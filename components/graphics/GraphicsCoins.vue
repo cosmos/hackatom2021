@@ -22,7 +22,7 @@ export default {
 
 <style lang="stylus" scoped>
 .canvas
-  position relative
+  // position relative
   width 30.7rem
   height 30.7rem
 

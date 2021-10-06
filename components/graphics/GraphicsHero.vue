@@ -31,7 +31,7 @@ export default {
 
 <style lang="stylus" scoped>
 .canvas
-  position relative
+  // position relative
   width: 169vw
   height: 180vw
   @media $breakpoint-medium
