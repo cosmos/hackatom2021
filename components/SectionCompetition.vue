@@ -12,7 +12,7 @@
               tm-title tm-rf5 tm-rf6-m-up tm-rf5-l-up tm-lh-title tm-bold
             "
           >
-            The biggest HackAtom in&nbsp;Cosmos history is here!
+            The biggest HackAtom in&nbsp;Cosmos history!
           </h2>
         </div>
       </div>
@@ -23,8 +23,13 @@
           Take part in the biggest HackAtom in Cosmos history and compete for
           your share of $1,000,000 in prizes. Organized by Tendermint, HackAtom
           VI will take place online for one month and cover six different
-          themes: Interoperability, Gaming, DeFi, Starport, Wallets, and
-          Ethereum on Cosmos.
+          themes:<br />
+          - <i>Ethereum on Cosmos</i><br />
+          - <i>Starport</i><br />
+          - <i>Interoperability</i><br />
+          - <i>DeFi</i><br />
+          - <i>End-User Apps</i><br />
+          - <i>Gaming</i>
         </p>
       </div>
 

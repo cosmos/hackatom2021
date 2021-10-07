@@ -10,7 +10,9 @@
           <logo-hackatom class="logo__cosmos" />
           <span class="sr-only">Hackatom</span>
         </nuxt-link>
-        <tm-link href="/privacy" class="privacy"> Privacy </tm-link>
+        <tm-link href="https://v1.cosmos.network/privacy" class="privacy">
+          Privacy
+        </tm-link>
       </nav>
       <nav ref="links" class="social-icons mt-7" role="navigation">
         <tm-link

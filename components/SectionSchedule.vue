@@ -26,25 +26,31 @@
                     <div class="event-header tm-grid-base">
                       <div class="date">
                         <div class="tm-code tm-rf0 tm-lh-copy">
-                          {{ toDate(event.date, event.startTime) }}
+                          {{ toDate(event.date, event.startTime || '0:00') }}
                         </div>
                         <div class="tm-code tm-rf0 tm-lh-copy tm-gray">
-                          <span v-if="event.place" class="show-inline-m-up">
-                            {{ event.place }} -
+                          <span class="show-inline-m-up">
+                            {{ event.type }}
+                            <span v-if="event.startTime">-</span>
                           </span>
-                          <span v-else class="show-inline-m-up">
-                            {{ event.type }} -
+                          <span v-if="event.startTime">
+                            {{ toTime(event.date, event.startTime) }}
                           </span>
-                          <span>{{ toTime(event.date, event.startTime) }}</span>
                         </div>
                       </div>
                       <div class="tm-title tm-lh-title tm-rf1 tm-bold">
                         <span>{{ event.title }}</span>
                         <div
                           v-if="event.place"
-                          class="hide-m-up tm-code tm-rf0 tm-lh-copy tm-gray"
+                          class="mt-3 tm-rf-1 tm-lh-copy tm-normal"
                         >
                           {{ event.place }}
+                        </div>
+                        <div
+                          v-if="event.place"
+                          class="hide-m-up tm-code tm-rf0 tm-lh-copy tm-gray"
+                        >
+                          {{ event.type }}
                         </div>
                       </div>
                     </div>
@@ -60,7 +66,7 @@
                             {{
                               eventLength(
                                 event.date,
-                                event.startTime,
+                                event.startTime || '0:00',
                                 event.endTime
                               )
                             }}
@@ -116,14 +122,14 @@ export default {
         {
           title: 'Opening Ceremony',
           date: '2021-11-11',
-          startTime: '15:00',
-          endTime: '17:00',
-          type: 'In Person Event',
+          // startTime: '15:00',
+          // endTime: '17:00',
+          type: 'In Person',
           place: 'Lisbon',
           language: 'English',
-          details:
-            'Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
-          url: '#',
+          // details:
+          //   'Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
+          // url: '#',
         },
       ],
     }

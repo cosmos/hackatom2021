@@ -19,7 +19,7 @@
           <p>
             Catch all the latest updates about HackAtom VI including competition
             rules, prize details, sponsors, and special news on our in-person
-            events in major world cities…
+            events in major cities…
           </p>
         </div>
       </div>

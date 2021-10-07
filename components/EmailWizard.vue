@@ -37,7 +37,10 @@
 
           <p class="info tm-rf-1 tm-lh-copy tm-text-center tm-muted">
             You can unsubscribe at any time.
-            <tm-link href="/privacy" class="tm-link-external">
+            <tm-link
+              href="https://v1.cosmos.network/privacy"
+              class="tm-link-external"
+            >
               Privacy policy
             </tm-link>
           </p>

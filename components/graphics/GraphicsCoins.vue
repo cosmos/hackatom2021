@@ -21,10 +21,10 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.canvas
-  // position relative
-  width 30.7rem
-  height 30.7rem
+// .canvas
+//   position relative
+//   width 30.7rem
+//   height 30.7rem
 
 .coin
   position absolute

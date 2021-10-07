@@ -4,9 +4,9 @@
       <div class="tm-grid-base">
         <div class="col-left">
           <p class="tm-lh-copy tm-rf0 tm-rf1-m-up tm-normal">
-            A massive $1,000,000 will be up for grabs divided over the six
-            competition categories with an additional Community Choice award for
-            the project that receives the most hearts on Devpost.
+            A massive $1,000,000 worth of ATOM will be up for grabs divided over
+            the six competition categories with an additional Community Choice
+            award for the project that receives the most hearts on Devpost.
           </p>
         </div>
         <div class="col-right card">
@@ -82,7 +82,7 @@ export default {
 .graphics
   position absolute
   right -5.4375rem
-  bottom -9.3375rem
+  bottom -7.3375rem
   width 22.255rem
   height 22.255rem
   @media $breakpoint-medium

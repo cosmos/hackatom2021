@@ -37,8 +37,17 @@
           date
         "
       >
-        registration opens at&nbsp;{{ countdown.time }}&nbsp;(UTC)
+        registration opens at&nbsp;{{ countdown.time }}&nbsp;(CET)
         {{ moment(countdown.date).format('MMM D') }}
+      </div>
+
+      <div
+        class="
+          mt-3
+          tm-title tm-rf-1 tm-rf0-m-up tm-lh-copy tm-medium tm-text-center
+        "
+      >
+        Opening Ceremony in-person in Lisbon, Nov 11th
       </div>
 
       <div class="wizard">
@@ -79,7 +88,7 @@ export default {
   },
   methods: {
     countdownTimer(date, time) {
-      return moment.tz(`${date} ${time}`, 'UTC').format()
+      return moment.tz(`${date} ${time}`, 'CET').format()
     },
     toTimezone(date, time) {
       return (
