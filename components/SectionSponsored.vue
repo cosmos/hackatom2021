@@ -7,19 +7,28 @@
     </div>
     <div class="logos mt-7">
       <div class="logos__row">
-        <div v-for="item in sponsors" :key="item.name" class="logos__item">
+        <div v-for="item in sponsors" :key="item" class="logos__item">
           <img
-            :src="require(`~/assets/images/logos/${item.img}.svg`)"
-            :alt="item.name"
+            :src="require(`~/assets/images/logos/logo-bounds-${item}.svg`)"
+            :alt="item"
             class="logo-item"
           />
         </div>
       </div>
       <div class="logos__row">
-        <div v-for="item in sponsors" :key="item.name" class="logos__item">
+        <div v-for="item in sponsors" :key="item" class="logos__item">
           <img
-            :src="require(`~/assets/images/logos/${item.img}.svg`)"
-            :alt="item.name"
+            :src="require(`~/assets/images/logos/logo-bounds-${item}.svg`)"
+            :alt="item"
+            class="logo-item"
+          />
+        </div>
+      </div>
+      <div class="logos__row">
+        <div v-for="item in sponsors" :key="item" class="logos__item">
+          <img
+            :src="require(`~/assets/images/logos/logo-bounds-${item}.svg`)"
+            :alt="item"
             class="logo-item"
           />
         </div>
@@ -32,36 +41,7 @@
 export default {
   data() {
     return {
-      sponsors: [
-        {
-          name: 'figment',
-          img: 'figment',
-        },
-        {
-          name: 'stake fish',
-          img: 'stake-fish',
-        },
-        {
-          name: 'inqlusion',
-          img: 'inqlusion',
-        },
-        {
-          name: 'chainflow',
-          img: 'chainflow',
-        },
-        {
-          name: 'interchain',
-          img: 'interchain',
-        },
-        {
-          name: 'tendermint',
-          img: 'tendermint',
-        },
-        {
-          name: 'cosmos',
-          img: 'cosmos',
-        },
-      ],
+      sponsors: ['pylons', 'archway', 'umee', 'kava'],
     }
   },
 }
@@ -79,12 +59,21 @@ export default {
   &__row
     animation: marquee 20s linear infinite
     display: inline-block
+    @media $breakpoint-medium
+      animation none
+      display none
+    &:first-child
+      @media $breakpoint-medium
+        display flex
+        justify-content space-between
+      @media $breakpoint-large
+        justify-content center
   &__item
     display: inline-flex
     align-items center
     justify-content center
     width 10.5625rem
-    height 4rem
+    height auto
     margin-right 2rem
     opacity .3
 
