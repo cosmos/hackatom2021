@@ -26,7 +26,7 @@
                     <div class="event-header tm-grid-base">
                       <div class="date">
                         <div class="tm-code tm-rf0 tm-lh-copy">
-                          {{ toDate(event.date, event.startTime || '0:00') }}
+                          {{ toDate(event.date, event.startTime || '12:00') }}
                         </div>
                         <div class="tm-code tm-rf0 tm-lh-copy tm-gray">
                           <span class="show-inline-m-up">
@@ -66,7 +66,7 @@
                             {{
                               eventLength(
                                 event.date,
-                                event.startTime || '0:00',
+                                event.startTime || '12:00',
                                 event.endTime
                               )
                             }}
@@ -118,6 +118,13 @@ export default {
           date: '2021-10-27',
           startTime: '19:00',
           type: 'Virtual',
+        },
+        {
+          title: 'HackAtom VI Side-Event Berlin Ceremony',
+          date: '2021-10-29',
+          type: 'In-Person',
+          place: 'Berlin',
+          language: 'English',
         },
         {
           title: 'Opening Ceremony',
