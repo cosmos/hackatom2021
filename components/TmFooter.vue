@@ -48,7 +48,7 @@
     </p>
     <p class="smallprint tm-rf-1 tm-lh-copy mt-8 tm-muted">
       Build by
-      <tm-link href="https://tendermint.com/"> Tendermint </tm-link>.
+      <tm-link href="https://tendermint.com/">Tendermint</tm-link>.
     </p>
   </footer>
 </template>
@@ -91,11 +91,11 @@ export default {
     return {
       links: [
         { title: 'Medium', url: 'https://blog.cosmos.network/' },
-        { title: 'Twitter', url: 'https://twitter.com/' },
-        { title: 'Reddit', url: 'https://reddit.com/' },
-        { title: 'Telegram', url: 'https://t.me/' },
-        { title: 'Discord', url: 'https://discord.gg/' },
-        { title: 'YouTube', url: 'https://www.youtube.com/' },
+        { title: 'Twitter', url: 'https://twitter.com/hack4atom' },
+        { title: 'Reddit', url: 'https://reddit.com/r/cosmosnetwork' },
+        { title: 'Telegram', url: 'https://t.me/cosmosproject' },
+        { title: 'Discord', url: 'https://discord.gg/cosmosnetwork' },
+        { title: 'YouTube', url: 'https://www.youtube.com/c/CosmosProject' },
       ],
       menu: [
         {
