@@ -1,5 +1,5 @@
 <template>
-  <section class="tm-section section pb0">
+  <section class="tm-section section">
     <div class="tm-section-container tm-container">
       <div class="tm-grid-base">
         <div class="col-left">
@@ -82,7 +82,7 @@ export default {
 .graphics
   position absolute
   right -5.4375rem
-  bottom -7.3375rem
+  bottom -9.3375rem
   width 22.255rem
   height 22.255rem
   @media $breakpoint-medium
