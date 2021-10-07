@@ -124,7 +124,7 @@ export default {
           date: '2021-11-11',
           // startTime: '15:00',
           // endTime: '17:00',
-          type: 'In Person',
+          type: 'In-Person',
           place: 'Lisbon',
           language: 'English',
           // details:
