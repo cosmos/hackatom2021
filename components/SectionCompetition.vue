@@ -36,7 +36,9 @@
       <div class="mt-10 tm-grid-base">
         <div class="video__container">
           <div class="video">
-            <icon-video-play class="video__icon" />
+            <video controls>
+              <source src="~/assets/video/hackatom.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </div>
@@ -44,15 +46,7 @@
   </section>
 </template>
 
-<script>
-import IconVideoPlay from './icons/IconVideoPlay.vue'
-
-export default {
-  components: {
-    IconVideoPlay,
-  },
-}
-</script>
+<script></script>
 
 <style lang="stylus" scoped>
 .section
@@ -80,15 +74,16 @@ export default {
 
 .video
   position relative
-  height 0
   margin-left calc(-1 * var(--wrap-gap))
   margin-right calc(-1 * var(--wrap-gap))
-  padding-bottom 56.3%
-  background-color var(--light-gray)
+  font-size 0
   @media $breakpoint-medium
     width 100%
     margin 0
     border-radius 1rem
+    overflow hidden
+  video
+    width 100%
   &__container
     grid-column 1 / -1
     @media $breakpoint-xl

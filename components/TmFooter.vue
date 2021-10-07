@@ -1,7 +1,7 @@
 <template>
   <footer class="footer tm-wrapper tm-container tm-grid-base">
     <img
-      :src="require(`~/assets/images/bg/galaxy-bg-footer.png`)"
+      src="~/assets/images/bg/galaxy-bg-footer.png"
       class="footer__background"
     />
     <div class="row">

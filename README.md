@@ -4,7 +4,7 @@
 
 [![banner](static/og-image.jpg)](https://six.hackatom.org)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4bf14159-c6a8-406d-9833-1506eda730e4/deploy-status)](https://app.netlify.com/sites/0202motakcah/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f17367bb-918c-4973-be76-f546c4659df1/deploy-status)](https://app.netlify.com/sites/hackatom2021/deploys)
 
 ## Build Setup
 

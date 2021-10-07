@@ -1,20 +1,20 @@
 <template>
   <div class="canvas">
-    <img :src="require(`~/assets/images/bg/galaxy-bg.png`)" class="bg" />
+    <img src="~/assets/images/bg/galaxy-bg.png" class="bg" />
     <kinesis-element :strength="-5" class="galaxy__container">
       <graphics-galaxy class="galaxy" />
     </kinesis-element>
     <kinesis-element :strength="-10" class="planet _comet">
-      <img :src="require(`~/assets/images/tx.png`)" />
+      <img src="~/assets/images/tx.png" />
     </kinesis-element>
     <kinesis-element :strength="-30" class="planet _pink">
-      <img :src="require(`~/assets/images/planet-01.png`)" />
+      <img src="~/assets/images/planet-01.png" />
     </kinesis-element>
     <kinesis-element :strength="-40" class="planet _gray">
-      <img :src="require(`~/assets/images/planet-03.png`)" />
+      <img src="~/assets/images/planet-03.png" />
     </kinesis-element>
     <kinesis-element :strength="-50" class="planet _blue">
-      <img :src="require(`~/assets/images/planet-02.png`)" />
+      <img src="~/assets/images/planet-02.png" />
     </kinesis-element>
   </div>
 </template>

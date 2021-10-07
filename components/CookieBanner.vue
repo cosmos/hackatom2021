@@ -9,7 +9,7 @@
               href="https://www.cookiesandyou.com"
               target="_blank"
               rel="noopener"
-              style="color: var(--link)"
+              style="color: var(--dark-gray)"
               >Cookie Policy</a
             >.
           </div>
