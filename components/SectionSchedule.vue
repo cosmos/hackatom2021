@@ -117,7 +117,7 @@ export default {
           title: 'Registrations Open',
           date: '2021-10-27',
           startTime: '19:00',
-          type: 'Hybrid',
+          type: 'Virtual',
         },
         {
           title: 'HackAtom VI Side-Event',
