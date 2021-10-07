@@ -21,15 +21,15 @@
         <p class="tm-lh-copy tm-rf0 tm-rf1-m-up">
           Calling all developers… It's time to build a cross-chain universe!
           Take part in the biggest HackAtom in Cosmos history and compete for
-          your share of $1,000,000 in prizes. Organized by Tendermint, HackAtom
-          VI will take place online for one month and cover six different
-          themes:<br />
-          - <i>Ethereum on Cosmos</i><br />
-          - <i>Starport</i><br />
-          - <i>Interoperability</i><br />
-          - <i>DeFi</i><br />
-          - <i>End-User Apps</i><br />
-          - <i>Gaming</i>
+          your share of $1,000,000 in prizes paid in $ATOM. Organized by
+          Tendermint, HackAtom VI will a one month hybrid hackathon cover six
+          different themes:<br />
+          - <b>Ethereum on Cosmos</b><br />
+          - <b>Starport</b><br />
+          - <b>Interoperability</b><br />
+          - <b>DeFi</b><br />
+          - <b>End-User Apps</b><br />
+          - <b>Gaming</b>
         </p>
       </div>
 

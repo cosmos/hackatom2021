@@ -26,7 +26,7 @@
               :disabled="emailInvalid"
               @click="actionSubmitEmail"
             >
-              <span>Stay up to date</span>
+              <span>Register for updates!</span>
               <span class="icon__right">&rarr;</span>
             </tm-button>
           </fieldset>

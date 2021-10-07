@@ -37,7 +37,7 @@
           date
         "
       >
-        registration opens at&nbsp;{{ countdown.time }}&nbsp;(CET)
+        Early-registration opens at&nbsp;{{ countdown.time }}&nbsp;(CET)
         {{ moment(countdown.date).format('MMM D') }}
       </div>
 
@@ -47,7 +47,7 @@
           tm-title tm-rf-1 tm-rf0-m-up tm-lh-copy tm-medium tm-text-center
         "
       >
-        Opening Ceremony in-person in Lisbon, Nov 11th
+        In-Person Opening Ceremony, Lisbon - Nov 11th
       </div>
 
       <div class="wizard">
