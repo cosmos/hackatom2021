@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after
+  box-sizing border-box
+  margin 0
+
+::selection
+  background #4251FA
+  color var(--white)
+
+a
+  color var(--link)
+  text-decoration none
+  outline-color rgba(64, 179, 255, 0.92)
+  cursor pointer
+  transition all .1s ease-out
+  &:hover
+    color var(--white)
+  &:active
+    opacity 0.7
+    transition-duration 0s
