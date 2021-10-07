@@ -47,12 +47,18 @@
         </form>
       </div>
 
-      <div
-        v-show="step === 1"
-        class="wizard__state tm-rf0 tm-lh-copy tm-text-center"
-      >
-        <div class="wizard__title tm-rf1 tm-lh-copy tm-bold">Thank you!</div>
-        <p class="wizard__state__success mt-5">Confirmation email sent.</p>
+      <div v-show="step === 1" class="wizard__state _success tm-rf0 tm-lh-copy">
+        <div class="wizard__title tm-rf0 tm-lh-copy tm-normal">
+          Confirmation email sent. Open it and click ‘Confirm your email’ so we
+          can keep you updated.
+        </div>
+        <p class="tm-lh-title tm-rf-1 mt-5">
+          Don’t see the confirmation email yet?
+        </p>
+        <p class="tm-lh-title tm-rf-1 tm-muted mt-3">
+          It might be in your spam folder.<br />
+          If so, make sure to mark it as “not spam”.
+        </p>
       </div>
 
       <div
@@ -164,6 +170,10 @@ export default {
   max-width 30.5rem
   center()
   &__state
+    &._success
+      max-width 20.4375rem
+      margin-left auto
+      margin-right auto
     &__success
       color var(--success)
     &__error
