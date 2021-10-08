@@ -60,7 +60,7 @@ export default {
         },
         {
           name: 'Silver Sponsors',
-          items: ['archway', 'icf', 'kava', 'bitsong', 'stake'],
+          items: ['archway', 'icf', 'kava', 'bitsong', 'stake', 'injective'],
         },
         {
           name: 'Other Sponsors',
