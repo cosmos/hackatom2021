@@ -60,7 +60,7 @@ export default {
         },
         {
           name: 'Silver Sponsors',
-          items: ['archway', 'icf', 'kava', 'bitsong'],
+          items: ['archway', 'icf', 'kava', 'bitsong', 'stake'],
         },
         {
           name: 'Other Sponsors',
@@ -132,7 +132,6 @@ export default {
     justify-content center
     width 10.5625rem
     height auto
-    margin-right 2rem
 
 @keyframes marquee
   from
