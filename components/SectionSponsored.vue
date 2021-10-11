@@ -96,9 +96,9 @@ export default {
     gap var(--spacing-7)
   &:first-child
     margin-top 0
-  &:last-child
-    .logos
-      opacity .3
+  // &:last-child
+  //   .logos
+  //     opacity .3
 
 .name
   display flex
