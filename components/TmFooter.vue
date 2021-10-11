@@ -47,8 +47,10 @@
       these websites.
     </p>
     <p class="smallprint tm-rf-1 tm-lh-copy mt-8 tm-muted">
-      Build by
-      <tm-link href="https://tendermint.com/">Tendermint</tm-link>.
+      Brought to you by
+      <tm-link href="https://tendermint.com/">Tendermint</tm-link>
+      and
+      <tm-link href="https://interchain.io/">Interchain Foundation</tm-link>.
     </p>
   </footer>
 </template>

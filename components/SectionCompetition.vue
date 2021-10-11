@@ -36,7 +36,18 @@
       <div class="mt-10 tm-grid-base">
         <div class="video__container">
           <div class="video">
-            <video controls>
+            <icon-video-play
+              v-if="paused"
+              class="video__icon"
+              @click.native="play"
+            />
+            <video
+              controls
+              :class="paused && 'hide'"
+              @canplay="updatePaused"
+              @playing="updatePaused"
+              @pause="updatePaused"
+            >
               <source src="~/assets/video/hackatom.mp4" type="video/mp4" />
             </video>
           </div>
@@ -46,7 +57,38 @@
   </section>
 </template>
 
-<script></script>
+<script>
+import IconVideoPlay from '~/components/icons/IconVideoPlay.vue'
+
+export default {
+  components: {
+    IconVideoPlay,
+  },
+  data() {
+    return {
+      videoElement: null,
+      paused: true,
+    }
+  },
+  computed: {
+    playing() {
+      return !this.paused
+    },
+  },
+  methods: {
+    updatePaused(event) {
+      this.videoElement = event.target
+      this.paused = event.target.paused
+    },
+    play() {
+      this.videoElement.play()
+    },
+    pause() {
+      this.videoElement.pause()
+    },
+  },
+}
+</script>
 
 <style lang="stylus" scoped>
 .section
@@ -74,16 +116,28 @@
 
 .video
   position relative
+  height 0
   margin-left calc(-1 * var(--wrap-gap))
   margin-right calc(-1 * var(--wrap-gap))
+  padding-bottom 57%
   font-size 0
+  background-image url('~assets/video/hackatom-poster.jpg')
+  background-size cover
   @media $breakpoint-medium
     width 100%
     margin 0
     border-radius 1rem
     overflow hidden
   video
+    position absolute
+    left 0
+    right 0
+    top 0
+    bottom 0
     width 100%
+    height 100%
+    &.hide
+      opacity 0
   &__container
     grid-column 1 / -1
     @media $breakpoint-xl
@@ -91,6 +145,7 @@
   &__icon
     cursor pointer
     position absolute
+    z-index 1
     top 50%
     left 50%
     width 3.75rem
