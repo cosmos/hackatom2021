@@ -11,7 +11,8 @@
             tm-overline tm-rf-1 tm-rf0-l-up tm-title tm-lh-title tm-medium
           "
         >
-          <div class="">Virtual</div>
+          <div class="logo-hackatom__long">Sponsored by Starport</div>
+          <div class="logo-hackatom__short">by Starport</div>
           <div class="logo-hackatom__long">November 11 - December 8</div>
           <div class="logo-hackatom__short">Nov 11 - Dec 8</div>
         </div>

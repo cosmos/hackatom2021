@@ -56,7 +56,7 @@ export default {
       sponsors: [
         {
           name: 'Gold Sponsors',
-          items: ['starport', 'emeris', 'pylons'],
+          items: ['pylons', 'sifchain'],
         },
         {
           name: 'Silver Sponsors',
