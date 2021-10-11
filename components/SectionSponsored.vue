@@ -55,6 +55,10 @@ export default {
     return {
       sponsors: [
         {
+          name: 'Platinum Sponsor',
+          items: ['starport'],
+        },
+        {
           name: 'Gold Sponsors',
           items: ['pylons'],
         },
@@ -66,6 +70,7 @@ export default {
             'bitsong',
             'stake',
             'injective',
+            'sentinel',
             'sifchain',
           ],
         },
