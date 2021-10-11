@@ -120,7 +120,7 @@ export default {
           type: 'Virtual',
         },
         {
-          title: 'HackAtom VI Side-Event',
+          title: 'HackAtom VI Warm Up Event',
           date: '2021-10-29',
           type: 'In-Person',
           place: 'Berlin',

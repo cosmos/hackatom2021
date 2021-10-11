@@ -48,7 +48,7 @@
           tm-title tm-rf-1 tm-rf0-m-up tm-lh-copy tm-medium tm-text-center
         "
       >
-        In-Person Opening Ceremony, Lisbon - Nov 11th
+        In-Person Opening Ceremony, Lisbon - November 11
       </div>
 
       <div class="wizard">
