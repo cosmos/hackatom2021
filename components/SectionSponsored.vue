@@ -56,11 +56,11 @@ export default {
       sponsors: [
         {
           name: 'Gold Sponsors',
-          items: ['pylons', 'sifchain'],
+          items: ['pylons'],
         },
         {
           name: 'Silver Sponsors',
-          items: ['archway', 'kava', 'bitsong', 'stake', 'injective'],
+          items: ['archway', 'kava', 'bitsong', 'stake', 'injective', 'sifchain'],
         },
         {
           name: 'Other Sponsors',

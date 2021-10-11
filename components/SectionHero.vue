@@ -24,7 +24,7 @@
           countdown
         "
       >
-        <span class="">Register in&nbsp;</span>
+        <span class="">Register virtually in&nbsp;</span>
         <tm-countdown
           class="tm-mono tm-rf4 tm-rf3-l-up countdown__count"
           :now="countdown.now"
