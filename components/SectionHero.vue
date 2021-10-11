@@ -38,7 +38,7 @@
           date
         "
       >
-        Early-registration opens at&nbsp;{{ countdown.time }}&nbsp;(CET)
+        Registration opens at&nbsp;{{ countdown.time }}&nbsp;(CET)
         {{ moment(countdown.date).format('MMM D') }}
       </div>
 
