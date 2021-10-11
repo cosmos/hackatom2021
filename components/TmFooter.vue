@@ -46,11 +46,17 @@
       the use, reference to, or reliance on any information contained within
       these websites.
     </p>
-    <p class="smallprint tm-rf-1 tm-lh-copy mt-8 tm-muted">
-      Brought to you by
-      <tm-link href="https://tendermint.com/">Tendermint</tm-link>
-      and
-      <tm-link href="https://interchain.io/">Interchain Foundation</tm-link>.
+    <p class="smallprint copy tm-rf-1 tm-lh-copy mt-8 tm-muted">
+      <span>Brought to you by</span>
+      <tm-link href="https://tendermint.com/">
+        <span class="sr-only">Tendermint</span>
+        <img src="~/assets/images/logos/tendermint.svg" class="logo-item" />
+      </tm-link>
+      <span>and</span>
+      <tm-link href="https://interchain.io/">
+        <span class="sr-only">Interchain Foundation</span>
+        <img src="~/assets/images/logos/icf.svg" class="logo-item" />
+      </tm-link>
     </p>
   </footer>
 </template>
@@ -289,6 +295,14 @@ export default {
 
 .smallprint
   text-align left
+
+.copy
+  > *
+    display inline-block
+    vertical-align middle
+  > .tm-link
+    font-size 0
+    line-height 0
 
 .row
   padding-top var(--spacing-8)

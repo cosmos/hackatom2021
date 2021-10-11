@@ -1,10 +1,16 @@
 <template>
-  <nav class="nav tm-text-center">
-    <span class="logo">
-      <logo-cosmos class="logo__svg" />
-      <span class="sr-only">Cosmos</span>
-    </span>
-  </nav>
+  <div class="tm-container tm-section-container">
+    <nav class="nav tm-text-center">
+      <span class="logo">
+        <logo-cosmos class="logo__svg" />
+        <span class="sr-only">Cosmos</span>
+      </span>
+      <span class="tm-text tm-normal tablet">
+        Virtual Hackathon open to everyone
+      </span>
+      <span class="tm-text tm-normal mobile">Virtual Hackathon</span>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -23,15 +29,23 @@ export default {
   z-index 2
   display flex
   flex-direction row
-  justify-content center
-  padding-top var(--spacing-10)
+  align-items center
+  justify-content space-between
+  padding-top var(--spacing-7)
   @media $breakpoint-medium
-    padding-top 4rem
+    padding-top var(--spacing-6)
   @media $breakpoint-large
-    padding-top var(--spacing-9)
+    padding-top var(--spacing-8)
+  .tablet
+    display none
+    @media $breakpoint-medium
+      display block
+  .mobile
+    @media $breakpoint-medium
+      display none
 
 .logo
-  transform rotate(90deg) translate(37.5%, 13.5%)
+  font-size 0
   &__svg
     width 4rem
     @media $breakpoint-medium

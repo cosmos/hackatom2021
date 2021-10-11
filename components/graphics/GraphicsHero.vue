@@ -67,14 +67,19 @@ export default {
     top 35.6%
     right 63.2%
     width 16.2%
+    @media $breakpoint-medium
+      top 38%
     @media $breakpoint-large
       top 34.25%
   &._pink
     top 35.1%
     right 73.2%
     width 9.4%
+    @media $breakpoint-medium
+      right 71%
+      top 39.5%
     @media $breakpoint-large
-      top 33.8%
+      top 35%
   &._gray
     top 51.7%
     left 69.3%
