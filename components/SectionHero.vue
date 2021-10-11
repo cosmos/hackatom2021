@@ -8,12 +8,16 @@
         <div
           class="
             logo-hackatom__text
-            tm-overline tm-rf-1 tm-rf0-l-up tm-title tm-lh-title tm-medium
+            tm-rf-1 tm-rf0-l-up tm-title tm-lh-title tm-medium
           "
         >
-          <div class="logo-hackatom__long">Platinum Sponsor Starport</div>
-          <div class="logo-hackatom__short"></div>
-          <div class="logo-hackatom__long">November 11 - December 8</div>
+          <div class="logo-hackatom__long tm-overline">
+            Platinum Sponsor Starport
+          </div>
+          <div class="logo-hackatom__short">Platinum - Starport</div>
+          <div class="logo-hackatom__long tm-overline">
+            November 11 - December 8
+          </div>
           <div class="logo-hackatom__short">Nov 11 - Dec 8</div>
         </div>
       </kinesis-element>
