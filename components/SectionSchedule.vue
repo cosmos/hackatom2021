@@ -128,7 +128,7 @@ export default {
           language: 'English',
         },
         {
-          title: 'Opening Ceremony',
+          title: 'HackAtom VI Opening Ceremony',
           date: '2021-11-11',
           startTime: '09:00',
           // endTime: '17:00',
