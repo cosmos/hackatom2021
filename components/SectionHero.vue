@@ -24,7 +24,7 @@
           countdown
         "
       >
-        <span class="">Register virtually in&nbsp;</span>
+        <span class="">Register Virtually in&nbsp;</span>
         <tm-countdown
           class="tm-mono tm-rf4 tm-rf3-l-up countdown__count"
           :now="countdown.now"
@@ -38,7 +38,7 @@
           date
         "
       >
-        Early-registration opens at&nbsp;{{ countdown.time }}&nbsp;(CET)
+        Registration opens at&nbsp;{{ countdown.time }}&nbsp;(CET)
         {{ moment(countdown.date).format('MMM D') }}
       </div>
 
