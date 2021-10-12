@@ -69,7 +69,6 @@ export default {
             'kava',
             'bitsong',
             'stake',
-            'injective',
             'sentinel',
             'sifchain',
             'likecoin',
@@ -77,7 +76,7 @@ export default {
         },
         {
           name: 'Other Sponsors',
-          items: ['umee', 'vitwit', 'iris'],
+          items: ['umee', 'injective', 'vitwit', 'iris'],
         },
       ],
     }
