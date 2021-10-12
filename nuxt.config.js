@@ -168,7 +168,7 @@ export default {
   // https://github.com/nuxt-community/google-gtag
   modules: ['@nuxtjs/google-gtag'],
   'google-gtag': {
-    id: 'UA-XXXXXXXX-XX',
+    id: '2992125925',
     config: {
       anonymize_ip: true, // anonymize IP
       send_page_view: false, // might be necessary to avoid duplicated page track on page reload
@@ -181,7 +181,7 @@ export default {
     // https://support.google.com/google-ads/answer/6095821
     additionalAccounts: [
       {
-        id: 'AW-585698793', // required if you are adding additional accounts
+        id: 'G-6Y0VDQ6SFG', // required if you are adding additional accounts
         config: {
           send_page_view: false, // optional configurations
         },

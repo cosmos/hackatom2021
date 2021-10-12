@@ -72,6 +72,7 @@ export default {
             'injective',
             'sentinel',
             'sifchain',
+            'likecoin',
           ],
         },
         {
