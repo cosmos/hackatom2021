@@ -72,6 +72,7 @@ export default {
             'sentinel',
             'sifchain',
             'likecoin',
+            'regen',
           ],
         },
         {
