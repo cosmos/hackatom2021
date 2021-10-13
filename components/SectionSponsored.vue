@@ -73,6 +73,7 @@ export default {
             'sifchain',
             'likecoin',
             'regen',
+            'akash',
           ],
         },
         {
