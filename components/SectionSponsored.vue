@@ -74,6 +74,7 @@ export default {
             'likecoin',
             'regen',
             'akash',
+            'secret',
           ],
         },
         {
