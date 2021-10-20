@@ -23,13 +23,14 @@
           Take part in the biggest HackAtom in Cosmos history and compete for
           your share of $1,000,000 in prizes paid in $ATOM. Organized by
           Tendermint, HackAtom VI will be a one month hybrid hackathon covering
-          six different themes:<br />
+          seven different themes:<br />
           - <b>Ethereum on Cosmos</b><br />
           - <b>Starport</b><br />
           - <b>Interoperability</b><br />
           - <b>DeFi</b><br />
           - <b>End-User Apps</b><br />
-          - <b>Gaming</b>
+          - <b>Gaming</b><br />
+          - <b>Earth</b>
         </p>
       </div>
 

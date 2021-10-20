@@ -7,10 +7,10 @@
             <div class="name tm-overline tm-rf-1 tm-lh-title tm-muted">
               <span>{{ group.name }}</span>
             </div>
-            <div class="logos" :class="group.items.length > 1 && 'animation'">
+            <div class="logos" :class="group.items.length > 2 && 'animation'">
               <div
                 class="logos__row"
-                :class="group.items.length > 1 && 'animation'"
+                :class="group.items.length > 2 && 'animation'"
               >
                 <div
                   v-for="item in group.items"
@@ -26,7 +26,7 @@
                   />
                 </div>
               </div>
-              <div class="logos__row animation" v-if="group.items.length > 1">
+              <div class="logos__row animation" v-if="group.items.length > 2">
                 <div
                   v-for="item in group.items"
                   :key="item"
@@ -112,13 +112,13 @@ export default {
 
 .logos
   position relative
-  overflow: hidden
   white-space: nowrap
   &:hover
     .logos
       &__row
         animation-play-state: paused
   &.animation
+    overflow: hidden
     margin-left calc(-1 * var(--wrap-gap))
     margin-right calc(-1 * var(--wrap-gap))
     padding-left var(--wrap-gap)
