@@ -60,7 +60,7 @@ export default {
         },
         {
           name: 'Gold Sponsors',
-          items: ['pylons'],
+          items: ['pylons', 'ixo'],
         },
         {
           name: 'Silver Sponsors',
@@ -79,7 +79,7 @@ export default {
         },
         {
           name: 'Other Sponsors',
-          items: ['umee', 'injective', 'vitwit', 'iris'],
+          items: ['umee', 'injective', 'vitwit', 'iris', 'pers'],
         },
       ],
     }
