@@ -75,6 +75,7 @@ export default {
             'regen',
             'akash',
             'secret',
+            'nym',
           ],
         },
         {
