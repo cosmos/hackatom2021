@@ -28,35 +28,20 @@
           countdown
         "
       >
-        <span class="">Register Virtually in&nbsp;</span>
-        <tm-countdown
-          class="tm-mono tm-rf4 tm-rf3-l-up countdown__count"
-          :now="countdown.now"
-          :end="countdownTimer(countdown.date, countdown.time)"
-        />
+        Register for the Virtual HackAtom
+      </div>
+
+      <div class="mt-7 tm-text-center">
+        <tm-button to-link="external" href="/"> Register Now ↗️ </tm-button>
       </div>
 
       <div
         class="
-          tm-rf-1 tm-rf0-m-up tm-medium tm-text-center tm-overline tm-muted
-          date
-        "
-      >
-        Registration opens at&nbsp;{{ countdown.time }}&nbsp;(CET)
-        {{ moment(countdown.date).format('MMM D') }}
-      </div>
-
-      <div
-        class="
-          mt-3
+          mt-7
           tm-title tm-rf-1 tm-rf0-m-up tm-lh-copy tm-medium tm-text-center
         "
       >
         In-Person Opening Ceremony, Lisbon - November 11
-      </div>
-
-      <div class="wizard">
-        <email-wizard />
       </div>
     </div>
   </section>
@@ -66,13 +51,11 @@
 import moment from 'moment-timezone'
 import GraphicsHero from '~/components/graphics/GraphicsHero.vue'
 import LogoHackatom from '~/components/logos/LogoHackatom.vue'
-import EmailWizard from '~/components/EmailWizard.vue'
 
 export default {
   components: {
     GraphicsHero,
     LogoHackatom,
-    EmailWizard,
   },
   data() {
     return {
@@ -113,7 +96,6 @@ export default {
 <style lang="stylus" scoped>
 .section-hero
   position relative
-  padding-bottom var(--spacing-11)
   &__graphics
     position absolute
     z-index 0

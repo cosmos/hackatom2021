@@ -1,5 +1,5 @@
 <template>
-  <section class="tm-section pb0 section">
+  <section class="tm-section pb0">
     <div class="tm-section-container tm-container">
       <div class="tm-grid-base">
         <div class="header tm-center">
@@ -17,41 +17,42 @@
         </div>
       </div>
 
-      <div class="info">
-        <p class="tm-lh-copy tm-rf0 tm-rf1-m-up">
-          Calling all developers… It's time to build a cross-chain universe!
-          Take part in the biggest HackAtom in Cosmos history and compete for
-          your share of $1,000,000 in prizes paid in $ATOM. Organized by
-          Tendermint, HackAtom VI will be a one month hybrid hackathon covering
-          seven different themes:<br />
-          - <b>Ethereum on Cosmos</b><br />
-          - <b>Starport</b><br />
-          - <b>Interoperability</b><br />
-          - <b>DeFi</b><br />
-          - <b>End-User Apps</b><br />
-          - <b>Gaming</b><br />
-          - <b>Earth</b>
-        </p>
+      <div class="tm-grid-base mt-8">
+        <div class="info">
+          <p class="tm-lh-copy tm-rf0 tm-rf1-m-up">
+            Calling all developers… It's time to build a cross-chain universe!
+            Take part in the biggest HackAtom in Cosmos history and compete for
+            your share of $1,000,000 in prizes paid in $ATOM. Organized by
+            Tendermint, HackAtom VI will be a one month virtual event with
+            in-person side events covering seven different themes.
+          </p>
+          <p class="tm-lh-copy tm-rf0 tm-rf1-m-up">
+            Cosmos is a rapidly expanding ecosystem of independent
+            interconnected blockchains built using developer-friendly
+            application components and connected with the ground-breaking IBC
+            (Inter-Blockchain Communication) protocol. There are more than 250
+            blockchain apps and services in the Cosmos Network with over $130
+            billion of digital assets under management.
+          </p>
+        </div>
       </div>
 
-      <div class="mt-10 tm-grid-base">
-        <div class="video__container">
-          <div class="video">
-            <icon-video-play
-              v-if="paused"
-              class="video__icon"
-              @click.native="play"
-            />
-            <video
-              controls
-              :class="paused && 'hide'"
-              @canplay="updatePaused"
-              @playing="updatePaused"
-              @pause="updatePaused"
-            >
-              <source src="~/assets/video/hackatom.mp4" type="video/mp4" />
-            </video>
-          </div>
+      <div class="mt-10">
+        <div class="video">
+          <icon-video-play
+            v-if="paused"
+            class="video__icon"
+            @click.native="play"
+          />
+          <video
+            controls
+            :class="paused && 'hide'"
+            @canplay="updatePaused"
+            @playing="updatePaused"
+            @pause="updatePaused"
+          >
+            <source src="~/assets/video/hackatom.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </div>
@@ -92,12 +93,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.section
-  @media $breakpoint-medium
-    margin-top var(--spacing-8)
-  @media $breakpoint-large
-    margin-top var(--spacing-10)
-
 .header
   grid-column 1 / -1
   @media $breakpoint-medium
@@ -107,13 +102,9 @@ export default {
     grid-column 3 / span 8
 
 .info
-  margin-top var(--spacing-8)
-  @media $breakpoint-medium
-    margin-top var(--spacing-9)
+  grid-column 1 / -1
   @media $breakpoint-large
-    max-width $measure-3
-    center()
-    margin-top var(--spacing-8)
+    grid-column 4 / span 6
 
 .video
   position relative
@@ -127,8 +118,17 @@ export default {
   @media $breakpoint-medium
     width 100%
     margin 0
-    border-radius 1rem
-    overflow hidden
+  @media $breakpoint-large
+    &:before
+      content ''
+      position absolute
+      z-index -1
+      top 50%
+      left 50%
+      width 105.5rem
+      height 105.5rem
+      transform: translate(-50%, -50%)
+      background: radial-gradient(42.6% 37.31% at 48.94% 55.57%, #13FFFF 0%, rgba(25, 110, 238, 0.849029) 18.23%, rgba(47, 60, 177, 0.32) 53.96%, rgba(0, 0, 0, 0) 100%)
   video
     position absolute
     left 0
@@ -139,10 +139,6 @@ export default {
     height 100%
     &.hide
       opacity 0
-  &__container
-    grid-column 1 / -1
-    @media $breakpoint-xl
-      grid-column 2 / span 10
   &__icon
     cursor pointer
     position absolute

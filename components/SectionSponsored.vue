@@ -26,7 +26,7 @@
                   />
                 </div>
               </div>
-              <div class="logos__row animation" v-if="group.items.length > 2">
+              <div v-if="group.items.length > 2" class="logos__row animation">
                 <div
                   v-for="item in group.items"
                   :key="item"
