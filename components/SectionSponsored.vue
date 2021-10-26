@@ -82,7 +82,7 @@ export default {
         },
         {
           name: 'Other Sponsors',
-          items: ['umee', 'injective', 'vitwit', 'iris', 'pers'],
+          items: ['umee', 'injective', 'vitwit', 'iris', 'pers', 'forte'],
         },
       ],
     }
