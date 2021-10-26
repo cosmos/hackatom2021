@@ -32,7 +32,9 @@
       </div>
 
       <div class="mt-7 tm-text-center">
-        <tm-button to-link="external" href="/"> Register Now ↗️ </tm-button>
+        <tm-button size="l" to-link="external" href="/">
+          Register Now <span class="icon__right">↗️</span>
+        </tm-button>
       </div>
 
       <div
@@ -111,12 +113,10 @@ export default {
   position relative
   width 98%
   max-width 48.625rem
-  margin-top var(--spacing-6)
   margin-left auto
   margin-right auto
   @media $breakpoint-medium
     width 95%
-    margin-top var(--spacing-4)
   &__svg
     width 100%
     height auto
@@ -150,7 +150,7 @@ export default {
     justify-content center
     margin-top var(--spacing-4)
   @media $breakpoint-large
-    margin-top 0
+    margin-top -3.4rem
   &__count
     margin-top var(--spacing-3)
     @media $breakpoint-small

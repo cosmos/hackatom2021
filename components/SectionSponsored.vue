@@ -1,46 +1,90 @@
 <template>
-  <section class="tm-section pb0">
+  <section class="tm-section">
     <div class="tm-section-container tm-container">
       <div class="tm-grid-base">
-        <div class="sponsors">
-          <div v-for="group in sponsors" :key="group.name" class="sponsor mt-7">
-            <div class="name tm-overline tm-rf-1 tm-lh-title tm-muted">
-              <span>{{ group.name }}</span>
-            </div>
-            <div class="logos" :class="group.items.length > 2 && 'animation'">
-              <div
-                class="logos__row"
-                :class="group.items.length > 2 && 'animation'"
+        <tm-link class="sponsor-card _starport" href="https://starport.com/">
+          <div class="tm-overline tm-rf-1 tm-lh-title tm-medium tm-muted">
+            Platinum Sponsor
+          </div>
+          <img
+            :src="require(`~/assets/images/logos/logo-starport.svg`)"
+            alt="starport"
+            class="mt-7 logo-item"
+          />
+          <p class="mt-7 tm-muted tm-measure-narrower">
+            The first complete developer environment for blockchain, Starport
+            comes with all the tools you need to build, launch, and run your
+            crypto application or product. Accelerate blockchain development so
+            you can focus on writing business logic.
+          </p>
+          <p class="tm-solid tm-rf0 tm-medium">
+            Discover <span class="icon__external">↗️</span>
+          </p>
+        </tm-link>
+
+        <div class="sponsor-card _gold">
+          <div class="tm-overline tm-rf-1 tm-lh-title tm-medium tm-muted">
+            Gold sponsors
+          </div>
+          <div class="gold-sponsors">
+            <tm-link
+              v-for="sponsor in goldSponsors"
+              :key="sponsor.name"
+              :href="sponsor.link"
+              class="mt-7 sponsor-link"
+            >
+              <img
+                :src="
+                  require(`~/assets/images/logos/logo-bounds-${sponsor.name}.svg`)
+                "
+                :alt="sponsor.name"
+                class="logo-item"
+              />
+              <p class="mt-5 tm-muted">
+                {{ sponsor.info }}
+              </p>
+            </tm-link>
+          </div>
+        </div>
+      </div>
+
+      <div class="sponsors">
+        <div v-for="group in sponsors" :key="group.name" class="sponsor mt-8">
+          <div class="name tm-overline tm-rf-1 tm-lh-title tm-muted">
+            <span>{{ group.name }}</span>
+          </div>
+          <div class="logos animation" :class="group.prefix">
+            <div class="logos__row animation" :class="group.prefix">
+              <tm-link
+                v-for="item in group.items"
+                :key="item.name"
+                class="sponsor-link logos__item"
+                :href="item.llink"
               >
-                <div
-                  v-for="item in group.items"
-                  :key="item"
-                  class="logos__item"
-                >
-                  <img
-                    :src="
-                      require(`~/assets/images/logos/logo-bounds-${item}.svg`)
-                    "
-                    :alt="item"
-                    class="logo-item"
-                  />
-                </div>
-              </div>
-              <div v-if="group.items.length > 2" class="logos__row animation">
-                <div
-                  v-for="item in group.items"
-                  :key="item"
-                  class="logos__item"
-                >
-                  <img
-                    :src="
-                      require(`~/assets/images/logos/logo-bounds-${item}.svg`)
-                    "
-                    :alt="item"
-                    class="logo-item"
-                  />
-                </div>
-              </div>
+                <img
+                  :src="
+                    require(`~/assets/images/logos/logo-bounds-${item.name}.svg`)
+                  "
+                  :alt="item.name"
+                  class="logo-item"
+                />
+              </tm-link>
+            </div>
+            <div class="logos__row animation" :class="group.prefix">
+              <tm-link
+                v-for="item in group.items"
+                :key="item.name"
+                class="sponsor-link logos__item"
+                :href="item.llink"
+              >
+                <img
+                  :src="
+                    require(`~/assets/images/logos/logo-bounds-${item.name}.svg`)
+                  "
+                  :alt="item.name"
+                  class="logo-item"
+                />
+              </tm-link>
             </div>
           </div>
         </div>
@@ -53,36 +97,102 @@
 export default {
   data() {
     return {
+      goldSponsors: [
+        {
+          name: 'pylons',
+          info: 'Built on Cosmos, Pylons is a fast and interoperable system for brands and creators to build engaging products with meaningful NFT experiences.',
+          link: 'https://www.pylon.money/',
+        },
+        {
+          name: 'ixo',
+          info: 'The ixo Protocol is establishing the new standard for making verifiable claims about changes in the state of the world, and to tokenize verified outcome states as NFT Impact Tokens.',
+          link: 'https://www.ixo.world/',
+        },
+      ],
       sponsors: [
         {
-          name: 'Platinum Sponsor',
-          items: ['starport'],
-        },
-        {
-          name: 'Gold Sponsors',
-          items: ['pylons', 'ixo'],
-        },
-        {
           name: 'Silver Sponsors',
+          prefix: '_silver',
           items: [
-            'archway',
-            'kava',
-            'bitsong',
-            'stake',
-            'sentinel',
-            'sifchain',
-            'likecoin',
-            'regen',
-            'akash',
-            'secret',
-            'nym',
-            'evmos',
-            'agoric',
+            {
+              name: 'archway',
+              link: 'https://archway.io/',
+            },
+            {
+              name: 'kava',
+              link: 'https://www.kava.io/',
+            },
+            {
+              name: 'bitsong',
+              link: 'https://bitsong.io/',
+            },
+            {
+              name: 'stake',
+              link: 'https://stake.fish/en/juno/',
+            },
+            {
+              name: 'sentinel',
+              link: 'https://sentinel.co/',
+            },
+            {
+              name: 'sifchain',
+              link: 'https://sifchain.finance/',
+            },
+            {
+              name: 'likecoin',
+              link: 'https://about.like.co/',
+            },
+            {
+              name: 'regen',
+              link: 'https://www.regen.network/',
+            },
+            {
+              name: 'akash',
+              link: 'https://akash.network/',
+            },
+            {
+              name: 'secret',
+              link: 'https://scrt.network/',
+            },
+            {
+              name: 'nym',
+              link: 'https://nymtech.net/',
+            },
+            {
+              name: 'evmos',
+              link: 'https://evmos.org/',
+            },
+            {
+              name: 'agoric',
+              link: 'https://agoric.com/',
+            },
           ],
         },
         {
           name: 'Other Sponsors',
-          items: ['umee', 'injective', 'vitwit', 'iris', 'pers'],
+          prefix: '_other',
+          items: [
+            {
+              name: 'umee',
+              link: 'https://umee.cc/',
+            },
+            {
+              name: 'injective',
+              link: 'https://injectiveprotocol.com/',
+            },
+            {
+              name: 'vitwit',
+              link: 'https://www.vitwit.com/',
+            },
+            {
+              name: 'iris',
+              link: 'https://www.irisnet.org/',
+            },
+            {
+              name: 'pers',
+              link: 'https://persistence.one/',
+            },
+          ],
         },
       ],
     }
@@ -91,20 +201,55 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.sponsors
+.sponsor-card
+  overflow hidden
+  position relative
   grid-column 1 / -1
-  @media $breakpoint-xl
-    grid-column 2 / span 10
-
-.sponsor
-  @media $breakpoint-medium
+  padding: var(--spacing-7)
+  border: 1px solid #333
+  border-radius: var(--spacing-4)
+  @media $breakpoint-large
+    grid-column span 6
+  &._gold
     display flex
-    gap var(--spacing-7)
-  &:first-child
-    margin-top 0
-  // &:last-child
-  //   .logos
-  //     opacity .3
+    flex-direction: column
+    justify-content: space-between
+  &._starport
+    background linear-gradient(90deg, rgba(0, 0, 0, 0.74) 0%, rgba(0, 0, 0, 0.6) 100%)
+    &:before
+      content: ''
+      position absolute
+      z-index -1
+      top 0
+      left 0
+      right 0
+      bottom 0
+      background-image url('~assets/images/bg/starport.jpg')
+      background-size inherit
+      background-position-x 5%
+      transition: transform .25s $ease-out
+    &:hover,
+    &:focus
+      &:before
+        transform: scale(1.03)
+
+.gold-sponsors
+  @media $breakpoint-large
+    display flex
+    gap: var(--grid-gap-x)
+    > *
+      width 50%
+  .logo-item
+    transform-origin: center left
+
+.sponsor-link
+  .logo-item
+    transition: opacity .25s $ease-out, transform .25s $ease-out
+  &:hover,
+  &:focus
+    .logo-item
+      opacity .85
+      transform: scale(1.1)
 
 .name
   display flex
@@ -127,23 +272,31 @@ export default {
     padding-left var(--wrap-gap)
     padding-right var(--wrap-gap)
     @media $breakpoint-medium
-      margin-left 0
-      margin-right 0
-      padding-left 0
-      padding-right 0
+      &._other
+        margin-left -1.75rem
+        margin-right 0
+        padding-left 0
+        padding-right 0
+    @media $breakpoint-xxl
+      &._silver
+        margin-left calc(-50vw + 43rem - var(--wrap-gap))
+        margin-right calc(-50vw + 43rem - var(--wrap-gap))
+        padding-left var(--wrap-gap)
+        padding-right var(--wrap-gap)
   &__row
     display: inline-block
     &.animation
       animation: marquee 20s linear infinite
+    &._other
       @media $breakpoint-medium
+        display none
         animation none
-    @media $breakpoint-medium
-      display none
-    &:first-child
-      @media $breakpoint-medium
-        display flex
-        flex-wrap wrap
-        gap var(--spacing-7)
+    &._other
+      &:first-child
+        @media $breakpoint-medium
+          display flex
+          flex-wrap wrap
+          gap var(--spacing-7)
   &__item
     display: inline-flex
     align-items center

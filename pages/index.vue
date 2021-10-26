@@ -4,9 +4,14 @@
       <section-hero />
       <section-competition />
       <section-prize-pool />
+      <section-prize-categories />
+      <section-chat />
       <section-sponsored />
+      <section-judging-criteria />
+      <section-judges />
       <section-schedule />
       <section-incoming-transmissions />
+      <section-participate />
     </kinesis-container>
   </main>
 </template>

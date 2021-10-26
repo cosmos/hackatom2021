@@ -89,7 +89,23 @@ export default {
 .tm-collapse-item
   border-bottom 1px solid var(--border)
   transition: all .25s ease
+  &.hide-border
+    @media $breakpoint-medium
+      border-bottom: 0
   &.open-item
+    @media $breakpoint-medium
+      &.light
+        position relative
+        &:before
+          content: ''
+          position absolute
+          z-index -1
+          top 0
+          left -2rem
+          right -2rem
+          bottom 2rem
+          border-radius: 1rem
+          background-color #171717
     .con-content--item
       opacity 1
     .tm-collapse-item--icon-header
@@ -129,6 +145,9 @@ export default {
     bottom auto
     right 0.85rem
     transform translateY(-50%)
+  &._top
+    top 3.3rem
+    right 0
   &:before
   &:after
     content ''

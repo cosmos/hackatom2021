@@ -26,7 +26,7 @@
             Tendermint, HackAtom VI will be a one month virtual event with
             in-person side events covering seven different themes.
           </p>
-          <p class="tm-lh-copy tm-rf0 tm-rf1-m-up">
+          <p class="mt-7 tm-lh-copy tm-rf0 tm-rf1-m-up">
             Cosmos is a rapidly expanding ecosystem of independent
             interconnected blockchains built using developer-friendly
             application components and connected with the ground-breaking IBC
@@ -111,7 +111,7 @@ export default {
   height 0
   margin-left calc(-1 * var(--wrap-gap))
   margin-right calc(-1 * var(--wrap-gap))
-  padding-bottom 57%
+  padding-bottom 56.4%
   font-size 0
   background-image url('~assets/video/hackatom-poster.jpg')
   background-size cover
@@ -149,6 +149,9 @@ export default {
     height 3.75rem
     transform translate(-50%, -50%)
     transition transform .2s $ease-out
+    @media $breakpoint-large
+      width 4.75rem
+      height 4.75rem
     &:hover
       transform translate(-50%, -50%) scale(1.1)
 </style>

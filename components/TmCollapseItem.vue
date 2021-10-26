@@ -1,6 +1,11 @@
 <template>
   <div
-    :class="{ 'open-item': maxHeight != '0px', disabled: disabled }"
+    :class="{
+      'open-item': maxHeight != '0px',
+      disabled: disabled,
+      light: light,
+      'hide-border': hideBorder,
+    }"
     class="tm-collapse-item"
     @mouseover="mouseover"
     @mouseout="mouseout"
@@ -10,7 +15,11 @@
       variant="text"
       @click="toggleContent"
     >
-      <span v-if="!notArrow" class="tm-collapse-item--icon-header" />
+      <span
+        v-if="!notArrow"
+        class="tm-collapse-item--icon-header"
+        :class="iconTop && '_top'"
+      />
       <slot name="header" />
     </button>
     <div ref="content" :style="styleContent" class="tm-collapse-item--content">
@@ -37,7 +46,19 @@ export default {
       default: false,
       type: Boolean,
     },
+    hideBorder: {
+      default: false,
+      type: Boolean,
+    },
+    light: {
+      default: false,
+      type: Boolean,
+    },
     notArrow: {
+      default: false,
+      type: Boolean,
+    },
+    iconTop: {
       default: false,
       type: Boolean,
     },
