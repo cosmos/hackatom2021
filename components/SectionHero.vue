@@ -22,41 +22,35 @@
         </div>
       </kinesis-element>
 
-      <div
-        class="
-          tm-text-center tm-rf2 tm-rf4-m-up tm-rf3-l-up tm-lh-title tm-bold
-          countdown
-        "
-      >
-        <span class="">Register Virtually in&nbsp;</span>
-        <tm-countdown
-          class="tm-mono tm-rf4 tm-rf3-l-up countdown__count"
-          :now="countdown.now"
-          :end="countdownTimer(countdown.date, countdown.time)"
-        />
-      </div>
+      <div class="header">
+        <div
+          class="
+            tm-text-center tm-rf2 tm-rf4-m-up tm-rf3-l-up tm-lh-title tm-bold
+            countdown
+          "
+        >
+          Register for the Virtual HackAtom
+        </div>
 
-      <div
-        class="
-          tm-rf-1 tm-rf0-m-up tm-medium tm-text-center tm-overline tm-muted
-          date
-        "
-      >
-        Registration opens at&nbsp;{{ countdown.time }}&nbsp;(CET)
-        {{ moment(countdown.date).format('MMM D') }}
-      </div>
+        <div class="mt-7 tm-text-center">
+          <tm-button
+            size="l"
+            to-link="external"
+            href="https://cosmos-hackatom-vi.devpost.com/"
+          >
+            Register Now <span class="icon__external">↗️</span>
+          </tm-button>
+        </div>
 
-      <div
-        class="
-          mt-3
-          tm-title tm-rf-1 tm-rf0-m-up tm-lh-copy tm-medium tm-text-center
-        "
-      >
-        In-Person Opening Ceremony, Lisbon - November 11
-      </div>
-
-      <div class="wizard">
-        <email-wizard />
+        <div
+          class="
+            mt-7
+            bottom
+            tm-title tm-rf-1 tm-rf0-m-up tm-lh-copy tm-medium tm-text-center
+          "
+        >
+          In-Person Opening Ceremony, Lisbon - November 11
+        </div>
       </div>
     </div>
   </section>
@@ -66,13 +60,11 @@
 import moment from 'moment-timezone'
 import GraphicsHero from '~/components/graphics/GraphicsHero.vue'
 import LogoHackatom from '~/components/logos/LogoHackatom.vue'
-import EmailWizard from '~/components/EmailWizard.vue'
 
 export default {
   components: {
     GraphicsHero,
     LogoHackatom,
-    EmailWizard,
   },
   data() {
     return {
@@ -113,7 +105,6 @@ export default {
 <style lang="stylus" scoped>
 .section-hero
   position relative
-  padding-bottom var(--spacing-11)
   &__graphics
     position absolute
     z-index 0
@@ -129,12 +120,10 @@ export default {
   position relative
   width 98%
   max-width 48.625rem
-  margin-top var(--spacing-6)
   margin-left auto
   margin-right auto
   @media $breakpoint-medium
     width 95%
-    margin-top var(--spacing-4)
   &__svg
     width 100%
     height auto
@@ -160,6 +149,16 @@ export default {
     @media $breakpoint-small
       display none
 
+.header
+  .countdown
+  .bottom
+    center()
+    max-width: 12rem
+    @media $breakpoint-medium
+      max-width: 25rem
+    @media $breakpoint-large
+      max-width: none
+
 .countdown
   margin-top var(--spacing-4)
   @media $breakpoint-small
@@ -168,7 +167,7 @@ export default {
     justify-content center
     margin-top var(--spacing-4)
   @media $breakpoint-large
-    margin-top 0
+    margin-top -3.4rem
   &__count
     margin-top var(--spacing-3)
     @media $breakpoint-small

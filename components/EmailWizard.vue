@@ -2,63 +2,93 @@
   <div class="wizard">
     <div>
       <div v-show="step === 0">
-        <form
-          :action="url"
-          method="POST"
-          target="_blank"
-          rel="noreferrer noopener"
-          class="wizard__form"
-          @submit.prevent="actionSubmitEmail"
-        >
-          <fieldset class="wizard__form__fieldset">
-            <input
-              id="field-email"
-              v-model="email"
-              name="fields[email]"
-              class="wizard__form__fieldset__input tm-rf0 tm-lh-copy"
-              type="email"
-              placeholder="Email address"
-              required="required"
-            />
-            <tm-button
-              class="btn"
-              size="s"
-              :disabled="emailInvalid"
-              @click="actionSubmitEmail"
+        <div class="tm-grid-base">
+          <div class="wizard__col">
+            <div class="tm-title tm-lh-title tm-rf4 tm-rf2-m-up tm-bold">
+              Don’t miss an update
+            </div>
+            <div
+              class="
+                mt-5
+                tm-lh-copy tm-rf0 tm-normal tm-muted tm-measure-narrow
+              "
             >
-              <span>Remind me</span>
-              <span class="icon__right">&rarr;</span>
-            </tm-button>
-          </fieldset>
-
-          <p v-if="hasError" class="mt-3 tm-rf-1 tm-lh-copy tm-error">
-            Something went wrong
-          </p>
-
-          <p class="info tm-rf-1 tm-lh-copy tm-text-center tm-muted">
-            You can unsubscribe at any time.
-            <tm-link
-              href="https://v1.cosmos.network/privacy"
-              class="tm-link-external"
+              Catch all the latest updates about HackAtom VI including
+              challenges, judges, workshops, sponsors, and details of our
+              in-person events…
+            </div>
+          </div>
+          <div class="wizard__col">
+            <form
+              :action="url"
+              method="POST"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="wizard__form"
+              @submit.prevent="actionSubmitEmail"
             >
-              Privacy policy
-            </tm-link>
-          </p>
-        </form>
+              <fieldset class="wizard__form__fieldset">
+                <input
+                  id="field-email"
+                  v-model="email"
+                  name="fields[email]"
+                  class="wizard__form__fieldset__input tm-rf0 tm-lh-copy"
+                  type="email"
+                  placeholder="Email address"
+                  required="required"
+                />
+                <tm-button
+                  class="btn"
+                  size="s"
+                  :disabled="emailInvalid"
+                  @click="actionSubmitEmail"
+                >
+                  <span>Get updates</span>
+                  <span class="icon__right">&rarr;</span>
+                </tm-button>
+              </fieldset>
+
+              <p v-if="hasError" class="mt-3 tm-rf-1 tm-lh-copy tm-error">
+                Something went wrong
+              </p>
+
+              <p class="info tm-rf-1 tm-lh-copy tm-muted">
+                You can unsubscribe at any time.
+                <tm-link
+                  href="https://v1.cosmos.network/privacy"
+                  class="tm-link-external"
+                >
+                  Privacy policy
+                </tm-link>
+              </p>
+            </form>
+          </div>
+        </div>
       </div>
 
       <div v-show="step === 1" class="wizard__state _success tm-rf0 tm-lh-copy">
-        <div class="wizard__title tm-rf0 tm-lh-copy tm-normal">
-          Confirmation email sent. Open it and click ‘Confirm your email’ so we
-          can keep you updated.
+        <div class="tm-grid-base">
+          <div class="wizard__col _success">
+            <img
+              src="~/assets/images/success-mails.svg"
+              class="success-graphics"
+            />
+          </div>
+          <div class="wizard__col">
+            <div class="wizard__title tm-rf0 tm-lh-copy tm-normal">
+              You should get a confirmation email for each of your selected
+              interests. Open it up and click ‘Confirm your email’ so we can
+              keep you updated.
+            </div>
+            <p class="tm-lh-title tm-rf-1 mt-5">
+              Don’t see the confirmation email yet?
+            </p>
+            <p class="tm-lh-title tm-rf-1 tm-muted mt-3">
+              It might be in your spam folder.<br />
+              If so, make sure to mark it as “not spam”.
+            </p>
+          </div>
         </div>
-        <p class="tm-lh-title tm-rf-1 mt-5">
-          Don’t see the confirmation email yet?
-        </p>
-        <p class="tm-lh-title tm-rf-1 tm-muted mt-3">
-          It might be in your spam folder.<br />
-          If so, make sure to mark it as “not spam”.
-        </p>
       </div>
 
       <div
@@ -167,22 +197,45 @@ export default {
 
 // Form
 .wizard
-  max-width 30.5rem
-  center()
-  &__state
+  padding: var(--spacing-8) var(--spacing-6)
+  border-radius: var(--spacing-4)
+  background: #171717
+  // max-width 30.5rem
+  // center()
+  @media $breakpoint-xl
+    padding: var(--spacing-9) var(--spacing-10)
+  &__col
+    grid-column 1 / -1
+    @media $breakpoint-medium
+      grid-column span 4
+    @media $breakpoint-xl
+      grid-column span 6
+    & + &
+      margin-top var(--spacing-8)
+      @media $breakpoint-medium
+        margin-top 0
     &._success
-      max-width 20.4375rem
-      margin-left auto
-      margin-right auto
+      display flex
+      align-items center
+      justify-content center
+  &__state
+    // &._success
+    //   max-width 20.4375rem
+    //   margin-left auto
+    //   margin-right auto
     &__success
       color var(--success)
     &__error
       color var(--error)
   &__form
     width 100%
+    height 100%
+    display flex
+    flex-direction: column
+    justify-content: flex-end
     &__fieldset
       display block
-      @media $breakpoint-medium
+      @media $breakpoint-large
         display flex
         gap var(--spacing-3)
       &__input
@@ -208,16 +261,24 @@ export default {
 
 .btn
   white-space nowrap
+  width 100%
   margin-top var(--spacing-3)
-  @media $breakpoint-medium
+  @media $breakpoint-large
+    width auto
     margin-top 0
 
 .info
   max-width 14rem
   margin-top var(--spacing-8)
-  margin-left auto
-  margin-right auto
+  // margin-left auto
+  // margin-right auto
   @media $breakpoint-medium
+    margin-top 0
+  @media $breakpoint-xl
     max-width none
     margin-top var(--spacing-6)
+
+.success-graphics
+  margin-top -1rem
+  margin-bottom -1rem
 </style>

@@ -89,7 +89,36 @@ export default {
 .tm-collapse-item
   border-bottom 1px solid var(--border)
   transition: all .25s ease
+  &.hide-border
+    @media $breakpoint-medium
+      border-bottom: 0
   &.open-item
+    @media $breakpoint-medium-max
+      &.mobile-light
+        position relative
+        &:before
+          content: ''
+          position absolute
+          z-index -1
+          top 0
+          left -1rem
+          right -1rem
+          bottom 1rem
+          border-radius: .5rem
+          background-color #171717
+    @media $breakpoint-medium
+      &.light
+        position relative
+        &:before
+          content: ''
+          position absolute
+          z-index -1
+          top 0
+          left -2rem
+          right -2rem
+          bottom 2rem
+          border-radius: 1rem
+          background-color #171717
     .con-content--item
       opacity 1
     .tm-collapse-item--icon-header
@@ -118,17 +147,32 @@ export default {
 
 .tm-collapse-item--icon-header
   position: absolute
-  top var(--spacing-12)
+  top 50%
   right 0
   width 1.375rem
   height 1.375rem
   font-size 0
+  margin-top -0.6875rem
   transition: transform .25s $ease-out
   @media $breakpoint-medium
     top 50%
     bottom auto
     right 0.85rem
+    margin-top 0
     transform translateY(-50%)
+  &._top
+    top 1.6rem
+    right 0
+    margin-top 0
+    @media $breakpoint-medium
+      top 3rem
+    @media $breakpoint-large
+      top 3.3rem
+  &._mobile-bottom
+    @media $breakpoint-medium-max
+      bottom 2.1rem
+      top auto
+      margin-top 0
   &:before
   &:after
     content ''

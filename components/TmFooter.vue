@@ -5,15 +5,39 @@
       class="footer__background"
     />
     <div class="row">
-      <nav ref="links" class="nav-bottom tm-rf-1 tm-lh-copy" role="navigation">
+      <div class="logo__container">
         <nuxt-link to="/" class="logo">
           <logo-hackatom class="logo__cosmos" />
           <span class="sr-only">Hackatom</span>
         </nuxt-link>
-        <tm-link href="https://v1.cosmos.network/privacy" class="privacy">
-          Privacy
-        </tm-link>
+      </div>
+      <nav class="nav" role="navigation">
+        <div class="menu">
+          <div v-for="item in menu" :key="item.title" class="nav-item">
+            <div
+              class="nav-item__title tm-rf0 tm-lh-title tm-medium tm-title mb-5"
+            >
+              {{ item.title }}
+            </div>
+            <div
+              v-for="child in item.children"
+              :key="child.title"
+              class="nav-item__child tm-rf0 tm-lh-copy"
+            >
+              <tm-link :href="child.href" class="tm-link-external">
+                {{ child.title }}
+              </tm-link>
+            </div>
+          </div>
+        </div>
       </nav>
+    </div>
+    <div class="row">
+      <div class="nav-bottom tm-rf-1 tm-lh-copy">
+        <tm-link href="https://v1.cosmos.network/privacy">
+          Privacy Policy
+        </tm-link>
+      </div>
       <nav ref="links" class="social-icons mt-7" role="navigation">
         <tm-link
           v-for="link in links"
@@ -106,116 +130,54 @@ export default {
         { title: 'YouTube', url: 'https://www.youtube.com/c/CosmosProject' },
       ],
       menu: [
+        // {
+        //   title: 'HackAtom',
+        //   children: [
+        //     {
+        //       title: 'Participate',
+        //       href: '/',
+        //     },
+        //     {
+        //       title: 'FAQ',
+        //       href: '/',
+        //     },
+        //     {
+        //       title: 'Participation guide',
+        //       href: '/',
+        //     },
+        //     {
+        //       title: 'Regulations',
+        //       href: '/',
+        //     },
+        //   ],
+        // },
         {
-          title: 'Learn',
+          title: 'Help',
           children: [
+            // {
+            //   title: 'Contact us',
+            //   href: '/',
+            // },
             {
-              title: 'Introduction',
-              href: 'https://v1.cosmos.network/intro',
-            },
-            {
-              title: 'Features',
-              href: '/features',
-            },
-            {
-              title: 'Staking',
-              href: '/learn/staking',
-            },
-            {
-              title: 'Get ATOM',
-              href: '/learn/get-atom',
-            },
-            {
-              title: 'FAQ',
-              href: '/learn/faq',
+              title: 'Developer Chat',
+              href: 'https://discord.gg/cosmosnetwork',
             },
           ],
         },
         {
-          title: 'Build',
+          title: 'Build on Cosmos',
           children: [
             {
               title: 'Starport',
-              href: '/starport',
+              href: 'https://starport.com/',
             },
             {
               title: 'Cosmos SDK',
               href: 'https://v1.cosmos.network/sdk',
             },
             {
-              title: 'Tools',
-              href: 'https://v1.cosmos.network/tools',
-            },
-            {
               title: 'IBC Protocol',
               href: 'https://ibcprotocol.org',
-            },
-          ],
-        },
-        {
-          title: 'Explore',
-          children: [
-            {
-              title: 'Tokens',
-              href: '/ecosystem/tokens',
-            },
-            {
-              title: 'Ecosystem',
-              href: '/ecosystem/apps',
-            },
-            {
-              title: 'Wallets',
-              href: '/ecosystem/wallets',
-            },
-            {
-              title: 'Gravity DEX',
-              href: '/gravity-dex',
-            },
-            {
-              title: 'Blog',
-              href: 'https://blog.cosmos.network',
-            },
-          ],
-        },
-        {
-          title: 'Participate',
-          children: [
-            {
-              title: 'Community',
-              href: 'https://v1.cosmos.network/community',
-            },
-            {
-              title: 'Contributors',
-              href: 'https://v1.cosmos.network/contributors',
-            },
-            {
-              title: 'Events',
-              href: 'https://v1.cosmos.network/events',
-            },
-            {
-              title: 'Newsletters',
-              href: 'https://v1.cosmos.network/newsletters',
-            },
-          ],
-        },
-        {
-          title: 'Resources',
-          children: [
-            {
-              title: 'About',
-              href: '/about',
-            },
-            {
-              title: 'Press Kit',
-              href: 'https://v1.cosmos.network/presskit',
-            },
-            {
-              title: 'Design',
-              href: 'https://v1.cosmos.network/design',
-            },
-            {
-              title: 'Resources',
-              href: 'https://v1.cosmos.network/resources',
             },
           ],
         },
@@ -251,7 +213,7 @@ export default {
   z-index 1
   padding var(--spacing-10) var(--wrap-gap) var(--spacing-9)
   @media $breakpoint-medium
-    padding var(--spacing-7) var(--wrap-gap)
+    padding var(--spacing-11) var(--wrap-gap) var(--spacing-7)
   > *
     grid-column 1/-1
   &__background
@@ -272,8 +234,10 @@ export default {
       transform translate(-50%, -47%)
 
 .nav
-  padding-top var(--spacing-8)
-  border-top 1px solid var(--white-100)
+  width 100%
+  display none
+  @media $breakpoint-medium
+    display block
   a
     color inherit
     border-radius $border-radius-2
@@ -305,12 +269,15 @@ export default {
     line-height 0
 
 .row
-  padding-top var(--spacing-8)
-  border-top 1px solid var(--white-100)
   display flex
   flex-direction column
   align-items center
   justify-content space-between
+  & + &
+    @media $breakpoint-medium
+      margin-top var(--spacing-9)
+      padding-top var(--spacing-8)
+      border-top 1px solid var(--white-100)
 
 .logo
   display flex
@@ -324,11 +291,10 @@ export default {
     width auto
   &__cosmos
     height 5.58rem
-
-.privacy
-  @media $breakpoint-medium
-    padding-left 1.5rem
-    border-left 1px solid var(--white-100)
+  &__container
+    @media $breakpoint-xl
+      width 42%
+      flex-shrink 0
 
 .nav-bottom
   text-align center

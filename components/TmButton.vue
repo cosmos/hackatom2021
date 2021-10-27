@@ -371,12 +371,14 @@ export default {
   /* icons */
   >>> .icon__right
   >>> .icon__left
+  >>> .icon__external
     display inline-block
     transform-fix()
     transition transform 0.25s $ease-out
   >>> .icon__left
     margin-right 0.5em
   >>> .icon__right
+  >>> .icon__external
     margin-left 0.5em
   &:hover,
   &:focus
@@ -384,6 +386,8 @@ export default {
       transform translateX(0.25rem)
     >>> .icon__left
       transform rotate(5deg) scale(1.05)
+    >>> .icon__external
+      transform translate(10%, -10%)
 
 @media screen and (max-width: 375px)
   .tm-button
