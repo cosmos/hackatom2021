@@ -112,9 +112,11 @@
             <p v-for="info in currentItem.moreInfo" :key="info" v-html="info" />
           </div>
           <ul v-if="currentItem.challenge" class="mt-5">
-            <li v-for="info in currentItem.challenge" :key="info">
-              {{ info }}
-            </li>
+            <li
+              v-for="info in currentItem.challenge"
+              :key="info"
+              v-html="info"
+            />
           </ul>
         </div>
         <div class="mt-9" v-if="currentItem.context">
@@ -238,8 +240,8 @@ export default {
                 'Evmos is an application-agnostic chain that will be interoperable with the Ethereum mainnet, EVM-compatible environments, and other BFT chains via IBC, making it easy for users and developers to interact seamlessly between chains. Evmos aims to be the EVM Hub of Cosmos, making it easy for smart contracts to deploy and communicate within the Cosmos ecosystem.',
               ],
               challenge: [
-                'To jumpstart the growth of the Evmos ecosystem, we have created a helpful list of topics that could be eligible for the Evmos prizes during HackAtom VI:',
-                `<ul>
+                `<p>To jumpstart the growth of the Evmos ecosystem, we have created a helpful list of topics that could be eligible for the Evmos prizes during HackAtom VI:</p>,
+                  <ul>
                   <li><b>NFT</b>: Build an NFT smart contract project, Marketplace (dApp), or other supportive tooling (e.g. NFT fractionalization, rentals, etc.) to support the burgeoning NFT ecosystem on Evmos. Judges will be looking for projects with a usable UI and broad support for multiple Ethereum NFT standards.</li>
                   <li><b>Wallets</b>: Build an EVM+Cosmos+IBC-compatible wallet that integrates Evmos’ JSON-RPC and gRPC services and is able to display ERC20 tokens, Cosmos coins, and IBC vouchers. Bonus points: Multisig support, WalletConnect V2 support.</li>
                   <li><b>Dashboards and Visualizations</b>: Build a block explorer for displaying Cosmos data alongside EVM data (transactions, blocks, etc.). Judges will be looking for projects that push the envelope on “seamless cross-chain UX."</li>
@@ -257,8 +259,8 @@ export default {
                 'Evmos is currently in testnet with additional functionality rolling out over time and leveraging the upcoming features of the testnet and incentivized testnet will have an added bonus.',
                 'The applications submitted must have had the significant majority of its development done after the date of the initial Evmos Arsia Mons testnet launch (Oct 12) as verified by Github commits. If you used a previous project as a starting off point, you must detail which components you developed during the hackathon (Nov 11-Dec 8).',
                 'Projects must be deployed on a <b>live</b> Evmos testnet (Incentivized testnet or Arsia Mons) by the end of the hackathon on December 8, 2021.',
-                'The projects <b>MUST</b> follow the following checklist to be eligible for the prizes:',
-                `<ul>
+                `<p>The projects <b>MUST</b> follow the following checklist to be eligible for the prizes:</p>
+                <ul>
                   <li>Open source, deployed on Github or Gitlab</li>
                   <li>Have a working UI (if applicable)</li>
                   <li>Have a working functionality</li>

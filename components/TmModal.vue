@@ -32,6 +32,11 @@
           ]"
           @scroll="setScrolling(true)"
         >
+          <div
+            v-if="side === 'center' && buttonClose"
+            class="close__overlay"
+            @click="close"
+          />
           <slot />
           <div
             v-if="side === 'center' && buttonClose"
@@ -74,6 +79,16 @@
   transform: translateX(var(--sidebar-translate-x))
     translateY(var(--sidebar-translate-y));
   -webkit-overflow-scrolling: touch;
+}
+.close__overlay {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  width: 100vw;
+  cursor: pointer;
+  transform: translateX(-50%);
 }
 .close {
   border-radius: 50%;
@@ -135,7 +150,7 @@
   bottom: 0;
   width: 100%;
   max-width: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   pointer-events: all;
   height: 100vh;
