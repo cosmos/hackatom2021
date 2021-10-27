@@ -192,6 +192,10 @@ export default {
               name: 'pers',
               link: 'https://persistence.one/',
             },
+            {
+              name: 'forte',
+              link: 'https://www.forte.io/',
+            },
           ],
         },
       ],
