@@ -2,16 +2,18 @@
   <section class="tm-section section pb0">
     <div class="tm-section-container tm-container">
       <div class="schedule">
-        <div class="tm-grid-base mb-6">
+        <div class="tm-grid-base rewards mb-6">
           <div
             v-for="category in prize"
             :key="category.title"
             class="prize-item"
             @click="open(category)"
           >
-            <icon-challenge />
-            <div class="mt-4 tm-title tm-lh-titlle tm-rf2 tm-bold">
-              {{ category.title }}
+            <div>
+              <icon-challenge />
+              <div class="mt-4 tm-title tm-lh-titlle tm-rf2 tm-bold">
+                {{ category.title }}
+              </div>
             </div>
             <div class="mt-8">
               <div class="tm-overline tm-lh-copy tm-rf-1 tm-muted">Reward</div>
@@ -1199,12 +1201,20 @@ export default {
   @media $breakpoint-medium
     padding-top var(--spacing-6)
 
+.rewards
+  gap var(--grid-gap-x)
+
 .prize-item
   grid-column 1 / -1
+  display flex
+  flex-direction column
+  justify-content space-between
   background: #171717
   padding var(--spacing-7)
   cursor pointer
   border-radius var(--spacing-4)
+  @media $breakpoint-medium
+    grid-column span 4
   @media $breakpoint-xl
     grid-column span 6
 
