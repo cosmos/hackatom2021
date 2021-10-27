@@ -179,6 +179,15 @@
             </ul>
           </div>
         </div>
+        <div class="mt-9">
+          <tm-button
+            size="l"
+            to-link="external"
+            href="https://cosmos-hackatom-vi.devpost.com/"
+          >
+            Register Now <span class="icon__external">↗️</span>
+          </tm-button>
+        </div>
       </div>
     </tm-modal>
   </section>
@@ -200,7 +209,7 @@ export default {
         {
           title: 'Ethereum on Cosmos',
           info: 'Ethereum projects on Cosmos SDK',
-          prize: 'Constellation Prize',
+          prize: 'Total Prize pool of $100K',
           details:
             'On blockchains, the goal of smart contracts is to simplify transactions between both anonymous and identified parties. Smart contracts are executed when predetermined conditions are met, such as the fulfillment of an agreement or completion of a task. Smart contracts are typically used to automate the execution of an agreement so that all participants can be certain of the outcome, without depending on any intermediary involvement. Smart contracts that currently live on the Ethereum Virtual Machine (EVM) are written in Solidity. Developers will explore among others rewriting an existing Solidity project as a Cosmos SDK blockchain that automates transactions on the blockchain or any other dedicated solution that could bridge the two ecosystems.',
           challenges: [
@@ -268,7 +277,7 @@ export default {
         {
           title: 'Starport',
           info: 'Starport improvements',
-          prize: 'Starport Prize',
+          prize: 'Total Prize pool of $200K',
           details:
             'Starport is the all-in-one platform to build, launch, and maintain any crypto application on a sovereign and secured blockchain. Starport CLI is a powerful developer tool for scaffolding blockchains, generating code, running a node in development, and much more. Builders will need to implement new scaffolding functionality or improve the functionality, reliability, or flexibility of Starport CLI or introduce new functionality that is useful for a large number of developers.',
           challenges: [
@@ -353,7 +362,7 @@ export default {
         {
           title: 'Interoperability',
           info: 'IBC use cases',
-          prize: 'Interstellar Prize',
+          prize: 'Total Prize pool of $250K',
           details:
             'Alongside the Tendermint high-performance Byzantine fault-tolerant (BFT) consensus engine, one of the main innovations of the Cosmos Network is the robust and secure Inter-Blockchain Communication protocol (IBC), the Cosmos standard for interoperability. This protocol enables communication and digital asset transfers across an ever-expanding network of interconnected blockchains. Developers will need to create new, innovative ways to highlight the possibilities of blockchain interoperability using the IBC protocol such as viable implementations, use cases, data formats or others.',
           challenges: [
@@ -548,7 +557,7 @@ export default {
         {
           title: 'End-User Apps',
           info: 'Create an End-User App',
-          prize: 'Solar Prize',
+          prize: 'Total Prize pool of $200K',
           details:
             'Accessibility is a primary driver to entering the blockchain ecosystem, yet one of the most challenging tasks in blockchain is to make cryptocurrency and digital asset ownership accessible to end-users. Applications should manage keys in a secure manner allowing users to access their assets in an easy way and improving the overall user experience for beginners and advanced users. Developers are expected to build applications that make features more accessible or provide a more intuitive experience for an end-user.',
           challenges: [
@@ -705,7 +714,7 @@ export default {
         {
           title: 'DeFi',
           info: 'DeFi app or module with the Cosmos SDK',
-          prize: 'Galaxy Prize',
+          prize: 'Total Prize pool of $100K',
           details:
             'DeFi is a blockchain-based alternative financial system to the legacy system of banks, exchanges, insurance companies, mortgage providers, etc., but reimagined from the ground up with no intermediaries in the middle. Unlike traditional finance, with no gatekeepers to turn down your application, DeFi lowers the barrier to entry, allowing more people to access financial services, take out a collateralized loan, or earn a yield on their assets. Help expand the capabilities of DeFi by building an app or module with the Cosmos SDK.',
           challenges: [
@@ -762,7 +771,7 @@ export default {
         {
           title: 'Gaming',
           info: 'Gaming apps on Cosmos SDK',
-          prize: 'Starship Prize',
+          prize: 'Total Prize pool of $100K',
           details:
             'Blockchain has the potential to completely restructure the gaming industry. Blockchain gaming uses true item ownership from the same technology that lies at the core of cryptocurrencies. Be the game developer that unlocks the potential of gaming with Cosmos. Build the future of gaming with the Cosmos SDK.',
           challenges: [
@@ -834,7 +843,7 @@ export default {
         {
           title: 'Earth',
           info: 'Earth Sustainability and Ecological Regeneration on Cosmos SDK',
-          prize: 'Earth Prize',
+          prize: 'Total Prize pool of $200K',
           details:
             'The ultimate purpose of the Internet of Blockchains is to empower people everywhere with digital technologies that enable communities to prosper. When communities prosper, they can regenerate the planet, and respond more effectively to the climate crisis. Change the state of the planet by building modules, accessible apps and integrations for local currencies, self-sovereign identity, non-fungible impact tokens, verification oracles, decentralised impact exchanges, and earth intelligence data. This is the Interchain Earth Mission!',
           challenges: [

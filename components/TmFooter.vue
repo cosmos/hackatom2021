@@ -130,37 +130,37 @@ export default {
         { title: 'YouTube', url: 'https://www.youtube.com/c/CosmosProject' },
       ],
       menu: [
-        {
-          title: 'HackAtom',
-          children: [
-            {
-              title: 'Participate',
-              href: '/',
-            },
-            {
-              title: 'FAQ',
-              href: '/',
-            },
-            {
-              title: 'Participation guide',
-              href: '/',
-            },
-            {
-              title: 'Regulations',
-              href: '/',
-            },
-          ],
-        },
+        // {
+        //   title: 'HackAtom',
+        //   children: [
+        //     {
+        //       title: 'Participate',
+        //       href: '/',
+        //     },
+        //     {
+        //       title: 'FAQ',
+        //       href: '/',
+        //     },
+        //     {
+        //       title: 'Participation guide',
+        //       href: '/',
+        //     },
+        //     {
+        //       title: 'Regulations',
+        //       href: '/',
+        //     },
+        //   ],
+        // },
         {
           title: 'Help',
           children: [
-            {
-              title: 'Contact us',
-              href: '/',
-            },
+            // {
+            //   title: 'Contact us',
+            //   href: '/',
+            // },
             {
               title: 'Developer Chat',
-              href: '/',
+              href: 'https://discord.gg/cosmosnetwork',
             },
           ],
         },

@@ -1,7 +1,7 @@
 <template>
   <section class="tm-section pt11">
     <div class="tm-section-container tm-container container">
-      <div class="star" />
+      <!-- <div class="star" /> -->
       <div class="header tm-center tm-text-center">
         <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
           Participate
@@ -20,18 +20,23 @@
       </div>
 
       <div class="mt-8 tm-text-center">
-        <tm-button class="btn" size="l">
-          Register <span class="icon__right">↗️</span>
-        </tm-button>
         <tm-button
+          class="btn"
+          size="l"
+          to-link="external"
+          href="https://cosmos-hackatom-vi.devpost.com/"
+        >
+          Register <span class="icon__external">↗️</span>
+        </tm-button>
+        <!-- <tm-button
           class="btn"
           size="l"
           variant="text"
           background-color="transparent"
           color="var(--white)"
         >
-          FAQ <span class="icon__right">↗️</span>
-        </tm-button>
+          FAQ <span class="icon__external">↗️</span>
+        </tm-button> -->
       </div>
     </div>
   </section>

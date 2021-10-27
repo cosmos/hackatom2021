@@ -33,8 +33,12 @@
         </div>
 
         <div class="mt-7 tm-text-center">
-          <tm-button size="l" to-link="external" href="/">
-            Register Now <span class="icon__right">↗️</span>
+          <tm-button
+            size="l"
+            to-link="external"
+            href="https://cosmos-hackatom-vi.devpost.com/"
+          >
+            Register Now <span class="icon__external">↗️</span>
           </tm-button>
         </div>
 

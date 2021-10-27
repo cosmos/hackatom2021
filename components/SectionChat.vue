@@ -17,9 +17,14 @@
           >
             Join the community of Cosmonaut Hackers on&nbsp;Discord.
           </p>
-          <tm-button class="mt-5">
-            Join Developer Chat<span class="icon__right">↗️</span>
-          </tm-button>
+          <div class="mt-5">
+            <tm-button
+              to-link="external"
+              href="https://discord.gg/cosmosnetwork"
+            >
+              Join Developer Chat<span class="icon__external">↗️</span>
+            </tm-button>
+          </div>
         </div>
       </div>
     </div>
