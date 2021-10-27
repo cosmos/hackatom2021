@@ -2,6 +2,25 @@
   <section class="tm-section section pb0">
     <div class="tm-section-container tm-container">
       <div class="schedule">
+        <div class="tm-grid-base mb-6">
+          <div
+            v-for="category in prize"
+            :key="category.title"
+            class="prize-item"
+            @click="open(category)"
+          >
+            <icon-challenge />
+            <div class="mt-4 tm-title tm-lh-titlle tm-rf2 tm-bold">
+              {{ category.title }}
+            </div>
+            <div class="mt-8">
+              <div class="tm-overline tm-lh-copy tm-rf-1 tm-muted">Reward</div>
+              <div class="tm-bold tm-rf1 tm-title tm-lh-title">
+                {{ category.prize }}
+              </div>
+            </div>
+          </div>
+        </div>
         <tm-collapse accordion>
           <div v-for="category in categories" :key="category.title">
             <tm-collapse-item :icon-top="true">
@@ -63,6 +82,24 @@
                           </li>
                         </ul>
                       </div>
+                      <div class="mt-9 prizes-list" v-if="challenge.prizes">
+                        <div
+                          v-for="(prize, key) in challenge.prizes"
+                          :key="`${challenge.type}_${key}`"
+                          class="prizes-list__item"
+                        >
+                          <div
+                            class="
+                              tm-overline tm-rf0 tm-lh-title tm-medium tm-muted
+                            "
+                          >
+                            {{ key }}
+                          </div>
+                          <div class="tm-title tm-lh-title tm-rf2">
+                            {{ prize }}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <div class="mt-8">
                       <tm-button
@@ -100,7 +137,14 @@
           {{ currentItem.type }}
         </div>
         <div class="mb-6 tm-title tm-lh-title tm-bold tm-rf4">
-          Challenge #{{ currentKey + 1 }}
+          <span v-if="currentKey">Challenge #{{ currentKey + 1 }}</span>
+          <span v-else>{{ currentItem.title }}</span>
+        </div>
+        <div
+          v-if="currentItem.details"
+          class="mb-6 tm-overline tm-rf0 tm-lh-title tm-medium tm-muted"
+        >
+          {{ currentItem.details }}
         </div>
         <div class="tm-lh-copy tm-rf1 tm-normal tm-muted">
           <div v-if="currentItem.info">
@@ -116,6 +160,28 @@
               v-html="info"
             />
           </ul>
+        </div>
+        <div class="mt-9 prizes-list" v-if="currentItem.prizes">
+          <div
+            v-for="(prize, key) in currentItem.prizes"
+            :key="`${currentItem.type}_${key}`"
+            class="prizes-list__item"
+          >
+            <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
+              {{ key }}
+            </div>
+            <div class="tm-title tm-lh-title tm-rf2">
+              {{ prize }}
+            </div>
+          </div>
+        </div>
+        <div class="mt-9" v-if="currentItem.prize">
+          <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
+            reward
+          </div>
+          <div class="tm-title tm-lh-title tm-rf2 tm-bold">
+            {{ currentItem.prize }}
+          </div>
         </div>
         <div class="mt-9" v-if="currentItem.context">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
@@ -205,6 +271,25 @@ export default {
       currentKey: 1,
       visible: false,
       currentItem: null,
+      prize: [
+        {
+          title: 'Grand Prize',
+          prize: '$25K',
+          details: 'Combine and build at least two challenges into one project',
+          info: [
+            `The Grand Prize will be awarded to the team or individual who successfully builds an individual project by combining at least two different challenges. The participant(s), going the extra mile, will have the ability to submit the project for the Grand Prize award, in addition to submitting it to the challenge of their choice.`,
+            `The most creative and impressive project, that complies with the Judging criteria, will be selected by the Board of Judges to receive the additional Grand Prize reward of $25k.`,
+          ],
+        },
+        {
+          title: 'Community Award Prize',
+          prize: '$10K',
+          details: '',
+          info: [
+            'Community plays an important role in our Cosmos ecosystem. That is why we want to give everyone a chance to review the submitted projects and vote for their favorite Cosmos one. Every member that has an account on DevPost will have the ability to cast one vote for one project. The project with the most votes collected from the time the voting starts until it ends, will win this prize category.',
+          ],
+        },
+      ],
       categories: [
         {
           title: 'Ethereum on Cosmos',
@@ -230,6 +315,10 @@ export default {
                 Github: 'https://github.com/ProjectOpenSea',
                 Docs: 'https://docs.opensea.io/',
                 "BitSong's Developer Portal": 'https://btsg.dev/ ',
+              },
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
               },
             },
             {
@@ -271,6 +360,10 @@ export default {
                 Telegram: 'https://t.me/EvmosOrg',
                 Medium: 'https://evmos.blog/',
               },
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
             },
           ],
         },
@@ -283,6 +376,10 @@ export default {
           challenges: [
             {
               type: 'Code Scaffolding',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `One of the core features of Starport is code scaffolding. Starport can scaffold a new blockchain from scratch, create new modules, add messages, queries, packets to modules, and much more. This functionality allows developers to prototype advanced modules with just a few commands. Currently, Starport depends on string placeholders being present in modules’ files. Placeholders work, but if another solution (likely, based on code analysis) is found, this could improve Starport's reliability even further.`,
               ],
@@ -304,6 +401,10 @@ export default {
             },
             {
               type: 'Local Testnet',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `Starport chain serve is the most convenient way to start a blockchain node for development purposes. Currently, this command sets up a single node testnet with automatic code reloading. Enhance this functionality of Starport, for example, to support multi-node local testnets.`,
               ],
@@ -323,6 +424,10 @@ export default {
             },
             {
               type: 'Build Process and Configuration',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `Starport uses an advanced build process to compile the source code of a chain into a binary. It’s both sophisticated and easy to use, but there is always room for improvement. To win this challenge, enhance the build process so that it’s more flexible, yet can be used even by beginner developers.`,
               ],
@@ -341,6 +446,10 @@ export default {
             },
             {
               type: 'A Plugin System',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `All of Starport’s functionality right now is implemented in packages within the Starport code repository. From a maintenance perspective this is convenient. But a program like Starport can definitely benefit from a flexible plugin system that will allow developers to add functionality to Starport on-the-fly. Your challenge is to build one!`,
               ],
@@ -368,6 +477,10 @@ export default {
           challenges: [
             {
               type: 'Akash',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `Censorship-resistant, permissionless, and self-sovereign, Akash Network is the world's first open source cloud. One of the biggest values that Akash can provide to other blockchains is the ability to run hard-to-deplatform durable blockchain nodes. Removing blockchains' dependence on centralized hosting providers is one of the biggest steps blockchains can take toward further decentralization. To this end, the Akash community and core developer team have put together the following GitHub repo:`,
                 `<a href="https://github.com/ovrclk/cosmos-omnibus" target="_blank" rel="noopener noreferrer" class="tm-link">https://github.com/ovrclk/cosmos-omnibus</a>`,
@@ -389,6 +502,10 @@ export default {
             },
             {
               type: 'Sentinel',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `Sentinel is a network of independent dVPN applications, not just a single consumer-facing dVPN. Sentinel's IBC challenge is a tough one to tackle but could help to solve an important problem in the wider Cosmos ecosystem. Participants must build a fast, reliable, and unbiased randomness generator which could ideally be used for validator selection.`,
                 `A randomness generator will be very useful for many other applications, from consumer-level apps to DeFi protocols, and Sentinel believes that the Cosmos Hub would benefit heavily if it could provide on-demand randomness through IBC.`,
@@ -406,6 +523,10 @@ export default {
             },
             {
               type: 'Sifchain',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `Sifchain is the world's first omni-chain decentralized exchange (DEX) for digital assets, unlocking liquidity in various chains to free people from egregious fees and inefficient trades. Sifchain's challenge for the hackathon is to implement IBC token name and service discovery for Cosmos-based tokens.`,
                 `When a new token is launched, developers may register their token with a token-listing-discovery endpoint. A DEX like Sifchain would consume the listing, where each token listing provides sufficient knowledge to implement the IBC interface and list the token automatically. Write a full stack backend which lists tokens using Golang and Swagger.`,
@@ -486,6 +607,10 @@ export default {
             },
             {
               type: 'Pylons',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 'Built on Cosmos, Pylons is a fast and interoperable system for brands and creators to build engaging products and with meaningful NFT experiences. For this challenge, Pylons wants you to build new, innovative ways to highlight the possibilities of blockchain interoperability using the IBC protocol—such as viable implementation, use cases, and data formats—using the Cosmos SDK.',
                 'Be the developer that unlocks the potential of interoperability for IRL applications—on Cosmos with the Pylons SDK. Reinvent centralized ticketing systems using NFTs.',
@@ -514,6 +639,10 @@ export default {
             },
             {
               type: 'Agoric',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `<b>Cross Chain Liquidity Mining</b>`,
                 `Agoric is an open-source development company launching an interoperable Proof-of-Stake chain and economy. Agoric's hackathon challenge is to build a set of Agoric smart contracts on Agoric that provide flexible liquidity mining options to Cosmos projects based on an Osmosis LP token. The contracts must at a minimum be able to do the following:`,
@@ -563,6 +692,10 @@ export default {
           challenges: [
             {
               type: 'Nym',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `Nym is a privacy platform. The Nym Mixnet provides network-layer privacy for users and applications by hiding the metadata (IP addresses, device types, timings, etc.) of the data packets that are sent through it. Creating a file storage application over the Nym Mixnet will allow users to store files in the cloud in a secure and private manner. The title of Nym's challenge is ‘The Eternity Service 2.0’.`,
               ],
@@ -630,6 +763,10 @@ export default {
             },
             {
               type: 'Injective',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 'Injective Protocol is pioneering a new decentralized economy to create a freer and more inclusive financial system. Injective has created a solution that allows crypto exchanges to become a decentralized public utility, giving users and their community much-needed value-capture in the exchange landscape.',
                 `Injective's HackAtom VI challenge is to build a new simple single-page application trading interface for trading spot and perpetual markets. The purpose of this is to provide mass market users (not pro traders) an accessible, user-friendly interface for trading (Like Matcha on Ethereum, for example). This will allow novice traders to access Injective easily.`,
@@ -652,6 +789,10 @@ export default {
             },
             {
               type: 'LikeCoin',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `LikeCoin aims to empower content ownership, authenticity, and provenance. Creators can register content metadata to guarantee its integrity by acquiring an International Standard Content Number (ISCN). ISCN is a tool to authenticate and track content, just like a digital footprint. ISCN is an NFT-like content registry record running on the LikeCoin chain that allows content creators to register their content metadata on the chain through ISCN transactions.`,
                 `Currently, there are three ways for creators to register their content metadata to the LikeCoin chain: 1) register via app.like.co, 2) ISCN batch uploader, 3) LikeCoin Wordpress plugin. Unlike traditional NFTs, ISCN owners might have to view, manage or edit ISCN records in batch, since talented creators can produce creative works quickly, and have a huge collection of series of ISCN.`,
@@ -682,6 +823,10 @@ export default {
             },
             {
               type: 'Archway',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `Archway is a smart contract platform that rewards developers, ushering in next gen dApps. Archway's HackAtom VI challenge is to create a base NFT marketplace on Archway’s testnet. This entails the marketplace smart contracts as well as front-end that will allow users to buy, sell, and trade CW721 tokens in exchange for CW20 tokens.`,
                 `Key features to include:`,
@@ -720,6 +865,10 @@ export default {
           challenges: [
             {
               type: 'Kava',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `Kava is a software protocol that uses multiple cryptocurrencies to allow its users to borrow and lend assets without the need for a traditional financial intermediary. Kava's HackAtom VI challenge asks you to build a fully autonomous options protocol as a Cosmos SDK module. You can assume that you have access to a price oracle.`,
               ],
@@ -742,6 +891,10 @@ export default {
             },
             {
               type: 'Tendermint',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `Tendermint builds and maintains critical state-of-the-art infrastructure for decentralized applications, such as Tendermint Core, Cosmos SDK, Starport, and Emeris. Tendermint is a core contributor to the Cosmos Network and organizer of HackAtom VI. Find the details of Tendermint's DeFi challenge below:`,
               ],
@@ -777,6 +930,10 @@ export default {
           challenges: [
             {
               type: 'Pylons',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 'Built on Cosmos, Pylons is a fast and interoperable system for brands and creators to build engaging products and with meaningful NFT experiences. For this challenge, Pylons wants you to build a game with meaningful gameplay behavior mediated through state changes using the Cosmos SDK blockchain framework, or build a decentralized virtual world with Cosmos network, utilizing the Cosmos SDK + Pylons SDK.',
               ],
@@ -806,6 +963,10 @@ export default {
             },
             {
               type: 'Secret Network',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `Secret Network is an open-source protocol that performs computations on encrypted data, bringing privacy to smart contracts and public blockchains. Secret's challenge is to build a game on Secret Network using CosmWasm, Secret NFTs, and on-chain randomness.`,
                 `Blockchain NFT gaming is taking off, even though main components of gaming are non-existent with traditional blockchains, namely private data and randomness. To create Games of Incomplete Information, private data must be utilized, and to create fair games, randomness must be utilized. Randomness can also be utilized to generate unpredictable mazes, puzzles and maps, to roll dice, to shuffle cards and cubes, to create gaming AIs, and to add "chaos" in order to enhance in-game experiences.`,
@@ -849,6 +1010,10 @@ export default {
           challenges: [
             {
               type: 'Regen Network',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `Regen Network is a platform for a thriving planet, that aligns economics with ecology to drive regenerative land management. Regen Network is soon approaching its first mainnet upgrade, which will include the launch of the first module for representing carbon credits (“ecocredits” on Regen Network) as on-chain assets on a Cosmos SDK-based blockchain.`,
                 `Regen Network's challenge for HackAtom VI under the EARTH category is to bridge ecocredits into the interchain ecosystem—by implementing an IBC application that allows users to move these new types of ecological assets across different blockchains.`,
@@ -874,6 +1039,10 @@ export default {
             },
             {
               type: 'Co-Sponsored by Grant.fish and Juno',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `Juno is an interoperable smart contract network that is highly scalable, robust, secure, and easy to deploy. Grant.fish is a validator operated by stake.fish that has launched with the Cosmos Hub 3 upgrade. Both believe that the ultimate purpose of the Internet of Blockchains is to empower people everywhere with digital technologies that enable communities to prosper. When communities prosper, they can regenerate the planet and respond more effectively to the climate crisis.`,
                 `For this important challenge, Juno and grant.fish are teaming up to ask you to change the state of the planet by building modules, accessible apps, and integrations for local currencies, self-sovereign identity, non-fungible impact tokens, verification oracles, decentralized impact exchanges, and earth intelligence data.`,
@@ -892,6 +1061,10 @@ export default {
             },
             {
               type: 'IXO Foundation',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `Humanity is on the brink of a fundamental state-transition into planetary chaos. Erratic weather patterns and natural disasters resulting from flooding, droughts and wild-fires are becoming more frequent each year, as climate-change accelerates. Mass human migrations away from disaster zones are already beginning and we see conflicts and famine. Re-emerging tropical diseases and lethal new infectious agents, such as COVID-19, threaten human and animal life. Natural resources are being depleted at an alarming rate, way beyond the planetary boundaries for sustainability, and imperial wars to control and own these resources have already begun!`,
                 `What can we do to avoid mass extinctions of life-forms on Earth and to reverse the threat of losing centuries of human progress?`,
@@ -940,6 +1113,10 @@ export default {
             },
             {
               type: 'IXO Foundation - The Earth Tokens Challenge',
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
               info: [
                 `For this challenge, “Earth Tokens” are defined as classes of tokens that are created and used for the purpose of sustainable socio-economic development, climate action, and ecological regeneration.`,
                 `Tokenization is transforming how people are incentivized, how decentralized economies and communities are secured and governed, how capital gets formed and allocated, how products and services are financed, and how digital or physical assets are used for financial or non-financial applications.`,
@@ -1000,20 +1177,6 @@ export default {
             },
           ],
         },
-        {
-          title: 'Grand Prize',
-          prize: '$25K',
-          info: 'Combine and build at least two challenges into one project',
-          details: `<p>The Grand Prize will be awarded to the team or individual who successfully builds an individual project by combining at least two different challenges. The participant(s), going the extra mile, will have the ability to submit the project for the Grand Prize award, in addition to submitting it to the challenge of their choice.</p>
-            <p>The most creative and impressive project, that complies with the Judging criteria, will be selected by the Board of Judges to receive the additional Grand Prize reward of $25k.</p>`,
-        },
-        {
-          title: 'Community Award Prize',
-          prize: '$10K',
-          info: '',
-          details:
-            'Community plays an important role in our Cosmos ecosystem. That is why we want to give everyone a chance to review the submitted projects and vote for their favorite Cosmos one. Every member that has an account on DevPost will have the ability to cast one vote for one project. The project with the most votes collected from the time the voting starts until it ends, will win this prize category.',
-        },
       ],
     }
   },
@@ -1035,6 +1198,15 @@ export default {
 .section
   @media $breakpoint-medium
     padding-top var(--spacing-6)
+
+.prize-item
+  grid-column 1 / -1
+  background: #171717
+  padding var(--spacing-7)
+  cursor pointer
+  border-radius var(--spacing-4)
+  @media $breakpoint-xl
+    grid-column span 6
 
 .event-header
   .title
@@ -1081,4 +1253,15 @@ export default {
     border-bottom 1px solid var(--border)
     &:last-child
       border-bottom 0
+
+.prizes-list
+  display flex
+  gap var(--spacing-6)
+  &__item
+    .tm-title
+      font-weight var(--font-weight-medium-2)
+    &:first-child
+      .tm-title
+        font-weight var(--font-weight-bold-2)
+        letter-spacing var(--letter-spacing-bold-2)
 </style>

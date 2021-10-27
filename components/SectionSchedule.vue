@@ -190,13 +190,13 @@ export default {
           language: 'English',
           people: [
             {
-              name: 'Aditya Sripal',
+              name: 'Callum Waters',
               avatar: 'avatar',
               company: 'Interchain Foundation',
             },
           ],
           details:
-            'The third and final workshop, given by Aditya Sripal, IBC Protocol Architect at ICF, will go over Inter-Blockchain Communication (IBC) and how to build an IBC-compatible app',
+            'The third and final workshop, given by Callum Waters, IBC Protocol Architect at ICF, will go over Inter-Blockchain Communication (IBC) and how to build an IBC-compatible app',
           url: 'https://www.eventbrite.com/e/hackatom-vi-warm-up-event-tickets-196504178287?aff=ebdssbdestsearch',
         },
         {
@@ -224,7 +224,7 @@ export default {
           type: 'Virtual',
         },
         {
-          title: 'Closing Ceremony & Winners Day Demo',
+          title: 'Closing Ceremony',
           date: '2021-12-14',
           startTime: '19:00',
           type: 'Virtual',
@@ -236,7 +236,7 @@ export default {
           type: 'Virtual',
         },
         {
-          title: 'Closing ceremony & Winners announced',
+          title: 'Closing ceremony & Winners announcement',
           date: '2021-12-16',
           startTime: '20:00',
           type: 'Virtual',
