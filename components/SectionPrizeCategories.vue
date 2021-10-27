@@ -26,9 +26,7 @@
               </div>
 
               <div>
-                <p class="tm-muted">
-                  {{ category.details }}
-                </p>
+                <p class="tm-muted" v-html="category.details" />
                 <div
                   v-if="category.challenges"
                   class="challenges mt-8 tm-grid-base"
@@ -1001,6 +999,20 @@ export default {
               },
             },
           ],
+        },
+        {
+          title: 'Grand Prize',
+          prize: '$25K',
+          info: 'Combine and build at least two challenges into one project',
+          details: `<p>The Grand Prize will be awarded to the team or individual who successfully builds an individual project by combining at least two different challenges. The participant(s), going the extra mile, will have the ability to submit the project for the Grand Prize award, in addition to submitting it to the challenge of their choice.</p>
+            <p>The most creative and impressive project, that complies with the Judging criteria, will be selected by the Board of Judges to receive the additional Grand Prize reward of $25k.</p>`,
+        },
+        {
+          title: 'Community Award Prize',
+          prize: '$10K',
+          info: '',
+          details:
+            'Community plays an important role in our Cosmos ecosystem. That is why we want to give everyone a chance to review the submitted projects and vote for their favorite Cosmos one. Every member that has an account on DevPost will have the ability to cast one vote for one project. The project with the most votes collected from the time the voting starts until it ends, will win this prize category.',
         },
       ],
     }

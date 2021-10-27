@@ -89,10 +89,13 @@
                 <div v-if="event.details || event.url">
                   <div class="tm-grid-base">
                     <div class="col-info">
-                      <p class="tm-lh-copy tm-rf0 tm-normal">
+                      <p
+                        v-if="event.details"
+                        class="tm-lh-copy tm-rf0 tm-normal"
+                      >
                         {{ event.details }}
                       </p>
-                      <div class="mt-7">
+                      <div v-if="event.url" :class="event.details && 'mt-7'">
                         <tm-button
                           v-if="event.url"
                           to-link="external"
@@ -140,6 +143,7 @@ export default {
           place: 'Spielfeld Digital Hub, Berlin',
           startTime: '17:30',
           language: 'English',
+          url: 'https://www.eventbrite.com/e/hackatom-vi-warm-up-event-tickets-196504178287',
         },
         {
           title: 'Dive into the Cosmos Ecosystem',
