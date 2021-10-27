@@ -53,9 +53,11 @@
                       </div>
                       <div class="tm-lh-copy tm-rf-1 tm-normal tm-muted">
                         <div v-if="challenge.info">
-                          <p v-for="info in challenge.info" :key="info">
-                            {{ info }}
-                          </p>
+                          <p
+                            v-for="info in challenge.info"
+                            :key="info"
+                            v-html="info"
+                          />
                         </div>
                         <ul v-else>
                           <li v-for="info in challenge.challenge" :key="info">
@@ -102,6 +104,8 @@ export default {
       showModal: false,
       currentItem: null,
       categories: [
+        // <a href='https://opensea.io/' target='_blank' rel='noopener noreferrer' class='tm-link'>https://opensea.io/</a>
+        // <a href="https://opensea.io/" target="_blank" rel="noopener noreferrer" class="tm-link">basic specs</a>
         {
           title: 'Ethereum on Cosmos',
           info: 'Ethereum projects on Cosmos SDK',
@@ -110,50 +114,147 @@ export default {
             'On blockchains, the goal of smart contracts is to simplify transactions between both anonymous and identified parties. Smart contracts are executed when predetermined conditions are met, such as the fulfillment of an agreement or completion of a task. Smart contracts are typically used to automate the execution of an agreement so that all participants can be certain of the outcome, without depending on any intermediary involvement. Smart contracts that currently live on the Ethereum Virtual Machine (EVM) are written in Solidity. Developers will explore among others rewriting an existing Solidity project as a Cosmos SDK blockchain that automates transactions on the blockchain or any other dedicated solution that could bridge the two ecosystems.',
           challenges: [
             {
-              challenge: [
-                'Rewrite an existing Solidity project as a Cosmos SDK blockchain that automates transactions on the blockchain.',
-                'Take an existing Smart Contract and rewrite the same logic in a Cosmos SDK module in Golang.',
+              type: 'Bitsong',
+              info: [
+                "BitSong is a project dedicated to musicians and their fans that aims to overcome the bureaucratic and economic obstacles within this industry and reward artists and users for simply using the platform. Bitsong's HackAtom VI challenge proposes the migration of smart contracts on the popular OpenSea (<a href='https://opensea.io/' target='_blank' rel='noopener noreferrer' class='tm-link'>https://opensea.io/</a>) NFT marketplace to Cosmos SDK. Participants should use the new NFT module that BitSong developed for its own blockchain, which contains an extraordinary feature—the introduction of perpetual royalties (a new standard for splitting royalties). Specifications can be found <a href='https://github.com/bitsongofficial/chainmodules/tree/master/x/nft/spec' target='_blank' rel='noopener noreferrer' class='tm-link'>here</a>.",
+                "In addition to BitSong's NFT module, there is an <b>Auction</b> where users can buy and sell their NFTs through a marketplace, providing participants with everything they need to bring Ethereum-based NFTs to Cosmos. Specifications can be found <a href='https://github.com/bitsongofficial/chainmodules/tree/master/x/auction/spec' target='_blank' rel='noopener noreferrer' class='tm-link'>here</a>.",
               ],
               requirements: [
-                'The participating developer must be the principal owner of the project or if the participant is not the owner, the project license must permit the participant to use new code in order to own the project for the purpose of the HackAtom. Participant has the sole responsibility to verify that the requirements are fulfilled in advance of participation.',
-                'The project is not already built with the Cosmos SDK.',
+                'The module development must be done using Golang.',
+                'Participants must follow the <a href="https://docs.cosmos.network/master/building-modules/" target="_blank" rel="noopener noreferrer" class="tm-link">basic specs</a> as per every Cosmos SDK module development.',
+                'The module is expected to be completed during the HackAtom, otherwise at least an MVP with integrated tests and CLI (even without UI) is required.',
+                'The module has to be importable to all ecosystem chains.',
+                "The NFTs Auction must respect the royalties system present in BitSong's <a href='https://github.com/bitsongofficial/chainmodules/tree/master/x/nft/spec' target='_blank' rel='noopener noreferrer' class='tm-link'>base module</a>.",
               ],
               sources: {
-                'cosmos-sdk': 'https://github.com/cosmos/cosmos-sdk/',
-                starport: 'https://github.com/tendermint/starport ',
-                ibc: 'https://github.com/cosmos/ibc',
-                'tutorials.cosmos':
-                  'https://tutorials.cosmos.network/connecting-to-testnet/',
-                'cosmos.network': 'https://v1.cosmos.network/tools',
+                Github: 'https://github.com/ProjectOpenSea',
+                Docs: 'https://docs.opensea.io/',
+                "BitSong's Developer Portal": 'https://btsg.dev/ ',
+              },
+            },
+            {
+              type: 'Evmos',
+              info: [
+                'Evmos is an application-agnostic chain that will be interoperable with the Ethereum mainnet, EVM-compatible environments, and other BFT chains via IBC, making it easy for users and developers to interact seamlessly between chains. Evmos aims to be the EVM Hub of Cosmos, making it easy for smart contracts to deploy and communicate within the Cosmos ecosystem.',
+              ],
+              challenge: [
+                'To jumpstart the growth of the Evmos ecosystem, we have created a helpful list of topics that could be eligible for the Evmos prizes during HackAtom VI:',
+                `<ul>
+                  <li><b>NFT</b>: Build an NFT smart contract project, Marketplace (dApp), or other supportive tooling (e.g. NFT fractionalization, rentals, etc.) to support the burgeoning NFT ecosystem on Evmos. Judges will be looking for projects with a usable UI and broad support for multiple Ethereum NFT standards.</li>
+                  <li><b>Wallets</b>: Build an EVM+Cosmos+IBC-compatible wallet that integrates Evmos’ JSON-RPC and gRPC services and is able to display ERC20 tokens, Cosmos coins, and IBC vouchers. Bonus points: Multisig support, WalletConnect V2 support.</li>
+                  <li><b>Dashboards and Visualizations</b>: Build a block explorer for displaying Cosmos data alongside EVM data (transactions, blocks, etc.). Judges will be looking for projects that push the envelope on “seamless cross-chain UX."</li>
+                  <li><b>EVM DeFi</b>: Port an existing open-source DeFi smart contract project or build and deploy your own DeFi smart contract application onto Evmos. As with the NFT challenge, your smart contracts must have a usable UI. Support integrations with as many other projects as possible for maximum consideration.</li>
+                  <li><b>IBC-EVM interoperability</b>: Build an IBC SDK application module to be deployed on Evmos, that is able to handle EVM or smart contract interoperability between two connecting chains that integrate the Ethermint library’s EVM module. The module should be able to process cross-chain contact calls.</li>
+                  <li><b>Cross-chain (Ethereum/EVM) challenge</b>: Port or build an EVM bridge and deploy it on Evmos so that Ethereum assets (ERC20, ERC721, ERC1155) can be bridged to the Evmos EVM and vice versa.</li>
+                </ul>`,
+              ],
+              requirements: [
+                'Solidity or other smart contract languages (Vyper, Fe, etc.)',
+                'Ethereum tools (Hardhat, Truffle, Remix, etc) and libraries (web3, go-ethereum, ethersjs, etc.)',
+                'Evmos JSON-RPC and gRPC services',
+              ],
+              stage: [
+                'Evmos is currently in testnet with additional functionality rolling out over time and leveraging the upcoming features of the testnet and incentivized testnet will have an added bonus.',
+                'The applications submitted must have had the significant majority of its development done after the date of the initial Evmos Arsia Mons testnet launch (Oct 12) as verified by Github commits. If you used a previous project as a starting off point, you must detail which components you developed during the hackathon (Nov 11-Dec 8).',
+                'Projects must be deployed on a <b>live</b> Evmos testnet (Incentivized testnet or Arsia Mons) by the end of the hackathon on December 8, 2021.',
+                'The projects <b>MUST</b> follow the following checklist to be eligible for the prizes:',
+                `<ul>
+                  <li>Open source, deployed on Github or Gitlab</li>
+                  <li>Have a working UI (if applicable)</li>
+                  <li>Have a working functionality</li>
+                  <li>Clear documentation in the form of a README.md, for how to interact and run the project</li>
+                </ul>`,
+              ],
+              sources: {
+                'Developer Docs': 'http://evmos.dev',
+                Discord: 'http://discord.gg/trje9XuAmy',
+                Telegram: 'https://t.me/EvmosOrg',
+                Medium: 'https://evmos.blog/',
               },
             },
           ],
         },
         {
           title: 'Starport',
-          info: 'Blockchains built using Starport',
+          info: 'Starport improvements',
           prize: 'Starport Prize',
           details:
             'Starport is the all-in-one platform to build, launch, and maintain any crypto application on a sovereign and secured blockchain. Starport CLI is a powerful developer tool for scaffolding blockchains, generating code, running a node in development, and much more. Builders will need to implement new scaffolding functionality or improve the functionality, reliability, or flexibility of Starport CLI or introduce new functionality that is useful for a large number of developers.',
           challenges: [
             {
-              challenge: [
-                'Improve the functionality, reliability, or flexibility of Starport CLI.',
-                'Implement new scaffolding functionality.',
-                'Introduce new functionality that is useful for a large number of developers.',
-                'Do not duplicate functionality of an existing module. For example, don’t add a command to scaffold a DEX.',
-                'Improve code generation both in terms of underlying logic and output.',
-                'Enhance the process of running a blockchain node in development.',
-                'Come with other creative ways of making Starport CLI even more awesome!',
+              type: 'Code Scaffolding',
+              info: [
+                `One of the core features of Starport is code scaffolding. Starport can scaffold a new blockchain from scratch, create new modules, add messages, queries, packets to modules, and much more. This functionality allows developers to prototype advanced modules with just a few commands. Currently, Starport depends on string placeholders being present in modules’ files. Placeholders work, but if another solution (likely, based on code analysis) is found, this could improve Starport's reliability even further.`,
               ],
               requirements: [
-                'Avoid duplicating existing functionality where the only difference is using a different library/framework. For example, Starport already comes with a Vue web template, please, do not implement a template using React or any other framework.',
+                `Reengineer Starport’s code scaffolding to avoid relying on placeholders as much as possible`,
+                `There should be no placeholders in proto files`,
+                `The goal is to make Starport more resilient and less fragile`,
+                `Solution should gracefully handle if required files are not found`,
+                `Use Starport's list as an example command to showcase functionality`,
+                `Try keeping backwards compatibility with Starport v0.18`,
               ],
               sources: {
-                starport: 'https://github.com/tendermint/starport ',
-                'docs.starport.network': 'https://docs.starport.network',
-                'cosmos-sdk': 'https://github.com/cosmos/cosmos-sdk/',
-                ibc: 'https://github.com/cosmos/ibc',
+                'Github issues':
+                  'https://github.com/tendermint/starport/issues/1312',
+                Github: 'https://github.com/tendermint/starport',
+                Docs: 'https://docs.starport.com/',
+                Starport: 'https://starport.com ',
+              },
+            },
+            {
+              type: 'Local Testnet',
+              info: [
+                `Starport chain serve is the most convenient way to start a blockchain node for development purposes. Currently, this command sets up a single node testnet with automatic code reloading. Enhance this functionality of Starport, for example, to support multi-node local testnets.`,
+              ],
+              requirements: [
+                `The enhanced version of serve should support existing features of Starport (for instance, code reloading)`,
+                `Multi-node testnet is just an example, find other creative ways to improve developer experience`,
+                `Command shouldn’t require flags to run, but you can use the config file to customize its behavior`,
+                `Try keeping backwards compatibility with Starport v0.18`,
+              ],
+              sources: {
+                'Github issues':
+                  'https://github.com/tendermint/starport/issues/1312',
+                Github: 'https://github.com/tendermint/starport',
+                Docs: 'https://docs.starport.com/',
+                Starport: 'https://starport.com ',
+              },
+            },
+            {
+              type: 'Build Process and Configuration',
+              info: [
+                `Starport uses an advanced build process to compile the source code of a chain into a binary. It’s both sophisticated and easy to use, but there is always room for improvement. To win this challenge, enhance the build process so that it’s more flexible, yet can be used even by beginner developers.`,
+              ],
+              requirements: [
+                `Do not rely on Makefiles. Makefiles are very flexible, but this flexibility makes it harder for us to control the build process (for example, we can’t know the name of the binary produced by make). Instead, consider using config.yml to customize the build process. For inspiration: goreleaser, taskfile, etc.`,
+                `Add customization options declaratively, like toggling support for Ledger devices, passing flags, etc.`,
+                `Think of other config.yml improvements that can enhance the developer experience.`,
+              ],
+              sources: {
+                'Github issues':
+                  'https://github.com/tendermint/starport/issues/1312',
+                Github: 'https://github.com/tendermint/starport',
+                Docs: 'https://docs.starport.com/',
+                Starport: 'https://starport.com ',
+              },
+            },
+            {
+              type: 'A Plugin System',
+              info: [
+                `All of Starport’s functionality right now is implemented in packages within the Starport code repository. From a maintenance perspective this is convenient. But a program like Starport can definitely benefit from a flexible plugin system that will allow developers to add functionality to Starport on-the-fly. Your challenge is to build one!`,
+              ],
+              requirements: [
+                `Each plugin is a Go Plugin, hosted in a repo. There can be multiple plugins inside a single repo.`,
+                `Users will need to add their desired plugins to their config.yml in the new plugin section.`,
+                `A plugin needs to comply with a certain interface defined by core Starport developers.`,
+              ],
+              sources: {
+                'Github issues':
+                  'https://github.com/tendermint/starport/issues/1312',
+                Github: 'https://github.com/tendermint/starport',
+                Docs: 'https://docs.starport.com/',
+                Starport: 'https://starport.com ',
               },
             },
           ],
@@ -166,35 +267,189 @@ export default {
             'Alongside the Tendermint high-performance Byzantine fault-tolerant (BFT) consensus engine, one of the main innovations of the Cosmos Network is the robust and secure Inter-Blockchain Communication protocol (IBC), the Cosmos standard for interoperability. This protocol enables communication and digital asset transfers across an ever-expanding network of interconnected blockchains. Developers will need to create new, innovative ways to highlight the possibilities of blockchain interoperability using the IBC protocol such as viable implementations, use cases, data formats or others.',
           challenges: [
             {
-              challenge: [
-                'To find viable implementations and use cases using IBC',
-                'Build new innovative ways to highlight the possibilities of blockchain interoperability using the IBC protocol.',
-                'To explore new data formats that can be used with IBC',
-                'To build interoperable: ',
-                'smart contract execution',
-                'interchain accounts ',
-                'interchain staking',
-                'interchain security',
+              type: 'Akash',
+              info: [
+                `Censorship-resistant, permissionless, and self-sovereign, Akash Network is the world's first open source cloud. One of the biggest values that Akash can provide to other blockchains is the ability to run hard-to-deplatform durable blockchain nodes. Removing blockchains' dependence on centralized hosting providers is one of the biggest steps blockchains can take toward further decentralization. To this end, the Akash community and core developer team have put together the following GitHub repo:`,
+                `<a href="https://github.com/ovrclk/cosmos-omnibus" target="_blank" rel="noopener noreferrer" class="tm-link">https://github.com/ovrclk/cosmos-omnibus</a>`,
+                `This repo contains the deployment scripts and references to working images to deploy nodes on a number of different Cosmos chains in a matter of seconds. Akash's HackAtom VI challenge asks participants to develop the container images, SDL files, and readme.dm documentation needed to run chain nodes from Cosmos chains that are not currently in the repository. Deliverables will be in the form of a PR to the <a href="https://github.com/ovrclk/cosmos-omnibus" target="_blank" rel="noopener noreferrer" class="tm-link">https://github.com/ovrclk/cosmos-omnibus</a> repo.`,
+              ],
+              requirementsInfo: 'Deliverable must include the following:',
+              requirements: [
+                'Configured SDL for deployment',
+                'Working container image',
+                'Complete documentation in the form of the readme.md',
+                'Working Github account for the pull requests',
+                'Access to the internet for the deployment and testing of the image on the Akash network',
+              ],
+              sources: {
+                'Network website': 'https://akash.network/',
+                'Network Discord': 'https://discord.gg/ryMhZpvdYX',
+                'Network forum': 'https://forum.akash.network/',
+              },
+            },
+            {
+              type: 'Sentinel',
+              info: [
+                `Sentinel is a network of independent dVPN applications, not just a single consumer-facing dVPN. Sentinel's IBC challenge is a tough one to tackle but could help to solve an important problem in the wider Cosmos ecosystem. Participants must build a fast, reliable, and unbiased randomness generator which could ideally be used for validator selection.`,
+                `A randomness generator will be very useful for many other applications, from consumer-level apps to DeFi protocols, and Sentinel believes that the Cosmos Hub would benefit heavily if it could provide on-demand randomness through IBC.`,
               ],
               requirements: [
-                'Participants are welcome to build and improve an existing proof of concept or to build a new proof of concept from scratch.',
-                'Have or build a Cosmos SDK blockchain with IBC enabled',
+                `Sentinel is a network of independent dVPN applications, not just a single consumer-facing dVPN. Sentinel's IBC challenge is a tough one to tackle but could help to solve an important problem in the wider Cosmos ecosystem. Participants must build a fast, reliable, and unbiased randomness generator which could ideally be used for validator selection.`,
+                `A randomness generator will be very useful for many other applications, from consumer-level apps to DeFi protocols, and Sentinel believes that the Cosmos Hub would benefit heavily if it could provide on-demand randomness through IBC.`,
+              ],
+              sources: {
+                dfinity:
+                  'https://dfinity.org/pdf-viewer/library/dfinity-consensus.pdf',
+                github: 'https://github.com/corestario/tendermint',
+                eprint: 'https://eprint.iacr.org/2020/096.pdf',
+              },
+            },
+            {
+              type: 'Sifchain',
+              info: [
+                `Sifchain is the world's first omni-chain decentralized exchange (DEX) for digital assets, unlocking liquidity in various chains to free people from egregious fees and inefficient trades. Sifchain's challenge for the hackathon is to implement IBC token name and service discovery for Cosmos-based tokens.`,
+                `When a new token is launched, developers may register their token with a token-listing-discovery endpoint. A DEX like Sifchain would consume the listing, where each token listing provides sufficient knowledge to implement the IBC interface and list the token automatically. Write a full stack backend which lists tokens using Golang and Swagger.`,
+              ],
+              requirementsInfo:
+                'Implement a low-friction integration and operation of a token listing microservice',
+              requirements: [
+                `<p>Maximize for ease of use</p>
+                  <ul>
+                    <li>Consuming the API</li>
+                    <li>Stateless, functional programming model</li>
+                  </ul>
+                `,
+                `<p>Full stack application</p>
+                  <ul>
+                    <li>
+                      <p>Build, run and test using only Docker</p>
+                      <ul>
+                        <li>from Alpine or Golang</li>
+                      </ul>
+                    </li>
+                    <li>Golang + Cosmos SDK (.42)</li>
+                    <li>Follow 12-factor app guidelines</li>
+                  </ul>
+                `,
+                `<p>Discovery REST API</p>
+                  <ul>
+                    <li>
+                      <p>Implement using swagger.io for listing entities (examples)</p>
+                      <ul>
+                        <li>list token</li>
+                        <li>delist token</li>
+                        <li>activate token ( listed, tradeable )</li>
+                        <li>deactivate token ( listed, not-tradeable )</li>
+                        <li>get/set description</li>
+                        <li>upload/update .proto file</li>
+                        <li>project summary</li>
+                        <li>token endpoint URL</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p>Implement using swagger.io for consuming entities: (examples)</p>
+                      <ul>
+                        </li>list tokens</li>
+                        </li>date token listed</li>
+                        </li>date token delisted</li>
+                        </li>date token active</li>
+                        </li>date token inactive</li>
+                        </li>download gRPC “.proto” file</li>
+                        </li>BETTER: JIT (just-in-time) generation of .proto endpoints in golang, javascript, or Java</li>
+                      </ul>
+                    </li>
+                  </ul>
+                `,
+                `
+                  <p>Persistence Layer</p>
+                  <ul><li>Token listings should be on-chain</li></ul>
+                `,
+                `<p>Test suite</p>
+                  <ul>
+                    <li>Should cover both success and failure cases of all APIs</li>
+                    <li>Excluding protobuf generated code, code coverage should be at least 50%</li>
+                  </ul>`,
+                `Document the build, run, and test process in a README.md at the root of your project`,
+              ],
+              sources: {
+                'Cosmos SDK documentation': 'https://docs.cosmos.network/',
+                'Cosmos SDK on Github': 'https://github.com/cosmos',
+                'Cosmos IBC documentation':
+                  'https://docs.cosmos.network/master/ibc/overview.html',
+                'Design Patterns for Dapps':
+                  'https://www.freecodecamp.org/news/how-to-design-a-secure-backend-for-your-decentralized-application-9541b5d8bddb/',
+                'Design Patterns for GoLang':
+                  'https://refactoring.guru/design-patterns/go',
+                'Swagger.io (Self-documenting REST)': 'https;//swaggar.io',
+                'Google RPC (gRPC, lightweight HTTP/2)': 'https://grpc.io',
+              },
+            },
+            {
+              type: 'Pylons',
+              info: [
+                'Built on Cosmos, Pylons is a fast and interoperable system for brands and creators to build engaging products and with meaningful NFT experiences. For this challenge, Pylons wants you to build new, innovative ways to highlight the possibilities of blockchain interoperability using the IBC protocol—such as viable implementation, use cases, and data formats—using the Cosmos SDK.',
+                'Be the developer that unlocks the potential of interoperability for IRL applications—on Cosmos with the Pylons SDK. Reinvent centralized ticketing systems using NFTs.',
+              ],
+              requirementsInfo: `<p>Build a ticketing experience on the blockchain that promotes authenticity, transparency, and monetization. Integrate administration that allows for significant resale rake that remits more $USD/$ATOM to the artist.</p>
+                <p>Utilizing the Cosmos SDK + Pylons SDK, create a ticketing sales and distribution system with the following attributes:</p>`,
+              requirements: [
+                `Ticket tiers and relevant price categories`,
+                `On-chain redemption upon venue entry/check-in`,
+                `Distribution of royalties upon execution of secondary sales`,
+                `Mobile or web client.`,
+                `Relatively unobtrusive chain interaction; chain state is saved on chain and updated with real time venue entry dynamics`,
+                `The prize can be paid in either ATOM or Pylons (native token) at a parity according to a fixed day market price set ahead of time.`,
               ],
               sources: {
                 'cosmos-sdk': 'https://github.com/cosmos/cosmos-sdk/',
-                starport: 'https://github.com/tendermint/starport ',
+                starport: 'https://github.com/tendermint/starport',
                 ibc: 'https://github.com/cosmos/ibc',
                 'connecting-to-testnet':
-                  'https://tutorials.cosmos.network/connecting-to-testnet/ ',
-                ibcprotocol: 'https://ibcprotocol.org/faq/',
-                cosmwasm:
-                  'https://medium.com/cosmwasm/a-peek-at-multi-chain-contracts-93cde6875cf5',
-                chainapsis:
-                  'https://medium.com/chainapsis/why-interchain-accounts-change-everything-for-cosmos-interoperability-59c19032bf11',
-                chjango:
-                  'https://chjango.medium.com/the-future-of-staking-is-going-into-hyperdrive-b8c84b97108',
-                'Interchain Security is coming to the Cosmos hub':
-                  'https://blog.cosmos.network/interchain-security-is-coming-to-the-cosmos-hub-f144c45fb035',
+                  'https://tutorials.cosmos.network/connecting-to-testnet/',
+                wallets: 'https://v1.cosmos.network/ecosystem/wallets',
+                pylons: 'https://www.pylons.tech/',
+                Discord: 'https://discord.com/invite/RrSnFVy',
+                Telegram: 'https://t.me/pylonstech',
+              },
+            },
+            {
+              type: 'Agoric',
+              info: [
+                `<b>Cross Chain Liquidity Mining</b>`,
+                `Agoric is an open-source development company launching an interoperable Proof-of-Stake chain and economy. Agoric's hackathon challenge is to build a set of Agoric smart contracts on Agoric that provide flexible liquidity mining options to Cosmos projects based on an Osmosis LP token. The contracts must at a minimum be able to do the following:`,
+                `<ul>
+                  <li>Accept an Osmosis LP token</li>
+                  <li>Allow an arbitrary number of reward tiers based on lockup time (e.g.,100 tokens per block for no lockup, 200 tokens per block for 1 month lockup, etc.)</li>
+                  <li>Allow governance token rewards to be deposited ahead of time and locked subject to distribution rules (i.e., project owners can credibly commit to reward amounts and distribution logic)</li>
+                  <li>Optional: include a nifty front end!</li>
+                </ul>`,
+              ],
+              context: [
+                `Most Cosmos chains are application-specific blockchains which don’t have generalized smart contract capabilities. As a result, they are unable to natively engage in common network bootstrapping activities like liquidity mining.  `,
+                `Liquidity mining is the process of distributing ownership of a protocol as a reward to users who provide assets (“liquidity providers”, LPs) to the protocol or to facilitate trade on a decentralized exchange.  `,
+                `The Osmosis chain on Cosmos has enabled this for a limited set of cases. The Osmosis protocol distributes its native token OSMO to LPs of specific AMM pools to bootstrap liquidity and allow trading of those tokens. To receive these distributions, users must lock their liquidity tokens and agree to an unlocking period (Osmosis allows 1 day, 7 days, and 14 days as its unlocking period). `,
+                `To further incentivize liquidity for its own tokens, Akash network partnered with Osmosis to *also* distribute Akash tokens to LPs in Akash pools on top of the existing OSMO token reward.  This is an important pattern and will become more so as the Cosmos network grows.`,
+                `However, in this partnership, Akash is limited to distributing its token based on the settings that Osmosis allows. For example, if Akash wanted to ask users to lock liquidity for 3 months in order to receive rewards, as protocols in Ethereum have done, this would not be possible.`,
+                `The goal of this bounty is to solve this problem more generally and to allow projects to offer liquidity mining rewards to LPs in major Cosmos DEXs (Osmosis and Gravity DEX to start) with flexible structures.`,
+              ],
+              requirements: [
+                `A successful project should demonstrate the capabilities mentioned above in the description`,
+                `<p>The contracts must, at a minimum, be able to do the following:</p>
+                <ul>
+                  <li>Accept an Osmosis LP token transferred over IBC</li>
+                  <li>Allow an arbitrary number of reward tiers based on lockup time (e.g., 100 tokens per block for no lockup, 200 tokens per block for 1 month lockup, etc.)</li>
+                  <li>Allow governance token rewards to be deposited ahead of time and locked subject to distribution rules (i.e., project owners can credibly commit to reward amounts and distribution logic)</li>
+                  <li>Optional: a front end</li>
+                  <li>Contract should be written in JavaScript using the Agoric SDK. Testnet deployments are preferred over local.</li>
+                </ul>`,
+              ],
+              sources: {
+                'Agoric ERTP Documentation':
+                  'https://agoric.com/documentation/ertp/guide/',
+                'Agoric Zoe Documentation':
+                  'https://agoric.com/documentation/zoe/guide/',
+                'IBC Documentation':
+                  'https://docs.cosmos.network/master/ibc/overview.html',
               },
             },
           ],
@@ -207,40 +462,151 @@ export default {
             'Accessibility is a primary driver to entering the blockchain ecosystem, yet one of the most challenging tasks in blockchain is to make cryptocurrency and digital asset ownership accessible to end-users. Applications should manage keys in a secure manner allowing users to access their assets in an easy way and improving the overall user experience for beginners and advanced users. Developers are expected to build applications that make features more accessible or provide a more intuitive experience for an end-user.',
           challenges: [
             {
-              type: 'Wallet UX using WebAuthn',
+              type: 'Nym',
               info: [
-                'Implementing support for WebAuthn can dramatically improve the user experience using web wallets. End-users for the most part don’t know much about the underlying technology and very often cannot be relied on to keep private keys secure and make proper backup of mnemonics. This is where WebAuthn comes in. A cutting edge web browser API allows apps to sign data (such as blockchain transactions, for example) using a built-in authenticator.',
-              ],
-            },
-            {
-              type: 'An App that makes blockchain features accessible',
-              info: [
-                'Many tools on the blockchain, for example IBC, Multisignatures, more complex authentication methods or a unique combination of features still did not make it to a good front end or application for anyone to use.',
-                'Develop an App that allows users to use these tools with a good user experience.',
+                `Nym is a privacy platform. The Nym Mixnet provides network-layer privacy for users and applications by hiding the metadata (IP addresses, device types, timings, etc.) of the data packets that are sent through it. Creating a file storage application over the Nym Mixnet will allow users to store files in the cloud in a secure and private manner. The title of Nym's challenge is ‘The Eternity Service 2.0’.`,
               ],
               challenge: [
-                'Build a wallet implementation that broadcasts transactions that are signed using the WebAuthn browser API.',
-                'Optional: Implement a module that allows a user to sign transactions using WebAuthn from more than one device (such as a laptop and a mobile phone) as a single user/account (from blockchain’s point of view). Map public keys of both devices to a single account on-chain.',
-                'Use biometric transaction signing.',
+                `The challenge is to create a Nym service provider (application) which offers cloud file storage, and a GUI where users interact with the service provider, all via the Nym mixnet.`,
+                `Users must be able to do the following via the GUI:`,
+                `<ul>
+                  <li>
+                    <p><b>Store an encrypted file on the service provider:</b></p>
+                    <ul>
+                      <li>Users must be able to encrypt a file and upload it to the service provider’s storage via the Nym mixnet. Whether new keys are generated for this encryption or whether the user can import existing keys is up to the developer. </li>
+                      <li>This step will also hash the contents of the file and store the resulting hash in local storage on the user’s machine, and be represented in the GUI.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p><b>Verify their file has been uploaded and stored:</b></p>
+                    <ul>
+                      <li>Users must be able to poke the service provider with the hash of the file they uploaded in order to verify that the encrypted file exists with this hash as its identifier.</li>
+                      <li>If the service provider answers in the affirmative, users should have the option of having their client-side application overwrite the bytes of their local storage where the file is to remove it.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p><b>Retrieve their encrypted file from the service provider:</b></p>
+                    <ul>
+                      <li>Users must be able to request their file from the service provider using the hash as proof of ownership.</li>
+                      <li>Users must be able to decrypt the retrieved file locally.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p><b>Request for the service provider to delete its copy of their encrypted file:</b></p>
+                    <ul>
+                      <li>Users must be able to ask the service provider to delete the file it is storing, and verify there is no identifier remaining, again using the content-hash of the encrypted file.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <b>[Optional bonus feature 1]</b> Users are able to securely share the hash & decryption key of uploaded encrypted files with friends via the Nym mixnet!
+                  </li>
+                  <li>
+                    <p><b>[Optional bonus feature 2]</b> Users are able to choose between uploading private files or public files for archiving:</p>
+                    <ul>
+                      <li>Users have the option of also uploading an unencrypted file to the service provider.</li>
+                      <li>Users can then upload the hash of the file to the Nym blockchain, with plaintext information about what the file is. How this information is best uploaded and stored in the blockchain is left to the developers to decide.</li>
+                      <li>This information is stored in a publicly accessible manner.</li>
+                    </ul>
+                  </li>
+                </ul>`,
+                `<i><b>A note regarding Nym testnet development</b>: Nym is likely to upgrade to a new testnet and/or to mainnet release during the time period of the hackathon. New networks will require bandwidth credentials to be created and used by both the client-side Nym client and the service provider’s Nym client in order to send packets through the mixnet. Integrating these updates will involve a small amount of extra work, but Nym will offer support by providing any necessary information!</i>`,
               ],
               requirements: [
-                'Implementation of Cosmos SDK transaction signing using WebAuthn',
-                'Key management',
-                'User interface in a mobile app or a web browser',
+                `Submissions must be usable/workable via the Nym testnet, but not necessarily production-ready. `,
+                `Submissions must include a working service provider and desktop GUI application.`,
+                `No specific language or framework requirements. `,
+                `Good security practices will be an integral part of the judging criteria.`,
               ],
               sources: {
-                'cosmos-sdk': 'https://github.com/cosmos/cosmos-sdk/',
-                starport: 'https://github.com/tendermint/starport',
-                ibc: 'https://github.com/cosmos/ibc',
-                'connecting-to-testnet':
-                  'https://tutorials.cosmos.network/connecting-to-testnet/',
-                wallets: 'https://cosmos.network/ecosystem/wallets/',
-                'cosmos-wallet': 'https://www.ledger.com/cosmos-wallet',
-                'developers.ledger.com': 'https://developers.ledger.com/',
-                'webauthn.guide': 'https://webauthn.guide/',
-                'Web Authentication API':
-                  'https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API',
-                webauthn: 'https://www.w3.org/TR/webauthn-2/',
+                'network overview documentation':
+                  'https://nymtech.net/docs/0.11.0/overview/nym-platform',
+                documentation:
+                  'https://nymtech.net/docs/0.11.0/run-nym-nodes/requester',
+                'Nym network':
+                  'https://nymtech.net/docs/0.11.0/run-nym-nodes/requester',
+                'The Eternity Service':
+                  'https://nymtech.net/docs/0.11.0/run-nym-nodes/requester',
+              },
+            },
+            {
+              type: 'Injective',
+              info: [
+                'Injective Protocol is pioneering a new decentralized economy to create a freer and more inclusive financial system. Injective has created a solution that allows crypto exchanges to become a decentralized public utility, giving users and their community much-needed value-capture in the exchange landscape.',
+                `Injective's HackAtom VI challenge is to build a new simple single-page application trading interface for trading spot and perpetual markets. The purpose of this is to provide mass market users (not pro traders) an accessible, user-friendly interface for trading (Like Matcha on Ethereum, for example). This will allow novice traders to access Injective easily.`,
+              ],
+              requirements: [
+                'Make a meaningfully unique/better designed product. Submissions that simply restyle a few components will not be awarded.',
+                'Proper project structure.',
+                'Clean and readable codebase.',
+              ],
+              sources: {
+                'how to use these packages in production':
+                  'https://github.com/InjectiveLabs/injective-dex',
+                'Monorepo and the packages that it produces to interact with the Injective Chain/Injective Exchange service':
+                  'https://github.com/InjectiveLabs/injective-ts',
+                'The Injective Chain docs': 'https://chain.injective.network/',
+                'The Injective API docs': 'https://api.injective.exchange/',
+                injective:
+                  'https://injective.notion.site/Injective-HackAtom-VI-Challenge-Additional-Details-3b308d7d78e34fd4b9a2e8422ea3a599',
+              },
+            },
+            {
+              type: 'LikeCoin',
+              info: [
+                `LikeCoin aims to empower content ownership, authenticity, and provenance. Creators can register content metadata to guarantee its integrity by acquiring an International Standard Content Number (ISCN). ISCN is a tool to authenticate and track content, just like a digital footprint. ISCN is an NFT-like content registry record running on the LikeCoin chain that allows content creators to register their content metadata on the chain through ISCN transactions.`,
+                `Currently, there are three ways for creators to register their content metadata to the LikeCoin chain: 1) register via app.like.co, 2) ISCN batch uploader, 3) LikeCoin Wordpress plugin. Unlike traditional NFTs, ISCN owners might have to view, manage or edit ISCN records in batch, since talented creators can produce creative works quickly, and have a huge collection of series of ISCN.`,
+                `In this challenge, LikeCoin is seeking developers who can develop a wallet interface to allow users to manage their ISCN records. Useful features will include visualization of the ISCN records and organizing them into directories or groups, interface for viewing and editing ISCN records, and sending and trading of ISCN records (change of owner).`,
+              ],
+              requirements: [
+                'Develop a dApp interface for users to view and manage their ISCN records',
+                'Visualization of users’ ISCN records, allow users to organize their collection in UI',
+                'Editor for ISCN records, figure out a user-friendly way for editing in batch mode',
+                'View-only mode to discover contents of a specific address/creator',
+                'Global ISCN browsers, preferably with a way to discover groups, series, and relationships between works',
+                'Other features that might be useful for content creators to manage their ISCN records',
+              ],
+              sources: {
+                Documentation: 'https://docs.like.co/',
+                'ISCN App': 'https://app.like.co',
+                'ISCN batch uploader':
+                  'https://github.com/likecoin/iscn-batch-uploader​',
+                'LikeCoin WordPress plugin':
+                  'https://wordpress.org/plugins/likecoin/',
+                'Mainnet LCD': 'https://mainnet-node.like.co/rpc',
+                'Mainnet RPC': 'https://mainnet-node.like.co/rpc/',
+                'Other useful information about LikeCoin mainnet':
+                  'https://github.com/likecoin/mainnet',
+                'LikeCoin chain repo':
+                  'https://github.com/likecoin/likecoin-chain/releases/tag/fotan-1',
+              },
+            },
+            {
+              type: 'Archway',
+              info: [
+                `Archway is a smart contract platform that rewards developers, ushering in next gen dApps. Archway's HackAtom VI challenge is to create a base NFT marketplace on Archway’s testnet. This entails the marketplace smart contracts as well as front-end that will allow users to buy, sell, and trade CW721 tokens in exchange for CW20 tokens.`,
+                `Key features to include:`,
+                `<ul>
+                  <li>A generic NFT marketplace smart contract</li>
+                  <li>Listing CW721 tokens for sale for any CW20 token</li>
+                  <li>Buying CW721 tokens with CW20 tokens</li>
+                  <li>Trading any CW721 token with any other CW721</li>
+                  <li>Any additional marketplace capabilities you’re keen to experiment with—auctions, fractionalization, royalties, etc.</li>
+                </ul>`,
+              ],
+              requirements: [
+                `The marketplace should work with the standard interfaces for CW20 and CW721 (CosmWasm NFTs) and be launched to Archway testnet (https://docs.archway.io/docs/create/getting-started/install/) using a compatible wallet (https://wallet.keplr.app/) for contract deployment and interactions (mint, list, buy, sell, transfer, etc).`,
+                `For reference, a sample CosmWasm marketplace built by the inimitable Blockscape team at last year’s Hackatom V — https://blockscape-network.medium.com/hackatom-v-nft-marketplace-smart-contract-795b743a7738. The idea is to build upon Blockscape’s stellar work atop Archway.`,
+              ],
+              sources: {
+                'docs.archway.io': 'https://docs.archway.io/',
+                'archway getting-started':
+                  'https://docs.archway.io/docs/create/getting-started/install/',
+                'docs.cosmwasm.com': 'https://docs.cosmwasm.com/docs/0.16/',
+                'CosmWasm github': 'https://github.com/CosmWasm/cw-nfts',
+                'CosmWasm Marketplace implementation (github)':
+                  'https://github.com/BlockscapeNetwork/hackatom_v/tree/master/contracts/marketplace',
+                'CosmWasm Marketplace implementation (blog)':
+                  'https://blockscape-network.medium.com/hackatom-v-nft-marketplace-smart-contract-795b743a7738',
               },
             },
           ],
@@ -253,25 +619,51 @@ export default {
             'DeFi is a blockchain-based alternative financial system to the legacy system of banks, exchanges, insurance companies, mortgage providers, etc., but reimagined from the ground up with no intermediaries in the middle. Unlike traditional finance, with no gatekeepers to turn down your application, DeFi lowers the barrier to entry, allowing more people to access financial services, take out a collateralized loan, or earn a yield on their assets. Help expand the capabilities of DeFi by building an app or module with the Cosmos SDK.',
           challenges: [
             {
-              challenge: [
-                'To build a general tool for loan or insurance modules',
-                'Collateral-less loan (Flash Loan)',
-                'Non-custodial asset borrowing (earn interest on deposit)',
-                'Examples for inspiration are Cosmos SDK Loan or Insurance Module',
-                'Use Gravity DEX and the Cosmos SDK to build a new loan or insurance module.',
+              type: 'Kava',
+              info: [
+                `Kava is a software protocol that uses multiple cryptocurrencies to allow its users to borrow and lend assets without the need for a traditional financial intermediary. Kava's HackAtom VI challenge asks you to build a fully autonomous options protocol as a Cosmos SDK module. You can assume that you have access to a price oracle.`,
               ],
               requirements: [
-                'Any prerequisite knowledge',
-                'Using Gravity DEX is mandatory for this challenge',
+                'All projects must be built using the Cosmos SDK, version 0.39+. Submissions should have at least minimum-viable functionality (ie, the main user actions are all supported by the protocol).',
+              ],
+              sources: {
+                'DeFi options':
+                  'https://blog.pods.finance/understanding-defi-options-f007a66e5133',
+                'Beginners guide':
+                  'https://medium.com/opyn/a-beginners-guide-to-defi-options-opyn-v2-4d64f91acc84',
+                coinmarketcap:
+                  'https://coinmarketcap.com/alexandria/article/alchemix-pulling-back-the-curtain-flipside-crypto',
+                medium:
+                  'https://medium.com/coinmonks/perpetual-swaps-in-defi-749997209ba3',
+                delphidigital:
+                  'https://www.delphidigital.io/reports/an-update-on-defi-perps/',
+                docs: 'https://docs.perp.fi/',
+              },
+            },
+            {
+              type: 'Tendermint',
+              info: [
+                `Tendermint builds and maintains critical state-of-the-art infrastructure for decentralized applications, such as Tendermint Core, Cosmos SDK, Starport, and Emeris. Tendermint is a core contributor to the Cosmos Network and organizer of HackAtom VI. Find the details of Tendermint's DeFi challenge below:`,
+              ],
+              challenge: [
+                `Build a general tool for Loan or Insurance modules `,
+                `Collateral-less loan (Flash Loan)`,
+                `Non-custodial asset borrowing (earn interest on deposit)`,
+                `Examples for inspiration are Cosmos SDK Loan or Insurance Module`,
+                `Use Gravity DEX and the Cosmos SDK to build a new Loan or Insurance Module`,
+              ],
+              requirements: [
+                `Using <a href='https://github.com/Gravity-Devs/liquidity/tree/v1.4.0' target='_blank' rel='noopener noreferrer' class='tm-link'>Gravity DEX</a> is mandatory for this challenge`,
               ],
               sources: {
                 'cosmos-sdk': 'https://github.com/cosmos/cosmos-sdk/',
                 starport: 'https://github.com/tendermint/starport',
+                'starport guide': 'https://docs.starport.com/guide/',
                 ibc: 'https://github.com/cosmos/ibc',
                 'connecting-to-testnet':
                   'https://tutorials.cosmos.network/connecting-to-testnet/',
                 'gravity-dex': 'https://cosmos.network/gravity-dex/',
-                DeFi: 'https://blog.cosmos.network/bringing-defi-to-cosmos-the-gravity-dex-protocol-is-live-a0c5857d6267',
+                blog: 'https://blog.cosmos.network/bringing-defi-to-cosmos-the-gravity-dex-protocol-is-live-a0c5857d6267',
               },
             },
           ],
@@ -281,50 +673,70 @@ export default {
           info: 'Gaming apps on Cosmos SDK',
           prize: 'Starship Prize',
           details:
-            'Blockchain has the potential to completely restructure the gaming industry. Blockchain gaming uses true item ownership from the same technology that lies at the core of cryptocurrencies. Be the game developer that unlocks the potential of gaming with Cosmos. Build the future of gaming with the Cosmos SDK. Builders will explore ideas using the Cosmos tech like creating a game with meaningful gameplay behavior mediated through state changes, a decentralized virtual world or others.',
+            'Blockchain has the potential to completely restructure the gaming industry. Blockchain gaming uses true item ownership from the same technology that lies at the core of cryptocurrencies. Be the game developer that unlocks the potential of gaming with Cosmos. Build the future of gaming with the Cosmos SDK.',
           challenges: [
             {
-              challenge: [
-                'Build a game with meaningful gameplay behavior mediated through state changes using the Cosmos SDK blockchain framework.',
-                'Build a decentralized virtual world with Cosmos Network.',
-                'Build a bridge to a smart contracting zone to play chess',
-                'Implement secure poker',
-                'Build an IBC Module',
-              ],
-            },
-            {
-              info: ['Build an auction system using Pylon'],
-            },
-            {
+              type: 'Pylons',
               info: [
-                'Create an NFT recipe that burns Regen when minted for carbon offset',
+                'Built on Cosmos, Pylons is a fast and interoperable system for brands and creators to build engaging products and with meaningful NFT experiences. For this challenge, Pylons wants you to build a game with meaningful gameplay behavior mediated through state changes using the Cosmos SDK blockchain framework, or build a decentralized virtual world with Cosmos network, utilizing the Cosmos SDK + Pylons SDK.',
               ],
-              reward: [
-                'NFT using Pylons',
-                'Collectables',
-                'Support transferable assets',
-                'Support exchangeable assets',
-                'Optional: Support in-app purchases',
-              ],
+              requirementsInfo:
+                'Build a gaming experience on the blockchain that follows the crafting experience of a Strange Clan character. Players should be able to farm, craft, and quest using Cosmos SDK + Pylons SDK. Gamers can create, purchase, and trade with other players as well. Further requirements include:',
               requirements: [
-                'Mobile or web client',
-                'Relatively unobtrusive chain interaction',
-                'Chain state is saved on chain and updated in real time with gameplay',
+                `Seamless chain integration (check out Pylons cookbooks and recipes)`,
+                `Implement farming`,
+                `Create direct trading and listing platform (bonus)`,
               ],
               sources: {
-                'cosmos-sdk': 'https://github.com/cosmos/cosmos-sdk/',
+                pylons: 'https://www.pylons.tech/',
+                'Cosmos SDK': 'https://github.com/cosmos/cosmos-sdk/',
                 starport: 'https://github.com/tendermint/starport',
                 ibc: 'https://github.com/cosmos/ibc',
                 'connecting-to-testnet':
                   'https://tutorials.cosmos.network/connecting-to-testnet/',
                 wallets: 'https://v1.cosmos.network/ecosystem/wallets',
+                github: 'https://github.com/Pylons-tech/pylons/issues/432 ',
+                'Strange Clan Website': 'https://strangeclan.com/',
+                'Unreal Engine 5 Early Access':
+                  'https://www.unrealengine.com/en-US/unreal-engine-5',
+                'Pylons Discord': 'https://discord.com/invite/RrSnFVy',
+                'The Strange Clan Discord': 'http://discord.gg/strangeclan',
+                Telegram: 'https://t.me/pylonstech',
               },
-              workshops: [
-                'How to use the recipe system, Alex Johnson',
-                'How to use the flutter SDK, Michael Soafer and Jewad',
-                'IBC: Advanced recipe for doing games',
-                'State machine, how to connect, and how to use IBC to bring in tokens for payment',
+            },
+            {
+              type: 'Secret Network',
+              info: [
+                `Secret Network is an open-source protocol that performs computations on encrypted data, bringing privacy to smart contracts and public blockchains. Secret's challenge is to build a game on Secret Network using CosmWasm, Secret NFTs, and on-chain randomness.`,
+                `Blockchain NFT gaming is taking off, even though main components of gaming are non-existent with traditional blockchains, namely private data and randomness. To create Games of Incomplete Information, private data must be utilized, and to create fair games, randomness must be utilized. Randomness can also be utilized to generate unpredictable mazes, puzzles and maps, to roll dice, to shuffle cards and cubes, to create gaming AIs, and to add "chaos" in order to enhance in-game experiences.`,
+                `Traditional blockchains like Ethereum don’t have data privacy or on-chain randomness, therefore gaming creators resort to centralized solutions. This makes for less fair and transparent games, and also leads to non-ideal UX at times (getting randomness from off-chain sources takes time).`,
+                `On Secret Network, all contract’s data is private by default. Only the contract can read its own state, and only the transaction sender can read the transaction inputs and outputs. By utilizing private state, contracts can store a private entropy pool and from it derive private random numbers instantly and at will.`,
               ],
+              requirements: [
+                `Implementation of blockchain gaming app on Secret Network`,
+                `Write contracts using CosmWasm`,
+                `Utilize private data (Game of Incomplete Information)`,
+                `Utilize on-chain randomness `,
+                `User interface in a mobile app or a web browser`,
+                `Using Keplr is optional`,
+                `May implement a simple local wallet for better UX`,
+              ],
+              sources: {
+                'Awesome Secret':
+                  'https://github.com/SecretFoundation/awesome-secret',
+                'Secret NFTs Code':
+                  'https://github.com/baedrik/snip721-reference-impl',
+                'Secret NFTs Docs':
+                  'https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-721.md',
+                'Secret NFTs Keplr':
+                  'https://github.com/enigmampc/snip20-reference-impl/pull/22',
+                'Running a local test chain':
+                  'https://github.com/enigmampc/snip20-reference-impl/blob/9d8e9d1/Makefile#L71-L76',
+                'Compiling a contract':
+                  'https://github.com/enigmampc/snip20-reference-impl/blob/9d8e9d1/Makefile#L61-L66',
+                'Implementing a simple local wallet for better UX':
+                  'https://github.com/enigmampc/SecretHoldEm/blob/57898fd/gui/src/App.js#L80-L116',
+              },
             },
           ],
         },
@@ -333,7 +745,160 @@ export default {
           info: 'Earth Sustainability and Ecological Regeneration on Cosmos SDK',
           prize: 'Earth Prize',
           details:
-            'The ultimate purpose of the Internet of Blockchains is to empower people everywhere with digital technologies that enable communities to prosper, regenerate the planet, and respond more effectively to the climate crisis. Change the state of the planet by building modules, accessible apps and integrations for local currencies, self-sovereign identity, non-fungible impact tokens, verification oracles, decentralised impact exchanges, and earth intelligence data. This is the Interchain Earth Mission!',
+            'The ultimate purpose of the Internet of Blockchains is to empower people everywhere with digital technologies that enable communities to prosper. When communities prosper, they can regenerate the planet, and respond more effectively to the climate crisis. Change the state of the planet by building modules, accessible apps and integrations for local currencies, self-sovereign identity, non-fungible impact tokens, verification oracles, decentralised impact exchanges, and earth intelligence data. This is the Interchain Earth Mission!',
+          challenges: [
+            {
+              type: 'Regen Network',
+              info: [
+                `Regen Network is a platform for a thriving planet, that aligns economics with ecology to drive regenerative land management. Regen Network is soon approaching its first mainnet upgrade, which will include the launch of the first module for representing carbon credits (“ecocredits” on Regen Network) as on-chain assets on a Cosmos SDK-based blockchain.`,
+                `Regen Network's challenge for HackAtom VI under the EARTH category is to bridge ecocredits into the interchain ecosystem—by implementing an IBC application that allows users to move these new types of ecological assets across different blockchains.`,
+                `Ecocredits are more feature rich than other familiar standards such as ERC-20 tokens, and allow for additional ecologically pertinent metadata, as well as the ability for a holder to “retire” these credits—thus claiming the credit as an “offset” in carbon accounting terms. As such, your submission should take into account these nuances and provide for cross-chain access to metadata, as well as cross-chain capabilities for retiring credits.`,
+              ],
+              requirementsInfo: `The challenge submission should include:`,
+              requirements: [
+                `The challenge submission should include:A complete IBC application in its own repository`,
+                `Documentation of the specification and functionality`,
+                `A readme with instructions for use`,
+                `A demo showcasing cross-chain ecocredit transfer & retirement using a fork of regen-ledger and a testnet of another IBC ecocredit enabled blockchain.`,
+                `Bonus points will be provided for extending this functionality into a dApp where end-users can issue, transfer, and retire ecocredits in a cross-chain capable way.`,
+              ],
+              sources: {
+                'Regen Ledger': 'http://github.com/regen-network/regen-ledger',
+                'Ecocredit Module Implementation':
+                  'https://github.com/regen-network/regen-ledger/tree/release/v2.0.x/x/ecocredit',
+                'Ecocredit Module Docs':
+                  'https://docs.regen.network/modules/ecocredit/',
+                'IBC Custom Application Docs':
+                  'https://ibc.cosmos.network/main/ibc/apps.html',
+              },
+            },
+            {
+              type: 'Co-Sponsored by Grant.fish and Juno',
+              info: [
+                `Juno is an interoperable smart contract network that is highly scalable, robust, secure, and easy to deploy. Grant.fish is a validator operated by stake.fish that has launched with the Cosmos Hub 3 upgrade. Both believe that the ultimate purpose of the Internet of Blockchains is to empower people everywhere with digital technologies that enable communities to prosper. When communities prosper, they can regenerate the planet and respond more effectively to the climate crisis.`,
+                `For this important challenge, Juno and grant.fish are teaming up to ask you to change the state of the planet by building modules, accessible apps, and integrations for local currencies, self-sovereign identity, non-fungible impact tokens, verification oracles, decentralized impact exchanges, and earth intelligence data.`,
+                `Create something that can leverage the power of the Juno platform and Cosmos IBC functionality that can support carbon emission reduction initiatives. Identifying ways to tie in existing Juno functionality with regenerative-focused networks like Regen Network could be a great opportunity as well.`,
+              ],
+              requirements: [
+                `Use the Juno platform and Cosmos IBC.`,
+                `You may find it helpful to use the Regen Network as well for its specific use case in regenerative climate-focused applications.`,
+              ],
+              sources: {
+                'docs Junochain': 'https://docs.junochain.com/',
+                'docs Cosmos':
+                  'https://docs.cosmos.network/master/ibc/overview.html',
+                'docs Regen': 'https://docs.regen.network/',
+              },
+            },
+            {
+              type: 'IXO Foundation',
+              info: [
+                `Humanity is on the brink of a fundamental state-transition into planetary chaos. Erratic weather patterns and natural disasters resulting from flooding, droughts and wild-fires are becoming more frequent each year, as climate-change accelerates. Mass human migrations away from disaster zones are already beginning and we see conflicts and famine. Re-emerging tropical diseases and lethal new infectious agents, such as COVID-19, threaten human and animal life. Natural resources are being depleted at an alarming rate, way beyond the planetary boundaries for sustainability, and imperial wars to control and own these resources have already begun!`,
+                `What can we do to avoid mass extinctions of life-forms on Earth and to reverse the threat of losing centuries of human progress?`,
+                `We must develop responses to the Earth Crisis using anti-fragile digital technologies and data about the state of the world that is verifiable and increases our intelligence. The ultimate sense-and-response system must become globally distributed and enable intelligent, rapid, effective local coordination, with incentives for people to take action, and to get sufficient resources to flow where these are most needed.`,
+                `The ixo-Cosmos Internet of Impact Hub and connected sovereign Impact Zone networks can provide the blockchain infrastructure needed to respond to the Earth Crisis. ixo describes the Internet of Impact as a global digital immune system for humanity.`,
+                `Your challenge is to build and demonstrate applications using the Internet of Impact, or software components that add capabilities to The Impact Stack, for preventing and responding to specific types of real-world Earth Crisis events.`,
+                `You will collaborate with Problem-owners who have place-based or domain-specific knowledge and expertise about use cases that may range from making earth state observations for early-warning systems, to financing earth state-changes, to enable local citizen action, and to create global change.`,
+                `This is an enormous, urgent opportunity space of the highest priority, in which to apply your skills, connect and interoperate with existing systems, integrate the latest AI technologies, and build better alternative decentralized financing and data verification mechanisms.`,
+              ],
+              requirements: [
+                `<b>Demonstrate a solution for a specific real-world use-case</b> that is ideally built in collaboration with a problem-owner who understands an Earth Crisis events domain. For instance, The Red Cross International Disaster Bonds insurance mechanism for rapidly delivering relief financing to communities threatened by natural disasters. The Earth Crisis problem space is rich with opportunities, so we look forward to seeing really interesting use cases that address real needs.`,
+                `<b>Build your solution on the Internet of Impact</b> using the ixo-Blockchain SDK. The blockchain base layer can either use the current Go modules and capabilities implemented in the ixo Pandora-4 Testnet (which has the same configuration as the ImpactHub-3 main-net), or you can build and configure new chains that include base ixo-Blockchain modules, with additional modules imported from the Cosmos SDK, or other projects. You may even decide to build your own custom module/s, using the Cosmos SDK framework, or implement smart contracts–for instance, using the CosmWasm module.`,
+                `<b>Create entities with specific roles and capabilities</b> in your solution, using ixo Decentralized Identifiers (DIDs) and combinations of the following entity types:
+                  <ul>
+                    <li><b>Agents</b> that are Individuals or groups with Self-sovereign Digital Identity.</li>
+                    <li><b>Projects</b> for managing agents to finance, deliver, claim and verify pre-defined results. </li>
+                    <li><b>Investments</b> for forming and distributing capital assets to invest into other entities, using sustainable DeFi mechanisms, such as ixo Alphabonds.</li>
+                    <li><b>Oracles</b> that provide trusted information from the real-world, or offer prediction services for proofing and verifying claims, personalising services, prescribing interventions, preventing risks, protecting against threats, and enabling more effective human participation in decision-making. </li>
+                    <li><b>Assets</b> that are tokenized using Interchain Identifiers, to represent any digital asset types such as tokenized Carbon Credits or other classes of Impact Tokens, tokenized titles and rights over physical assets, tokenized data assets, etc.</li>
+                    <li><b>Templates</b> that encode the claims and data models for the Internet of Impact Linked-data Graph, which enable users to quickly configure new entities from template libraries.</li>
+                    <li><b>Cells</b> for coordinating groups of agents with a shared purpose, including through DAOs mechanisms.</li>
+                  </ul>
+                `,
+                `<b>Provide a compelling user interface</b> to demonstrate from the target user’s perspective how the solution works to meet their needs. Using personas and user journey maps would be helpful in your presentation of the solution. You can build your interface using the ixo-Webclient (React, Typescript), with the option to add new features and systems integrations into the current version of the web-client. Alternatively, you can build entirely new client applications, using the ixo-Client SDK and javascript libraries. For instance, an IoT device client that feeds information into the  integrating IoT devices with the ixo system.`,
+                `<b>Consider building service integrations</b> that extend the capabilities of the Internet of Impact to receive information and services from other Web3 or Web 2.0 networks, and/or to provide information and services into other networks.`,
+              ],
+              sources: {
+                'The ixo Foundation Github Repo':
+                  'https://github.com/ixofoundation',
+                'ixo Developer Documentation':
+                  'https://docs.ixo.foundation/ixo/',
+                'Risk-Adjusted Bonding Curves':
+                  'https://github.com/BlockScience/Risk-Adjusted-Bonding-Curves',
+                'Pandora Testnet': 'https://testnet.ixo.world',
+                'ixo Web Application UAT instance':
+                  'https://app-uat.ixo.world/',
+                'ixo Discord community ': 'https://discord.gg/mCJue97UZa',
+                'ixo Discourse discussion forum': 'https://forum.ixo.world',
+                'Developers Slack for HackAtom':
+                  'https://join.slack.com/share/enQtMjY2ODY2NzYyMDU3Ni0yMmRjNWNjY2U2ZmQyZDg0YmJhYzkzMWYxMzg3MzM2MWNlMjU1MDhkMTk1ZTQ4NTMxNmJlMGQzZTA2NjMyYjA5',
+                'Code with Us workshop on the ixo Bonds Module':
+                  'https://www.youtube.com/watch?v=pIpVDJLbKFQ',
+                'AI for Good Neural Network':
+                  'https://aiforgood.itu.int/neural-network/',
+              },
+            },
+            {
+              type: 'IXO Foundation - The Earth Tokens Challenge',
+              info: [
+                `For this challenge, “Earth Tokens” are defined as classes of tokens that are created and used for the purpose of sustainable socio-economic development, climate action, and ecological regeneration.`,
+                `Tokenization is transforming how people are incentivized, how decentralized economies and communities are secured and governed, how capital gets formed and allocated, how products and services are financed, and how digital or physical assets are used for financial or non-financial applications.`,
+                `Across this wide range of applications, there are many different classes of tokens. Each token class has a unique set of token properties and token behaviors.`,
+                `The Interchain Identifier (IID) Specification describes how to configure various classes of tokens, using token templates and standards that are designed to be interoperable across all blockchain networks, and addressable from the web.`,
+              ],
+              moreInfo: [
+                `Consider these 3 use-cases as examples of how different classes of Earth Tokens could be configured:`,
+                `<ul>
+                  <li><b>Community Currency Tokens</b> enable people to exchange their time, goods, and services to grow a local economy. A token issuer may define a class of fungible, fixed-supply tokens that can only be transacted between identified accounts with verifiable credentials.</li>
+                  <li><b>Mutual Credit Tokens</b> enable small businesses to transact with less reliance on external capital and this token class may have more characteristics of non-fungible tokens, when they are linked to verifiable claims about the provenance of goods produced–for instance, in sustainable supply-chains, or if these tokens accord the holder an automated right to be paid for invoices when orders are delivered.</li>
+                  <li><b>Renewable Energy Tokens</b> enable independent power producers to sell certified green electricity, or to claim Carbon Credits that can be sold as offsets. Non-fungible Renewable Energy Certificate (REC) tokens may include the right for a token-holder to mint fungible fractional units of the REC tokens, to trade for electricity supply.</li>
+                </ul>`,
+                `These examples only begin to demonstrate the incredible potential for configuring classes of tokens for different Earth Token use-cases. For this challenge, you will build and demonstrate innovative ways for Earth Tokens to be issued, traded, and used in Sustainable DeFi and Regenerative Finance (ReFi) applications.`,
+                `Suggested areas for innovation include (but are not limited to):`,
+                `<ul>
+                  <li>Great UX for creating and using Token Templates to mint and different classes of Earth Tokens.</li>
+                  <li>Decentralized marketplace mechanisms for trading different classes of Earth Tokens. This may include new types of services that enable tokens of different classes to be bought or sold, auctioned, used as collateral, lent or borrowed, used as offsets, etc. </li>
+                  <li>Automated market-makers for trading heterogeneous token classes, such as a liquidity mechanism for pooling fungible with non-fungible token classes.</li>
+                  <li>Authorization Capabilities (zCaps) to provide secure delegated authorization mechanisms for interacting with token services.</li>
+                  <li>Clever ways of using Liquid Staking or other token derivatives, to unlock capital for sustainable development and ecological regeneration.</li>
+                  <li>Software tooling or integrations that further enable Earth Token use-cases.</li>
+                </ul>`,
+              ],
+              requirements: [
+                `Address a real-world need that is relevant to the Interchain Earth Mission, based on a real or fictitious use-case that has a great user story.`,
+                `Implement the Interchain Identifiers (IID) specification and Token Templates.`,
+                `Use the standard Cosmos SDK modules, and/or add new features to existing Cosmos modules, and/or create new module/s.`,
+                `(Optionally) build on the ixo-Webclient, with the possibility of adding new features and/or integrations. `,
+                `(Optionally) contribute new software tooling for implementers of Earth Token applications.`,
+              ],
+              sources: {
+                'Interchain Identifiers and Tokens Specifications':
+                  'https://w3id.org/earth/ns',
+                'Cosmos SDK Modules':
+                  'https://docs.cosmos.network/v0.42/building-modules/intro.html',
+                'InterWork Alliance Token Taxonomy Framework':
+                  'https://docs.cosmos.network/v0.42/building-modules/intro.html',
+                'BlockScience Community Currencies ':
+                  'https://github.com/BlockScience/Community_Inclusion_Currencies',
+                'The ixo Foundation Github Repo.':
+                  'https://github.com/ixofoundation',
+                'ixo Developer Documentation':
+                  'https://docs.ixo.foundation/ixo/',
+                'Risk-Adjusted Bonding Curves':
+                  'https://github.com/BlockScience/Risk-Adjusted-Bonding-Curves',
+                'ixo Pandora Testnet': 'https://testnet.ixo.world',
+                'ixo Web Application UAT': 'https://app-uat.ixo.world/',
+                'ixo Discord community': 'https://discord.gg/mCJue97UZa',
+                'ixo Discourse discussion forum ': 'https://forum.ixo.world',
+                'Developers Slack for HackAtom':
+                  'https://join.slack.com/share/enQtMjY2ODY2NzYyMDU3Ni0yMmRjNWNjY2U2ZmQyZDg0YmJhYzkzMWYxMzg3MzM2MWNlMjU1MDhkMTk1ZTQ4NTMxNmJlMGQzZTA2NjMyYjA5',
+                'Code with Us workshop on the ixo Bonds Module':
+                  'https://www.youtube.com/watch?v=pIpVDJLbKFQ',
+                'Peoples Money':
+                  'https://unsdg.un.org/resources/peoples-money-harnessing-digitalization-finance-sustainable-future',
+              },
+            },
+          ],
         },
       ],
     }

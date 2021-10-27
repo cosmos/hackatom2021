@@ -19,12 +19,12 @@
           <tm-collapse accordion>
             <div v-for="(event, key) in events" :key="event.title">
               <tm-collapse-item
-                :iconTop="true"
+                :icon-top="true"
                 :disabled="!event.details && !event.url"
                 :light="isLight(key)"
-                :mobileLight="true"
-                :hideBorder="hideBorder(key)"
-                :mobileBottom="true"
+                :mobile-light="true"
+                :hide-border="hideBorder(key)"
+                :mobile-bottom="true"
               >
                 <div slot="header">
                   <div
