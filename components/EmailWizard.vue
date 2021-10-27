@@ -4,7 +4,7 @@
       <div v-show="step === 0">
         <div class="tm-grid-base">
           <div class="wizard__col">
-            <div class="tm-title tm-lh-title tm-rf2 tm-bold">
+            <div class="tm-title tm-lh-title tm-rf4 tm-rf2-m-up tm-bold">
               Don’t miss an update
             </div>
             <div
@@ -68,7 +68,7 @@
 
       <div v-show="step === 1" class="wizard__state _success tm-rf0 tm-lh-copy">
         <div class="tm-grid-base">
-          <div class="wizard__col">
+          <div class="wizard__col _success">
             <img
               src="~/assets/images/success-mails.svg"
               class="success-graphics"
@@ -197,17 +197,27 @@ export default {
 
 // Form
 .wizard
-  padding: var(--spacing-9) var(--spacing-10)
+  padding: var(--spacing-8) var(--spacing-6)
   border-radius: var(--spacing-4)
   background: #171717
   // max-width 30.5rem
   // center()
+  @media $breakpoint-xl
+    padding: var(--spacing-9) var(--spacing-10)
   &__col
     grid-column 1 / -1
     @media $breakpoint-medium
       grid-column span 4
-    @media $breakpoint-large
+    @media $breakpoint-xl
       grid-column span 6
+    & + &
+      margin-top var(--spacing-8)
+      @media $breakpoint-medium
+        margin-top 0
+    &._success
+      display flex
+      align-items center
+      justify-content center
   &__state
     // &._success
     //   max-width 20.4375rem
@@ -225,7 +235,7 @@ export default {
     justify-content: flex-end
     &__fieldset
       display block
-      @media $breakpoint-medium
+      @media $breakpoint-large
         display flex
         gap var(--spacing-3)
       &__input
@@ -251,8 +261,10 @@ export default {
 
 .btn
   white-space nowrap
+  width 100%
   margin-top var(--spacing-3)
-  @media $breakpoint-medium
+  @media $breakpoint-large
+    width auto
     margin-top 0
 
 .info
@@ -261,6 +273,8 @@ export default {
   // margin-left auto
   // margin-right auto
   @media $breakpoint-medium
+    margin-top 0
+  @media $breakpoint-xl
     max-width none
     margin-top var(--spacing-6)
 

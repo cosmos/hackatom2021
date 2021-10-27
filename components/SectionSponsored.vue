@@ -201,6 +201,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.tm-grid-base
+  gap var(--grid-gap-x)
+
 .sponsor-card
   overflow hidden
   position relative
@@ -209,6 +212,8 @@ export default {
   border: 1px solid #333
   border-radius: var(--spacing-4)
   @media $breakpoint-large
+    grid-column span 4
+  @media $breakpoint-xl
     grid-column span 6
   &._gold
     display flex
@@ -225,22 +230,32 @@ export default {
       right 0
       bottom 0
       background-image url('~assets/images/bg/starport.jpg')
-      background-size inherit
-      background-position-x 5%
+      background-position-x 45%
       transition: transform .25s $ease-out
+      @media $breakpoint-medium
+        background-size inherit
+        background-position-x 5%
     &:hover,
     &:focus
       &:before
         transform: scale(1.03)
 
 .gold-sponsors
-  @media $breakpoint-large
+  @media $breakpoint-medium
     display flex
     gap: var(--grid-gap-x)
+    margin-top var(--spacing-6)
     > *
       width 50%
+  @media $breakpoint-xl
+    margin-top 0
   .logo-item
     transform-origin: center left
+  .sponsor-link
+    display block
+    margin-top var(--spacing-8)
+    @media $breakpoint-medium
+      margin-top 0
 
 .sponsor-link
   .logo-item
@@ -271,7 +286,7 @@ export default {
     margin-right calc(-1 * var(--wrap-gap))
     padding-left var(--wrap-gap)
     padding-right var(--wrap-gap)
-    @media $breakpoint-medium
+    @media $breakpoint-xl
       &._other
         margin-left -1.75rem
         margin-right 0
@@ -288,12 +303,12 @@ export default {
     &.animation
       animation: marquee 20s linear infinite
     &._other
-      @media $breakpoint-medium
+      @media $breakpoint-xl
         display none
         animation none
     &._other
       &:first-child
-        @media $breakpoint-medium
+        @media $breakpoint-xl
           display flex
           flex-wrap wrap
           gap var(--spacing-7)

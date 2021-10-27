@@ -182,7 +182,7 @@ export default {
 <style lang="stylus" scoped>
 .section
   position relative
-  @media $breakpoint-large
+  @media $breakpoint-xl
     margin-top var(--spacing-9)
   .tm-grid-base
     gap var(--spacing-8) var(--grid-gap-x)
@@ -196,11 +196,15 @@ export default {
   left: 50%
   background: radial-gradient(50.22% 50.22% at 50.22% 50.22%, #FB6464 0%, rgba(0, 0, 0, 0) 100%)
   filter: blur(42.0853px)
-  transform: translate(-105%, -50%)
+  transform: translate(-90%, -70%)
+  @media $breakpoint-medium
+    transform: translate(-105%, -50%)
 
 .judge-card
-  grid-column 1 / -1
-  @media $breakpoint-large
+  grid-column span 2
+  @media $breakpoint-medium
+    grid-column span 2
+  @media $breakpoint-xl
     grid-column span 3
 
 .images

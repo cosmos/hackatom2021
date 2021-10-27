@@ -4,6 +4,7 @@
       'open-item': maxHeight != '0px',
       disabled: disabled,
       light: light,
+      'mobile-light': mobileLight,
       'hide-border': hideBorder,
     }"
     class="tm-collapse-item"
@@ -18,7 +19,7 @@
       <span
         v-if="!notArrow"
         class="tm-collapse-item--icon-header"
-        :class="iconTop && '_top'"
+        :class="[iconTop && '_top', mobileBottom && '_mobile-bottom']"
       />
       <slot name="header" />
     </button>
@@ -51,6 +52,14 @@ export default {
       type: Boolean,
     },
     light: {
+      default: false,
+      type: Boolean,
+    },
+    mobileLight: {
+      default: false,
+      type: Boolean,
+    },
+    mobileBottom: {
       default: false,
       type: Boolean,
     },

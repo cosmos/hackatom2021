@@ -7,7 +7,8 @@
             Challenges and Prizes
           </p>
           <h2 class="mt-3 tm-title tm-lh-title tm-rf5 tm-bold">
-            Keep your eye on the prize
+            Keep your eye<br />
+            on the prize
           </h2>
         </div>
         <div class="col-right card">
@@ -48,7 +49,7 @@ export default {
 
 .col-left
   grid-column 1 / -1
-  @media $breakpoint-large
+  @media $breakpoint-xl
     grid-column span 4
     height 100%
     display flex
@@ -59,12 +60,15 @@ export default {
 
 .col-right
   grid-column 1 / -1
-  margin-top var(--spacing-8)
+  margin-top var(--spacing-11)
+  margin-bottom var(--spacing-8)
+  padding-bottom var(--spacing-12)
   @media $breakpoint-medium
     margin-top var(--spacing-8)
-  @media $breakpoint-large
+  @media $breakpoint-xl
     grid-column span 4
-    margin-top 0
+    margin 0
+    padding-bottom 0
   @media $breakpoint-xl
     grid-column 7 / span 6
     margin-top 0
@@ -90,7 +94,7 @@ export default {
     bottom auto
     width 30.7rem
     height 30.7rem
-  @media $breakpoint-large
+  @media $breakpoint-xl
     position relative
     right auto
     top auto

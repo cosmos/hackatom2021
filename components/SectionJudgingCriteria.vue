@@ -66,19 +66,35 @@ export default {
 <style lang="stylus" scoped>
 .section
   position relative
+  padding-top 20rem
+  margin-bottom var(--spacing-9)
+  @media $breakpoint-medium
+    padding-top var(--spacing-10)
   @media $breakpoint-large
     margin-top var(--spacing-9)
+    margin-bottom 0
   .tm-grid-base
     gap var(--spacing-8) var(--grid-gap-x)
 
 .graphics
   position absolute
-  top -5rem
-  left 44%
+  top -22rem
+  left 55%
   z-index -1
+  width 140vw
+  transform: translateX(-50%)
+  @media $breakpoint-medium
+    top -8rem
+    left 44%
+    width auto
+    transform: none
+  @media $breakpoint-large
+    top -5rem
 
 .sponsor-card
   grid-column 1 / -1
+  @media $breakpoint-medium
+    grid-column span 4
   @media $breakpoint-large
     grid-column span 4
 </style>

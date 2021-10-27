@@ -22,28 +22,31 @@
         </div>
       </kinesis-element>
 
-      <div
-        class="
-          tm-text-center tm-rf2 tm-rf4-m-up tm-rf3-l-up tm-lh-title tm-bold
-          countdown
-        "
-      >
-        Register for the Virtual HackAtom
-      </div>
+      <div class="header">
+        <div
+          class="
+            tm-text-center tm-rf2 tm-rf4-m-up tm-rf3-l-up tm-lh-title tm-bold
+            countdown
+          "
+        >
+          Register for the Virtual HackAtom
+        </div>
 
-      <div class="mt-7 tm-text-center">
-        <tm-button size="l" to-link="external" href="/">
-          Register Now <span class="icon__right">↗️</span>
-        </tm-button>
-      </div>
+        <div class="mt-7 tm-text-center">
+          <tm-button size="l" to-link="external" href="/">
+            Register Now <span class="icon__right">↗️</span>
+          </tm-button>
+        </div>
 
-      <div
-        class="
-          mt-7
-          tm-title tm-rf-1 tm-rf0-m-up tm-lh-copy tm-medium tm-text-center
-        "
-      >
-        In-Person Opening Ceremony, Lisbon - November 11
+        <div
+          class="
+            mt-7
+            bottom
+            tm-title tm-rf-1 tm-rf0-m-up tm-lh-copy tm-medium tm-text-center
+          "
+        >
+          In-Person Opening Ceremony, Lisbon - November 11
+        </div>
       </div>
     </div>
   </section>
@@ -141,6 +144,16 @@ export default {
   &__short
     @media $breakpoint-small
       display none
+
+.header
+  .countdown
+  .bottom
+    center()
+    max-width: 12rem
+    @media $breakpoint-medium
+      max-width: 25rem
+    @media $breakpoint-large
+      max-width: none
 
 .countdown
   margin-top var(--spacing-4)

@@ -22,7 +22,9 @@
                 :iconTop="true"
                 :disabled="!event.details && !event.url"
                 :light="isLight(key)"
+                :mobileLight="true"
                 :hideBorder="hideBorder(key)"
+                :mobileBottom="true"
               >
                 <div slot="header">
                   <div
@@ -315,7 +317,7 @@ export default {
       flex-direction column
       .day._mobile
         visibility hidden
-    @media $breakpoint-large
+    @media $breakpoint-xl
       grid-column span 4
       display grid
       grid-template-columns: repeat(2, 1fr)
@@ -327,15 +329,18 @@ export default {
     @media $breakpoint-medium
       grid-column span 4
       margin-top 0
-    @media $breakpoint-large
+    @media $breakpoint-xl
       grid-column span 7
 
 .avatars
+  width 2.5rem
+  margin-top var(--spacing-6)
   @media $breakpoint-medium
     position absolute
     top 0
     left 100%
     width 2.5rem
+    margin-top 0
     font-size 0
     img
       width 2.5rem
@@ -344,7 +349,7 @@ export default {
   grid-column 1 / -1
   @media $breakpoint-medium
     grid-column span 3
-  @media $breakpoint-large
+  @media $breakpoint-xl
     grid-column span 3
 
 .col-info
@@ -353,6 +358,6 @@ export default {
   @media $breakpoint-medium
     grid-column span 5
     margin-top 0
-  @media $breakpoint-large
+  @media $breakpoint-xl
     grid-column 5 / span 6
 </style>

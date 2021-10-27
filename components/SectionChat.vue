@@ -50,6 +50,7 @@ export default {
 .card
   overflow hidden
   position relative
+  padding 9.5rem var(--spacing-5) var(--spacing-5)
   background: #171717
   border-radius var(--spacing-4)
   @media $breakpoint-medium
@@ -58,13 +59,19 @@ export default {
     padding var(--spacing-9) var(--spacing-10)
   &__graphics
   &__info
+    position relative
+    z-index 1
     width 100%
     @media $breakpoint-xl
       width 50%
 
 .icon
   position relative
+  z-index 1
   display inline-block
+  margin-bottom var(--spacing-10)
+  @media $breakpoint-medium
+    margin-bottom 0
   &:after
     content: ''
     position absolute
@@ -77,7 +84,16 @@ export default {
 
 .graphics
   position absolute
-  top 60%
-  right 0
-  transform: translateY(-50%)
+  z-index 0
+  top 0
+  right 85%
+  transform: translate(50%, -50%)
+  @media $breakpoint-medium
+    top 60%
+    right 0
+    transform: translate(50%, -50%)
+  @media $breakpoint-large
+    transform: translate(35%, -50%)
+  @media $breakpoint-xl
+    transform: translate(15%, -50%)
 </style>

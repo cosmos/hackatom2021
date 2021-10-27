@@ -96,14 +96,13 @@ export default {
 .header
   grid-column 1 / -1
   @media $breakpoint-medium
-    grid-column 2 / span 6
     text-align center
   @media $breakpoint-xl
     grid-column 3 / span 8
 
 .info
   grid-column 1 / -1
-  @media $breakpoint-large
+  @media $breakpoint-xl
     grid-column 4 / span 6
 
 .video
@@ -118,17 +117,20 @@ export default {
   @media $breakpoint-medium
     width 100%
     margin 0
-  @media $breakpoint-large
-    &:before
-      content ''
-      position absolute
-      z-index -1
-      top 50%
-      left 50%
+  &:before
+    content ''
+    position absolute
+    z-index -1
+    top 50%
+    left 50%
+    transform: translate(-50%, -50%)
+    background: radial-gradient(42.6% 37.31% at 48.94% 55.57%, #13FFFF 0%, rgba(25, 110, 238, 0.849029) 18.23%, rgba(47, 60, 177, 0.32) 53.96%, rgba(0, 0, 0, 0) 100%)
+    @media $breakpoint-medium
+      width 65rem
+      height 65rem
+    @media $breakpoint-large
       width 105.5rem
       height 105.5rem
-      transform: translate(-50%, -50%)
-      background: radial-gradient(42.6% 37.31% at 48.94% 55.57%, #13FFFF 0%, rgba(25, 110, 238, 0.849029) 18.23%, rgba(47, 60, 177, 0.32) 53.96%, rgba(0, 0, 0, 0) 100%)
   video
     position absolute
     left 0
@@ -149,7 +151,7 @@ export default {
     height 3.75rem
     transform translate(-50%, -50%)
     transition transform .2s $ease-out
-    @media $breakpoint-large
+    @media $breakpoint-xl
       width 4.75rem
       height 4.75rem
     &:hover

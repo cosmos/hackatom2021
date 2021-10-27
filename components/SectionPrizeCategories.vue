@@ -12,11 +12,13 @@
                       {{ category.title }}
                     </div>
                   </div>
-                  <div class="mt-4 tm-grid-base">
-                    <div class="info tm-muted">
+                  <div class="tm-grid-base">
+                    <div class="mt-4 info tm-muted">
                       {{ category.info }}
                     </div>
-                    <div class="prize tm-title tm-lh-title tm-rf1 tm-medium">
+                    <div
+                      class="mt-4 prize tm-title tm-lh-title tm-rf1 tm-medium"
+                    >
                       {{ category.prize }}
                     </div>
                   </div>
@@ -27,7 +29,10 @@
                 <p class="tm-muted">
                   {{ category.details }}
                 </p>
-                <div v-if="category.challenges" class="mt-8 tm-grid-base">
+                <div
+                  v-if="category.challenges"
+                  class="challenges mt-8 tm-grid-base"
+                >
                   <div
                     v-for="(challenge, count) in category.challenges"
                     :key="`${category.title}_${count}`"
@@ -360,6 +365,9 @@ export default {
       grid-column span 6
       text-align right
 
+.challenges
+  gap var(--grid-gap-x)
+
 .challenge
   grid-column 1 / -1
   display flex
@@ -369,7 +377,5 @@ export default {
   border-radius var(--spacing-4)
   background-color #171717
   @media $breakpoint-medium
-    grid-column span 3
-  @media $breakpoint-large
     grid-column span 4
 </style>

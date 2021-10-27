@@ -2,20 +2,15 @@
   <section class="tm-section pt11">
     <div class="tm-section-container tm-container container">
       <div class="star" />
-      <div class="header tm-center">
+      <div class="header tm-center tm-text-center">
         <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
           Participate
         </div>
-        <h2
-          class="
-            mt-3
-            tm-title tm-rf5 tm-rf6-m-up tm-rf5-l-up tm-lh-title tm-bold
-          "
-        >
+        <h2 class="mt-3 tm-title tm-rf6 tm-rf5-l-up tm-lh-title tm-bold">
           Suit up, Cosmonaut
         </h2>
       </div>
-      <div class="tm-measure tm-center mt-8">
+      <div class="tm-measure tm-center mt-8 tm-text-center">
         <div class="info tm-lh-copy tm-normal">
           <p>
             The time has come to show us your skills and help build a
@@ -60,14 +55,14 @@ export default {
   top: 65%
   left: 50%
   background: radial-gradient(42.6% 37.31% at 48.94% 55.57%, #13FFFF 0%, rgba(25, 110, 238, 0.849029) 18.23%, rgba(47, 60, 177, 0.32) 53.96%, rgba(0, 0, 0, 0) 100%)
-  transform: translate(-100%, -50%)
-
-.header
-.info
+  transform: translate(-75%, -60%)
   @media $breakpoint-medium
-    text-align center
+    transform: translate(-100%, -50%)
 
 .btn
   & + &
-    margin-left var(--spacing-8)
+    margin-top var(--spacing-8)
+    @media $breakpoint-medium
+      margin-top 0
+      margin-left var(--spacing-8)
 </style>

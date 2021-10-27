@@ -32,7 +32,7 @@
         </div>
       </nav>
     </div>
-    <div class="row mt-9">
+    <div class="row">
       <div class="nav-bottom tm-rf-1 tm-lh-copy">
         <tm-link href="https://v1.cosmos.network/privacy">
           Privacy Policy
@@ -235,6 +235,9 @@ export default {
 
 .nav
   width 100%
+  display none
+  @media $breakpoint-medium
+    display block
   a
     color inherit
     border-radius $border-radius-2
@@ -271,8 +274,10 @@ export default {
   align-items center
   justify-content space-between
   & + &
-    padding-top var(--spacing-8)
-    border-top 1px solid var(--white-100)
+    @media $breakpoint-medium
+      margin-top var(--spacing-9)
+      padding-top var(--spacing-8)
+      border-top 1px solid var(--white-100)
 
 .logo
   display flex
@@ -287,8 +292,9 @@ export default {
   &__cosmos
     height 5.58rem
   &__container
-    width 42%
-    flex-shrink 0
+    @media $breakpoint-xl
+      width 42%
+      flex-shrink 0
 
 .nav-bottom
   text-align center
