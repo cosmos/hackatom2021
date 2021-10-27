@@ -66,16 +66,16 @@
                         </ul>
                       </div>
                     </div>
-                    <!-- <div class="mt-8">
+                    <div class="mt-8">
                       <tm-button
                         variant="text"
                         background-color="transparent"
                         color="var(--white)"
-                        @click.native="open(challenge)"
+                        @click.native="open(challenge, count)"
                       >
                         More details <span class="icon__right">&rarr;</span>
                       </tm-button>
-                    </div> -->
+                    </div>
                   </div>
                 </div>
               </div>
@@ -84,28 +84,119 @@
         </tm-collapse>
       </div>
     </div>
-    <!-- <modal-challenge :visible="showModal" /> -->
+    <tm-modal
+      :closeModal="closeModal"
+      v-if="currentItem"
+      v-bind="{
+        visible,
+        side: 'center',
+        boxShadow: '0 10px 25px 0 rgba(0,0,0,.15)',
+      }"
+    >
+      <div class="modal">
+        <icon-challenge class="mb-6 icon-challenge" />
+        <div
+          v-if="currentItem.type"
+          class="tm-overline tm-rf1 tm-lh-title tm-medium tm-muted"
+        >
+          {{ currentItem.type }}
+        </div>
+        <div class="mb-6 tm-title tm-lh-title tm-bold tm-rf4">
+          Challenge #{{ currentKey + 1 }}
+        </div>
+        <div class="tm-lh-copy tm-rf1 tm-normal tm-muted">
+          <div v-if="currentItem.info">
+            <p v-for="info in currentItem.info" :key="info" v-html="info" />
+          </div>
+          <div v-if="currentItem.moreInfo">
+            <p v-for="info in currentItem.moreInfo" :key="info" v-html="info" />
+          </div>
+          <ul v-if="currentItem.challenge" class="mt-5">
+            <li v-for="info in currentItem.challenge" :key="info">
+              {{ info }}
+            </li>
+          </ul>
+        </div>
+        <div class="mt-9" v-if="currentItem.context">
+          <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
+            Context
+          </div>
+          <div class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted">
+            <div v-if="currentItem.context">
+              <p
+                v-for="info in currentItem.context"
+                :key="info"
+                v-html="info"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-9"
+          v-if="currentItem.requirements || currentItem.requirementsInfo"
+        >
+          <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
+            Requirements
+          </div>
+          <div class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted">
+            <p v-if="currentItem.requirementsInfo">
+              {{ currentItem.requirementsInfo }}
+            </p>
+            <ul v-if="currentItem.requirements">
+              <li
+                v-for="info in currentItem.requirements"
+                :key="info"
+                v-html="info"
+              />
+            </ul>
+          </div>
+        </div>
+        <div class="mt-9" v-if="currentItem.stage">
+          <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
+            Stage of development
+          </div>
+          <div class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted">
+            <ul v-if="currentItem.stage">
+              <li v-for="info in currentItem.stage" :key="info" v-html="info" />
+            </ul>
+          </div>
+        </div>
+        <div class="mt-9" v-if="currentItem.sources">
+          <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
+            Resources
+          </div>
+          <div class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted">
+            <ul v-if="currentItem.sources" class="links">
+              <li
+                v-for="(info, key) in currentItem.sources"
+                :key="info"
+                class="links__item"
+              >
+                <tm-link :href="info" class="tm-link-external">
+                  {{ key }}
+                </tm-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </tm-modal>
   </section>
 </template>
 
 <script>
-// import TmButton from './TmButton.vue'
-// import ModalChallenge from './ModalChallenge.vue'
 import IconChallenge from '~/components/icons/IconChallenge.vue'
 
 export default {
   components: {
-    // TmButton,
-    // ModalChallenge,
     IconChallenge,
   },
   data() {
     return {
-      showModal: false,
+      currentKey: 1,
+      visible: false,
       currentItem: null,
       categories: [
-        // <a href='https://opensea.io/' target='_blank' rel='noopener noreferrer' class='tm-link'>https://opensea.io/</a>
-        // <a href="https://opensea.io/" target="_blank" rel="noopener noreferrer" class="tm-link">basic specs</a>
         {
           title: 'Ethereum on Cosmos',
           info: 'Ethereum projects on Cosmos SDK',
@@ -905,9 +996,13 @@ export default {
   },
   computed: {},
   methods: {
-    open(info) {
+    open(info, key) {
       this.currentItem = info
-      this.showModal = true
+      this.currentKey = key
+      this.visible = true
+    },
+    closeModal() {
+      this.visible = false
     },
   },
 }
@@ -943,4 +1038,24 @@ export default {
   background-color #171717
   @media $breakpoint-medium
     grid-column span 4
+
+.modal
+  padding var(--spacing-7) var(--spacing-5)
+  @media $breakpoint-medium
+    padding var(--spacing-10) var(--spacing-10)
+  .icon-challenge
+    width 1.5rem
+    height auto
+    @media $breakpoint-medium
+      width 4rem
+
+.links
+  list-style none
+  padding 0
+  &__item
+    padding var(--spacing-5) 0
+    list-style none
+    border-bottom 1px solid var(--border)
+    &:last-child
+      border-bottom 0
 </style>

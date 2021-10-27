@@ -2,21 +2,18 @@
   <div>
     <transition name="overlay" appear>
       <div
-        v-if="visible && visibleLocal"
+        v-if="visible"
         ref="overlay"
         class="overlay"
         :style="{
           'background-color': backgroundColor || 'rgba(0, 0, 0, 0.35)',
         }"
         @click="close"
-        @touchstart="touchstart"
-        @touchmove="touchmove"
-        @touchend="touchend"
       />
     </transition>
     <transition :name="`sidebar__${side}`" appear @after-leave="emitVisible()">
       <div
-        v-if="visible && visibleLocal"
+        v-if="visible"
         ref="sidebar"
         :class="['sidebar', `sidebar__side__${side}`]"
         :style="style"
@@ -36,32 +33,32 @@
           @scroll="setScrolling(true)"
         >
           <slot />
-        </div>
-        <div
-          v-if="side === 'center' && buttonClose"
-          class="close"
-          @click="close"
-        >
-          <svg
-            class="close__icon"
-            width="100%"
-            height="100%"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            v-if="side === 'center' && buttonClose"
+            class="close"
+            @click="close"
           >
-            <path
-              d="M4 4l16 16m0-16L4 20"
-              stroke-width="1.5"
-              stroke-linecap="round"
-            />
-          </svg>
+            <svg
+              class="close__icon"
+              width="100%"
+              height="100%"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 4l16 16m0-16L4 20"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </transition>
   </div>
 </template>
 
-<style scoped>
+<style lang="stylus" scoped>
 .overlay {
   position: fixed;
   top: 0;
@@ -90,6 +87,10 @@
   right: 0;
   margin: 1rem;
   cursor: pointer;
+  transition: transform 0.25s ease-out;
+}
+.close:hover {
+  transform: scale(1.1);
 }
 .close__icon {
   display: block;
@@ -140,7 +141,7 @@
   height: 100vh;
 }
 .sidebar__content {
-  background: white;
+  background: #171717;
   position: absolute;
   pointer-events: all;
   overflow-y: scroll;
@@ -157,7 +158,7 @@
 .sidebar__content.sidebar__content__side__center {
   pointer-events: all;
   position: absolute;
-  width: var(--sidebar-width, 600px);
+  width: var(--sidebar-width, 61.3125rem);
   max-width: var(--sidebar-max-width, 90%);
   height: var(--sidebar-height, auto);
   max-height: var(--sidebar-max-height, none);
@@ -240,7 +241,10 @@
 @media screen and (max-width: 500px) {
   /* TODO: hotfix for https://github.com/cosmos/cosmos.network/pull/832#pullrequestreview-413650189 */
   .sidebar__content.sidebar__content__side__center {
-    margin-top: 3rem;
+    padding-top: 3rem;
+  }
+  .close {
+    top: 2.6rem;
   }
 }
 </style>
@@ -322,12 +326,16 @@ export default {
      */
     buttonClose: {
       type: Boolean,
-      default: false,
+      default: true,
+    },
+    closeModal: {
+      type: Function,
+      default: () => {},
     },
   },
   data() {
     return {
-      visibleLocal: true,
+      visibleLocal: false,
       startX: null,
       startY: null,
       currentX: null,
@@ -356,20 +364,6 @@ export default {
         '--sidebar-margin-top': this.marginTopComputed + 'px',
         '--sidebar-translate-x': `${this.translateX || 0}px`,
         '--sidebar-translate-y': `${this.translateY || 0}px`,
-      }
-    },
-  },
-  // watch: {
-  //   visible(becomesVisible) {
-  //     if (becomesVisible) {
-  //       this.visibleLocal = true
-  //     }
-  //   },
-  // },
-  watch: {
-    visible(newVal) {
-      if (newVal) {
-        this.visibleLocal = true
       }
     },
   },
@@ -412,6 +406,7 @@ export default {
     },
     close(e) {
       this.visibleLocal = null
+      this.closeModal()
       this.$refs.overlay.style['pointer-events'] = 'none'
       if (e.clientX && e.clientY) {
         const doc = document.elementFromPoint(e.clientX, e.clientY)
