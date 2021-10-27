@@ -12,6 +12,7 @@
       <section-schedule />
       <section-incoming-transmissions />
       <section-participate />
+      <section-faq />
     </kinesis-container>
   </main>
 </template>

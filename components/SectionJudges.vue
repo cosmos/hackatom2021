@@ -189,6 +189,7 @@ export default {
 
 .graphics
   position absolute
+  z-index: -1
   width 111rem
   height 111rem
   top: 37%
