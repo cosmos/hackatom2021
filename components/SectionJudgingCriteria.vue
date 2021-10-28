@@ -18,9 +18,9 @@
           <div class="mt-6 tm-title tm-rf2 tm-lh-title tm-bold">
             {{ item.name }}
           </div>
-          <p class="mt-5 tm-lh-title tm-muted tm-rf0">
-            {{ item.info }}
-          </p>
+          <ul class="mt-5 tm-lh-title tm-muted tm-rf0">
+            <li v-for="text in item.info" :key="text">{{ text }}</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -33,29 +33,62 @@ export default {
     return {
       criteria: [
         {
-          name: 'Technicality',
-          icon: 'terminal',
-          info: 'How are the chops on your team? Did your team demonstrate 10x capabilities? Did you execute clean code applying new or difficult techniques across a well-thought-out stack? This rating is for how much this challenge got the nerd in you to really geek out!',
-        },
-        {
-          name: 'Originality',
-          icon: 'bulb',
-          info: 'Have we seen your project before? Is this the same old project from the last hackathon in a new package? Is this something that you have not thought about or imagined before? This category is about evaluating new and amazing ideas.',
-        },
-        {
-          name: 'UX / UI',
+          name: 'Execution',
           icon: 'layout',
-          info: 'Who cares what it does—how does it feel? Is there a `wow` factor? Does it click into place? Are the judges surprised by how easy something was? This score is for a tight execution and user experience—rather than the substance, it`s the packaging around the project.',
+          info: [
+            `CLI commands work `,
+            `Frontend works without errors`,
+            `The setup is explained well`,
+            `Project runs as expected, behavior is reproducible`,
+          ],
+        },
+        {
+          name: 'Code Quality',
+          icon: 'terminal',
+          info: [
+            `High-quality code that can be read by a human
+            Code is commented throughout
+            Variable names are well-chosen
+            The code is split into logical functions
+            Tests are provided that confirm the business logic
+            The project is production-ready`,
+          ],
+        },
+        {
+          name: 'Innovation',
+          icon: 'bulb',
+          info: [
+            `The project does something that is innovative
+            The project does something new
+            The project simplifies something complex 
+            The project provides a useful contribution to the ecosystem that could be used in the future`,
+          ],
+        },
+        {
+          name: 'Technical Documentation and Usability',
+          icon: 'users',
+          info: [
+            `The project has an explanatory README file
+            Documentation includes instructions that explain how to use the project
+            Conceptual information describes the benefits of the project
+            Reference content is provided 
+            Project is usable and provides a low-friction user experience (UX)
+            Project user interface (UI) is easy to follow
+            Users can successfully complete the intended task`,
+          ],
         },
         {
           name: 'Utility / Competitiveness',
-          icon: 'world',
-          info: 'Does your project solve the existing problem? Is the market aware of this problem? Is your product able to compete with similar products on the market? This category is for the product side of your project.',
-        },
-        {
-          name: 'Presentation',
-          icon: 'users',
-          info: 'Quality often speaks for itself but sometimes help is needed. Is the team able to present their work in a clear and engaging way? Is the code well packaged? Is the README legible? This is an assessment of the demo video submitted with the project and how well a project is presented.',
+          icon: 'video',
+          info: [
+            `The video is clear and engaging
+            The project value is clearly explained 
+            The project is demonstrated in the video
+            The video is high quality and includes audio and visual
+            The video is in English
+            The video includes subtitles
+            The video is 2 to 5 minutes `,
+          ],
         },
       ],
     }
