@@ -8,7 +8,7 @@
     <section-prize-categories />
     <section-chat />
     <section-sponsored />
-    <!-- <section-judging-criteria /> -->
+    <section-judging-criteria />
     <section-judges />
     <section-schedule />
     <section-incoming-transmissions />

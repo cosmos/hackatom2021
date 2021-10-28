@@ -191,7 +191,7 @@ export default {
           people: [
             {
               name: 'Callum Waters',
-              avatar: 'avatar',
+              avatar: 'callum',
               company: 'Interchain Foundation',
             },
           ],

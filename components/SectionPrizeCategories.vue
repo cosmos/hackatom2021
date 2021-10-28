@@ -68,21 +68,13 @@
                         {{ challenge.type }}
                       </div>
                       <div class="mb-5 tm-title tm-lh-title tm-bold tm-rf2">
-                        Challenge #{{ count + 1 }}
+                        {{ challenge.title }}
                       </div>
                       <div class="tm-lh-copy tm-rf-1 tm-normal tm-muted">
-                        <div v-if="challenge.info">
-                          <p
-                            v-for="info in challenge.info"
-                            :key="info"
-                            v-html="info"
-                          />
-                        </div>
-                        <ul v-else>
-                          <li v-for="info in challenge.challenge" :key="info">
-                            {{ info }}
-                          </li>
-                        </ul>
+                        <p
+                          v-if="challenge.preview"
+                          v-html="challenge.preview"
+                        />
                       </div>
                       <div class="mt-9 prizes-list" v-if="challenge.prizes">
                         <div
@@ -108,7 +100,7 @@
                         variant="text"
                         background-color="transparent"
                         color="var(--white)"
-                        @click.native="open(challenge, count)"
+                        @click.native="open(challenge)"
                       >
                         More details <span class="icon__right">&rarr;</span>
                       </tm-button>
@@ -139,8 +131,7 @@
           {{ currentItem.type }}
         </div>
         <div class="mb-6 tm-title tm-lh-title tm-bold tm-rf4">
-          <span v-if="currentKey">Challenge #{{ currentKey + 1 }}</span>
-          <span v-else>{{ currentItem.title }}</span>
+          {{ currentItem.title }}
         </div>
         <div
           v-if="currentItem.details"
@@ -270,7 +261,6 @@ export default {
   },
   data() {
     return {
-      currentKey: 1,
       visible: false,
       currentItem: null,
       prize: [
@@ -302,9 +292,12 @@ export default {
           challenges: [
             {
               type: 'Bitsong',
+              title: 'Bitsong Challenge',
+              preview: `Bitsong's HackAtom VI challenge proposes the migration of smart contracts on the popular OpenSea NFT marketplace to Cosmos SDK.`,
               info: [
-                "BitSong is a project dedicated to musicians and their fans that aims to overcome the bureaucratic and economic obstacles within this industry and reward artists and users for simply using the platform. Bitsong's HackAtom VI challenge proposes the migration of smart contracts on the popular OpenSea (<a href='https://opensea.io/' target='_blank' rel='noopener noreferrer' class='tm-link'>https://opensea.io/</a>) NFT marketplace to Cosmos SDK. Participants should use the new NFT module that BitSong developed for its own blockchain, which contains an extraordinary feature—the introduction of perpetual royalties (a new standard for splitting royalties). Specifications can be found <a href='https://github.com/bitsongofficial/chainmodules/tree/master/x/nft/spec' target='_blank' rel='noopener noreferrer' class='tm-link'>here</a>.",
-                "In addition to BitSong's NFT module, there is an <b>Auction</b> where users can buy and sell their NFTs through a marketplace, providing participants with everything they need to bring Ethereum-based NFTs to Cosmos. Specifications can be found <a href='https://github.com/bitsongofficial/chainmodules/tree/master/x/auction/spec' target='_blank' rel='noopener noreferrer' class='tm-link'>here</a>.",
+                `BitSong is a multifunctional blockchain-based ecosystem built to empower the music industry. It unites artists, fans, and distributors in an environment where music, merchandise, and fan loyalty are assets of value. BitSong’s decentralized ecosystem of services provides the global music community with a trustless marketplace for music streaming, Fan Tokens, and NFTs, powered by the BTSG token.`,
+                `Bitsong's HackAtom VI challenge proposes the migration of smart contracts on the popular OpenSea (<a href='https://opensea.io/' target='_blank' rel='noopener noreferrer' class='tm-link'>https://opensea.io/</a>) NFT marketplace to Cosmos SDK. The new Module should be developed based on the NFT module released by BitSong, which also contains the introduction of perpetual royalties (the standard for royalties splitting). Specifications can be found <a href='https://github.com/bitsongofficial/chainmodules/tree/master/x/auction/spec' target='_blank' rel='noopener noreferrer' class='tm-link'>here</a>.`,
+                `The BitSong Auction Module also has to be taken into consideration for the development. The Auction module is needed for users to buy and sell their NFTs through a marketplace and its specifications can be found <a href='https://opensea.io/' target='_blank' rel='noopener noreferrer' class='tm-link'>here</a>.`,
               ],
               requirements: [
                 'The module development must be done using Golang.',
@@ -325,6 +318,8 @@ export default {
             },
             {
               type: 'Evmos',
+              title: 'Evmos Challenge',
+              preview: `Evmos aims to be the EVM Hub of Cosmos, making it easy for smart contracts to deploy and communicate within the Cosmos ecosystem.`,
               info: [
                 'Evmos is an application-agnostic chain that will be interoperable with the Ethereum mainnet, EVM-compatible environments, and other BFT chains via IBC, making it easy for users and developers to interact seamlessly between chains. Evmos aims to be the EVM Hub of Cosmos, making it easy for smart contracts to deploy and communicate within the Cosmos ecosystem.',
               ],
@@ -377,7 +372,9 @@ export default {
             'Starport is the all-in-one platform to build, launch, and maintain any crypto application on a sovereign and secured blockchain. Starport CLI is a powerful developer tool for scaffolding blockchains, generating code, running a node in development, and much more. Builders will need to implement new scaffolding functionality or improve the functionality, reliability, or flexibility of Starport CLI or introduce new functionality that is useful for a large number of developers.',
           challenges: [
             {
-              type: 'Code Scaffolding',
+              type: 'Starport',
+              title: 'Code Scaffolding Challenge',
+              preview: `Currently, Starport depends on string placeholders being present in modules’ files. Placeholders work, but if another solution (likely, based on code analysis) is found, this could improve Starport's reliability even further.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -402,7 +399,9 @@ export default {
               },
             },
             {
-              type: 'Local Testnet',
+              type: 'Starport',
+              title: 'Local Testnet Challenge',
+              preview: `For this challenge “Earth Tokens” are defined as classes of tokens that are created and used for the purpose of sustainable socio-economic development, climate action, and ecological regeneration.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -425,7 +424,9 @@ export default {
               },
             },
             {
-              type: 'Build Process and Configuration',
+              type: 'Starport',
+              title: 'Build Process and Configuration Challenge',
+              preview: `Starport uses an advanced build process to compile the source code of a chain into a binary. It’s both sophisticated and easy to use, but there is always room for improvement. To win this challenge, enhance the build process so that it’s more flexible, yet can be used even by beginner developers.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -447,7 +448,9 @@ export default {
               },
             },
             {
-              type: 'A Plugin System',
+              type: 'Starport',
+              title: 'A Plugin System Challenge',
+              preview: `A program like Starport can definitely benefit from a flexible plugin system that will allow developers to add functionality to Starport on the fly. Your challenge is to build one!`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -479,6 +482,8 @@ export default {
           challenges: [
             {
               type: 'Akash',
+              title: 'Akash Challenge',
+              preview: `Akash's HackAtom VI challenge asks participants to develop the container images, SDL files, and readme.dm documentation needed to run chain nodes from Cosmos chains that are not currently in the repository. `,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -504,6 +509,8 @@ export default {
             },
             {
               type: 'Sentinel',
+              title: 'Sentinel Challenge',
+              preview: `Sentinel's IBC challenge is a tough one to tackle but could help to solve an important problem in the wider Cosmos ecosystem. Participants must build a fast, reliable, and unbiased randomness generator which could ideally be used for validator selection.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -525,6 +532,8 @@ export default {
             },
             {
               type: 'Sifchain',
+              title: 'Sifchain Challenge',
+              preview: `Sifchain's challenge for the hackathon is to implement IBC token name and service discovery for Cosmos-based tokens.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -609,6 +618,8 @@ export default {
             },
             {
               type: 'Pylons',
+              title: 'Pylons Challenge',
+              preview: `For this challenge, Pylons wants you to build new, innovative ways to highlight the possibilities of blockchain interoperability using the IBC protocol—such as viable implementation, use cases, and data formats—using the Cosmos SDK.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -641,6 +652,8 @@ export default {
             },
             {
               type: 'Agoric',
+              title: 'Cross Chain Liquidity Mining Challenge',
+              preview: `Agoric's hackathon challenge is to build a set of Agoric smart contracts on Agoric that provide flexible liquidity mining options to Cosmos projects based on an Osmosis LP token.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -694,6 +707,8 @@ export default {
           challenges: [
             {
               type: 'Nym',
+              title: 'NYM Challenge',
+              preview: `The challenge is to create a Nym service provider (application) which offers cloud file storage, and a GUI where users interact with the service provider, all via the Nym mixnet.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -765,6 +780,8 @@ export default {
             },
             {
               type: 'Injective',
+              title: 'Injective Challenge',
+              preview: `Injective's HackAtom VI challenge is to build a new simple single-page application trading interface for trading spot and perpetual markets. The purpose of this is to provide mass market users (not pro traders) an accessible, user-friendly interface for trading (Like Matcha on Ethereum, for example).`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -791,6 +808,8 @@ export default {
             },
             {
               type: 'LikeCoin',
+              title: 'Likecoin Challenge',
+              preview: `In this challenge, LikeCoin is seeking developers who can develop a wallet interface to allow users to manage their ISCN records.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -825,6 +844,8 @@ export default {
             },
             {
               type: 'Archway',
+              title: 'Archway Challenge',
+              preview: `Archway's HackAtom VI challenge is to create a base NFT marketplace on Archway’s testnet. This entails the marketplace smart contracts as well as front-end that will allow users to buy, sell, and trade CW721 tokens in exchange for CW20 tokens.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -867,6 +888,8 @@ export default {
           challenges: [
             {
               type: 'Kava',
+              title: 'Kava Challenge',
+              preview: `Kava's HackAtom VI challenge asks you to build a fully autonomous options protocol as a Cosmos SDK module. You can assume that you have access to a price oracle.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -893,6 +916,8 @@ export default {
             },
             {
               type: 'Tendermint',
+              title: 'Tendermint Challenge',
+              preview: `Build a general tool for Loan or Insurance modules using the gravity dex.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -932,6 +957,8 @@ export default {
           challenges: [
             {
               type: 'Pylons',
+              title: 'Pylons Challenge',
+              preview: `Build a game with meaningful gameplay behavior mediated through state changes using the Cosmos SDK blockchain framework, or build a decentralized virtual world with Cosmos network — utilizing the Cosmos SDK + Pylons SDK.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -965,6 +992,8 @@ export default {
             },
             {
               type: 'Secret Network',
+              title: 'Secret Network Challenge',
+              preview: `Secret’s challenge is to build a game on Secret Network using CosmWasm, Secret NFTs, and on-chain randomness.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -1011,7 +1040,9 @@ export default {
             'The ultimate purpose of the Internet of Blockchains is to empower people everywhere with digital technologies that enable communities to prosper. When communities prosper, they can regenerate the planet, and respond more effectively to the climate crisis. Change the state of the planet by building modules, accessible apps and integrations for local currencies, self-sovereign identity, non-fungible impact tokens, verification oracles, decentralised impact exchanges, and earth intelligence data. This is the Interchain Earth Mission!',
           challenges: [
             {
-              type: 'Regen Network',
+              type: 'Regen',
+              title: 'Regen Network Challenge',
+              preview: `Regen Network's challenge for HackAtom VI under the EARTH category is to bridge ecocredits into the interchain ecosystem—by implementing an IBC application that allows users to move these new types of ecological assets across different blockchains.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -1040,7 +1071,9 @@ export default {
               },
             },
             {
-              type: 'Co-Sponsored by Grant.fish and Juno',
+              type: 'Pylons',
+              title: 'Grant.fish and Juno Challenge',
+              preview: `For this important challenge, Juno and grant.fish are teaming up to ask you to change the state of the planet by building modules, accessible apps, and integrations for local currencies, self-sovereign identity, non-fungible impact tokens, verification oracles, decentralized impact exchanges, and earth intelligence data.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -1062,7 +1095,9 @@ export default {
               },
             },
             {
-              type: 'IXO Foundation',
+              type: 'IXO',
+              title: 'IXO Foundation Challenge',
+              preview: `Your challenge is to build and demonstrate applications using the Internet of Impact, or software components that add capabilities to The Impact Stack, for preventing and responding to specific types of real-world Earth Crisis events.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -1114,7 +1149,9 @@ export default {
               },
             },
             {
-              type: 'IXO Foundation - The Earth Tokens Challenge',
+              type: 'IXO',
+              title: 'The Earth Token Challenge',
+              preview: `For this challenge “Earth Tokens” are defined as classes of tokens that are created and used for the purpose of sustainable socio-economic development, climate action, and ecological regeneration.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -1184,9 +1221,8 @@ export default {
   },
   computed: {},
   methods: {
-    open(info, key) {
+    open(info) {
       this.currentItem = info
-      this.currentKey = key
       this.visible = true
     },
     closeModal() {
