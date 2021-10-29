@@ -240,6 +240,7 @@
         </div>
         <div class="mt-9">
           <tm-button
+            class="cta-button"
             size="l"
             to-link="external"
             href="https://cosmos-hackatom-vi.devpost.com/"
