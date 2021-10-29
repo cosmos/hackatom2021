@@ -34,6 +34,7 @@
 
         <div class="mt-7 tm-text-center">
           <tm-button
+            class="cta-button"
             size="l"
             to-link="external"
             href="https://cosmos-hackatom-vi.devpost.com/"
