@@ -245,7 +245,7 @@ export default {
         {
           type: 'Judge',
           avatar: 'federico',
-          name: 'Federico Kullmer',
+          name: 'Federico Kunze Küllmer',
           company: 'Evmos',
           companyLogo: 'evmos',
         },
