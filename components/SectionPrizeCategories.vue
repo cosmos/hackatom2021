@@ -788,8 +788,11 @@ export default {
                 '2nd': '$15,000',
               },
               info: [
-                'Injective Protocol is pioneering a new decentralized economy to create a freer and more inclusive financial system. Injective has created a solution that allows crypto exchanges to become a decentralized public utility, giving users and their community much-needed value-capture in the exchange landscape.',
+                `Injective Protocol is pioneering a new decentralized economy to create a freer and more inclusive financial system. Injective has created a solution that allows crypto exchanges to become a decentralized public utility, giving users and their community much-needed value-capture in the exchange landscape.`,
                 `Injective's HackAtom VI challenge is to build a new simple single-page application trading interface for trading spot and perpetual markets. The purpose of this is to provide mass market users (not pro traders) an accessible, user-friendly interface for trading (Like Matcha on Ethereum, for example). This will allow novice traders to access Injective easily.`,
+                `On Injective, such frontend interfaces are referred to as a Relayer. A relayer is essentially a frontend interface that allows users to interact with Injective Protocol. Relayers are able to earn 40% of all trading fees generated. So, if you build a relayer, you can continue to earn fees in perpetuity. Relayers come in all forms. Currently there are a number of different relayers such as <a href="https://injective.exchange/" target="_blank" rel="noopener noreferrer" class="tm-link">Injective Pro</a> and <a href="https://trade.picasso.exchange/" target="_blank" rel="noopener noreferrer" class="tm-link">Picasso Exchange</a>. A relayer can include new features and even be region-specific (for instance, there is currently a relayer being built entirely in Chinese).`,
+                `The easiest way to get started without worrying about underlying business logic implementations is to fork our <a href="https://github.com/InjectiveLabs/injective-dex" target="_blank" rel="noopener noreferrer" class="tm-link">injective-dex</a> repo. This repository already contains two of the three components required for the application. It also has a lot of example usage of our <a href="https://github.com/InjectiveLabs/injective-ts" target="_blank" rel="noopener noreferrer" class="tm-link">injective-ts</a> monorepo packages that are used to easily build user interfaces that consume and interact with the Injective Chain.`,
+                `You can find tips and more details in <a href="https://injective.notion.site/Injective-HackAtom-VI-Challenge-Additional-Details-3b308d7d78e34fd4b9a2e8422ea3a599" target="_blank" rel="noopener noreferrer" class="tm-link">the following page</a>.`,
               ],
               requirements: [
                 'Make a meaningfully unique/better designed product. Submissions that simply restyle a few components will not be awarded.',
@@ -1096,8 +1099,8 @@ export default {
               },
             },
             {
-              type: 'IXO',
-              title: 'IXO Foundation Challenge',
+              type: 'ixo Foundation',
+              title: 'The Earth Crisis Challenge',
               preview: `Your challenge is to build and demonstrate applications using the Internet of Impact, or software components that add capabilities to The Impact Stack, for preventing and responding to specific types of real-world Earth Crisis events.`,
               prizes: {
                 '1st': '$35,000',
