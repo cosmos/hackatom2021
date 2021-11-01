@@ -420,8 +420,6 @@ export default {
                 `Try keeping backwards compatibility with Starport v0.18`,
               ],
               sources: {
-                'Github issues':
-                  'https://github.com/tendermint/starport/issues/1312',
                 Github: 'https://github.com/tendermint/starport',
                 Docs: 'https://docs.starport.com/',
                 Starport: 'https://starport.com ',
@@ -445,8 +443,6 @@ export default {
                 `Try keeping backwards compatibility with Starport v0.18`,
               ],
               sources: {
-                'Github issues':
-                  'https://github.com/tendermint/starport/issues/1312',
                 Github: 'https://github.com/tendermint/starport',
                 Docs: 'https://docs.starport.com/',
                 Starport: 'https://starport.com ',
@@ -469,8 +465,6 @@ export default {
                 `Think of other config.yml improvements that can enhance the developer experience.`,
               ],
               sources: {
-                'Github issues':
-                  'https://github.com/tendermint/starport/issues/1312',
                 Github: 'https://github.com/tendermint/starport',
                 Docs: 'https://docs.starport.com/',
                 Starport: 'https://starport.com ',
@@ -493,7 +487,7 @@ export default {
                 `A plugin needs to comply with a certain interface defined by core Starport developers.`,
               ],
               sources: {
-                'Github issues':
+                'Github issue':
                   'https://github.com/tendermint/starport/issues/1312',
                 Github: 'https://github.com/tendermint/starport',
                 Docs: 'https://docs.starport.com/',
