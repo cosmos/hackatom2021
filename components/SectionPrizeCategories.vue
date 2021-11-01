@@ -259,7 +259,14 @@
                 :key="info"
                 class="links__item"
               >
-                <tm-link :href="info" class="tm-link-external">
+                <a
+                  v-if="key === 'email'"
+                  :href="`mailto:${info}`"
+                  class="tm-link tm-link-external"
+                >
+                  {{ info }}
+                </a>
+                <tm-link v-else :href="info" class="tm-link-external">
                   {{ key }}
                 </tm-link>
               </li>
@@ -1012,20 +1019,24 @@ export default {
                 `Purchases should be reflected in-game and on-chain`,
               ],
               sources: {
-                pylons: 'https://www.pylons.tech/',
+                Pylons: 'https://www.pylons.tech/',
                 'Cosmos SDK': 'https://github.com/cosmos/cosmos-sdk/',
-                starport: 'https://github.com/tendermint/starport',
-                ibc: 'https://github.com/cosmos/ibc',
+                Starport: 'https://github.com/tendermint/starport',
+                IBC: 'https://github.com/cosmos/ibc',
                 'connecting-to-testnet':
                   'https://tutorials.cosmos.network/connecting-to-testnet/',
                 wallets: 'https://v1.cosmos.network/ecosystem/wallets',
-                github: 'https://github.com/Pylons-tech/pylons/issues/432 ',
+                'Github issue':
+                  'https://github.com/Pylons-tech/pylons/issues/432',
                 'Strange Clan Website': 'https://strangeclan.com/',
                 'Unreal Engine 5 Early Access':
                   'https://www.unrealengine.com/en-US/unreal-engine-5',
                 'Pylons Discord': 'https://discord.com/invite/RrSnFVy',
                 'The Strange Clan Discord': 'http://discord.gg/strangeclan',
                 Telegram: 'https://t.me/pylonstech',
+                'Twitter @pylonstech': 'https://twitter.com/pylonstech',
+                'Twitter @thestrangeclan': 'https://twitter.com/thestrangeclan',
+                email: 'support@pylons.tech',
               },
             },
             {
@@ -1061,12 +1072,26 @@ export default {
               sources: {
                 'Awesome Secret':
                   'https://github.com/SecretFoundation/awesome-secret',
+                'Awesome Secret #developer-guides':
+                  'https://github.com/SecretFoundation/awesome-secret#developer-guides',
+                'Awesome Secret #developer-tools':
+                  'https://github.com/SecretFoundation/awesome-secret#developer-tools',
+                'Awesome Secret #reference-contracts':
+                  'https://github.com/SecretFoundation/awesome-secret#reference-contracts',
+                'Awesome Secret #games':
+                  'https://github.com/SecretFoundation/awesome-secret#games',
                 'Secret NFTs Code':
                   'https://github.com/baedrik/snip721-reference-impl',
                 'Secret NFTs Docs':
                   'https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-721.md',
-                'Secret NFTs Keplr':
+                'Secret NFTs Keplr + query permits example':
                   'https://github.com/enigmampc/snip20-reference-impl/pull/22',
+                'Example: Maintaining a private entropy pool and get random numbers at will #1':
+                  'https://github.com/enigmampc/SecretSwapAnonEdition/blob/b52f76f/contracts/secretswap_pair/src/state.rs#L21-L51',
+                'Example: Maintaining a private entropy pool and get random numbers at will #2':
+                  'https://github.com/enigmampc/SecretSwapAnonEdition/blob/b52f76f/contracts/secretswap_pair/src/contract.rs#L173-L175',
+                'Example: Shuffling a deck of cards':
+                  'https://github.com/enigmampc/SecretHoldEm/blob/57898fdfc55a41a3972c40353dc0df1c42e4cd83/contract/src/contract.rs#L332-L346',
                 'Running a local test chain':
                   'https://github.com/enigmampc/snip20-reference-impl/blob/9d8e9d1/Makefile#L71-L76',
                 'Compiling a contract':

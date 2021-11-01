@@ -31,7 +31,7 @@
               v-for="sponsor in goldSponsors"
               :key="sponsor.name"
               :href="sponsor.link"
-              class="mt-7 sponsor-link"
+              class="mt-7 sponsor-item"
             >
               <img
                 :src="
@@ -58,7 +58,7 @@
               <tm-link
                 v-for="item in group.items"
                 :key="item.name"
-                class="sponsor-link logos__item"
+                class="sponsor-item logos__item"
                 :href="item.llink"
               >
                 <img
@@ -74,7 +74,7 @@
               <tm-link
                 v-for="item in group.items"
                 :key="item.name"
-                class="sponsor-link logos__item"
+                class="sponsor-item logos__item"
                 :href="item.llink"
               >
                 <img
@@ -265,13 +265,13 @@ export default {
     margin-top 0
   .logo-item
     transform-origin: center left
-  .sponsor-link
+  .sponsor-item
     display block
     margin-top var(--spacing-8)
     @media $breakpoint-medium
       margin-top 0
 
-.sponsor-link
+.sponsor-item
   .logo-item
     transition: opacity .25s $ease-out, transform .25s $ease-out
   &:hover,
