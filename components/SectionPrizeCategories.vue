@@ -76,7 +76,7 @@
                           v-html="challenge.preview"
                         />
                       </div>
-                      <div class="mt-9 prizes-list" v-if="challenge.prizes">
+                      <div v-if="challenge.prizes" class="mt-9 prizes-list">
                         <div
                           v-for="(prize, key) in challenge.prizes"
                           :key="`${challenge.type}_${key}`"
@@ -114,8 +114,8 @@
       </div>
     </div>
     <tm-modal
-      :closeModal="closeModal"
       v-if="currentItem"
+      :close-modal="closeModal"
       v-bind="{
         visible,
         side: 'center',
@@ -154,7 +154,7 @@
             />
           </ul>
         </div>
-        <div class="mt-9" v-if="currentItem.context">
+        <div v-if="currentItem.context" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Context
           </div>
@@ -168,7 +168,7 @@
             </div>
           </div>
         </div>
-        <div class="mt-9 prizes-list" v-if="currentItem.prizes">
+        <div v-if="currentItem.prizes" class="mt-9 prizes-list">
           <div
             v-for="(prize, key) in currentItem.prizes"
             :key="`${currentItem.type}_${key}`"
@@ -182,7 +182,7 @@
             </div>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.prize">
+        <div v-if="currentItem.prize" class="mt-9">
           <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
             reward
           </div>
@@ -191,8 +191,8 @@
           </div>
         </div>
         <div
-          class="mt-9"
           v-if="currentItem.requirements || currentItem.requirementsInfo"
+          class="mt-9"
         >
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Requirements
@@ -210,7 +210,7 @@
             </ul>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.judgingCriteria">
+        <div v-if="currentItem.judgingCriteria" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Judging Criteria
           </div>
@@ -224,7 +224,7 @@
             </ul>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.bonusPoints">
+        <div v-if="currentItem.bonusPoints" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Bonus Points
           </div>
@@ -238,7 +238,7 @@
             </ul>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.stage">
+        <div v-if="currentItem.stage" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Stage of development
           </div>
@@ -248,7 +248,7 @@
             </ul>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.sources">
+        <div v-if="currentItem.sources" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Resources
           </div>
@@ -259,7 +259,14 @@
                 :key="info"
                 class="links__item"
               >
-                <tm-link :href="info" class="tm-link-external">
+                <a
+                  v-if="key === 'email'"
+                  :href="`mailto:${info}`"
+                  class="tm-link tm-link-external"
+                >
+                  {{ info }}
+                </a>
+                <tm-link v-else :href="info" class="tm-link-external">
                   {{ key }}
                 </tm-link>
               </li>
@@ -273,7 +280,7 @@
             to-link="external"
             href="https://cosmos-hackatom-vi.devpost.com/"
           >
-            Register Now <span class="icon__external">↗️</span>
+            Register Now <span class="icon__external">&nearr;</span>
           </tm-button>
         </div>
       </div>
@@ -841,15 +848,15 @@ export default {
                 '2nd': '$15,000',
               },
               info: [
-                `LikeCoin aims to empower content ownership, authenticity, and provenance. Creators can register content metadata to guarantee its integrity by acquiring an International Standard Content Number (ISCN). ISCN is a tool to authenticate and track content, just like a digital footprint. ISCN is an NFT-like content registry record running on the LikeCoin chain that allows content creators to register their content metadata on the chain through ISCN transactions.`,
-                `<p>Currently, there are three ways for creators to register their content metadata to the LikeCoin chain:</p>
+                `ISCN is a NFT-like content registry record running on the LikeCoin chain. We allow content creators to register their content metadata on the chain through ISCN transactions.`,
+                `<p>Currently, there are three ways for creators to register their content metadata to the LikeCoin chain,</p>
                 <ol>
                   <li>register via <a href="https://app.like.co/" target="_blank" rel="noopener noreferrer" class="tm-link">app.like.co</a>,</li>
                   <li>ISCN <a href="https://docs.like.co/developer/international-standard-content-number-iscn/batch-upload-tool" target="_blank" rel="noopener noreferrer" class="tm-link">batch uploader</a>,</li>
                   <li>LikeCoin Wordpress <a href="https://wordpress.org/plugins/likecoin/" target="_blank" rel="noopener noreferrer" class="tm-link">plugin</a>.</li>
                 </ol>
-                <p>Unlike traditional NFTs, ISCN owners might have to view, manage or edit ISCN records in batch, since talented creators can produce creative works quickly, and have a huge collection of series of ISCN.</p>`,
-                `In this challenge, LikeCoin is seeking developers who can develop a wallet interface to allow users to manage their ISCN records. Useful features will include visualization of the ISCN records and organizing them into directories or groups, interface for viewing and editing ISCN records, and sending and trading of ISCN records (change of owner).`,
+                <p>Unlike traditional NFT, ISCN owners might have to view, manage or edit ISCN records in batch, since talented creators can produce creative works quickly, and have a huge collection of series of metadata.</p>`,
+                `In this challenge, we hope developers can develop a wallet interface to allow users to manage their pre-NFT credentials (metadata) records. Useful features include visualization of the metadata records, and organizing them into directories or groups; interface for viewing and editing metadata records, and sending and trading of metadata records (change of owner).`,
               ],
               requirements: [
                 'Develop a dApp interface for users to view and manage their ISCN records',
@@ -1012,20 +1019,24 @@ export default {
                 `Purchases should be reflected in-game and on-chain`,
               ],
               sources: {
-                pylons: 'https://www.pylons.tech/',
+                Pylons: 'https://www.pylons.tech/',
                 'Cosmos SDK': 'https://github.com/cosmos/cosmos-sdk/',
-                starport: 'https://github.com/tendermint/starport',
-                ibc: 'https://github.com/cosmos/ibc',
+                Starport: 'https://github.com/tendermint/starport',
+                IBC: 'https://github.com/cosmos/ibc',
                 'connecting-to-testnet':
                   'https://tutorials.cosmos.network/connecting-to-testnet/',
                 wallets: 'https://v1.cosmos.network/ecosystem/wallets',
-                github: 'https://github.com/Pylons-tech/pylons/issues/432 ',
+                'Github issue':
+                  'https://github.com/Pylons-tech/pylons/issues/432',
                 'Strange Clan Website': 'https://strangeclan.com/',
                 'Unreal Engine 5 Early Access':
                   'https://www.unrealengine.com/en-US/unreal-engine-5',
                 'Pylons Discord': 'https://discord.com/invite/RrSnFVy',
                 'The Strange Clan Discord': 'http://discord.gg/strangeclan',
                 Telegram: 'https://t.me/pylonstech',
+                'Twitter @pylonstech': 'https://twitter.com/pylonstech',
+                'Twitter @thestrangeclan': 'https://twitter.com/thestrangeclan',
+                email: 'support@pylons.tech',
               },
             },
             {
@@ -1061,12 +1072,26 @@ export default {
               sources: {
                 'Awesome Secret':
                   'https://github.com/SecretFoundation/awesome-secret',
+                'Awesome Secret #developer-guides':
+                  'https://github.com/SecretFoundation/awesome-secret#developer-guides',
+                'Awesome Secret #developer-tools':
+                  'https://github.com/SecretFoundation/awesome-secret#developer-tools',
+                'Awesome Secret #reference-contracts':
+                  'https://github.com/SecretFoundation/awesome-secret#reference-contracts',
+                'Awesome Secret #games':
+                  'https://github.com/SecretFoundation/awesome-secret#games',
                 'Secret NFTs Code':
                   'https://github.com/baedrik/snip721-reference-impl',
                 'Secret NFTs Docs':
                   'https://github.com/SecretFoundation/SNIPs/blob/master/SNIP-721.md',
-                'Secret NFTs Keplr':
+                'Secret NFTs Keplr + query permits example':
                   'https://github.com/enigmampc/snip20-reference-impl/pull/22',
+                'Example: Maintaining a private entropy pool and get random numbers at will #1':
+                  'https://github.com/enigmampc/SecretSwapAnonEdition/blob/b52f76f/contracts/secretswap_pair/src/state.rs#L21-L51',
+                'Example: Maintaining a private entropy pool and get random numbers at will #2':
+                  'https://github.com/enigmampc/SecretSwapAnonEdition/blob/b52f76f/contracts/secretswap_pair/src/contract.rs#L173-L175',
+                'Example: Shuffling a deck of cards':
+                  'https://github.com/enigmampc/SecretHoldEm/blob/57898fdfc55a41a3972c40353dc0df1c42e4cd83/contract/src/contract.rs#L332-L346',
                 'Running a local test chain':
                   'https://github.com/enigmampc/snip20-reference-impl/blob/9d8e9d1/Makefile#L71-L76',
                 'Compiling a contract':
@@ -1347,11 +1372,12 @@ export default {
 
 .prizes-list
   display flex
-  gap var(--spacing-6)
   &__item
+    margin-left var(--spacing-6)
     .tm-title
       font-weight var(--font-weight-medium-2)
     &:first-child
+      margin-left 0
       .tm-title
         font-weight var(--font-weight-bold-2)
         letter-spacing var(--letter-spacing-bold-2)

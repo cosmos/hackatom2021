@@ -19,7 +19,9 @@
             {{ item.name }}
           </div>
           <ul class="mt-5 tm-lh-title tm-muted tm-rf0">
-            <li v-for="text in item.info" :key="text">{{ text }}</li>
+            <li v-for="text in item.info" :key="text">
+              {{ text }}
+            </li>
           </ul>
         </div>
       </div>
@@ -46,48 +48,48 @@ export default {
           name: 'Code Quality',
           icon: 'terminal',
           info: [
-            `High-quality code that can be read by a human
-            Code is commented throughout
-            Variable names are well-chosen
-            The code is split into logical functions
-            Tests are provided that confirm the business logic
-            The project is production-ready`,
+            `High-quality code that can be read by a human`,
+            `Code is commented throughout`,
+            `Variable names are well-chosen`,
+            `The code is split into logical functions`,
+            `Tests are provided that confirm the business logic`,
+            `The project is production-ready`,
           ],
         },
         {
           name: 'Innovation',
           icon: 'bulb',
           info: [
-            `The project does something that is innovative
-            The project does something new
-            The project simplifies something complex 
-            The project provides a useful contribution to the ecosystem that could be used in the future`,
+            `The project does something that is innovative`,
+            `The project does something new`,
+            `The project simplifies something complex`,
+            `The project provides a useful contribution to the ecosystem that could be used in the future`,
           ],
         },
         {
           name: 'Technical Documentation and Usability',
           icon: 'users',
           info: [
-            `The project has an explanatory README file
-            Documentation includes instructions that explain how to use the project
-            Conceptual information describes the benefits of the project
-            Reference content is provided 
-            Project is usable and provides a low-friction user experience (UX)
-            Project user interface (UI) is easy to follow
-            Users can successfully complete the intended task`,
+            `The project has an explanatory README file`,
+            `Documentation includes instructions that explain how to use the project`,
+            `Conceptual information describes the benefits of the project`,
+            `Reference content is provided`,
+            `Project is usable and provides a low-friction user experience (UX)`,
+            `Project user interface (UI) is easy to follow`,
+            `Users can successfully complete the intended task`,
           ],
         },
         {
           name: 'Utility / Competitiveness',
           icon: 'video',
           info: [
-            `The video is clear and engaging
-            The project value is clearly explained 
-            The project is demonstrated in the video
-            The video is high quality and includes audio and visual
-            The video is in English
-            The video includes subtitles
-            The video is 2 to 5 minutes `,
+            `The video is clear and engaging`,
+            `The project value is clearly explained `,
+            `The project is demonstrated in the video`,
+            `The video is high quality and includes audio and visual`,
+            `The video is in English`,
+            `The video includes subtitles`,
+            `The video is 2 to 5 minutes `,
           ],
         },
       ],
