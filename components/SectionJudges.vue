@@ -188,7 +188,7 @@ export default {
         },
         {
           type: 'Judge',
-          avatar: 'avatar',
+          avatar: 'chong',
           name: 'William Chong ',
           company: 'Likecoin',
           companyLogo: 'likecoin',
@@ -258,8 +258,8 @@ export default {
         },
         {
           type: 'Judge',
-          avatar: 'avatar',
-          name: 'Alexander McCall',
+          avatar: 'mcall',
+          name: 'McCall Alexander',
           company: 'Sifchain',
           companyLogo: 'sifchain',
         },
