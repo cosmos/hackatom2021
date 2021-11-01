@@ -76,7 +76,7 @@
                           v-html="challenge.preview"
                         />
                       </div>
-                      <div class="mt-9 prizes-list" v-if="challenge.prizes">
+                      <div v-if="challenge.prizes" class="mt-9 prizes-list">
                         <div
                           v-for="(prize, key) in challenge.prizes"
                           :key="`${challenge.type}_${key}`"
@@ -114,8 +114,8 @@
       </div>
     </div>
     <tm-modal
-      :closeModal="closeModal"
       v-if="currentItem"
+      :close-modal="closeModal"
       v-bind="{
         visible,
         side: 'center',
@@ -154,7 +154,7 @@
             />
           </ul>
         </div>
-        <div class="mt-9" v-if="currentItem.context">
+        <div v-if="currentItem.context" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Context
           </div>
@@ -168,7 +168,7 @@
             </div>
           </div>
         </div>
-        <div class="mt-9 prizes-list" v-if="currentItem.prizes">
+        <div v-if="currentItem.prizes" class="mt-9 prizes-list">
           <div
             v-for="(prize, key) in currentItem.prizes"
             :key="`${currentItem.type}_${key}`"
@@ -182,7 +182,7 @@
             </div>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.prize">
+        <div v-if="currentItem.prize" class="mt-9">
           <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
             reward
           </div>
@@ -191,8 +191,8 @@
           </div>
         </div>
         <div
-          class="mt-9"
           v-if="currentItem.requirements || currentItem.requirementsInfo"
+          class="mt-9"
         >
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Requirements
@@ -210,7 +210,7 @@
             </ul>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.judgingCriteria">
+        <div v-if="currentItem.judgingCriteria" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Judging Criteria
           </div>
@@ -224,7 +224,7 @@
             </ul>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.bonusPoints">
+        <div v-if="currentItem.bonusPoints" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Bonus Points
           </div>
@@ -238,7 +238,7 @@
             </ul>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.stage">
+        <div v-if="currentItem.stage" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Stage of development
           </div>
@@ -248,7 +248,7 @@
             </ul>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.sources">
+        <div v-if="currentItem.sources" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Resources
           </div>
@@ -273,7 +273,7 @@
             to-link="external"
             href="https://cosmos-hackatom-vi.devpost.com/"
           >
-            Register Now <span class="icon__external">↗️</span>
+            Register Now <span class="icon__external">&nearr;</span>
           </tm-button>
         </div>
       </div>

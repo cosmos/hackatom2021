@@ -39,7 +39,7 @@
             to-link="external"
             href="https://cosmos-hackatom-vi.devpost.com/"
           >
-            Register Now <span class="icon__external">↗️</span>
+            Register Now <span class="icon__external">&nearr;</span>
           </tm-button>
         </div>
 

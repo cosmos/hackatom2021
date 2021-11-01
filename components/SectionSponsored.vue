@@ -18,7 +18,7 @@
             you can focus on writing business logic.
           </p>
           <p class="tm-solid tm-rf0 tm-medium">
-            Discover <span class="icon__external">↗️</span>
+            Discover <span class="icon__external">&nearr;</span>
           </p>
         </tm-link>
 

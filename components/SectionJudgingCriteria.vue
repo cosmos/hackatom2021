@@ -19,7 +19,9 @@
             {{ item.name }}
           </div>
           <ul class="mt-5 tm-lh-title tm-muted tm-rf0">
-            <li v-for="text in item.info" :key="text">{{ text }}</li>
+            <li v-for="text in item.info" :key="text">
+              {{ text }}
+            </li>
           </ul>
         </div>
       </div>
