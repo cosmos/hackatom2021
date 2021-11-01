@@ -198,6 +198,16 @@ export default {
             },
           ],
         },
+        {
+          name: 'Media Sponsors',
+          prefix: '_media',
+          items: [
+            {
+              name: 'omniflix',
+              link: 'https://www.omniflix.network/',
+            },
+          ],
+        },
       ],
     }
   },
@@ -290,6 +300,12 @@ export default {
     margin-right calc(-1 * var(--wrap-gap))
     padding-left var(--wrap-gap)
     padding-right var(--wrap-gap)
+    &._media
+      overflow initial
+      margin-left -1.75rem
+      margin-right 0
+      padding-left 0
+      padding-right 0
     @media $breakpoint-xl
       &._other
         margin-left -1.75rem
@@ -306,6 +322,13 @@ export default {
     display: inline-block
     &.animation
       animation: marquee 20s linear infinite
+    &._media
+      display none
+      animation none
+      &:first-child
+        display flex
+        flex-wrap wrap
+        gap var(--spacing-7)
     &._other
       @media $breakpoint-xl
         display none
