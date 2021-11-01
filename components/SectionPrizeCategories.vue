@@ -76,7 +76,7 @@
                           v-html="challenge.preview"
                         />
                       </div>
-                      <div class="mt-9 prizes-list" v-if="challenge.prizes">
+                      <div v-if="challenge.prizes" class="mt-9 prizes-list">
                         <div
                           v-for="(prize, key) in challenge.prizes"
                           :key="`${challenge.type}_${key}`"
@@ -114,8 +114,8 @@
       </div>
     </div>
     <tm-modal
-      :closeModal="closeModal"
       v-if="currentItem"
+      :close-modal="closeModal"
       v-bind="{
         visible,
         side: 'center',
@@ -154,7 +154,7 @@
             />
           </ul>
         </div>
-        <div class="mt-9" v-if="currentItem.context">
+        <div v-if="currentItem.context" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Context
           </div>
@@ -168,7 +168,7 @@
             </div>
           </div>
         </div>
-        <div class="mt-9 prizes-list" v-if="currentItem.prizes">
+        <div v-if="currentItem.prizes" class="mt-9 prizes-list">
           <div
             v-for="(prize, key) in currentItem.prizes"
             :key="`${currentItem.type}_${key}`"
@@ -182,7 +182,7 @@
             </div>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.prize">
+        <div v-if="currentItem.prize" class="mt-9">
           <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
             reward
           </div>
@@ -191,8 +191,8 @@
           </div>
         </div>
         <div
-          class="mt-9"
           v-if="currentItem.requirements || currentItem.requirementsInfo"
+          class="mt-9"
         >
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Requirements
@@ -210,7 +210,7 @@
             </ul>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.judgingCriteria">
+        <div v-if="currentItem.judgingCriteria" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Judging Criteria
           </div>
@@ -224,7 +224,7 @@
             </ul>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.bonusPoints">
+        <div v-if="currentItem.bonusPoints" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Bonus Points
           </div>
@@ -238,7 +238,7 @@
             </ul>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.stage">
+        <div v-if="currentItem.stage" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Stage of development
           </div>
@@ -248,7 +248,7 @@
             </ul>
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.sources">
+        <div v-if="currentItem.sources" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Resources
           </div>
@@ -273,7 +273,7 @@
             to-link="external"
             href="https://cosmos-hackatom-vi.devpost.com/"
           >
-            Register Now <span class="icon__external">↗️</span>
+            Register Now <span class="icon__external">&nearr;</span>
           </tm-button>
         </div>
       </div>
@@ -847,15 +847,15 @@ export default {
                 '2nd': '$15,000',
               },
               info: [
-                `LikeCoin aims to empower content ownership, authenticity, and provenance. Creators can register content metadata to guarantee its integrity by acquiring an International Standard Content Number (ISCN). ISCN is a tool to authenticate and track content, just like a digital footprint. ISCN is an NFT-like content registry record running on the LikeCoin chain that allows content creators to register their content metadata on the chain through ISCN transactions.`,
-                `<p>Currently, there are three ways for creators to register their content metadata to the LikeCoin chain:</p>
+                `ISCN is a NFT-like content registry record running on the LikeCoin chain. We allow content creators to register their content metadata on the chain through ISCN transactions.`,
+                `<p>Currently, there are three ways for creators to register their content metadata to the LikeCoin chain,</p>
                 <ol>
                   <li>register via <a href="https://app.like.co/" target="_blank" rel="noopener noreferrer" class="tm-link">app.like.co</a>,</li>
                   <li>ISCN <a href="https://docs.like.co/developer/international-standard-content-number-iscn/batch-upload-tool" target="_blank" rel="noopener noreferrer" class="tm-link">batch uploader</a>,</li>
                   <li>LikeCoin Wordpress <a href="https://wordpress.org/plugins/likecoin/" target="_blank" rel="noopener noreferrer" class="tm-link">plugin</a>.</li>
                 </ol>
-                <p>Unlike traditional NFTs, ISCN owners might have to view, manage or edit ISCN records in batch, since talented creators can produce creative works quickly, and have a huge collection of series of ISCN.</p>`,
-                `In this challenge, LikeCoin is seeking developers who can develop a wallet interface to allow users to manage their ISCN records. Useful features will include visualization of the ISCN records and organizing them into directories or groups, interface for viewing and editing ISCN records, and sending and trading of ISCN records (change of owner).`,
+                <p>Unlike traditional NFT, ISCN owners might have to view, manage or edit ISCN records in batch, since talented creators can produce creative works quickly, and have a huge collection of series of metadata.</p>`,
+                `In this challenge, we hope developers can develop a wallet interface to allow users to manage their pre-NFT credentials (metadata) records. Useful features include visualization of the metadata records, and organizing them into directories or groups; interface for viewing and editing metadata records, and sending and trading of metadata records (change of owner).`,
               ],
               requirements: [
                 'Develop a dApp interface for users to view and manage their ISCN records',
@@ -1353,11 +1353,12 @@ export default {
 
 .prizes-list
   display flex
-  gap var(--spacing-6)
   &__item
+    margin-left var(--spacing-6)
     .tm-title
       font-weight var(--font-weight-medium-2)
     &:first-child
+      margin-left 0
       .tm-title
         font-weight var(--font-weight-bold-2)
         letter-spacing var(--letter-spacing-bold-2)

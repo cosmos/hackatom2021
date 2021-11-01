@@ -22,7 +22,7 @@
               to-link="external"
               href="https://discord.gg/cosmosnetwork"
             >
-              Join Developer Chat<span class="icon__external">↗️</span>
+              Join Developer Chat<span class="icon__external">&nearr;</span>
             </tm-button>
           </div>
         </div>

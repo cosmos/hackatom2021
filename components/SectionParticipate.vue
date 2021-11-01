@@ -26,7 +26,7 @@
           to-link="external"
           href="https://cosmos-hackatom-vi.devpost.com/"
         >
-          Register <span class="icon__external">↗️</span>
+          Register <span class="icon__external">&nearr;</span>
         </tm-button>
         <!-- <tm-button
           class="btn"
@@ -35,7 +35,7 @@
           background-color="transparent"
           color="var(--white)"
         >
-          FAQ <span class="icon__external">↗️</span>
+          FAQ <span class="icon__external">&nearr;</span>
         </tm-button> -->
       </div>
     </div>
