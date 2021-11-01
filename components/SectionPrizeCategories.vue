@@ -154,6 +154,20 @@
             />
           </ul>
         </div>
+        <div class="mt-9" v-if="currentItem.context">
+          <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
+            Context
+          </div>
+          <div class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted">
+            <div v-if="currentItem.context">
+              <p
+                v-for="info in currentItem.context"
+                :key="info"
+                v-html="info"
+              />
+            </div>
+          </div>
+        </div>
         <div class="mt-9 prizes-list" v-if="currentItem.prizes">
           <div
             v-for="(prize, key) in currentItem.prizes"
@@ -176,20 +190,6 @@
             {{ currentItem.prize }}
           </div>
         </div>
-        <div class="mt-9" v-if="currentItem.context">
-          <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
-            Context
-          </div>
-          <div class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted">
-            <div v-if="currentItem.context">
-              <p
-                v-for="info in currentItem.context"
-                :key="info"
-                v-html="info"
-              />
-            </div>
-          </div>
-        </div>
         <div
           class="mt-9"
           v-if="currentItem.requirements || currentItem.requirementsInfo"
@@ -204,6 +204,34 @@
             <ul v-if="currentItem.requirements">
               <li
                 v-for="info in currentItem.requirements"
+                :key="info"
+                v-html="info"
+              />
+            </ul>
+          </div>
+        </div>
+        <div class="mt-9" v-if="currentItem.judgingCriteria">
+          <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
+            Judging Criteria
+          </div>
+          <div class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted">
+            <ul v-if="currentItem.judgingCriteria">
+              <li
+                v-for="info in currentItem.judgingCriteria"
+                :key="info"
+                v-html="info"
+              />
+            </ul>
+          </div>
+        </div>
+        <div class="mt-9" v-if="currentItem.bonusPoints">
+          <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
+            Bonus Points
+          </div>
+          <div class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted">
+            <ul v-if="currentItem.bonusPoints">
+              <li
+                v-for="info in currentItem.bonusPoints"
                 :key="info"
                 v-html="info"
               />
@@ -402,7 +430,7 @@ export default {
             {
               type: 'Starport',
               title: 'Local Testnet Challenge',
-              preview: `For this challenge “Earth Tokens” are defined as classes of tokens that are created and used for the purpose of sustainable socio-economic development, climate action, and ecological regeneration.`,
+              preview: `Starport chain serve is the most convenient way to start a blockchain node for development purposes. Currently, this command sets up a single node testnet with automatic code reloading. Enhance this functionality of Starport, for example, to support multi-node local testnets.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
@@ -820,7 +848,13 @@ export default {
               },
               info: [
                 `LikeCoin aims to empower content ownership, authenticity, and provenance. Creators can register content metadata to guarantee its integrity by acquiring an International Standard Content Number (ISCN). ISCN is a tool to authenticate and track content, just like a digital footprint. ISCN is an NFT-like content registry record running on the LikeCoin chain that allows content creators to register their content metadata on the chain through ISCN transactions.`,
-                `Currently, there are three ways for creators to register their content metadata to the LikeCoin chain: 1) register via app.like.co, 2) ISCN batch uploader, 3) LikeCoin Wordpress plugin. Unlike traditional NFTs, ISCN owners might have to view, manage or edit ISCN records in batch, since talented creators can produce creative works quickly, and have a huge collection of series of ISCN.`,
+                `<p>Currently, there are three ways for creators to register their content metadata to the LikeCoin chain:</p>
+                <ol>
+                  <li>register via <a href="https://app.like.co/" target="_blank" rel="noopener noreferrer" class="tm-link">app.like.co</a>,</li>
+                  <li>ISCN <a href="https://docs.like.co/developer/international-standard-content-number-iscn/batch-upload-tool" target="_blank" rel="noopener noreferrer" class="tm-link">batch uploader</a>,</li>
+                  <li>LikeCoin Wordpress <a href="https://wordpress.org/plugins/likecoin/" target="_blank" rel="noopener noreferrer" class="tm-link">plugin</a>.</li>
+                </ol>
+                <p>Unlike traditional NFTs, ISCN owners might have to view, manage or edit ISCN records in batch, since talented creators can produce creative works quickly, and have a huge collection of series of ISCN.</p>`,
                 `In this challenge, LikeCoin is seeking developers who can develop a wallet interface to allow users to manage their ISCN records. Useful features will include visualization of the ISCN records and organizing them into directories or groups, interface for viewing and editing ISCN records, and sending and trading of ISCN records (change of owner).`,
               ],
               requirements: [
@@ -977,6 +1011,12 @@ export default {
                 `Implement farming`,
                 `Create direct trading and listing platform (bonus)`,
               ],
+              judgingCriteria: [
+                `Characters should be able to create their own items/list them on trade for other Strange Clan Holders`,
+                `Characters should be able to interact with the 3D Strange Clan environment and develop their Clan/plots of land`,
+                `Cosmos SDK/Pylons SDK is used for on-chain implementation of creation and trading`,
+                `Purchases should be reflected in-game and on-chain`,
+              ],
               sources: {
                 pylons: 'https://www.pylons.tech/',
                 'Cosmos SDK': 'https://github.com/cosmos/cosmos-sdk/',
@@ -1013,9 +1053,16 @@ export default {
                 `Write contracts using CosmWasm`,
                 `Utilize private data (Game of Incomplete Information)`,
                 `Utilize on-chain randomness `,
-                `User interface in a mobile app or a web browser`,
-                `Using Keplr is optional`,
-                `May implement a simple local wallet for better UX`,
+                `<p>User interface in a mobile app or a web browser</p>
+                <ul>
+                  <li>Using Keplr is optional</li>
+                  <li>May implement a simple local wallet for better UX</li>
+                </ul>`,
+              ],
+              bonusPoints: [
+                `Use Secret NFTs (SNIP-721)`,
+                `Use query permits`,
+                `Don’t use viewing keys`,
               ],
               sources: {
                 'Awesome Secret':
@@ -1154,7 +1201,7 @@ export default {
             },
             {
               type: 'IXO',
-              title: 'The Earth Token Challenge',
+              title: 'The Earth Tokens Challenge',
               preview: `For this challenge “Earth Tokens” are defined as classes of tokens that are created and used for the purpose of sustainable socio-economic development, climate action, and ecological regeneration.`,
               prizes: {
                 '1st': '$35,000',

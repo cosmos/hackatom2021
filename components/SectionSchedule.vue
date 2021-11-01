@@ -173,7 +173,7 @@ export default {
           people: [
             {
               name: 'Har Preet Singh',
-              avatar: 'avatar',
+              avatar: 'har',
               company: 'Tendermint',
             },
           ],
