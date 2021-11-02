@@ -270,6 +270,20 @@ export default {
           company: 'Secret Network',
           companyLogo: 'secret',
         },
+        {
+          type: 'Judge',
+          avatar: 'alexj',
+          name: 'Alex Johnson',
+          company: 'Pylons',
+          companyLogo: 'pylons',
+        },
+        {
+          type: 'Judge',
+          avatar: 'avatar',
+          name: 'Charlie S. Chin',
+          company: 'Pylons',
+          companyLogo: 'pylons',
+        },
       ],
     }
   },
