@@ -890,19 +890,23 @@ export default {
                 '2nd': '$15,000',
               },
               info: [
-                `Archway is a smart contract platform that rewards developers, ushering in next gen dApps. Archway's HackAtom VI challenge is to create a base NFT marketplace on Archway’s testnet. This entails the marketplace smart contracts as well as front-end that will allow users to buy, sell, and trade CW721 tokens in exchange for CW20 tokens.`,
-                `Key features to include:`,
+                `Archway is an incentivized smart contract chain for Cosmos. The protocol gives developers a simple way to build and launch scalable cross-chain dApps, and get rewarded for the value they contribute to the network — all through the glory of CosmWasm // Rust contracts!`,
+                `As dApps generate usage on Archway, they earn a proportional share of transaction fees and inflationary rewards on the network, similar to validators in a typical PoS network.`,
+                `For this HackAtom challenge, we’re excited to work with you to start building out some of the pivotal apps that will help bootstrap the ecosystem — NFTs, DeFi, DAOs, token minting, automated rewards distribution...`,
                 `<ul>
-                  <li>A generic NFT marketplace smart contract</li>
-                  <li>Listing CW721 tokens for sale for any CW20 token</li>
-                  <li>Buying CW721 tokens with CW20 tokens</li>
-                  <li>Trading any CW721 token with any other CW721</li>
-                  <li>Any additional marketplace capabilities you’re keen to experiment with—auctions, fractionalization, royalties, etc.</li>
+                  <li>🖼️ <b>NFT marketplace</b> — create a base NFT marketplace on Archway. This entails the marketplace smart contracts and front-end that will allow users to buy, sell, and trade CW721 tokens in exchange for CW20 tokens. Key features to include a generic NFT marketplace smart contract, listing CW721 tokens for sale for any CW20 token, buying CW721 tokens with CW20 tokens, trading any CW721 token with any other CW721, and any additional marketplace capabilities you’re keen to experiment with (auctions, fractionalization, royalties, etc.)</li>
+                  <li>💹 <b>DEX</b> — migrate an existing AMM-based DEX or build your own atop Archway’s testnet. The DEX should allow users to swap native CW20 tokens, add / remove liquidity, earn fees for providing liquidity, and other standard DEX features.</li>
+                  <li>🏛️ <b>DAOs</b> — build a tool to create a basic DAO that enables community management of a treasury using CW20 tokens. This DAO launcher would allow for the configuration of the token, distribution, proposals, voting duration, threshold to pass, proposal fees, etc. Token holders would then control the treasury by proposing and then voting on transactions.</li>
+                  <li>✨ <b>Token minting UI</b> — build a token minting app that allows users to easily define and deploy standard CosmWasm tokens to Archway entirely through a web UI. This will give users a front-end to mint CW20 or CW721 tokens on Archway, including some basic configuration of token type, metadata, and functionality (i.e. name, symbol, desc, supply, properties, etc).</li>
+                  <li>💸 <b>Rewards distribution</b> — one of the unique features of Archway is protocol-level rewards for developers, which are automatically deposited to a dapp’s “owner” address based on gas consumed. You can create custom contracts to automatically redistribute such rewards in ways that benefit your community — for example, back to governance token holders, depositing in a ‘pool account’ to sponsor gas payments, contributing to a DAO, boost liquidity incentives, purchase ecocredits, or any other creative way you envision allocating recurring funding streams.</li>
                 </ul>`,
+                `* Major bonus points for incorporating cross-chain features ⚛️`,
               ],
               requirements: [
-                `The marketplace should work with the standard interfaces for CW20 and CW721 (CosmWasm NFTs) and be launched to Archway testnet (https://docs.archway.io/docs/create/getting-started/install/) using a compatible wallet (https://wallet.keplr.app/) for contract deployment and interactions (mint, list, buy, sell, transfer, etc).`,
-                `For reference, a sample CosmWasm marketplace built by the inimitable Blockscape team at last year’s Hackatom V — https://blockscape-network.medium.com/hackatom-v-nft-marketplace-smart-contract-795b743a7738. The idea is to build upon Blockscape’s stellar work atop Archway.`,
+                `All projects should be deployed and workable on Archway’s testnet (<a href="https://docs.archway.io/docs/create/getting-started/install/" target="_blank" rel="noopener noreferrer" class="tm-link">https://docs.archway.io/docs/create/getting-started/install/</a>),`,
+                `Contracts using CosmWasm`,
+                `Adhere to standard token interfaces (CW20, CW721) and <a href="https://cosmos.network/ecosystem/wallets" target="_blank" rel="noopener noreferrer" class="tm-link">wallets</a> for contract deployment and interactions (mint, list, buy, sell, transfer, etc),`,
+                `A functional and usable front-end`,
               ],
               sources: {
                 'docs.archway.io': 'https://docs.archway.io/',
@@ -910,10 +914,12 @@ export default {
                   'https://docs.archway.io/docs/create/getting-started/install/',
                 'docs.cosmwasm.com': 'https://docs.cosmwasm.com/docs/0.16/',
                 'CosmWasm github': 'https://github.com/CosmWasm/cw-nfts',
-                'CosmWasm Marketplace implementation (github)':
+                'CosmWasm NFT marketplace (github)':
                   'https://github.com/BlockscapeNetwork/hackatom_v/tree/master/contracts/marketplace',
-                'CosmWasm Marketplace implementation (blog)':
+                'CosmWasm NFT marketplace (blog)':
                   'https://blockscape-network.medium.com/hackatom-v-nft-marketplace-smart-contract-795b743a7738',
+                'Reference implementation — token minting app':
+                  'https://vittominacori.github.io/erc20-generator/create-token/',
               },
             },
           ],
