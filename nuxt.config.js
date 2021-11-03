@@ -122,6 +122,22 @@ export default {
         href: 'https://fonts.googleapis.com/css?family=Inter:400,700,900&display=swap',
       },
     ],
+    script: [
+      {
+        innerHTML: "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-KXGP6JS');",
+        type: 'text/javascript',
+        charset: 'utf-8'
+      }
+    ],
+    __dangerouslyDisableSanitizers: ['script', 'innerHTML'],
+  },
+  body: {
+    noscript: [
+      {
+        innerHTML: '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXGP6JS" height="0" width="0" style="display:none;visibility:hidden"></iframe>',
+      }
+    ],
+    __dangerouslyDisableSanitizers: ['script', 'innerHTML'],
   },
   /*
    ** Global CSS
@@ -165,28 +181,28 @@ export default {
    ** Nuxt.js modules
    */
   // https://github.com/nuxt-community/google-gtag
-  modules: ['@nuxtjs/google-gtag'],
-  'google-gtag': {
-    id: 'GTM-KXGP6JS',
-    config: {
-      anonymize_ip: true, // anonymize IP
-      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
-      // linker: {
-      //   domains: ['six.hackatom.org'],
-      // },
-    },
-    debug: true, // enable to track in dev mode
-    disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
-    // https://support.google.com/google-ads/answer/6095821
-    // additionalAccounts: [
-    //   {
-    //     id: 'G-6Y0VDQ6SFG', // required if you are adding additional accounts
-    //     config: {
-    //       send_page_view: false, // optional configurations
-    //     },
-    //   },
-    // ],
-  },
+  // modules: ['@nuxtjs/google-gtag'],
+  // 'google-gtag': {
+  //   id: '2992125925',
+  //   config: {
+  //     anonymize_ip: true, // anonymize IP
+  //     send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+  //     // linker: {
+  //     //   domains: ['six.hackatom.org'],
+  //     // },
+  //   },
+  //   debug: true, // enable to track in dev mode
+  //   disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
+  //   // https://support.google.com/google-ads/answer/6095821
+  //   // additionalAccounts: [
+  //   //   {
+  //   //     id: 'G-6Y0VDQ6SFG', // required if you are adding additional accounts
+  //   //     config: {
+  //   //       send_page_view: false, // optional configurations
+  //   //     },
+  //   //   },
+  //   // ],
+  // },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
