@@ -101,7 +101,8 @@
                           to-link="external"
                           :href="event.url"
                         >
-                          <span>Attend</span>
+                          <span v-if="event.btnText">{{ event.btnText }}</span>
+                          <span v-else>Attend</span>
                           <span class="icon__right">&rarr;</span>
                         </tm-button>
                       </div>
@@ -143,7 +144,8 @@ export default {
           place: 'Spielfeld Digital Hub, Berlin',
           startTime: '17:30',
           language: 'English',
-          url: 'https://www.eventbrite.com/e/hackatom-vi-warm-up-event-tickets-196504178287',
+          // url: 'https://www.youtube.com/channel/UC8HFOUdnMnpoWmQMgeKoB3A',
+          // btnText: 'Watch Replay',
         },
         {
           title: 'Dive into the Cosmos Ecosystem',
@@ -161,7 +163,8 @@ export default {
           ],
           details:
             'Learn what blockchain modules are, how to create them, how to use the various open-source modules to build a Cosmos blockchain, and see what else Cosmos has to offer!',
-          url: 'https://www.eventbrite.com/e/hackatom-vi-warm-up-event-tickets-196504178287?aff=ebdssbdestsearch',
+          url: 'https://youtu.be/YLziYFKfvck',
+          btnText: 'Watch Replay',
         },
         {
           title: 'Blockchain Gaming with Cosmos SDK and Starport',
@@ -179,7 +182,8 @@ export default {
           ],
           details:
             'An informative workshop with Har Preet Singh, Developer Relations Engineer at Tendermint, in which you can build your own blockchain-based multiplayer game using Starport and Cosmos SDK.',
-          url: 'https://www.eventbrite.com/e/hackatom-vi-warm-up-event-tickets-196504178287?aff=ebdssbdestsearch',
+          url: 'https://youtu.be/fWbx5Zkg-ok',
+          btnText: 'Watch Replay',
         },
         {
           title: 'How to Build an IBC-Compatible App',
@@ -197,7 +201,8 @@ export default {
           ],
           details:
             'The third and final workshop, given by Callum Waters, IBC Protocol Architect at ICF, will go over Inter-Blockchain Communication (IBC) and how to build an IBC-compatible app',
-          url: 'https://www.eventbrite.com/e/hackatom-vi-warm-up-event-tickets-196504178287?aff=ebdssbdestsearch',
+          url: 'https://youtu.be/ljQ30mYa-Ks',
+          btnText: 'Watch Replay',
         },
         {
           title: 'HackAtom VI Opening Ceremony',
@@ -209,7 +214,7 @@ export default {
           language: 'English',
           // details:
           //   'Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
-          // url: '#',
+          url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
         },
         {
           title: 'Submissions Deadline',
