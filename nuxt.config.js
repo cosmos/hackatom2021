@@ -112,7 +112,6 @@ export default {
         href: '/safari-pinned-tab.svg',
         color: 'black',
       },
-      { rel: 'preconnect', href: 'https://www.google-analytics.com' },
       {
         rel: 'preload',
         as: 'style',
@@ -168,7 +167,7 @@ export default {
   // https://github.com/nuxt-community/google-gtag
   modules: ['@nuxtjs/google-gtag'],
   'google-gtag': {
-    id: '2992125925',
+    id: 'GTM-KXGP6JS',
     config: {
       anonymize_ip: true, // anonymize IP
       send_page_view: false, // might be necessary to avoid duplicated page track on page reload
@@ -179,14 +178,14 @@ export default {
     debug: true, // enable to track in dev mode
     disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
     // https://support.google.com/google-ads/answer/6095821
-    additionalAccounts: [
-      {
-        id: 'G-6Y0VDQ6SFG', // required if you are adding additional accounts
-        config: {
-          send_page_view: false, // optional configurations
-        },
-      },
-    ],
+    // additionalAccounts: [
+    //   {
+    //     id: 'G-6Y0VDQ6SFG', // required if you are adding additional accounts
+    //     config: {
+    //       send_page_view: false, // optional configurations
+    //     },
+    //   },
+    // ],
   },
   /*
    ** Build configuration
