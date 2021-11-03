@@ -144,8 +144,8 @@ export default {
           place: 'Spielfeld Digital Hub, Berlin',
           startTime: '17:30',
           language: 'English',
-          url: 'https://www.youtube.com/channel/UC8HFOUdnMnpoWmQMgeKoB3A',
-          btnText: 'Watch Replay',
+          // url: 'https://www.youtube.com/channel/UC8HFOUdnMnpoWmQMgeKoB3A',
+          // btnText: 'Watch Replay',
         },
         {
           title: 'Dive into the Cosmos Ecosystem',
@@ -214,7 +214,7 @@ export default {
           language: 'English',
           // details:
           //   'Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
-          // url: '#',
+          url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
         },
         {
           title: 'Submissions Deadline',
