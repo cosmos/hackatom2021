@@ -21,6 +21,7 @@
             <tm-button
               to-link="external"
               href="https://discord.gg/cosmosnetwork"
+              id="joinDeveloperChat"
             >
               Join Developer Chat<span class="icon__external">&nearr;</span>
             </tm-button>
