@@ -25,6 +25,7 @@
           size="l"
           to-link="external"
           href="https://cosmos-hackatom-vi.devpost.com/"
+          id="registerNowBottom"
         >
           Register <span class="icon__external">&nearr;</span>
         </tm-button>
