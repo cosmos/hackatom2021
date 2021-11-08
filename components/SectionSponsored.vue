@@ -166,6 +166,14 @@ export default {
               name: 'agoric',
               link: 'https://agoric.com/',
             },
+            {
+              name: 'ki',
+              link: 'https://foundation.ki/',
+            },
+            {
+              name: 'osmosis',
+              link: 'https://osmosis.zone/',
+            },
           ],
         },
         {
