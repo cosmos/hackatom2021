@@ -13,7 +13,7 @@
     <section-schedule />
     <section-incoming-transmissions />
     <section-participate />
-    <!-- <section-faq /> -->
+    <section-faq />
   </main>
 </template>
 
