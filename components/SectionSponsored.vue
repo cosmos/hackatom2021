@@ -101,7 +101,7 @@ export default {
         {
           name: 'pylons',
           info: 'Built on Cosmos, Pylons is a fast and interoperable system for brands and creators to build engaging products with meaningful NFT experiences.',
-          link: 'https://www.pylon.money/',
+          link: 'https://www.pylons.tech/',
         },
         {
           name: 'ixo',
