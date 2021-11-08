@@ -26,32 +26,55 @@
         <div
           class="
             tm-text-center tm-rf2 tm-rf4-m-up tm-rf3-l-up tm-lh-title tm-bold
-            countdown
           "
         >
-          Register for the Virtual HackAtom
+          Time remaining
         </div>
 
-        <div class="mt-7 tm-text-center">
+        <div
+          class="
+            mt-4
+            tm-text-center tm-rf2 tm-rf4-m-up tm-rf3-l-up tm-lh-title tm-bold
+          "
+        >
+          <tm-countdown
+            class="tm-mono tm-rf4 tm-rf3-l-up countdown__count"
+            :now="countdown.now"
+            :end="countdownTimer(countdown.date, countdown.time)"
+          />
+        </div>
+
+        <div
+          class="
+            mt-3
+            tm-rf-1 tm-rf0-m-up tm-medium tm-text-center tm-overline tm-muted
+            date
+          "
+        >
+          7 PM Nov 11 – 7 PM Dec 08
+        </div>
+
+        <div class="mt-6 tm-text-center">
           <tm-button
             class="cta-button"
             size="l"
             to-link="external"
             href="https://cosmos-hackatom-vi.devpost.com/"
-            id="registerNowTop"
+            id="submitProject"
           >
-            Register Now <span class="icon__external">&nearr;</span>
+            Submit your Project <span class="icon__external">&nearr;</span>
           </tm-button>
         </div>
 
-        <div
-          class="
-            mt-7
-            bottom
-            tm-title tm-rf-1 tm-rf0-m-up tm-lh-copy tm-medium tm-text-center
-          "
-        >
-          In-Person Opening Ceremony, Lisbon - November 11
+        <div class="mt-7 tm-text-center">
+          <span>Not registered?</span>
+          <tm-link
+            class="tm-link-external cta-button"
+            href="https://cosmos-hackatom-vi.devpost.com/"
+            id="suitUp"
+          >
+            Suit up
+          </tm-link>
         </div>
       </div>
     </div>
@@ -73,10 +96,10 @@ export default {
       moment,
       countdown: {
         now: Math.trunc(new Date(new Date().toUTCString()).getTime() / 1000),
-        date: '2021-10-27',
+        date: '2021-12-08',
         time: '19:00',
-        usage: moment.tz('2021-10-27 19:00', 'CET').format(),
-        end: '2021-10-27T19:00:00Z',
+        usage: moment.tz('2021-12-08 19:00', 'CET').format(),
+        end: '2021-12-08T19:00:00Z',
       },
     }
   },
@@ -152,6 +175,11 @@ export default {
       display none
 
 .header
+  margin-top var(--spacing-4)
+  @media $breakpoint-small
+    margin-top var(--spacing-4)
+  @media $breakpoint-large
+    margin-top -2.4rem
   .countdown
   .bottom
     center()
@@ -162,28 +190,10 @@ export default {
       max-width: none
 
 .countdown
-  margin-top var(--spacing-4)
-  @media $breakpoint-small
-    display flex
-    align-items baseline
-    justify-content center
-    margin-top var(--spacing-4)
-  @media $breakpoint-large
-    margin-top -3.4rem
   &__count
     margin-top var(--spacing-3)
     @media $breakpoint-small
       margin-top 0
-
-.date
-  max-width 14rem
-  margin-top var(--spacing-6)
-  center()
-  @media $breakpoint-medium
-    max-width none
-    margin-top var(--spacing-3)
-  @media $breakpoint-large
-    margin-top var(--spacing-4)
 
 .wizard
   margin-top var(--spacing-10)

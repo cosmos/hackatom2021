@@ -5,20 +5,38 @@
         <logo-cosmos class="logo__svg" />
         <span class="sr-only">Cosmos</span>
       </span>
-      <span class="tm-text tm-normal tablet">
-        Virtual Hackathon open to everyone
+      <span class="info tm-text tm-normal tablet">
+        <span>Virtual Hackathon open to everyone</span>
+        <tm-tooltip
+          text="Some restrictions may apply.<br/>Click to learn more."
+          position="top-center"
+          :isIcon="true"
+        >
+          <icon-info />
+        </tm-tooltip>
       </span>
-      <span class="tm-text tm-normal mobile">Virtual Hackathon</span>
+      <span class="info tm-text tm-normal mobile">
+        <span>Virtual Hackathon</span>
+        <tm-tooltip
+          text="Some restrictions may apply.<br/>Click to learn more."
+          position="top-center"
+          :isIcon="true"
+        >
+          <icon-info />
+        </tm-tooltip>
+      </span>
     </nav>
   </div>
 </template>
 
 <script>
 import LogoCosmos from '~/components/logos/LogoCosmos.vue'
+import IconInfo from '~/components/icons/IconInfo.vue'
 
 export default {
   components: {
     LogoCosmos,
+    IconInfo,
   },
 }
 </script>
@@ -36,13 +54,16 @@ export default {
     padding-top var(--spacing-6)
   @media $breakpoint-large
     padding-top var(--spacing-8)
-  .tablet
-    display none
-    @media $breakpoint-medium
-      display block
-  .mobile
-    @media $breakpoint-medium
+  .info
+    > *
+      vertical-align middle
+    &.tablet
       display none
+      @media $breakpoint-medium
+        display block
+    &.mobile
+      @media $breakpoint-medium
+        display none
 
 .logo
   font-size 0

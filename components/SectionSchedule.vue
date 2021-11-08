@@ -12,13 +12,36 @@
           Schedule
         </h2>
         <p class="mt-8 tm-lh-title tm-rf0 tm-normal tm-gray">
-          All event times are listed in your local timezone ({{ getTimezone }}).
+          All event times are listed in your local timezone ({{
+            getTimezone
+          }}).<br />
+          In person events will be live streamed.
         </p>
+
+        <div class="mt-8">
+          <tm-button
+            size="l"
+            variant="text"
+            background-color="transparent"
+            color="var(--white)"
+            @click.native="isShowPast = !isShowPast"
+          >
+            <span v-if="isShowPast">Hide past events</span>
+            <span v-else>Show past events</span>
+            <span class="icon__bottom" :class="isShowPast && '_rotate'">
+              &darr;
+            </span>
+          </tm-button>
+        </div>
 
         <div class="mt-8">
           <tm-collapse accordion>
             <div v-for="(event, key) in events" :key="event.title">
               <tm-collapse-item
+                v-if="
+                  (!isOld(event.date, event.startTime) && !isShowPast) ||
+                  isShowPast
+                "
                 :icon-top="true"
                 :disabled="!event.details && !event.url"
                 :light="isLight(key)"
@@ -92,9 +115,8 @@
                       <p
                         v-if="event.details"
                         class="tm-lh-copy tm-rf0 tm-normal"
-                      >
-                        {{ event.details }}
-                      </p>
+                        v-html="event.details"
+                      />
                       <div v-if="event.url" :class="event.details && 'mt-7'">
                         <tm-button
                           v-if="event.url"
@@ -130,6 +152,7 @@ export default {
   components: { TmButton },
   data() {
     return {
+      isShowPast: true,
       events: [
         {
           title: 'Registrations Open',
@@ -210,10 +233,194 @@ export default {
           startTime: '09:00',
           // endTime: '17:00',
           type: 'In-Person',
-          place: 'Lisbon',
+          place: 'Time Out Market Studio, Lisbon',
           language: 'English',
           // details:
           //   'Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
+          url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+        },
+        {
+          title: 'Opening Remarks: The Internet of Blockchains',
+          date: '2021-11-11',
+          startTime: '10:00',
+          type: 'In-Person',
+          place: 'Time Out Market Studio, Lisbon',
+          language: 'English',
+          // details: '',
+          url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          people: [
+            {
+              name: 'Peng Zhong',
+              avatar: 'peng',
+              company: 'Tendermint',
+            },
+          ],
+        },
+        {
+          title: 'HackAtom VI Guidelines',
+          date: '2021-11-11',
+          startTime: '10:15',
+          type: 'In-Person',
+          place: 'Time Out Market Studio, Lisbon',
+          language: 'English',
+          // details: '',
+          url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          people: [
+            {
+              name: 'Adriana Mihai',
+              avatar: 'adriana',
+              company: 'Tendermint',
+            },
+          ],
+        },
+        {
+          title: 'Overview of Cosmos Ecosystem and HackAtom Challenges',
+          date: '2021-11-11',
+          startTime: '10:30',
+          type: 'In-Person',
+          place: 'Time Out Market Studio, Lisbon',
+          language: 'English',
+          // details: '',
+          url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          people: [
+            {
+              name: 'Tobias Schwarz',
+              avatar: 'tobias',
+              company: 'Tendermint',
+            },
+          ],
+        },
+        {
+          title: 'Starport Challenges Overview',
+          date: '2021-11-11',
+          startTime: '10:45',
+          type: 'In-Person',
+          place: 'Time Out Market Studio, Lisbon',
+          language: 'English',
+          details: `<p>We will fire up the CLI and review Starport challenges.</p>
+            <p>Code analysis for scaffolding, improving the serve command to support multi-node testnets, enhancing the build process and architecting a proper plugin system for Starport</p>`,
+          url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          people: [
+            {
+              name: 'Denis Fadeev',
+              avatar: 'denis',
+              company: 'Tendermint',
+            },
+          ],
+        },
+        {
+          title: 'Workshop - Creating a Loan Blockchain with Starport',
+          date: '2021-11-11',
+          startTime: '12:00',
+          type: 'In-Person',
+          place: 'Time Out Market Studio, Lisbon',
+          language: 'English',
+          details:
+            'Description: In this workshop we’ll create a new blockchain module for borrowing and lending tokens. The module will be created from scratch using Starport. We’ll use simple scaffolding commands to create a blockchain and add functionality to it, then we’ll go into the code and implement the business logic. By the end of the workshop you should be able to start building your own blockchains.',
+          url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          people: [
+            {
+              name: 'Denis Fadeev',
+              avatar: 'denis',
+              company: 'Tendermint',
+            },
+          ],
+        },
+        {
+          title: 'User Experience is the Real Gateway',
+          date: '2021-11-11',
+          startTime: '14:30',
+          type: 'In-Person',
+          place: 'Time Out Market Studio, Lisbon',
+          language: 'English',
+          details:
+            'The experience of using blockchain has historically been very difficult for users and developers alike. Yet, broader acceptance will require good usability on both ends—and Pylons has built one way to do that. Discover the Pylons solution in this fascinating talk.',
+          url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          people: [
+            {
+              name: 'Michael Soafer',
+              avatar: 'michael',
+              company: 'Pylons',
+            },
+          ],
+        },
+        {
+          title: 'Workshop - Gaming',
+          date: '2021-11-11',
+          startTime: '14:45',
+          type: 'In-Person',
+          place: 'Time Out Market Studio, Lisbon',
+          language: 'English',
+          // details: '',
+          url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          people: [
+            {
+              name: 'Mijolae Wright',
+              avatar: 'avatar',
+              company: 'Pylons',
+            },
+          ],
+        },
+        {
+          title: 'Assignment: Earth',
+          date: '2021-11-11',
+          startTime: '16:15',
+          type: 'In-Person',
+          place: 'Time Out Market Studio, Lisbon',
+          language: 'English',
+          details:
+            'The year is 2030. Cosmos technologies and collaborations changed the state of our planet. What happened?',
+          url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          people: [
+            {
+              name: 'Shaun Conway',
+              avatar: 'shaun',
+              company: 'IXO Foundation',
+            },
+          ],
+        },
+        {
+          title: 'Workshop - Sustainable DeFi! (It’s ReFi!)',
+          date: '2021-11-11',
+          startTime: '16:30',
+          type: 'In-Person',
+          place: 'Time Out Market Studio, Lisbon',
+          language: 'English',
+          details: `The ixo Protocol defines how to make verifiable claims about Earth States, verify these claims, issue verifiable credentials, and mint Earth Tokens of different classes, using the Interchain Identifier Specification and Token Templates. In this workshop, you'll see how to build compelling solutions with these protocols and next-generation token specifications.`,
+          url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          people: [
+            {
+              name: 'Shaun Conway',
+              avatar: 'shaun',
+              company: 'IXO Foundation',
+            },
+          ],
+        },
+        {
+          title: 'Opening Ceremony - Closing Remarks',
+          date: '2021-11-11',
+          startTime: '17:30',
+          type: 'In-Person',
+          place: 'Time Out Market Studio, Lisbon',
+          language: 'English',
+          // details: '',
+          url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          people: [
+            {
+              name: 'Billy Rennekamp',
+              avatar: 'billy',
+              company: 'IBC Foundation',
+            },
+          ],
+        },
+        {
+          title: 'Evening Party',
+          date: '2021-11-11',
+          startTime: '17:30',
+          type: 'In-Person',
+          place: 'Ferroviário, Lisbon',
+          language: 'English',
+          // details: 'Party Time!',
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
         },
         {
@@ -369,4 +576,11 @@ export default {
     margin-top 0
   @media $breakpoint-xl
     grid-column 5 / span 6
+
+.icon__bottom
+  position relative
+  display inline-block
+  transition transform .25s $ease-out
+  &._rotate
+    transform scale(1, -1)
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="tm-section">
+  <section class="tm-section pb0">
     <div class="tm-section-container tm-container">
       <email-wizard />
     </div>
