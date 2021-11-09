@@ -251,7 +251,7 @@ export default {
   .nav-list
     opacity .2
     position absolute
-    top calc(-1 * var(--spacing-4))
+    top calc(-1 * var(--spacing-7))
     left calc(-1 * var(--wrap-gap))
     right calc(-1 * var(--wrap-gap))
     text-align center
