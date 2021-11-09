@@ -1085,6 +1085,69 @@ export default {
                 blog: 'https://blog.cosmos.network/bringing-defi-to-cosmos-the-gravity-dex-protocol-is-live-a0c5857d6267',
               },
             },
+            {
+              type: 'Ki Foundation',
+              title: 'Ki Foundation Challenge',
+              // preview: `Build a general tool for Loan or Insurance modules using the gravity dex.`,
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
+              info: [
+                `The Ki Foundation bridges CeFi and DeFi through an innovative range of products that provide users with an easy and seamless way to engage in DeFi operations, including its flagship Ki Chain blockchain and bridges to other blockchain ecosystems. The Token transfer capability of IBC was the first step showcasing the power of interoperability between Cosmos SDK-based chains. In order to grow the value of this thriving ecosystem, we need to implement the next step of cross-chain interoperability through the Interchain Account feature.`,
+                `For this challenge, developers will need to implement the module enabling cross-chain interoperability with features such as delegating, undelegating, sending coins, or operating an application-based action such as swapping on a chain like Osmosis.`,
+                `The idea is to leverage IBC capabilities and be able to use application-specific features on different sovereign chains in the Cosmos ecosystem. Specifically, we would like to be able to call any custom Cosmos SDK message on any IBC-enabled chain from an interchain account.`,
+                `A concrete use case we want to implement is the possibility to interact with the Osmosis GAMM module. For instance, we would need to deposit liquidity in pools and swap tokens. Another important aspect is the first class support of Interchain Accounts on CosmWasm smart contracts. We would like to use InterChain Accounts features from a CosmWasm smart contract and be able to interact through IBC with a CosmWasm smart contract on another chain.`,
+              ],
+              requirementsInfo: `Here is how we see the global architecture of the project and how we imagine the delivery. Basically, the challenge will include the below major tasks:`,
+              requirements: [
+                `<p>Specifications:</p>
+                <ul>
+                  <li>Support and contribute to the effort regarding ICS-27 specification.</li>
+                  <li><a href="https://github.com/cosmos/ibc/blob/master/spec/app/ics-027-interchain-accounts/README.md" target="_blank" rel="noopener noreferrer" class="tm-link">https://github.com/cosmos/ibc/blob/master/spec/app/ics-027-interchain-accounts/README.md</a></li>
+                  <li>Add the required changes to the specification that are missing to implement the needed features</li>
+                  <li>Coordinate with us and the community to identify any potential blockers and see how we could overcome those</li>
+                </ul>`,
+                `<p>IBC Relayers implementation</p>
+                <ul>
+                  <li>Analyze the ongoing initiatives from different parties regarding ICS-27 support in the different relayers implementations</li>
+                  <li>Identify the missing features to fully support ICS-27</li>
+                  <li>Submit a PR to at least one major relayer implementation (Hermes, Go relayer, or confio typescript relayer)</li>
+                </ul>`,
+                `<p>Cosmos SDK</p>
+                <ul>
+                  <li>Identify if the Interchain Account feature could be designed as a Cosmos SDK module, easily integrable to any IBC-enabled Cosmos chain</li>
+                  <li>Submit a PR to Cosmos SDK with the implementation of an Interchain Account module</li>
+                </ul>`,
+                `<p>CosmWasm / Wasmd</p>
+                <ul>
+                  <li>Identify the ongoing initiatives from different parties regarding ICS-27 support in CosmWasm contracts</li>
+                  <li>Identify the missing features to fully support ICS-27</li>
+                  <li>Submit a PR to wasmd with the implementation of ICS-27 specification</li>
+                </ul>`,
+                `<p>MVP: Implement an MVP showcasing the different features</p>
+                <ul>
+                  <li>End to end test repository with a working demo</li>
+                  <li>Documentation and guides on how to use the product</li>
+                  <li>Interoperable product</li>
+                  <li>Deployed on Juno testnet</li>
+                </ul>`,
+              ],
+              sources: {
+                'README.md':
+                  'https://github.com/cosmos/ibc/blob/master/spec/app/ics-027-interchain-accounts/README.md',
+                'Why Interchain Accounts Change Everything for Cosmos Interoperability':
+                  'https://medium.com/chainapsis/why-interchain-accounts-change-everything-for-cosmos-interoperability-59c19032bf11',
+                'github.com/cosmos/interchain-accounts':
+                  'https://github.com/cosmos/interchain-accounts',
+                'github.com/chainapsis/cosmos-sdk-interchain-account':
+                  'https://github.com/chainapsis/cosmos-sdk-interchain-account',
+                'chainapsis.github.io/cosmos-sdk-interchain-account':
+                  'https://chainapsis.github.io/cosmos-sdk-interchain-account/',
+                'chainapsis.github.io/cosmos-sdk-interchain-account/starport':
+                  'https://chainapsis.github.io/cosmos-sdk-interchain-account/starport/',
+              },
+            },
           ],
         },
         {
