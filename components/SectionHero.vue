@@ -125,6 +125,11 @@ export default {
 <style lang="stylus" scoped>
 .section-hero
   position relative
+  padding-top calc(var(--spacing-10) + 2.7rem)
+  @media $breakpoint-medium
+    padding-top calc(var(--spacing-10) + 2.9rem)
+  @media $breakpoint-large
+    padding-top calc(var(--spacing-10) + 4.75rem)
   &__graphics
     position absolute
     z-index 0

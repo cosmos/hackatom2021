@@ -1,5 +1,5 @@
 <template>
-  <section class="tm-section section mt-6 pb0">
+  <section class="tm-section section mt-6 pb0" id="schedule">
     <div class="tm-section-container tm-container">
       <div class="schedule">
         <p class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">Event</p>
