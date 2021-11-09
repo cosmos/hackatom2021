@@ -248,6 +248,32 @@
             </ul>
           </div>
         </div>
+        <div v-if="currentItem.testnet" class="mt-9">
+          <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
+            Testnet resources
+          </div>
+          <div class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted">
+            <ul v-if="currentItem.testnet" class="links">
+              <li
+                v-for="info in currentItem.testnet"
+                :key="info.name"
+                class="links__item tm-rf0"
+              >
+                <span v-if="info.name" class="links__label">
+                  {{ info.name }}
+                </span>
+                <tm-link
+                  v-if="info.link"
+                  :href="info.link"
+                  class="tm-link-external"
+                >
+                  {{ info.shortLink }}
+                </tm-link>
+                <div v-else class="tm-title" v-html="info.content" />
+              </li>
+            </ul>
+          </div>
+        </div>
         <div v-if="currentItem.sources" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Resources
@@ -257,7 +283,7 @@
               <li
                 v-for="(info, key) in currentItem.sources"
                 :key="info"
-                class="links__item"
+                class="links__item _sources tm-rf0"
               >
                 <a
                   v-if="key === 'email'"
@@ -386,6 +412,13 @@ export default {
                   <li>Have a working functionality</li>
                   <li>Clear documentation in the form of a README.md, for how to interact and run the project</li>
                 </ul>`,
+              ],
+              testnet: [
+                {
+                  name: 'Testnet',
+                  link: 'https://evmos.dev/testnet/join.html',
+                  shortLink: 'evmos.dev/testnet/join',
+                },
               ],
               sources: {
                 'Developer Docs': 'http://evmos.dev',
@@ -633,6 +666,20 @@ export default {
                   </ul>`,
                 `Document the build, run, and test process in a README.md at the root of your project`,
               ],
+              testnet: [
+                {
+                  name: 'Peers for the testnet:',
+                  content: `b4caebe07ab25126e4e6053bf955833198f18ed0@54.216.30.38:26656<br />
+                    b6f113a30e7019b034e8b31cd2541aebebaacb60@54.66.212.111:26656<br />
+                    ffcc2fab592d512eca7f903fd494d85a93e19cfe@122.248.219.121:26656<br />
+                    a2864737f01d3977211e2ea624dd348595dd4f73@3.222.8.87:26656`,
+                },
+                {
+                  name: 'Genesis for the testnet:',
+                  link: 'https://github.com/Sifchain/networks/blob/master/testnet/sifchain-testnet/genesis.json',
+                  shortLink: 'github.com/Sifchain/networks',
+                },
+              ],
               sources: {
                 'Cosmos SDK documentation': 'https://docs.cosmos.network/',
                 'Cosmos SDK on Github': 'https://github.com/cosmos',
@@ -667,6 +714,23 @@ export default {
                 `Mobile or web client.`,
                 `Relatively unobtrusive chain interaction; chain state is saved on chain and updated with real time venue entry dynamics`,
                 `The prize can be paid in either ATOM or Pylons (native token) at a parity according to a fixed day market price set ahead of time.`,
+              ],
+              testnet: [
+                {
+                  name: 'Testnet',
+                  link: 'http://testnet.pylons.tech',
+                  shortLink: 'testnet.pylons.tech',
+                },
+                {
+                  name: 'Block Explorer',
+                  link: 'https://wallet.pylons.tech/',
+                  shortLink: 'https://wallet.pylons.tech',
+                },
+                {
+                  name: 'User Endpoint',
+                  link: 'http://wallet.pylons.tech',
+                  shortLink: 'wallet.pylons.tech',
+                },
               ],
               sources: {
                 'cosmos-sdk': 'https://github.com/cosmos/cosmos-sdk/',
@@ -866,6 +930,18 @@ export default {
                 'Global ISCN browsers, preferably with a way to discover groups, series, and relationships between works',
                 'Other features that might be useful for content creators to manage their ISCN records',
               ],
+              testnet: [
+                {
+                  name: 'Can use this link for testing:',
+                  link: 'https://github.com/likecoin/testnets/tree/master/likecoin-public-testnet-3',
+                  shortLink: 'github.com/likecoin/testnets',
+                },
+                {
+                  name: 'Mainnet with actual wallets with iscn records:',
+                  link: 'https://github.com/likecoin/mainnet',
+                  shortLink: 'github.com/likecoin/mainnet',
+                },
+              ],
               sources: {
                 Documentation: 'https://docs.like.co/',
                 'ISCN App': 'https://app.like.co',
@@ -980,6 +1056,24 @@ export default {
               requirements: [
                 `Using <a href='https://github.com/Gravity-Devs/liquidity/tree/v1.4.0' target='_blank' rel='noopener noreferrer' class='tm-link'>Gravity DEX</a> is mandatory for this challenge`,
               ],
+              testnet: [
+                {
+                  link: 'https://testnet.cosmos.network/',
+                  shortLink: 'testnet.cosmos.network',
+                },
+                {
+                  link: 'https://rpc.testnet.cosmos.network/',
+                  shortLink: 'rpc.testnet.cosmos.network',
+                },
+                {
+                  link: 'https://api.testnet.cosmos.network/',
+                  shortLink: 'api.testnet.cosmos.network',
+                },
+                {
+                  link: 'https://grpc.testnet.cosmos.network/',
+                  shortLink: 'grpc.testnet.cosmos.network',
+                },
+              ],
               sources: {
                 'cosmos-sdk': 'https://github.com/cosmos/cosmos-sdk/',
                 starport: 'https://github.com/tendermint/starport',
@@ -1023,6 +1117,23 @@ export default {
                 `Characters should be able to interact with the 3D Strange Clan environment and develop their Clan/plots of land`,
                 `Cosmos SDK/Pylons SDK is used for on-chain implementation of creation and trading`,
                 `Purchases should be reflected in-game and on-chain`,
+              ],
+              testnet: [
+                {
+                  name: 'Testnet',
+                  link: 'http://testnet.pylons.tech',
+                  shortLink: 'testnet.pylons.tech',
+                },
+                {
+                  name: 'Block Explorer',
+                  link: 'https://wallet.pylons.tech/',
+                  shortLink: 'https://wallet.pylons.tech',
+                },
+                {
+                  name: 'User Endpoint',
+                  link: 'http://wallet.pylons.tech',
+                  shortLink: 'wallet.pylons.tech',
+                },
               ],
               sources: {
                 Pylons: 'https://www.pylons.tech/',
@@ -1135,6 +1246,20 @@ export default {
                 `A readme with instructions for use`,
                 `A demo showcasing cross-chain ecocredit transfer & retirement using a fork of regen-ledger and a testnet of another IBC ecocredit enabled blockchain.`,
                 `Bonus points will be provided for extending this functionality into a dApp where end-users can issue, transfer, and retire ecocredits in a cross-chain capable way.`,
+              ],
+              testnet: [
+                {
+                  name: 'Getting Started Tutorial:',
+                  link: 'https://docs.regen.network/getting-started/live-networks.html',
+                  shortLink: 'docs.regen.network/getting-started',
+                },
+                {
+                  name: 'Redwood Testnet:',
+                  content: `<p><b>regen-redwood-1</b> is the chain ID for Redwood Testnet</p>
+                  <p>Redwood Testnet launched with the <b>v1.0.0</b> release tag of <b>regen-ledger</b></p>
+                  <p>When starting a full node or a validator node from genesis, you will need to start the node with the <b>v1.0.0</b> version (the "genesis binary"). For more information about preparing your node to migrate to the <b>v2.0.0</b> version, see <a href="https://docs.regen.network/migrations/v2.0-upgrade.html" target="_blank" rel="noopener noreferrer" class="tm-link tm-link-underline tm-link-external">Upgrade Guide v2.0</a></p>
+                  <p>The following URL is the node address for a full node operated by RND:<br/><a href="http://redwood.regen.network:26657/" target="_blank" rel="noopener noreferrer" class="tm-link tm-link-underline tm-link-external">http://redwood.regen.network:26657/</a></p>`,
+                },
               ],
               sources: {
                 'Regen Ledger': 'http://github.com/regen-network/regen-ledger',
@@ -1373,8 +1498,12 @@ export default {
     padding var(--spacing-5) 0
     list-style none
     border-bottom 1px solid var(--border)
-    &:last-child
-      border-bottom 0
+    &._sources
+      &:last-child
+        border-bottom 0
+  &__label
+    display inline-block
+    margin-right var(--spacing-4)
 
 .prizes-list
   display flex
