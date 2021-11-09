@@ -62,19 +62,14 @@
             href="https://cosmos-hackatom-vi.devpost.com/"
             id="submitProject"
           >
-            Submit your Project <span class="icon__external">&nearr;</span>
+            Participate <span class="icon__external">&nearr;</span>
           </tm-button>
         </div>
 
         <div class="mt-7 tm-text-center">
-          <span>Not registered?</span>
-          <tm-link
-            class="tm-link-external cta-button"
-            href="https://cosmos-hackatom-vi.devpost.com/"
-            id="suitUp"
-          >
-            Suit up
-          </tm-link>
+          <span class="tm-overline tm-rf0 tm-lh-title tm-medium">
+            WIN OVER $1M in prizes
+          </span>
         </div>
       </div>
     </div>

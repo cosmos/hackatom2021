@@ -196,7 +196,7 @@ export default {
         },
         {
           question: 'What is Cosmos?',
-          answer: `<p>Cosmos is a rapidly expanding ecosystem of independent interconnected blockchains built using developer-friendly application components and connected with the ground-breaking IBC (Inter-Blockchain Communication) protocol. There are currently more than 250 blockchain apps and services in the Cosmos network, including Binance Chain, Terra, Crypto.org, Cosmos Hub, and Osmosis, with over $120 billion of digital assets under management.</p>
+          answer: `<p>Cosmos is a rapidly expanding ecosystem of independent interconnected blockchains built using developer-friendly application components and connected with the ground-breaking Inter-Blockchain Communication protocol (IBC). There are currently more than 250 blockchain apps and services in the Cosmos network, including Binance Chain, Terra, Crypto.org, Cosmos Hub, and Osmosis, with over $120 billion of digital assets under management.</p>
             <p>All Cosmos chains are built using environmentally-friendly Proof-of-Stake (PoS) technology, which allows them to be highly sustainable and scalable with an estimated 99% lower carbon footprint than leading Proof-of-Work (PoW) blockchains. With Cosmos, developers can build entirely autonomous application-specific blockchains that can easily interconnect, self-govern, follow their own economic models with low transaction fees, and scale for mainstream adoption.</p>`,
         },
         {

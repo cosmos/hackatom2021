@@ -274,7 +274,7 @@ export default {
           ],
         },
         {
-          title: 'Overview of Cosmos Ecosystem and HackAtom Challenges',
+          title: 'Overview of Cosmos Ecosystem and HackAtom challenges',
           date: '2021-11-11',
           startTime: '10:30',
           type: 'In-Person',
@@ -293,7 +293,7 @@ export default {
         {
           title: 'Starport Challenges Overview',
           date: '2021-11-11',
-          startTime: '10:45',
+          startTime: '11:35',
           type: 'In-Person',
           place: 'Time Out Market Studio, Lisbon',
           language: 'English',
@@ -311,12 +311,12 @@ export default {
         {
           title: 'Workshop - Creating a Loan Blockchain with Starport',
           date: '2021-11-11',
-          startTime: '12:00',
+          startTime: '11:50',
           type: 'In-Person',
           place: 'Time Out Market Studio, Lisbon',
           language: 'English',
           details:
-            'Description: In this workshop we’ll create a new blockchain module for borrowing and lending tokens. The module will be created from scratch using Starport. We’ll use simple scaffolding commands to create a blockchain and add functionality to it, then we’ll go into the code and implement the business logic. By the end of the workshop you should be able to start building your own blockchains.',
+            'In this workshop we’ll create a new blockchain module for borrowing and lending tokens. The module will be created from scratch using Starport. We’ll use simple scaffolding commands to create a blockchain and add functionality to it, then we’ll go into the code and implement the business logic. By the end of the workshop you should be able to start building your own blockchains.',
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
           people: [
             {
@@ -329,7 +329,7 @@ export default {
         {
           title: 'User Experience is the Real Gateway',
           date: '2021-11-11',
-          startTime: '14:30',
+          startTime: '14:20',
           type: 'In-Person',
           place: 'Time Out Market Studio, Lisbon',
           language: 'English',
@@ -345,13 +345,15 @@ export default {
           ],
         },
         {
-          title: 'Workshop - Gaming',
+          title:
+            'Workshop - Build with me! A Cross Platform mobile blockchain experience',
           date: '2021-11-11',
-          startTime: '14:45',
+          startTime: '14:35',
           type: 'In-Person',
           place: 'Time Out Market Studio, Lisbon',
           language: 'English',
-          // details: '',
+          details:
+            'Developing a cross platform mobile blockchain experiences with Pylons SDK.',
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
           people: [
             {
@@ -364,7 +366,7 @@ export default {
         {
           title: 'Assignment: Earth',
           date: '2021-11-11',
-          startTime: '16:15',
+          startTime: '16:25',
           type: 'In-Person',
           place: 'Time Out Market Studio, Lisbon',
           language: 'English',
@@ -382,7 +384,7 @@ export default {
         {
           title: 'Workshop - Sustainable DeFi! (It’s ReFi!)',
           date: '2021-11-11',
-          startTime: '16:30',
+          startTime: '16:40',
           type: 'In-Person',
           place: 'Time Out Market Studio, Lisbon',
           language: 'English',
@@ -399,11 +401,12 @@ export default {
         {
           title: 'Opening Ceremony - Closing Remarks',
           date: '2021-11-11',
-          startTime: '17:30',
+          startTime: '17:40',
           type: 'In-Person',
           place: 'Time Out Market Studio, Lisbon',
           language: 'English',
-          // details: '',
+          details:
+            'Booth strapping a career in the crypto industry via hackathons and grants',
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
           people: [
             {
@@ -416,7 +419,7 @@ export default {
         {
           title: 'Evening Party',
           date: '2021-11-11',
-          startTime: '17:30',
+          startTime: '19:00',
           type: 'In-Person',
           place: 'Ferroviário, Lisbon',
           language: 'English',
