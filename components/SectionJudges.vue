@@ -1,5 +1,5 @@
 <template>
-  <section class="tm-section section pb0">
+  <section class="tm-section section pb0" id="jury">
     <div class="tm-section-container tm-container">
       <div class="graphics" />
 
@@ -173,6 +173,13 @@ export default {
           companyLogo: 'informal',
         },
         {
+          type: 'Board Judge',
+          avatar: 'sunny',
+          name: 'Sunny Aggarwal',
+          company: 'Osmosis',
+          companyLogo: 'osmosis',
+        },
+        {
           type: 'Judge',
           avatar: 'dave',
           name: 'Dave Hrycyszyn',
@@ -284,6 +291,13 @@ export default {
           company: 'Pylons',
           companyLogo: 'pylons',
         },
+        {
+          type: 'Judge',
+          avatar: 'abdelhamid',
+          name: 'Abdelhamid Bakhta',
+          company: 'KI Foundation',
+          companyLogo: 'ki',
+        },
       ],
     }
   },
@@ -297,7 +311,6 @@ export default {
     margin-top var(--spacing-9)
   .tm-grid-base
     gap var(--spacing-8) var(--grid-gap-x)
-
 .graphics
   position absolute
   z-index: -1
@@ -310,12 +323,10 @@ export default {
   transform: translate(-90%, -70%)
   @media $breakpoint-medium
     transform: translate(-105%, -50%)
-
 .judges-list
   display none
   @media $breakpoint-large
     display block
-
 .judges-scroll
   display flex
   margin-left calc(-1 * var(--wrap-gap))
@@ -330,7 +341,6 @@ export default {
     display none
   @media $breakpoint-large
     display none
-
 .judge-card
   width 13.5rem
   flex-shrink 0
@@ -341,7 +351,6 @@ export default {
     grid-column span 3
   &.hide
     display none
-
 .images
   position relative
   display: inline-block
@@ -355,10 +364,8 @@ export default {
     left 100%
     width 2.5rem
     transform: translate(-.5rem, -50%)
-
 .company-name
   max-width: 8rem
-
 .icon__bottom
   position relative
   display inline-block
