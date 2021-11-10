@@ -1010,7 +1010,7 @@ export default {
         {
           title: 'DeFi',
           info: 'DeFi app or module with the Cosmos SDK',
-          prize: 'Total Prize pool of $100K',
+          prize: 'Total Prize pool of $200K',
           details:
             'DeFi is a blockchain-based alternative financial system to the legacy system of banks, exchanges, insurance companies, mortgage providers, etc., but reimagined from the ground up with no intermediaries in the middle. Unlike traditional finance, with no gatekeepers to turn down your application, DeFi lowers the barrier to entry, allowing more people to access financial services, take out a collateralized loan, or earn a yield on their assets. Help expand the capabilities of DeFi by building an app or module with the Cosmos SDK.',
           challenges: [

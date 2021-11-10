@@ -291,6 +291,22 @@ export default {
           ],
         },
         {
+          title: 'Judging criteria: What we look for in a project',
+          date: '2021-11-11',
+          startTime: '11:15',
+          type: 'In-Person',
+          place: 'Time Out Market Studio, Lisbon',
+          language: 'English',
+          url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          people: [
+            {
+              name: 'Sunny Aggarwal',
+              avatar: 'sunny',
+              company: 'Osmosis',
+            },
+          ],
+        },
+        {
           title: 'Starport Challenges Overview',
           date: '2021-11-11',
           startTime: '11:35',

@@ -173,6 +173,13 @@ export default {
           companyLogo: 'informal',
         },
         {
+          type: 'Board Judge',
+          avatar: 'sunny',
+          name: 'Sunny Aggarwal',
+          company: 'Osmosis',
+          companyLogo: 'osmosis',
+        },
+        {
           type: 'Judge',
           avatar: 'dave',
           name: 'Dave Hrycyszyn',
