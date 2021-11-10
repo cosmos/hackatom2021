@@ -117,7 +117,11 @@
                         class="tm-lh-copy tm-rf0 tm-normal"
                         v-html="event.details"
                       />
-                      <div v-if="event.url" :class="event.details && 'mt-7'">
+                      <div
+                        v-if="event.url"
+                        class="button__container"
+                        :class="event.details && 'mt-7'"
+                      >
                         <tm-button
                           v-if="event.url"
                           to-link="external"
@@ -126,6 +130,18 @@
                           <span v-if="event.btnText">{{ event.btnText }}</span>
                           <span v-else>Attend</span>
                           <span class="icon__right">&rarr;</span>
+                        </tm-button>
+                        <tm-button
+                          v-if="event.livestream"
+                          to-link="external"
+                          variant="text"
+                          background-color="transparent"
+                          color="var(--white)"
+                          :href="event.livestream"
+                        >
+                          <span v-if="event.btnText">{{ event.btnText }}</span>
+                          <span v-else>Livestream</span>
+                          <span class="icon__external">&nearr;</span>
                         </tm-button>
                       </div>
                     </div>
@@ -237,6 +253,7 @@ export default {
           // details:
           //   'Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          livestream: 'https://www.youtube.com/watch?v=6bq-JaViGRM',
         },
         {
           title: 'Opening Remarks: Welcome to HackAtom VI',
@@ -247,6 +264,7 @@ export default {
           language: 'English',
           // details: '',
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          livestream: 'https://www.youtube.com/watch?v=6bq-JaViGRM',
           people: [
             {
               name: 'Peng Zhong',
@@ -264,6 +282,7 @@ export default {
           language: 'English',
           // details: '',
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          livestream: 'https://www.youtube.com/watch?v=6bq-JaViGRM',
           people: [
             {
               name: 'Adriana Mihai',
@@ -281,6 +300,7 @@ export default {
           language: 'English',
           // details: '',
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          livestream: 'https://www.youtube.com/watch?v=6bq-JaViGRM',
           people: [
             {
               name: 'Tobias Schwarz',
@@ -297,6 +317,7 @@ export default {
           place: 'Time Out Market Studio, Lisbon',
           language: 'English',
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          livestream: 'https://www.youtube.com/watch?v=6bq-JaViGRM',
           people: [
             {
               name: 'Sunny Aggarwal',
@@ -315,6 +336,7 @@ export default {
           details: `<p>We will fire up the CLI and review Starport challenges.</p>
             <p>Code analysis for scaffolding, improving the serve command to support multi-node testnets, enhancing the build process and architecting a proper plugin system for Starport</p>`,
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          livestream: 'https://www.youtube.com/watch?v=6bq-JaViGRM',
           people: [
             {
               name: 'Denis Fadeev',
@@ -333,6 +355,7 @@ export default {
           details:
             'In this workshop we’ll create a new blockchain module for borrowing and lending tokens. The module will be created from scratch using Starport. We’ll use simple scaffolding commands to create a blockchain and add functionality to it, then we’ll go into the code and implement the business logic. By the end of the workshop you should be able to start building your own blockchains.',
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          livestream: 'https://www.youtube.com/watch?v=6bq-JaViGRM',
           people: [
             {
               name: 'Denis Fadeev',
@@ -351,6 +374,7 @@ export default {
           details:
             'The experience of using blockchain has historically been very difficult for users and developers alike. Yet, broader acceptance will require good usability on both ends—and Pylons has built one way to do that. Discover the Pylons solution in this fascinating talk.',
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          livestream: 'https://www.youtube.com/watch?v=6bq-JaViGRM',
           people: [
             {
               name: 'Michael Soafer',
@@ -370,6 +394,7 @@ export default {
           details:
             'Developing a cross platform mobile blockchain experiences with Pylons SDK.',
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          livestream: 'https://www.youtube.com/watch?v=6bq-JaViGRM',
           people: [
             {
               name: 'Mijolae Wright',
@@ -388,6 +413,7 @@ export default {
           details:
             'The year is 2030. Cosmos technologies and collaborations changed the state of our planet. What happened?',
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          livestream: 'https://www.youtube.com/watch?v=6bq-JaViGRM',
           people: [
             {
               name: 'Shaun Conway',
@@ -405,6 +431,7 @@ export default {
           language: 'English',
           details: `The ixo Protocol defines how to make verifiable claims about Earth States, verify these claims, issue verifiable credentials, and mint Earth Tokens of different classes, using the Interchain Identifier Specification and Token Templates. In this workshop, you'll see how to build compelling solutions with these protocols and next-generation token specifications.`,
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          livestream: 'https://www.youtube.com/watch?v=6bq-JaViGRM',
           people: [
             {
               name: 'Shaun Conway',
@@ -423,6 +450,7 @@ export default {
           details:
             'Booth strapping a career in the crypto industry via hackathons and grants',
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
+          livestream: 'https://www.youtube.com/watch?v=6bq-JaViGRM',
           people: [
             {
               name: 'Billy Rennekamp',
@@ -593,4 +621,15 @@ export default {
   transition transform .25s $ease-out
   &._rotate
     transform scale(1, -1)
+
+.button__container
+  > *
+    margin-top var(--spacing-7)
+    display block
+    @media $breakpoint-medium
+      display inline-block
+      margin-top 0
+      margin-left var(--spacing-7)
+    &:first-child
+      margin 0
 </style>
