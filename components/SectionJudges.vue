@@ -284,6 +284,13 @@ export default {
           company: 'Pylons',
           companyLogo: 'pylons',
         },
+        {
+          type: 'Judge',
+          avatar: 'abdelhamid',
+          name: 'Abdelhamid Bakhta',
+          company: 'KI Foundation',
+          companyLogo: 'ki',
+        },
       ],
     }
   },

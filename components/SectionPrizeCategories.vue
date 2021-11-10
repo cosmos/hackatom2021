@@ -984,6 +984,13 @@ export default {
                 `Adhere to standard token interfaces (CW20, CW721) and <a href="https://cosmos.network/ecosystem/wallets" target="_blank" rel="noopener noreferrer" class="tm-link">wallets</a> for contract deployment and interactions (mint, list, buy, sell, transfer, etc),`,
                 `A functional and usable front-end`,
               ],
+              testnet: [
+                {
+                  name: 'Network configurations',
+                  link: 'https://docs.archway.io/docs/overview/technology/network/',
+                  shortLink: 'docs.archway.io',
+                },
+              ],
               sources: {
                 'docs.archway.io': 'https://docs.archway.io/',
                 'archway getting-started':
@@ -1146,6 +1153,25 @@ export default {
                   'https://chainapsis.github.io/cosmos-sdk-interchain-account/',
                 'chainapsis.github.io/cosmos-sdk-interchain-account/starport':
                   'https://chainapsis.github.io/cosmos-sdk-interchain-account/starport/',
+              },
+            },
+            {
+              type: 'Osmosis',
+              title: 'Osmosis Challenge',
+              preview: `Build something cool with Osmosis. Bonus points if you incorporate ION.`,
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
+              info: [
+                `Build something cool with Osmosis. Bonus points if you incorporate ION.`,
+              ],
+              sources: {
+                'github.com/osmosis-labs/osmosis':
+                  'https://github.com/osmosis-labs/osmosis',
+                'github.com/osmosis-labs/osmosis-frontend':
+                  'https://github.com/osmosis-labs/osmosis-frontend',
+                'osmosis.zone': 'https://osmosis.zone',
               },
             },
           ],

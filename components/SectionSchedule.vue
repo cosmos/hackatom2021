@@ -240,7 +240,7 @@ export default {
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
         },
         {
-          title: 'Opening Remarks: The Internet of Blockchains',
+          title: 'Opening Remarks: Welcome to HackAtom VI',
           date: '2021-11-11',
           startTime: '10:00',
           type: 'In-Person',
@@ -257,7 +257,7 @@ export default {
           ],
         },
         {
-          title: 'HackAtom VI Guidelines',
+          title: 'HackAtom VI: Ready, Steady, Go!',
           date: '2021-11-11',
           startTime: '10:15',
           type: 'In-Person',
