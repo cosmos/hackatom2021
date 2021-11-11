@@ -1,7 +1,7 @@
 <template>
   <section class="tm-section pt11">
     <div class="tm-section-container tm-container container">
-      <!-- <div class="star" /> -->
+      <div class="star" />
       <div class="header tm-center tm-text-center">
         <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
           Participate
@@ -25,9 +25,9 @@
           size="l"
           to-link="external"
           href="https://cosmos-hackatom-vi.devpost.com/"
-          id="registerNowBottom"
+          id="submitProjectBottom"
         >
-          Register <span class="icon__external">&nearr;</span>
+          Submit your Project <span class="icon__external">&nearr;</span>
         </tm-button>
         <!-- <tm-button
           class="btn"

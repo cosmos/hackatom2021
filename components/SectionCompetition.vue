@@ -23,16 +23,16 @@
             Calling all developers… It's time to build a cross-chain universe!
             Take part in the biggest HackAtom in Cosmos history and compete for
             your share of $1,000,000 in prizes paid in $ATOM. Organized by
-            Tendermint, HackAtom VI will be a one month virtual event with
-            in-person side events covering seven different themes.
+            Tendermint, HackAtom VI is a one-month virtual event with in-person
+            side events covering seven different themes.
           </p>
           <p class="mt-7 tm-lh-copy tm-rf0 tm-rf1-m-up">
             Cosmos is a rapidly expanding ecosystem of independent
             interconnected blockchains built using developer-friendly
-            application components and connected with the ground-breaking IBC
-            (Inter-Blockchain Communication) protocol. There are more than 250
-            blockchain apps and services in the Cosmos Network with over $130
-            billion of digital assets under management.
+            application components and connected with the ground-breaking
+            Inter-Blockchain Communication protocol (IBC). There are more than
+            250 blockchain apps and services in the Cosmos Network with over
+            $130 billion of digital assets under management.
           </p>
         </div>
       </div>

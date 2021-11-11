@@ -3,18 +3,18 @@
     <kinesis-container :perspective="1000">
       <section-hero />
       <section-competition />
-      <section-prize-pool />
     </kinesis-container>
+    <section-schedule />
+    <section-incoming-transmissions />
+    <section-prize-pool />
     <section-prize-categories />
     <section-chat />
     <section-sponsored />
     <section-judging-criteria />
     <section-judges />
-    <section-schedule />
-    <section-incoming-transmissions />
     <section-participate />
+    <section-faq />
     <promo-signal-card />
-    <!-- <section-faq /> -->
   </main>
 </template>
 

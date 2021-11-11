@@ -1,11 +1,12 @@
 <template>
-  <div class="container">
+  <div class="container" :class="isIcon && '_icon'">
     <!-- set tooltip text manually -->
     <button
       v-if="text"
       v-tooltip="{
         content: text,
         placement: position,
+        html: true,
       }"
       :position="position"
       class="tm-link"
@@ -32,6 +33,10 @@ export default {
       type: String,
       default: 'auto',
     },
+    isIcon: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {},
 }
@@ -41,4 +46,6 @@ export default {
 .container
   display inline-block
   position relative
+  &._icon
+    font-size 0
 </style>
