@@ -14,13 +14,14 @@
     <section-judges />
     <section-participate />
     <section-faq />
+    <promo-signal-card />
   </main>
 </template>
 
 <script>
-import SectionPrizePool from '../components/SectionPrizePool.vue'
+import PromoSignalCard from '../components/PromoSignalCard.vue'
 export default {
-  components: { SectionPrizePool },
+  components: { PromoSignalCard },
 }
 </script>
 
