@@ -151,6 +151,8 @@ export default {
     '~/plugins/v-tooltip.client.js',
     '~/plugins/vue-kinesis.client.js',
     '~/plugins/vue-scrollto.client.js',
+    '~/plugins/vue-youtube.client.js',
+    '~/plugins/youtube.client.js',
   ],
   /*
    ** Auto import components

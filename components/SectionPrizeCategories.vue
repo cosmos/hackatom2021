@@ -248,16 +248,47 @@
             </ul>
           </div>
         </div>
+        <div v-if="currentItem.testnet" class="mt-9">
+          <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
+            Testnet resources
+          </div>
+          <div class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted">
+            <ul v-if="currentItem.testnet" class="links">
+              <li
+                v-for="info in currentItem.testnet"
+                :key="info.name"
+                class="links__item tm-rf0"
+              >
+                <span v-if="info.name" class="links__label">
+                  {{ info.name }}
+                </span>
+                <tm-link
+                  v-if="info.link"
+                  :href="info.link"
+                  class="tm-link-external"
+                >
+                  {{ info.shortLink }}
+                </tm-link>
+                <div v-else class="tm-title" v-html="info.content" />
+              </li>
+            </ul>
+          </div>
+        </div>
         <div v-if="currentItem.sources" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Resources
           </div>
+          <div
+            v-if="currentItem.sourcesInfo"
+            class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted"
+            v-html="currentItem.sourcesInfo"
+          />
           <div class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted">
             <ul v-if="currentItem.sources" class="links">
               <li
                 v-for="(info, key) in currentItem.sources"
                 :key="info"
-                class="links__item"
+                class="links__item _sources tm-rf0"
               >
                 <a
                   v-if="key === 'email'"
@@ -343,9 +374,12 @@ export default {
                 "The NFTs Auction must respect the royalties system present in BitSong's <a href='https://github.com/bitsongofficial/chainmodules/tree/master/x/nft/spec' target='_blank' rel='noopener noreferrer' class='tm-link'>base module</a>.",
               ],
               sources: {
-                Github: 'https://github.com/ProjectOpenSea',
-                Docs: 'https://docs.opensea.io/',
-                "BitSong's Developer Portal": 'https://btsg.dev/ ',
+                'github.com/ProjectOpenSea':
+                  'https://github.com/ProjectOpenSea',
+                'github.com/bitsongofficial/go-bitsong/tree/hackatom/nft':
+                  'https://github.com/bitsongofficial/go-bitsong/tree/hackatom/nft',
+                'docs.opensea.io': 'https://docs.opensea.io/',
+                "BitSong's Developer Portal": 'https://btsg.dev/',
               },
               prizes: {
                 '1st': '$35,000',
@@ -386,6 +420,13 @@ export default {
                   <li>Have a working functionality</li>
                   <li>Clear documentation in the form of a README.md, for how to interact and run the project</li>
                 </ul>`,
+              ],
+              testnet: [
+                {
+                  name: 'Testnet',
+                  link: 'https://evmos.dev/testnet/join.html',
+                  shortLink: 'evmos.dev/testnet/join',
+                },
               ],
               sources: {
                 'Developer Docs': 'http://evmos.dev',
@@ -563,76 +604,120 @@ export default {
             {
               type: 'Sifchain',
               title: 'Sifchain Challenge',
-              preview: `Sifchain's challenge for the hackathon is to implement IBC token name and service discovery for Cosmos-based tokens.`,
+              preview: `Developers will need to create new, innovative ways to highlight the possibilities of blockchain interoperability using the IBC protocol such as viable implementations, use cases, data formats or others.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
               },
               info: [
-                `Sifchain is the world's first omni-chain decentralized exchange (DEX) for digital assets, unlocking liquidity in various chains to free people from egregious fees and inefficient trades. Sifchain's challenge for the hackathon is to implement IBC token name and service discovery for Cosmos-based tokens.`,
-                `When a new token is launched, developers may register their token with a token-listing-discovery endpoint. A DEX like Sifchain would consume the listing, where each token listing provides sufficient knowledge to implement the IBC interface and list the token automatically. Write a full stack backend which lists tokens using Golang and Swagger.`,
+                `Alongside the Tendermint high-performance Byzantine fault-tolerant (BFT) consensus engine, one of the main innovations of the Cosmos Network is the robust and secure Inter-Blockchain Communication protocol (IBC), the Cosmos standard for interoperability. This protocol enables communication and digital asset transfers across an ever-expanding network of interconnected blockchains.`,
+                `Developers will need to create new, innovative ways to highlight the possibilities of blockchain interoperability using the IBC protocol such as viable implementations, use cases, data formats or others.`,
+                `<b>Implement IBC chain name and metadata synchronization service as a Cosmos IBC module.<b>`,
+                `With the inception of Web 1.0 came IP addresses: strings of numbers which were useful to engineers but useless for the vast majority of users. The invention of DNS (domain name service) enabled users to easily identify a valid server without the need to maintain a client side list. Similarly, this project aims to enable users to easily identify a valid IBC client and its tokens without the need to maintain a client side list of chain id’s, channel id’s, connection id’s, and token denom mappings.`,
+                `Secret Network has a variety of different tokens, each with their own name, display name, image url, precision etc. Imagine that Secret Network connects to Sifchain, as it will in the near future. Sifchain users transfer over Secret tokens. Currently, these tokens are useless because they still need to be added to a frontend asset whitelist (e.g. <a href="https://github.com/osmosis-labs/assetlists" target="_blank" rel="noopener noreferrer" class="tm-link">https://github.com/osmosis-labs/assetlists</a> or <a href="https://github.com/Sifchain/sifchain-ui/blob/develop/ui/core/src/config/networks/ethereum/assets.ethereum.mainnet.json" target="_blank" rel="noopener noreferrer" class="tm-link">https://github.com/Sifchain/sifchain-ui/blob/develop/ui/core/src/config/networks/ethereum/assets.ethereum.mainnet.json</a>) or on-chain whitelist (e.g. <a href="https://api.sifchain.finance/tokenregistry/entries" target="_blank" rel="noopener noreferrer" class="tm-link">https://api.sifchain.finance/tokenregistry/entries</a>) before they can be parsed by wallets, apps, exchanges, etc.`,
+                `The first challenge of this project is to sync over the name, display name, image url, and precision of tokens to and from cooperating blockchains, making these tokens immediately accessible to applications built on the counterparty chains.`,
+                `Then imagine someone forks Secret Network, creating Fake Secret Network with indistinguishable copies of all Secret tokens. Then they connect to Sifchain as well. How do we tell the difference between tokens from Secret Network and tokens from Fake Secret Network?`,
+                `The bonus challenge of this project is to create a governance-driven chain name service that defines which connection chain (which IBC client) is the legitimate one. Once this is complete, chains can update their own token data locally and automatically sync the updates across to counterparty chains.`,
               ],
-              requirementsInfo:
-                'Implement a low-friction integration and operation of a token listing microservice',
               requirements: [
-                `<p>Maximize for ease of use</p>
-                  <ul>
-                    <li>Consuming the API</li>
-                    <li>Stateless, functional programming model</li>
-                  </ul>
-                `,
                 `<p>Full stack application</p>
-                  <ul>
-                    <li>
-                      <p>Build, run and test using only Docker</p>
-                      <ul>
-                        <li>from Alpine or Golang</li>
-                      </ul>
-                    </li>
-                    <li>Golang + Cosmos SDK (.42)</li>
-                    <li>Follow 12-factor app guidelines</li>
-                  </ul>
-                `,
-                `<p>Discovery REST API</p>
-                  <ul>
-                    <li>
-                      <p>Implement using swagger.io for listing entities (examples)</p>
-                      <ul>
-                        <li>list token</li>
-                        <li>delist token</li>
-                        <li>activate token ( listed, tradeable )</li>
-                        <li>deactivate token ( listed, not-tradeable )</li>
-                        <li>get/set description</li>
-                        <li>upload/update .proto file</li>
-                        <li>project summary</li>
-                        <li>token endpoint URL</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <p>Implement using swagger.io for consuming entities: (examples)</p>
-                      <ul>
-                        </li>list tokens</li>
-                        </li>date token listed</li>
-                        </li>date token delisted</li>
-                        </li>date token active</li>
-                        </li>date token inactive</li>
-                        </li>download gRPC “.proto” file</li>
-                        </li>BETTER: JIT (just-in-time) generation of .proto endpoints in golang, javascript, or Java</li>
-                      </ul>
-                    </li>
-                  </ul>
-                `,
-                `
-                  <p>Persistence Layer</p>
-                  <ul><li>Token listings should be on-chain</li></ul>
-                `,
-                `<p>Test suite</p>
-                  <ul>
-                    <li>Should cover both success and failure cases of all APIs</li>
-                    <li>Excluding protobuf generated code, code coverage should be at least 50%</li>
-                  </ul>`,
-                `Document the build, run, and test process in a README.md at the root of your project`,
+                <ul>
+                  <li>Build prototype blockchain with Starport</li>
+                  <li>Golang + Cosmos SDK (.44+)</li>
+                  <li>Provide a basic test harness via HTTP</li>
+                  <li>Browse and exercise REST API</li>
+                </ul>`,
+                `<p>Discovery API</p>
+                <ul>
+                  <li>
+                    <p>Implement using swagger.io REST GET requests and RPC/Protobufs for chain and token metadata entities (examples)</p>
+                    <ul>
+                      <li>
+                        <p>Chain</p>
+                        <ul>
+                          <li>name (domain name esque format)</li>
+                          <li>description</li>
+                          <li>image url (or arweave file hash etc)</li>
+                          <li>
+                            <p>IBC Meta</p>
+                            <ul>
+                              <li>Source channel id</li>
+                              <li>Source chain id</li>
+                              <li>Source client id</li>
+                            </ul>
+                          </li>
+                          <li>
+                            <p>Tokens</p>
+                            <ul>
+                              <li>name</li>
+                              <li>symbol</li>
+                              <li>description</li>
+                              <li>decimals</li>
+                              <li>image url (or arweave file hash etc)</li>
+                              <li>Etc</li>
+                            </ul>
+                          </li>
+                          <li>Etc</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>`,
+                `<p>Persistence Layer</p>
+                <ul>
+                  <li>Chain & Token metadata should be stored</li>
+                  <li>
+                    <p>Command Line Interface (CLI)</p>
+                    <ul>
+                      <li>Provide CLI to update and query chain & token metadata to be synced across chains</li>
+                      <li>If used properly, starport will scaffold most of this for you</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>REST/RPC</p>
+                    <ul>
+                      <li>Provide REST/RPC interface to update and query chain & token metadata to be synced across chains</li>
+                      <li>If used properly, starport will scaffold most of this for you</li>
+                    </ul>
+                  <li>
+                    <p>IBC Layer</p>
+                    <ul>
+                      <li>Synchronize chain name and metadata across IBC clients</li>
+                      <li>For the minimum viable product, IBC client id’s may be hardcoded and this hardcoded list would naturally need approval via a chain upgrade.</li>
+                    </ul>
+                  <li>
+                    <p>Governance Layer (bonus)</p>
+                    <ul>
+                      <li>Utilize governance to form a consensus on the canonically identified IBC client for a given counterparty chain from the source chain</li>
+                    </ul>
+                  <li>
+                    <p>Web Interface (bonus)</p>
+                    <ul>
+                      <li>A prototype web interface to display how</li>
+                    </ul>
+                  </li>
+                </ul>`,
+                `Document the architecture, decisions and build & run steps a README.md at the root of your project`,
+                `Provide a video demo using the product`,
               ],
+              testnet: [
+                {
+                  name: 'Peers for the testnet:',
+                  content: `b4caebe07ab25126e4e6053bf955833198f18ed0@54.216.30.38:26656<br />
+                    b6f113a30e7019b034e8b31cd2541aebebaacb60@54.66.212.111:26656<br />
+                    ffcc2fab592d512eca7f903fd494d85a93e19cfe@122.248.219.121:26656<br />
+                    a2864737f01d3977211e2ea624dd348595dd4f73@3.222.8.87:26656`,
+                },
+                {
+                  name: 'Genesis for the testnet:',
+                  link: 'https://github.com/Sifchain/networks/blob/master/testnet/sifchain-testnet/genesis.json',
+                  shortLink: 'github.com/Sifchain/networks',
+                },
+              ],
+              sourcesInfo: `<p>A successful submission provides sufficient detail of the ‘who, what, when, why, and how’ of the service.</p>
+                <p>The following questions should be considered in the design of the solution.</p>
+                <p>Who is using the API? When would the API be used? Why does the service need to exist? How does the service address the problem? Does the API appropriately solve the question being asked by why? How does the service benefit the Cosmos community? What happens when the service fails?</p>
+                <p>The following resources can be used to aid your development.</p>`,
               sources: {
                 'Cosmos SDK documentation': 'https://docs.cosmos.network/',
                 'Cosmos SDK on Github': 'https://github.com/cosmos',
@@ -667,6 +752,23 @@ export default {
                 `Mobile or web client.`,
                 `Relatively unobtrusive chain interaction; chain state is saved on chain and updated with real time venue entry dynamics`,
                 `The prize can be paid in either ATOM or Pylons (native token) at a parity according to a fixed day market price set ahead of time.`,
+              ],
+              testnet: [
+                {
+                  name: 'Testnet',
+                  link: 'http://testnet.pylons.tech',
+                  shortLink: 'testnet.pylons.tech',
+                },
+                {
+                  name: 'Block Explorer',
+                  link: 'https://wallet.pylons.tech/',
+                  shortLink: 'https://wallet.pylons.tech',
+                },
+                {
+                  name: 'User Endpoint',
+                  link: 'http://wallet.pylons.tech',
+                  shortLink: 'wallet.pylons.tech',
+                },
               ],
               sources: {
                 'cosmos-sdk': 'https://github.com/cosmos/cosmos-sdk/',
@@ -866,6 +968,18 @@ export default {
                 'Global ISCN browsers, preferably with a way to discover groups, series, and relationships between works',
                 'Other features that might be useful for content creators to manage their ISCN records',
               ],
+              testnet: [
+                {
+                  name: 'Can use this link for testing:',
+                  link: 'https://github.com/likecoin/testnets/tree/master/likecoin-public-testnet-3',
+                  shortLink: 'github.com/likecoin/testnets',
+                },
+                {
+                  name: 'Mainnet with actual wallets with iscn records:',
+                  link: 'https://github.com/likecoin/mainnet',
+                  shortLink: 'github.com/likecoin/mainnet',
+                },
+              ],
               sources: {
                 Documentation: 'https://docs.like.co/',
                 'ISCN App': 'https://app.like.co',
@@ -908,6 +1022,13 @@ export default {
                 `Adhere to standard token interfaces (CW20, CW721) and <a href="https://cosmos.network/ecosystem/wallets" target="_blank" rel="noopener noreferrer" class="tm-link">wallets</a> for contract deployment and interactions (mint, list, buy, sell, transfer, etc),`,
                 `A functional and usable front-end`,
               ],
+              testnet: [
+                {
+                  name: 'Network configurations',
+                  link: 'https://docs.archway.io/docs/overview/technology/network/',
+                  shortLink: 'docs.archway.io',
+                },
+              ],
               sources: {
                 'docs.archway.io': 'https://docs.archway.io/',
                 'archway getting-started':
@@ -927,7 +1048,7 @@ export default {
         {
           title: 'DeFi',
           info: 'DeFi app or module with the Cosmos SDK',
-          prize: 'Total Prize pool of $100K',
+          prize: 'Total Prize pool of $200K',
           details:
             'DeFi is a blockchain-based alternative financial system to the legacy system of banks, exchanges, insurance companies, mortgage providers, etc., but reimagined from the ground up with no intermediaries in the middle. Unlike traditional finance, with no gatekeepers to turn down your application, DeFi lowers the barrier to entry, allowing more people to access financial services, take out a collateralized loan, or earn a yield on their assets. Help expand the capabilities of DeFi by building an app or module with the Cosmos SDK.',
           challenges: [
@@ -980,6 +1101,24 @@ export default {
               requirements: [
                 `Using <a href='https://github.com/Gravity-Devs/liquidity/tree/v1.4.0' target='_blank' rel='noopener noreferrer' class='tm-link'>Gravity DEX</a> is mandatory for this challenge`,
               ],
+              testnet: [
+                {
+                  link: 'https://testnet.cosmos.network/',
+                  shortLink: 'testnet.cosmos.network',
+                },
+                {
+                  link: 'https://rpc.testnet.cosmos.network/',
+                  shortLink: 'rpc.testnet.cosmos.network',
+                },
+                {
+                  link: 'https://api.testnet.cosmos.network/',
+                  shortLink: 'api.testnet.cosmos.network',
+                },
+                {
+                  link: 'https://grpc.testnet.cosmos.network/',
+                  shortLink: 'grpc.testnet.cosmos.network',
+                },
+              ],
               sources: {
                 'cosmos-sdk': 'https://github.com/cosmos/cosmos-sdk/',
                 starport: 'https://github.com/tendermint/starport',
@@ -989,6 +1128,88 @@ export default {
                   'https://tutorials.cosmos.network/connecting-to-testnet/',
                 'gravity-dex': 'https://cosmos.network/gravity-dex/',
                 blog: 'https://blog.cosmos.network/bringing-defi-to-cosmos-the-gravity-dex-protocol-is-live-a0c5857d6267',
+              },
+            },
+            {
+              type: 'Ki Foundation',
+              title: 'Ki Foundation Challenge',
+              // preview: `Build a general tool for Loan or Insurance modules using the gravity dex.`,
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
+              info: [
+                `The Ki Foundation bridges CeFi and DeFi through an innovative range of products that provide users with an easy and seamless way to engage in DeFi operations, including its flagship Ki Chain blockchain and bridges to other blockchain ecosystems. The Token transfer capability of IBC was the first step showcasing the power of interoperability between Cosmos SDK-based chains. In order to grow the value of this thriving ecosystem, we need to implement the next step of cross-chain interoperability through the Interchain Account feature.`,
+                `For this challenge, developers will need to implement the module enabling cross-chain interoperability with features such as delegating, undelegating, sending coins, or operating an application-based action such as swapping on a chain like Osmosis.`,
+                `The idea is to leverage IBC capabilities and be able to use application-specific features on different sovereign chains in the Cosmos ecosystem. Specifically, we would like to be able to call any custom Cosmos SDK message on any IBC-enabled chain from an interchain account.`,
+                `A concrete use case we want to implement is the possibility to interact with the Osmosis GAMM module. For instance, we would need to deposit liquidity in pools and swap tokens. Another important aspect is the first class support of Interchain Accounts on CosmWasm smart contracts. We would like to use InterChain Accounts features from a CosmWasm smart contract and be able to interact through IBC with a CosmWasm smart contract on another chain.`,
+              ],
+              requirementsInfo: `Here is how we see the global architecture of the project and how we imagine the delivery. Basically, the challenge will include the below major tasks:`,
+              requirements: [
+                `<p>Specifications:</p>
+                <ul>
+                  <li>Support and contribute to the effort regarding ICS-27 specification.</li>
+                  <li><a href="https://github.com/cosmos/ibc/blob/master/spec/app/ics-027-interchain-accounts/README.md" target="_blank" rel="noopener noreferrer" class="tm-link">https://github.com/cosmos/ibc/blob/master/spec/app/ics-027-interchain-accounts/README.md</a></li>
+                  <li>Add the required changes to the specification that are missing to implement the needed features</li>
+                  <li>Coordinate with us and the community to identify any potential blockers and see how we could overcome those</li>
+                </ul>`,
+                `<p>IBC Relayers implementation</p>
+                <ul>
+                  <li>Analyze the ongoing initiatives from different parties regarding ICS-27 support in the different relayers implementations</li>
+                  <li>Identify the missing features to fully support ICS-27</li>
+                  <li>Submit a PR to at least one major relayer implementation (Hermes, Go relayer, or confio typescript relayer)</li>
+                </ul>`,
+                `<p>Cosmos SDK</p>
+                <ul>
+                  <li>Identify if the Interchain Account feature could be designed as a Cosmos SDK module, easily integrable to any IBC-enabled Cosmos chain</li>
+                  <li>Submit a PR to Cosmos SDK with the implementation of an Interchain Account module</li>
+                </ul>`,
+                `<p>CosmWasm / Wasmd</p>
+                <ul>
+                  <li>Identify the ongoing initiatives from different parties regarding ICS-27 support in CosmWasm contracts</li>
+                  <li>Identify the missing features to fully support ICS-27</li>
+                  <li>Submit a PR to wasmd with the implementation of ICS-27 specification</li>
+                </ul>`,
+                `<p>MVP: Implement an MVP showcasing the different features</p>
+                <ul>
+                  <li>End to end test repository with a working demo</li>
+                  <li>Documentation and guides on how to use the product</li>
+                  <li>Interoperable product</li>
+                  <li>Deployed on Juno testnet</li>
+                </ul>`,
+              ],
+              sources: {
+                'README.md':
+                  'https://github.com/cosmos/ibc/blob/master/spec/app/ics-027-interchain-accounts/README.md',
+                'Why Interchain Accounts Change Everything for Cosmos Interoperability':
+                  'https://medium.com/chainapsis/why-interchain-accounts-change-everything-for-cosmos-interoperability-59c19032bf11',
+                'github.com/cosmos/interchain-accounts':
+                  'https://github.com/cosmos/interchain-accounts',
+                'github.com/chainapsis/cosmos-sdk-interchain-account':
+                  'https://github.com/chainapsis/cosmos-sdk-interchain-account',
+                'chainapsis.github.io/cosmos-sdk-interchain-account':
+                  'https://chainapsis.github.io/cosmos-sdk-interchain-account/',
+                'chainapsis.github.io/cosmos-sdk-interchain-account/starport':
+                  'https://chainapsis.github.io/cosmos-sdk-interchain-account/starport/',
+              },
+            },
+            {
+              type: 'Osmosis',
+              title: 'Osmosis Challenge',
+              preview: `Build something cool with Osmosis. Bonus points if you incorporate ION.`,
+              prizes: {
+                '1st': '$35,000',
+                '2nd': '$15,000',
+              },
+              info: [
+                `Build something cool with Osmosis. Bonus points if you incorporate ION.`,
+              ],
+              sources: {
+                'github.com/osmosis-labs/osmosis':
+                  'https://github.com/osmosis-labs/osmosis',
+                'github.com/osmosis-labs/osmosis-frontend':
+                  'https://github.com/osmosis-labs/osmosis-frontend',
+                'osmosis.zone': 'https://osmosis.zone',
               },
             },
           ],
@@ -1023,6 +1244,23 @@ export default {
                 `Characters should be able to interact with the 3D Strange Clan environment and develop their Clan/plots of land`,
                 `Cosmos SDK/Pylons SDK is used for on-chain implementation of creation and trading`,
                 `Purchases should be reflected in-game and on-chain`,
+              ],
+              testnet: [
+                {
+                  name: 'Testnet',
+                  link: 'http://testnet.pylons.tech',
+                  shortLink: 'testnet.pylons.tech',
+                },
+                {
+                  name: 'Block Explorer',
+                  link: 'https://wallet.pylons.tech/',
+                  shortLink: 'https://wallet.pylons.tech',
+                },
+                {
+                  name: 'User Endpoint',
+                  link: 'http://wallet.pylons.tech',
+                  shortLink: 'wallet.pylons.tech',
+                },
               ],
               sources: {
                 Pylons: 'https://www.pylons.tech/',
@@ -1135,6 +1373,20 @@ export default {
                 `A readme with instructions for use`,
                 `A demo showcasing cross-chain ecocredit transfer & retirement using a fork of regen-ledger and a testnet of another IBC ecocredit enabled blockchain.`,
                 `Bonus points will be provided for extending this functionality into a dApp where end-users can issue, transfer, and retire ecocredits in a cross-chain capable way.`,
+              ],
+              testnet: [
+                {
+                  name: 'Getting Started Tutorial:',
+                  link: 'https://docs.regen.network/getting-started/live-networks.html',
+                  shortLink: 'docs.regen.network/getting-started',
+                },
+                {
+                  name: 'Redwood Testnet:',
+                  content: `<p><b>regen-redwood-1</b> is the chain ID for Redwood Testnet</p>
+                  <p>Redwood Testnet launched with the <b>v1.0.0</b> release tag of <b>regen-ledger</b></p>
+                  <p>When starting a full node or a validator node from genesis, you will need to start the node with the <b>v1.0.0</b> version (the "genesis binary"). For more information about preparing your node to migrate to the <b>v2.0.0</b> version, see <a href="https://docs.regen.network/migrations/v2.0-upgrade.html" target="_blank" rel="noopener noreferrer" class="tm-link tm-link-underline tm-link-external">Upgrade Guide v2.0</a></p>
+                  <p>The following URL is the node address for a full node operated by RND:<br/><a href="http://redwood.regen.network:26657/" target="_blank" rel="noopener noreferrer" class="tm-link tm-link-underline tm-link-external">http://redwood.regen.network:26657/</a></p>`,
+                },
               ],
               sources: {
                 'Regen Ledger': 'http://github.com/regen-network/regen-ledger',
@@ -1373,8 +1625,12 @@ export default {
     padding var(--spacing-5) 0
     list-style none
     border-bottom 1px solid var(--border)
-    &:last-child
-      border-bottom 0
+    &._sources
+      &:last-child
+        border-bottom 0
+  &__label
+    display inline-block
+    margin-right var(--spacing-4)
 
 .prizes-list
   display flex
