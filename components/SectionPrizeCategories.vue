@@ -568,6 +568,7 @@ export default {
                 'Network website': 'https://akash.network/',
                 'Network Discord': 'https://discord.gg/ryMhZpvdYX',
                 'Network forum': 'https://forum.akash.network/',
+                'drip.akash.network': 'https://drip.akash.network/login',
               },
             },
             {
