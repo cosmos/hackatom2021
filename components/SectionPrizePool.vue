@@ -1,5 +1,5 @@
 <template>
-  <section class="tm-section section pb0">
+  <section class="tm-section section pb0" id="prizes">
     <div class="tm-section-container tm-container">
       <div class="tm-grid-base">
         <div class="col-left">

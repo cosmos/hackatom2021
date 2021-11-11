@@ -11,10 +11,11 @@
 
   .tooltip-inner
     max-width 18rem
-    background var(--title)
-    color var(--bg)
+    background var(--bg)
+    color var(--title)
     border-radius $border-radius-3
     padding var(--spacing-2) var(--spacing-4)
+    text-align center
 
   .tooltip-arrow
     width 0
@@ -22,7 +23,7 @@
     border-style solid
     position absolute
     margin $border-radius-3
-    border-color var(--title)
+    border-color var(--bg)
     z-index $z-index-1
 
   &[x-placement^="top"]
