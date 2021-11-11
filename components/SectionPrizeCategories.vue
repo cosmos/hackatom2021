@@ -278,6 +278,11 @@
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
             Resources
           </div>
+          <div
+            v-if="currentItem.sourcesInfo"
+            class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted"
+            v-html="currentItem.sourcesInfo"
+          />
           <div class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted">
             <ul v-if="currentItem.sources" class="links">
               <li
@@ -369,9 +374,12 @@ export default {
                 "The NFTs Auction must respect the royalties system present in BitSong's <a href='https://github.com/bitsongofficial/chainmodules/tree/master/x/nft/spec' target='_blank' rel='noopener noreferrer' class='tm-link'>base module</a>.",
               ],
               sources: {
-                Github: 'https://github.com/ProjectOpenSea',
-                Docs: 'https://docs.opensea.io/',
-                "BitSong's Developer Portal": 'https://btsg.dev/ ',
+                'github.com/ProjectOpenSea':
+                  'https://github.com/ProjectOpenSea',
+                'github.com/bitsongofficial/go-bitsong/tree/hackatom/nft':
+                  'https://github.com/bitsongofficial/go-bitsong/tree/hackatom/nft',
+                'docs.opensea.io': 'https://docs.opensea.io/',
+                "BitSong's Developer Portal": 'https://btsg.dev/',
               },
               prizes: {
                 '1st': '$35,000',
@@ -596,75 +604,101 @@ export default {
             {
               type: 'Sifchain',
               title: 'Sifchain Challenge',
-              preview: `Sifchain's challenge for the hackathon is to implement IBC token name and service discovery for Cosmos-based tokens.`,
+              preview: `Developers will need to create new, innovative ways to highlight the possibilities of blockchain interoperability using the IBC protocol such as viable implementations, use cases, data formats or others.`,
               prizes: {
                 '1st': '$35,000',
                 '2nd': '$15,000',
               },
               info: [
-                `Sifchain is the world's first omni-chain decentralized exchange (DEX) for digital assets, unlocking liquidity in various chains to free people from egregious fees and inefficient trades. Sifchain's challenge for the hackathon is to implement IBC token name and service discovery for Cosmos-based tokens.`,
-                `When a new token is launched, developers may register their token with a token-listing-discovery endpoint. A DEX like Sifchain would consume the listing, where each token listing provides sufficient knowledge to implement the IBC interface and list the token automatically. Write a full stack backend which lists tokens using Golang and Swagger.`,
+                `Alongside the Tendermint high-performance Byzantine fault-tolerant (BFT) consensus engine, one of the main innovations of the Cosmos Network is the robust and secure Inter-Blockchain Communication protocol (IBC), the Cosmos standard for interoperability. This protocol enables communication and digital asset transfers across an ever-expanding network of interconnected blockchains.`,
+                `Developers will need to create new, innovative ways to highlight the possibilities of blockchain interoperability using the IBC protocol such as viable implementations, use cases, data formats or others.`,
+                `<b>Implement IBC chain name and metadata synchronization service as a Cosmos IBC module.<b>`,
+                `With the inception of Web 1.0 came IP addresses: strings of numbers which were useful to engineers but useless for the vast majority of users. The invention of DNS (domain name service) enabled users to easily identify a valid server without the need to maintain a client side list. Similarly, this project aims to enable users to easily identify a valid IBC client and its tokens without the need to maintain a client side list of chain id’s, channel id’s, connection id’s, and token denom mappings.`,
+                `Secret Network has a variety of different tokens, each with their own name, display name, image url, precision etc. Imagine that Secret Network connects to Sifchain, as it will in the near future. Sifchain users transfer over Secret tokens. Currently, these tokens are useless because they still need to be added to a frontend asset whitelist (e.g. <a href="https://github.com/osmosis-labs/assetlists" target="_blank" rel="noopener noreferrer" class="tm-link">https://github.com/osmosis-labs/assetlists</a> or <a href="https://github.com/Sifchain/sifchain-ui/blob/develop/ui/core/src/config/networks/ethereum/assets.ethereum.mainnet.json" target="_blank" rel="noopener noreferrer" class="tm-link">https://github.com/Sifchain/sifchain-ui/blob/develop/ui/core/src/config/networks/ethereum/assets.ethereum.mainnet.json</a>) or on-chain whitelist (e.g. <a href="https://api.sifchain.finance/tokenregistry/entries" target="_blank" rel="noopener noreferrer" class="tm-link">https://api.sifchain.finance/tokenregistry/entries</a>) before they can be parsed by wallets, apps, exchanges, etc.`,
+                `The first challenge of this project is to sync over the name, display name, image url, and precision of tokens to and from cooperating blockchains, making these tokens immediately accessible to applications built on the counterparty chains.`,
+                `Then imagine someone forks Secret Network, creating Fake Secret Network with indistinguishable copies of all Secret tokens. Then they connect to Sifchain as well. How do we tell the difference between tokens from Secret Network and tokens from Fake Secret Network?`,
+                `The bonus challenge of this project is to create a governance-driven chain name service that defines which connection chain (which IBC client) is the legitimate one. Once this is complete, chains can update their own token data locally and automatically sync the updates across to counterparty chains.`,
               ],
-              requirementsInfo:
-                'Implement a low-friction integration and operation of a token listing microservice',
               requirements: [
-                `<p>Maximize for ease of use</p>
-                  <ul>
-                    <li>Consuming the API</li>
-                    <li>Stateless, functional programming model</li>
-                  </ul>
-                `,
                 `<p>Full stack application</p>
-                  <ul>
-                    <li>
-                      <p>Build, run and test using only Docker</p>
-                      <ul>
-                        <li>from Alpine or Golang</li>
-                      </ul>
-                    </li>
-                    <li>Golang + Cosmos SDK (.42)</li>
-                    <li>Follow 12-factor app guidelines</li>
-                  </ul>
-                `,
-                `<p>Discovery REST API</p>
-                  <ul>
-                    <li>
-                      <p>Implement using swagger.io for listing entities (examples)</p>
-                      <ul>
-                        <li>list token</li>
-                        <li>delist token</li>
-                        <li>activate token ( listed, tradeable )</li>
-                        <li>deactivate token ( listed, not-tradeable )</li>
-                        <li>get/set description</li>
-                        <li>upload/update .proto file</li>
-                        <li>project summary</li>
-                        <li>token endpoint URL</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <p>Implement using swagger.io for consuming entities: (examples)</p>
-                      <ul>
-                        </li>list tokens</li>
-                        </li>date token listed</li>
-                        </li>date token delisted</li>
-                        </li>date token active</li>
-                        </li>date token inactive</li>
-                        </li>download gRPC “.proto” file</li>
-                        </li>BETTER: JIT (just-in-time) generation of .proto endpoints in golang, javascript, or Java</li>
-                      </ul>
-                    </li>
-                  </ul>
-                `,
-                `
-                  <p>Persistence Layer</p>
-                  <ul><li>Token listings should be on-chain</li></ul>
-                `,
-                `<p>Test suite</p>
-                  <ul>
-                    <li>Should cover both success and failure cases of all APIs</li>
-                    <li>Excluding protobuf generated code, code coverage should be at least 50%</li>
-                  </ul>`,
-                `Document the build, run, and test process in a README.md at the root of your project`,
+                <ul>
+                  <li>Build prototype blockchain with Starport</li>
+                  <li>Golang + Cosmos SDK (.44+)</li>
+                  <li>Provide a basic test harness via HTTP</li>
+                  <li>Browse and exercise REST API</li>
+                </ul>`,
+                `<p>Discovery API</p>
+                <ul>
+                  <li>
+                    <p>Implement using swagger.io REST GET requests and RPC/Protobufs for chain and token metadata entities (examples)</p>
+                    <ul>
+                      <li>
+                        <p>Chain</p>
+                        <ul>
+                          <li>name (domain name esque format)</li>
+                          <li>description</li>
+                          <li>image url (or arweave file hash etc)</li>
+                          <li>
+                            <p>IBC Meta</p>
+                            <ul>
+                              <li>Source channel id</li>
+                              <li>Source chain id</li>
+                              <li>Source client id</li>
+                            </ul>
+                          </li>
+                          <li>
+                            <p>Tokens</p>
+                            <ul>
+                              <li>name</li>
+                              <li>symbol</li>
+                              <li>description</li>
+                              <li>decimals</li>
+                              <li>image url (or arweave file hash etc)</li>
+                              <li>Etc</li>
+                            </ul>
+                          </li>
+                          <li>Etc</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>`,
+                `<p>Persistence Layer</p>
+                <ul>
+                  <li>Chain & Token metadata should be stored</li>
+                  <li>
+                    <p>Command Line Interface (CLI)</p>
+                    <ul>
+                      <li>Provide CLI to update and query chain & token metadata to be synced across chains</li>
+                      <li>If used properly, starport will scaffold most of this for you</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>REST/RPC</p>
+                    <ul>
+                      <li>Provide REST/RPC interface to update and query chain & token metadata to be synced across chains</li>
+                      <li>If used properly, starport will scaffold most of this for you</li>
+                    </ul>
+                  <li>
+                    <p>IBC Layer</p>
+                    <ul>
+                      <li>Synchronize chain name and metadata across IBC clients</li>
+                      <li>For the minimum viable product, IBC client id’s may be hardcoded and this hardcoded list would naturally need approval via a chain upgrade.</li>
+                    </ul>
+                  <li>
+                    <p>Governance Layer (bonus)</p>
+                    <ul>
+                      <li>Utilize governance to form a consensus on the canonically identified IBC client for a given counterparty chain from the source chain</li>
+                    </ul>
+                  <li>
+                    <p>Web Interface (bonus)</p>
+                    <ul>
+                      <li>A prototype web interface to display how</li>
+                    </ul>
+                  </li>
+                </ul>`,
+                `Document the architecture, decisions and build & run steps a README.md at the root of your project`,
+                `Provide a video demo using the product`,
               ],
               testnet: [
                 {
@@ -680,6 +714,10 @@ export default {
                   shortLink: 'github.com/Sifchain/networks',
                 },
               ],
+              sourcesInfo: `<p>A successful submission provides sufficient detail of the ‘who, what, when, why, and how’ of the service.</p>
+                <p>The following questions should be considered in the design of the solution.</p>
+                <p>Who is using the API? When would the API be used? Why does the service need to exist? How does the service address the problem? Does the API appropriately solve the question being asked by why? How does the service benefit the Cosmos community? What happens when the service fails?</p>
+                <p>The following resources can be used to aid your development.</p>`,
               sources: {
                 'Cosmos SDK documentation': 'https://docs.cosmos.network/',
                 'Cosmos SDK on Github': 'https://github.com/cosmos',

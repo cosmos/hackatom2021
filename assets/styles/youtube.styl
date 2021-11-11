@@ -1,0 +1,66 @@
+// Source: https://github.com/paulirish/lite-youtube-embed/blob/master/src/lite-yt-embed.css
+
+lite-youtube
+  background-color transparent
+  position relative
+  display block
+  contain content
+  background-position center center
+  background-size cover
+  cursor pointer
+  border-radius $border-radius-6
+
+/* 
+  responsive iframe with a 16:9 aspect ratio
+  thanks https://css-tricks.com/responsive-iframes/
+*/
+lite-youtube::after
+  content ""
+  display block
+  padding-bottom calc(100% / (16 / 9))
+
+lite-youtube > iframe
+  width 100%
+  height 100%
+  position absolute
+  top 0
+  left 0
+  border 0
+  border-radius $border-radius-6 // safari
+
+/* play button */
+lite-youtube > .lty-playbtn
+  width 62px
+  height 62px
+  position absolute
+  cursor pointer
+  transform translate3d(-50%, -50%, 0)
+  top 50%
+  left 50%
+  background-color transparent
+  background-image url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.808 7.7702C20.6004 4.56804 26.2347 2.85889 31.9985 2.85889C39.7247 2.86763 47.132 5.94075 52.5953 11.404C58.0586 16.8673 61.1317 24.2746 61.1405 32.0009C61.1405 37.7646 59.4313 43.399 56.2292 48.1913C53.027 52.9837 48.4756 56.7189 43.1506 58.9246C37.8256 61.1303 31.9661 61.7074 26.3131 60.583C20.6601 59.4585 15.4675 56.683 11.392 52.6074C7.31637 48.5318 4.54086 43.3392 3.41641 37.6862C2.29196 32.0332 2.86907 26.1737 5.07476 20.8487C7.28045 15.5237 11.0157 10.9724 15.808 7.7702ZM41.6915 32.518L26.9203 40.9191C26.8268 40.9717 26.7208 40.9995 26.6128 40.9995C26.5049 40.9996 26.3989 40.9719 26.3053 40.9194C26.2118 40.8669 26.1341 40.7913 26.08 40.7003C26.0259 40.6092 25.9973 40.5059 25.9971 40.4006V23.5984C25.9973 23.4931 26.0259 23.3898 26.08 23.2988C26.1341 23.2077 26.2118 23.1321 26.3053 23.0796C26.3989 23.0271 26.5049 22.9995 26.6128 22.9995C26.7208 22.9996 26.8268 23.0273 26.9203 23.0799L41.6915 31.481C41.7845 31.5339 41.8616 31.6095 41.9152 31.7005C41.9689 31.7915 41.9971 31.8946 41.9971 31.9995C41.9971 32.1044 41.9689 32.2075 41.9152 32.2985C41.8616 32.3895 41.7845 32.4652 41.6915 32.518Z' fill='black' fill-opacity='0.6'/%3E%3Cpath d='M26.9203 40.9191L41.6915 32.518C41.7845 32.4652 41.8616 32.3895 41.9152 32.2985C41.9689 32.2075 41.9971 32.1044 41.9971 31.9995C41.9971 31.8946 41.9689 31.7915 41.9152 31.7005C41.8616 31.6095 41.7845 31.5339 41.6915 31.481L26.9203 23.0799C26.8268 23.0273 26.7208 22.9996 26.6128 22.9995C26.5049 22.9995 26.3989 23.0271 26.3053 23.0796C26.2118 23.1321 26.1341 23.2077 26.08 23.2988C26.0259 23.3898 25.9973 23.4931 25.9971 23.5984V40.4006C25.9973 40.5059 26.0259 40.6092 26.08 40.7003C26.1341 40.7913 26.2118 40.8669 26.3053 40.9194C26.3989 40.9719 26.5049 40.9996 26.6128 40.9995C26.7208 40.9995 26.8268 40.9717 26.9203 40.9191Z' fill='white'/%3E%3C/svg%3E")
+  filter grayscale(100%)
+  transition filter .1s cubic-bezier(0, 0, 0.2, 1)
+  border none
+
+lite-youtube:hover > .lty-playbtn,
+lite-youtube .lty-playbtn:focus
+  filter none
+
+/* Post-click styles */
+lite-youtube.lyt-activated
+  cursor unset
+
+lite-youtube.lyt-activated::before,
+lite-youtube.lyt-activated > .lty-playbtn
+  opacity 0
+  pointer-events none
+
+.lyt-visually-hidden
+  clip rect(0 0 0 0)
+  clip-path inset(50%)
+  height 1px
+  overflow hidden
+  position absolute
+  white-space nowrap
+  width 1px

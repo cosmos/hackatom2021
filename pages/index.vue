@@ -13,14 +13,15 @@
     <section-schedule />
     <section-incoming-transmissions />
     <section-participate />
+    <promo-signal-card />
     <!-- <section-faq /> -->
   </main>
 </template>
 
 <script>
-import SectionPrizePool from '../components/SectionPrizePool.vue'
+import PromoSignalCard from '../components/PromoSignalCard.vue'
 export default {
-  components: { SectionPrizePool },
+  components: { PromoSignalCard },
 }
 </script>
 
