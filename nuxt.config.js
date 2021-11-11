@@ -44,12 +44,12 @@ export default {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://six.hackatom.org',
+        content: 'https://hackatom.org',
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://six.hackatom.org/og-image.jpg',
+        content: 'https://hackatom.org/og-image.jpg',
       },
       // Twitter Card
       {
@@ -61,7 +61,7 @@ export default {
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'HackAtom VI 202z',
+        content: 'HackAtom VI 2021',
       },
       {
         hid: 'twitter:description',
@@ -71,7 +71,7 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://six.hackatom.org/og-image.jpg',
+        content: 'https://hackatom.org/og-image.jpg',
       },
       {
         hid: 'twitter:image:alt',
