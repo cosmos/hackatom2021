@@ -491,7 +491,7 @@ export default {
         },
         {
           title: 'Hermes relayer - Connecting IBC enabled blockchains',
-          // date: '2021-11-16',
+          date: '2021-11-19',
           // startTime: '14:00',
           type: 'Virtual',
           details:
