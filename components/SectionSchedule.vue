@@ -59,7 +59,9 @@
                         class="day tm-code tm-rf0 tm-lh-copy"
                         :class="hideDate(key) && '_mobile'"
                       >
-                        {{ toDate(event.date, event.startTime || '12:00') }}
+                        <span v-if="event.date">
+                          {{ toDate(event.date, event.startTime || '12:00') }}
+                        </span>
                       </div>
                       <div class="tm-code tm-rf0 tm-lh-copy tm-gray">
                         <span class="show-inline-m-up">
@@ -92,7 +94,7 @@
                           class="tm-lh-copy tm-rf0 tm-normal tm-muted"
                         >
                           <b class="">{{ item.name }}</b>
-                          <span class="">- {{ item.company }}</span>
+                          <span v-if="item.company">- {{ item.company }}</span>
                         </div>
                       </div>
                       <div v-if="event.people" class="avatars">
@@ -470,6 +472,39 @@ export default {
           url: 'https://www.eventbrite.com/e/hackatom-vi-opening-ceremony-tickets-203639791097',
         },
         {
+          title: 'Building for UX with Msg Authorization and Fee Grants',
+          date: '2021-11-16',
+          startTime: '14:00',
+          type: 'Virtual',
+          details:
+            'Cosmos SDK v0.43 introduced two new core modules to the Cosmos SDK. x/authz and x/feegrant can both be used independently (and in combination!) to add big benefits to end user experience of Cosmos based blockchains across the interchain. Join this workshop to learn how these two modules work, and integrate them into a blockchain application of your very own.',
+          people: [
+            {
+              name: 'Amaury Martiny',
+              avatar: 'amaury',
+            },
+            {
+              name: 'Likhita Polavarapu',
+              avatar: 'likhita',
+            },
+          ],
+        },
+        {
+          title: 'Hermes relayer - Connecting IBC enabled blockchains',
+          // date: '2021-11-16',
+          // startTime: '14:00',
+          type: 'Virtual',
+          details:
+            'In this workshop we will demonstrate how a relayer, such as Hermes, is a critical part of the infrastructure of the Interchain. We will talk about IBC and how the relayer acts as the "messenger" to make the Interchain a reality',
+          people: [
+            {
+              name: 'Andy Nogueira',
+              avatar: 'avatar',
+              company: 'Informal',
+            },
+          ],
+        },
+        {
           title: 'Submissions Deadline',
           date: '2021-12-08',
           startTime: '19:00',
@@ -589,18 +624,31 @@ export default {
       margin-top 0
     @media $breakpoint-xl
       grid-column span 7
+
 .avatars
+  display flex
+  justify-content flex-start
   width 2.5rem
   margin-top var(--spacing-6)
+  white-space nowrap
   @media $breakpoint-medium
+    justify-content center
     position absolute
     top 0
     left 100%
     width 2.5rem
     margin-top 0
     font-size 0
-    img
-      width 2.5rem
+  @media $breakpoint-large
+    justify-content flex-end
+  img
+    width 2.5rem
+    border-radius 100%
+    border 1px solid var(--bg)
+  > div
+    flex-shrink 0
+    margin-right -0.5rem
+
 .col-small
   grid-column 1 / -1
   @media $breakpoint-medium
