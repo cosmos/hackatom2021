@@ -169,7 +169,7 @@ export default {
   components: { TmButton },
   data() {
     return {
-      isShowPast: true,
+      isShowPast: false,
       events: [
         {
           title: 'Registrations Open',
