@@ -478,7 +478,7 @@ export default {
           type: 'Virtual',
           details:
             'Cosmos SDK v0.43 introduced two new core modules to the Cosmos SDK. x/authz and x/feegrant can both be used independently (and in combination!) to add big benefits to end user experience of Cosmos based blockchains across the interchain. Join this workshop to learn how these two modules work, and integrate them into a blockchain application of your very own.',
-          link: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
           people: [
             {
               name: 'Amaury Martiny',
@@ -497,7 +497,7 @@ export default {
           type: 'Virtual',
           details:
             'In this workshop we will demonstrate how a relayer, such as Hermes, is a critical part of the infrastructure of the Interchain. We will talk about IBC and how the relayer acts as the "messenger" to make the Interchain a reality',
-          link: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
           people: [
             {
               name: 'Andy Nogueira',
