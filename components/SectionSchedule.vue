@@ -478,7 +478,8 @@ export default {
           type: 'Virtual',
           details:
             'Cosmos SDK v0.43 introduced two new core modules to the Cosmos SDK. x/authz and x/feegrant can both be used independently (and in combination!) to add big benefits to end user experience of Cosmos based blockchains across the interchain. Join this workshop to learn how these two modules work, and integrate them into a blockchain application of your very own.',
-          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          url: 'https://youtu.be/-OcyG51j2xs',
+          btnText: 'Watch Replay',
           people: [
             {
               name: 'Amaury Martiny',
