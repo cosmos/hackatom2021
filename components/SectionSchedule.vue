@@ -474,7 +474,7 @@ export default {
         {
           title: 'Building for UX with Msg Authorization and Fee Grants',
           date: '2021-11-16',
-          startTime: '14:00',
+          startTime: '15:00',
           type: 'Virtual',
           details:
             'Cosmos SDK v0.43 introduced two new core modules to the Cosmos SDK. x/authz and x/feegrant can both be used independently (and in combination!) to add big benefits to end user experience of Cosmos based blockchains across the interchain. Join this workshop to learn how these two modules work, and integrate them into a blockchain application of your very own.',
@@ -493,7 +493,7 @@ export default {
         {
           title: 'Hermes relayer - Connecting IBC enabled blockchains',
           date: '2021-11-19',
-          // startTime: '14:00',
+          startTime: '15:00',
           type: 'Virtual',
           details:
             'In this workshop we will demonstrate how a relayer, such as Hermes, is a critical part of the infrastructure of the Interchain. We will talk about IBC and how the relayer acts as the "messenger" to make the Interchain a reality',
