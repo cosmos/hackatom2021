@@ -153,7 +153,7 @@
               v-html="info"
             />
           </ul>
-          <p>
+          <p class="mt-5">
             <i
               >In order to encourage experimentation and innovation, we will
               also accept submissions, beyond the scope of the example
