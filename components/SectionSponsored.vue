@@ -131,7 +131,7 @@ export default {
               link: 'https://stake.fish/en/juno/',
             },
             {
-              name: 'sentinel',
+              name: 'sentinel-exidio',
               link: 'https://sentinel.co/',
             },
             {
