@@ -153,6 +153,15 @@
               v-html="info"
             />
           </ul>
+          <p>
+            <i
+              >In order to encourage experimentation and innovation, we will
+              also accept submissions, beyond the scope of the example
+              challenge, as long as those are creative solutions built on our
+              technology. The submitted project will need to use the resources
+              we have provided.</i
+            >
+          </p>
         </div>
         <div v-if="currentItem.context" class="mt-9">
           <div class="tm-overline tm-rf1 tm-lhtitle tm-medium tm-muted">
@@ -563,6 +572,7 @@ export default {
                 `Censorship-resistant, permissionless, and self-sovereign, Akash Network is the world's first open source cloud. One of the biggest values that Akash can provide to other blockchains is the ability to run hard-to-deplatform durable blockchain nodes. Removing blockchains' dependence on centralized hosting providers is one of the biggest steps blockchains can take toward further decentralization. To this end, the Akash community and core developer team have put together the following GitHub repo:`,
                 `<a href="https://github.com/ovrclk/cosmos-omnibus" target="_blank" rel="noopener noreferrer" class="tm-link">https://github.com/ovrclk/cosmos-omnibus</a>`,
                 `This repo contains the deployment scripts and references to working images to deploy nodes on a number of different Cosmos chains in a matter of seconds. Akash's HackAtom VI challenge asks participants to develop the container images, SDL files, and readme.dm documentation needed to run chain nodes from Cosmos chains that are not currently in the repository. Deliverables will be in the form of a PR to the <a href="https://github.com/ovrclk/cosmos-omnibus" target="_blank" rel="noopener noreferrer" class="tm-link">https://github.com/ovrclk/cosmos-omnibus</a> repo.`,
+                `The team that adds the most working chains to the repo, will qualify for win.`,
               ],
               requirementsInfo: 'Deliverable must include the following:',
               requirements: [
@@ -576,7 +586,9 @@ export default {
                 'Network website': 'https://akash.network/',
                 'Network Discord': 'https://discord.gg/ryMhZpvdYX',
                 'Network forum': 'https://forum.akash.network/',
-                'drip.akash.network': 'https://drip.akash.network/login',
+                'Mainnet and Testnets':
+                  'https://docs.archway.io/docs/overview/technology/network',
+                Faucet: 'https://drip.akash.network/login',
               },
             },
             {
