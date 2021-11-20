@@ -1,5 +1,5 @@
 <template>
-  <section class="tm-section section mx-9">
+  <section class="tm-section section">
     <div class="tm-section-container tm-container">
       <div class="header tm-text-center tm-center">
         <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
@@ -122,9 +122,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.section
-  padding-bottom 0
-
 .header,
 .list
   max-width: 29.6875rem

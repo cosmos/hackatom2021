@@ -56,7 +56,7 @@ export default {
 .logo-hackatom
   position relative
   width 75%
-  max-width calc(48.625rem / 2)
+  max-width 24.5rem
   margin-left auto
   margin-right auto
   &__svg
