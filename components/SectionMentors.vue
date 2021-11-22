@@ -51,50 +51,6 @@ export default {
     return {
       mentors: [
         {
-          company: 'Tendermint',
-          people: [
-            {
-              avatar: 'sonia',
-              name: 'Sonia Singla',
-              position: 'Developer Relations Engineer',
-              link: 'https://calendar.google.com/calendar/selfsched?sstoken=UUZaXzFhT2VSYnJ3fGRlZmF1bHR8OTFlOTdhZmI2ZDhlZTc4NTBhMWQ1OWRkNDIxNjBiNzg',
-            },
-          ],
-        },
-        {
-          company: 'Starport',
-          people: [
-            {
-              avatar: 'denis',
-              name: 'Denis Fadeev',
-              position: 'Director of Developer Experience',
-              link: 'https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUhsNlExZzJZWVBvfGRlZmF1bHR8YTMwYTczN2FlMWEyZGVlY2FjMWYyNjkzMmZlNWM1Mzk',
-            },
-          ],
-        },
-        {
-          company: 'Siffchain',
-          people: [
-            {
-              avatar: 'casey',
-              name: 'Casey Arrington',
-              position: 'Head of Business & Operations',
-              link: 'https://calendar.google.com/calendar/selfsched?sstoken=UUZaXzFhT2VSYnJ3fGRlZmF1bHR8OTFlOTdhZmI2ZDhlZTc4NTBhMWQ1OWRkNDIxNjBiNzg',
-            },
-          ],
-        },
-        {
-          company: 'NYM',
-          people: [
-            {
-              avatar: 'max',
-              name: 'Max Hampshire',
-              position: 'Technical Writer / DevOps',
-              link: 'https://meet.nymte.ch/nymchallengecosmoshack',
-            },
-          ],
-        },
-        {
           company: 'Archway',
           people: [
             {
@@ -118,23 +74,13 @@ export default {
           ],
         },
         {
-          company: 'Regen network',
+          company: 'NYM',
           people: [
             {
-              avatar: 'cory',
-              name: 'Cory Levinson',
-              position: 'Director of Engineering',
-              link: 'https://calendar.google.com/calendar/u/2?cid=Y29yeUByZWdlbi5uZXR3b3Jr',
-            },
-            {
-              avatar: 'goodman',
-              name: 'Tyler Goodman',
-              link: 'https://calendar.google.com/calendar/u/2?cid=dHlsZXJAcmVnZW4ubmV0d29yaw',
-            },
-            {
-              avatar: 'zaremba',
-              name: 'Robert Zaremba',
-              link: 'https://calendar.google.com/calendar/u/2?cid=cnlhbkByZWdlbi5uZXR3b3Jr',
+              avatar: 'max',
+              name: 'Max Hampshire',
+              position: 'Technical Writer / DevOps',
+              link: 'https://meet.nymte.ch/nymchallengecosmoshack',
             },
           ],
         },
@@ -148,28 +94,16 @@ export default {
               link: 'https://calendly.com/alex-johnson-6/15min',
             },
             {
-              avatar: 'jawad',
-              name: 'Jawad Ahmed',
-              position: 'Senior Engineer, Pylons',
-              link: 'https://calendly.com/jawadahmeddeveloper/15min',
-            },
-            {
-              avatar: 'mustafa',
-              name: 'Mustafa Seyrek',
-              position: 'Director of Engineering, Pylons',
-              link: 'https://calendly.com/mustafaseyrek',
-            },
-            {
-              avatar: 'mijolae',
-              name: 'Mijolae Wright',
-              position: 'Software Engineer, Pylons',
-              link: 'https://calendly.com/mijolae/15min?month=2021-11',
-            },
-            {
               avatar: 'emeka',
               name: 'Emeka Onwuliri',
               position: 'Tendermint Engineer',
               link: 'https://calendly.com/emeka-onwuliri',
+            },
+            {
+              avatar: 'jawad',
+              name: 'Jawad Ahmed',
+              position: 'Senior Engineer, Pylons',
+              link: 'https://calendly.com/jawadahmeddeveloper/15min',
             },
             {
               avatar: 'michaels',
@@ -179,10 +113,76 @@ export default {
               link: 'https',
             },
             {
+              avatar: 'mijolae',
+              name: 'Mijolae Wright',
+              position: 'Software Engineer, Pylons',
+              link: 'https://calendly.com/mijolae/15min?month=2021-11',
+            },
+            {
+              avatar: 'mustafa',
+              name: 'Mustafa Seyrek',
+              position: 'Director of Engineering, Pylons',
+              link: 'https://calendly.com/mustafaseyrek',
+            },
+            {
               avatar: 'rafael',
               name: 'Rafael de Andrade',
               position: 'Tendermint Engineer',
               link: 'https://calendly.com/rafaeldeandrade',
+            },
+          ],
+        },
+        {
+          company: 'Regen network',
+          people: [
+            {
+              avatar: 'cory',
+              name: 'Cory Levinson',
+              position: 'Director of Engineering',
+              link: 'https://calendar.google.com/calendar/u/2?cid=Y29yeUByZWdlbi5uZXR3b3Jr',
+            },
+            {
+              avatar: 'zaremba',
+              name: 'Robert Zaremba',
+              link: 'https://calendar.google.com/calendar/u/2?cid=cnlhbkByZWdlbi5uZXR3b3Jr',
+            },
+            {
+              avatar: 'goodman',
+              name: 'Tyler Goodman',
+              link: 'https://calendar.google.com/calendar/u/2?cid=dHlsZXJAcmVnZW4ubmV0d29yaw',
+            },
+          ],
+        },
+        {
+          company: 'Sifchain',
+          people: [
+            {
+              avatar: 'casey',
+              name: 'Casey Arrington',
+              position: 'Head of Business & Operations',
+              link: 'https://calendar.google.com/calendar/selfsched?sstoken=UUZaXzFhT2VSYnJ3fGRlZmF1bHR8OTFlOTdhZmI2ZDhlZTc4NTBhMWQ1OWRkNDIxNjBiNzg',
+            },
+          ],
+        },
+        {
+          company: 'Starport',
+          people: [
+            {
+              avatar: 'denis',
+              name: 'Denis Fadeev',
+              position: 'Director of Developer Experience',
+              link: 'https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUhsNlExZzJZWVBvfGRlZmF1bHR8YTMwYTczN2FlMWEyZGVlY2FjMWYyNjkzMmZlNWM1Mzk',
+            },
+          ],
+        },
+        {
+          company: 'Tendermint',
+          people: [
+            {
+              avatar: 'sonia',
+              name: 'Sonia Singla',
+              position: 'Developer Relations Engineer',
+              link: 'https://calendar.google.com/calendar/selfsched?sstoken=UUZaXzFhT2VSYnJ3fGRlZmF1bHR8OTFlOTdhZmI2ZDhlZTc4NTBhMWQ1OWRkNDIxNjBiNzg',
             },
           ],
         },
