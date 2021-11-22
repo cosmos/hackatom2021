@@ -556,6 +556,22 @@ export default {
           ],
         },
         {
+          title: 'Injective Challenge <> AMA Brainstorming Session',
+          date: '2021-11-24',
+          startTime: '17:30',
+          type: 'Virtual',
+          details:
+            'Join an open AMA brainstorming session on Injective Challenge',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Bojan Angjelkoski',
+              avatar: 'bojanA',
+              company: 'Injective',
+            },
+          ],
+        },
+        {
           title: 'Evmos Challenge <> AMA Brainstorming Session',
           date: '2021-11-24',
           startTime: '17:30',
