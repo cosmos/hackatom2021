@@ -508,6 +508,84 @@ export default {
           ],
         },
         {
+          title: 'Juno + Grantfish <> AMA Brainstorming Session',
+          date: '2021-11-22',
+          startTime: '16:00',
+          type: 'Virtual',
+          details:
+            'Join an open AMA brainstorming session on Juno+Grantfish Challenge',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Andrea di Michele',
+              avatar: 'andrea',
+              company: 'Juno + Grantfish',
+            },
+          ],
+        },
+        {
+          title: 'Regen Network <> Brainstorming AMA Session',
+          date: '2021-11-23',
+          startTime: '16:00',
+          type: 'Virtual',
+          details:
+            'Join AMA Brainstorming Session to ask your questions on Regen Network challenge from Robert',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Robert Zaremba',
+              avatar: 'avatar',
+              company: 'Regen Network',
+            },
+          ],
+        },
+        {
+          title: 'Secret Networks <> Brainstorming AMA Session',
+          date: '2021-11-23',
+          startTime: '18:00',
+          type: 'Virtual',
+          details:
+            'Join the Brainstorming AMA Session on Secret Networks Challenge',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Assaf Morami',
+              avatar: 'avatar',
+              company: 'Secret Network',
+            },
+          ],
+        },
+        {
+          title: 'Evmos Challenge <> AMA Brainstorming Session',
+          date: '2021-11-24',
+          startTime: '17:30',
+          type: 'Virtual',
+          details: 'Join an open AMA brainstorming session on Evmos Challenge',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Liam',
+              avatar: 'avatar',
+              company: 'Evmos',
+            },
+          ],
+        },
+        {
+          title: 'Starport Challenge <> Brainstorming AMA Session',
+          date: '2021-11-25',
+          startTime: '14:00',
+          type: 'Virtual',
+          details: 'Join the Q&A session on Starport Challenge!',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Denis Fadeev',
+              avatar: 'denis',
+              company: 'Starport',
+            },
+          ],
+        },
+        {
           title: 'Submissions Deadline',
           date: '2021-12-08',
           startTime: '19:00',
@@ -517,12 +595,6 @@ export default {
           title: 'Voting Open for Community Choice Award',
           date: '2021-12-09',
           startTime: '20:00',
-          type: 'Virtual',
-        },
-        {
-          title: 'Closing Ceremony',
-          date: '2021-12-14',
-          startTime: '19:00',
           type: 'Virtual',
         },
         {

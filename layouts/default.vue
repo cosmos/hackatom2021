@@ -2,7 +2,7 @@
   <div id="content">
     <cookie-banner />
     <div class="page-container">
-      <section-nav />
+      <section-nav v-if="this.$route.path !== '/mentors'" />
       <nuxt />
     </div>
     <tm-footer />
