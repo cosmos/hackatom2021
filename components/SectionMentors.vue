@@ -51,6 +51,29 @@ export default {
     return {
       mentors: [
         {
+          company: 'Akash',
+          people: [
+            {
+              avatar: 'adam',
+              name: 'Adam Wozney',
+              position: 'Community',
+              link: 'https://calendly.com/akashcommunity/15min',
+            },
+            {
+              avatar: 'ericz',
+              name: 'Eric Zietlow',
+              position: 'Director of Developer Relations',
+              link: 'https://calendly.com/eric-zietlow/15min-1',
+            },
+            {
+              avatar: 'scott',
+              name: 'Scott Carruthers',
+              position: 'Director of Technical Support',
+              link: 'http://calendly.com/scott-akash',
+            },
+          ],
+        },
+        {
           company: 'Archway',
           people: [
             {
@@ -70,6 +93,28 @@ export default {
               name: 'Mike Cullinan',
               position: 'Biz Dev',
               link: 'https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUlJR244OXFaMmExfGRlZmF1bHR8YTA4Njc3MzU0ZjRkMDgwYTcwZDY2MDYxNjZiZTBjZWQ',
+            },
+          ],
+        },
+        {
+          company: 'Evmos',
+          people: [
+            {
+              avatar: 'avatar',
+              name: 'Liam',
+              position: 'Partnerships',
+              link: 'http://calendly.com/liamdig',
+            },
+          ],
+        },
+        {
+          company: 'LikeCoin',
+          people: [
+            {
+              avatar: 'chong',
+              name: 'William Chong',
+              position: 'CTO',
+              link: 'https://meet.nymte.ch/nymchallengecosmoshack',
             },
           ],
         },
