@@ -3,33 +3,25 @@
     <graphics-hero :isSmall="true" class="section-hero__graphics" />
 
     <div class="tm-section-container tm-container">
-      <div class="logo-hackatom__container">
-        <kinesis-element :strength="-20" class="tm-text-center logo-hackatom">
-          <h1 class="sr-only">Hackatom</h1>
-          <logo-hackatom class="logo-hackatom__svg" />
-          <div
-            class="
-              logo-hackatom__text
-              tm-rf-1 tm-rf0-l-up tm-title tm-lh-title tm-medium
-            "
-          >
-            <div class="logo-hackatom__long tm-overline">
-              Platinum Sponsor Starport
-            </div>
-            <div class="logo-hackatom__short">Platinum - Starport</div>
-            <div class="logo-hackatom__long tm-overline">
-              November 11 - December 8
-            </div>
-            <div class="logo-hackatom__short">Nov 11 - Dec 8</div>
+      <kinesis-element :strength="-20" class="tm-text-center logo-hackatom">
+        <h1 class="sr-only">Hackatom</h1>
+        <logo-hackatom class="logo-hackatom__svg" />
+        <div class="logo-hackatom__text tm-title tm-lh-title tm-medium">
+          <div class="logo-hackatom__long tm-overline">
+            Platinum Sponsor Starport
           </div>
-        </kinesis-element>
-      </div>
+          <div class="logo-hackatom__short">Platinum - Starport</div>
+          <div class="logo-hackatom__long tm-overline">
+            November 11 - December 8
+          </div>
+          <div class="logo-hackatom__short">Nov 11 - Dec 8</div>
+        </div>
+      </kinesis-element>
     </div>
   </section>
 </template>
 
 <script>
-import moment from 'moment-timezone'
 import GraphicsHero from '~/components/graphics/GraphicsHero.vue'
 import LogoHackatom from '~/components/logos/LogoHackatom.vue'
 
@@ -38,39 +30,6 @@ export default {
     GraphicsHero,
     LogoHackatom,
   },
-  data() {
-    return {
-      moment,
-      countdown: {
-        now: Math.trunc(new Date(new Date().toUTCString()).getTime() / 1000),
-        date: '2021-12-08',
-        time: '19:00',
-        usage: moment.tz('2021-12-08 19:00', 'CET').format(),
-        end: '2021-12-08T19:00:00Z',
-      },
-    }
-  },
-  mounted() {
-    window.setInterval(() => {
-      this.countdown.now = Math.trunc(new Date().getTime() / 1000)
-    }, 1000)
-  },
-  methods: {
-    countdownTimer(date, time) {
-      return moment.tz(`${date} ${time}`, 'CET').format()
-    },
-    toTimezone(date, time) {
-      return (
-        moment
-          // set base time with UTC
-          // get timezone with i18n API - Intl.DateTimeFormat().resolvedOptions().timeZone
-          // usage: 2020-08-04 08:00
-          .tz(`${date} ${time}`, 'UTC')
-          // use client's locale time zone
-          .tz(moment.tz.guess())
-      )
-    },
-  },
 }
 </script>
 
@@ -78,6 +37,7 @@ export default {
 .section-hero
   position relative
   padding-top var(--spacing-7)
+  padding-bottom 0
   @media $breakpoint-medium
     padding-top var(--spacing-8)
   @media $breakpoint-large
@@ -95,16 +55,11 @@ export default {
 
 .logo-hackatom
   position relative
-  width 98%
-  max-width 48.625rem
+  display block
+  width 75%
+  max-width 24.5rem
   margin-left auto
   margin-right auto
-  @media $breakpoint-medium
-    width 95%
-  &__container
-    margin-bottom -50%
-    transform-origin top
-    transform: scale(0.5)
   &__svg
     width 100%
     height auto
@@ -118,10 +73,11 @@ export default {
     justify-content space-between
     margin-top 1.5rem
     transform translateY(-50%)
+    font-weight: var(--font-weight-medium-0)
+    line-height var(--line-height-title-0)
+    font-size calc(var(--font-size-0) / 2)
     @media $breakpoint-medium
-      margin-top 3.2rem
-    @media $breakpoint-large
-      margin-top 3.7rem
+      margin-top 1.75rem
   &__long
     display none
     @media $breakpoint-small

@@ -1,5 +1,5 @@
 <template>
-  <section class="tm-section section mx-9">
+  <section class="tm-section section">
     <div class="tm-section-container tm-container">
       <div class="header tm-text-center tm-center">
         <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
@@ -26,9 +26,11 @@
                 <div class="tm-lh-solid tm-rf0 tm-medium tm-title">
                   {{ mentor.name }}
                 </div>
-                <div class="tm-lh-title tm-rf-1 tm-normal tm-muted mt-3">
-                  {{ mentor.position }}
-                </div>
+                <div
+                  v-if="mentor.position"
+                  class="tm-lh-title tm-rf-1 tm-normal tm-muted mt-3"
+                  v-html="mentor.position"
+                />
               </div>
             </div>
             <div class="mentor__link">
@@ -115,6 +117,75 @@ export default {
             },
           ],
         },
+        {
+          company: 'Regen network',
+          people: [
+            {
+              avatar: 'cory',
+              name: 'Cory Levinson',
+              position: 'Director of Engineering',
+              link: 'https://calendar.google.com/calendar/u/2?cid=Y29yeUByZWdlbi5uZXR3b3Jr',
+            },
+            {
+              avatar: 'goodman',
+              name: 'Tyler Goodman',
+              link: 'https://calendar.google.com/calendar/u/2?cid=dHlsZXJAcmVnZW4ubmV0d29yaw',
+            },
+            {
+              avatar: 'zaremba',
+              name: 'Robert Zaremba',
+              link: 'https://calendar.google.com/calendar/u/2?cid=cnlhbkByZWdlbi5uZXR3b3Jr',
+            },
+          ],
+        },
+        {
+          company: 'Pylons',
+          people: [
+            {
+              avatar: 'alexj',
+              name: 'Alex Johnson',
+              position: 'Tendermint Engineer',
+              link: 'https://calendly.com/alex-johnson-6/15min',
+            },
+            {
+              avatar: 'jawad',
+              name: 'Jawad Ahmed',
+              position: 'Senior Engineer, Pylons',
+              link: 'https://calendly.com/jawadahmeddeveloper/15min',
+            },
+            {
+              avatar: 'mustafa',
+              name: 'Mustafa Seyrek',
+              position: 'Director of Engineering, Pylons',
+              link: 'https://calendly.com/mustafaseyrek',
+            },
+            {
+              avatar: 'mijolae',
+              name: 'Mijolae Wright',
+              position: 'Software Engineer, Pylons',
+              link: 'https://calendly.com/mijolae/15min?month=2021-11',
+            },
+            {
+              avatar: 'emeka',
+              name: 'Emeka Onwuliri',
+              position: 'Tendermint Engineer',
+              link: 'https://calendly.com/emeka-onwuliri',
+            },
+            {
+              avatar: 'michaels',
+              name: 'Michael Sofaer',
+              position:
+                'Founder & CEO, Pylons<br/>Director of NFTs, Tendermint',
+              link: 'https',
+            },
+            {
+              avatar: 'rafael',
+              name: 'Rafael de Andrade',
+              position: 'Tendermint Engineer',
+              link: 'https://calendly.com/rafaeldeandrade',
+            },
+          ],
+        },
       ],
     }
   },
@@ -122,9 +193,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.section
-  padding-bottom 0
-
 .header,
 .list
   max-width: 29.6875rem
