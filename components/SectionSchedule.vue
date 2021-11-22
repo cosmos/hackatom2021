@@ -524,6 +524,21 @@ export default {
           ],
         },
         {
+          title: 'ixo Foundation <> Brainstorming AMA session',
+          date: '2021-11-23',
+          startTime: '14:00',
+          type: 'Virtual',
+          details: 'Join the Brainstorming AMA Session',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Shaun Conway',
+              avatar: 'shaun',
+              company: 'ixo Foundation',
+            },
+          ],
+        },
+        {
           title: 'Regen Network <> Brainstorming AMA Session',
           date: '2021-11-23',
           startTime: '16:00',
@@ -558,7 +573,7 @@ export default {
         {
           title: 'Injective Challenge <> AMA Brainstorming Session',
           date: '2021-11-24',
-          startTime: '17:30',
+          startTime: '11:00',
           type: 'Virtual',
           details:
             'Join an open AMA brainstorming session on Injective Challenge',
@@ -568,6 +583,22 @@ export default {
               name: 'Bojan Angjelkoski',
               avatar: 'bojanA',
               company: 'Injective',
+            },
+          ],
+        },
+        {
+          title: 'Bitsong Challenge <> AMA Brainstorming Session ',
+          date: '2021-11-24',
+          startTime: '12:00',
+          type: 'Virtual',
+          details:
+            'Join an open AMA brainstorming session on Bitsong Challenge',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'TBC',
+              avatar: 'avatar',
+              company: 'Bitsong',
             },
           ],
         },
@@ -583,6 +614,41 @@ export default {
               name: 'Liam',
               avatar: 'avatar',
               company: 'Evmos',
+            },
+          ],
+        },
+        {
+          title: 'Pylons Challenge <> AMA Brainstorming Session',
+          date: '2021-11-24',
+          startTime: '19:00',
+          type: 'Virtual',
+          details: 'Join an open AMA brainstorming session on Pylons Challenge',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Mijolae Wright',
+              avatar: 'mijolae',
+              company: 'Pylons',
+            },
+            {
+              name: 'Alex Johnson',
+              avatar: 'alexj',
+              company: 'Pylons',
+            },
+          ],
+        },
+        {
+          title: 'LikeCoin Challenge <> Brainstorming AMA Session',
+          date: '2021-11-25',
+          startTime: '09:00',
+          type: 'Virtual',
+          details: 'Join the Q&A session on LikeCoin Challenge!',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'William Chong',
+              avatar: 'chong',
+              company: 'LikeCoin',
             },
           ],
         },
