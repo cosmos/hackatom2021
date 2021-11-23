@@ -7,7 +7,7 @@ export default {
   ssr: true,
   generate: {
     fallback: false,
-    routes: ['/', '404'],
+    routes: ['/', '404', 'mentors'],
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head

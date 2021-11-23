@@ -11,35 +11,50 @@
       </div>
 
       <div class="list mt-10">
-        <div v-for="item in mentors" :key="item.company" class="mt-8">
-          <div class="company tm-title tm-lh-copy tm-rf0 tm-bold mb-6">
-            {{ item.company }}
-          </div>
-          <div class="mentor" v-for="mentor in item.people" :key="mentor.name">
-            <div class="mentor__card">
-              <img
-                :src="require(`~/assets/images/people/${mentor.avatar}.png`)"
-                :alt="item.name"
-                class="avatar"
-              />
-              <div class="mentor__info">
-                <div class="tm-lh-solid tm-rf0 tm-medium tm-title">
-                  {{ mentor.name }}
-                </div>
-                <div
-                  v-if="mentor.position"
-                  class="tm-lh-title tm-rf-1 tm-normal tm-muted mt-3"
-                  v-html="mentor.position"
-                />
+        <tm-collapse accordion>
+          <div v-for="item in mentors" :key="item.title">
+            <tm-collapse-item>
+              <div slot="header">
+                <span class="tm-title tm-lh-copy tm-rf0 tm-bold">
+                  {{ item.company }}
+                </span>
               </div>
-            </div>
-            <div class="mentor__link">
-              <tm-link :href="mentor.link" class="tm-link-external">
-                Schedule time
-              </tm-link>
-            </div>
+
+              <div>
+                <div
+                  class="mentor"
+                  v-for="mentor in item.people"
+                  :key="mentor.name"
+                >
+                  <div class="mentor__card">
+                    <img
+                      :src="
+                        require(`~/assets/images/people/${mentor.avatar}.png`)
+                      "
+                      :alt="item.name"
+                      class="avatar"
+                    />
+                    <div class="mentor__info">
+                      <div class="tm-lh-solid tm-rf0 tm-medium tm-title">
+                        {{ mentor.name }}
+                      </div>
+                      <div
+                        v-if="mentor.position"
+                        class="tm-lh-title tm-rf-1 tm-normal tm-muted mt-3"
+                        v-html="mentor.position"
+                      />
+                    </div>
+                  </div>
+                  <div class="mentor__link">
+                    <tm-link :href="mentor.link" class="tm-link-external">
+                      Schedule time
+                    </tm-link>
+                  </div>
+                </div>
+              </div>
+            </tm-collapse-item>
           </div>
-        </div>
+        </tm-collapse>
       </div>
     </div>
   </section>
@@ -104,6 +119,17 @@ export default {
               name: 'Liam',
               position: 'Partnerships',
               link: 'http://calendly.com/liamdig',
+            },
+          ],
+        },
+        {
+          company: 'IXO',
+          people: [
+            {
+              avatar: 'madelynn',
+              name: 'Madelynn Martiniere',
+              position: 'Managing Partner, Armillaria',
+              link: 'https://calendly.com/mmartiniere/60min?back=1&month=2021-11',
             },
           ],
         },
@@ -249,11 +275,12 @@ export default {
     padding-right 3rem
 
 .mentor
-  margin-bottom var(--spacing-9)
+  margin-bottom var(--spacing-7)
   @media $breakpoint-medium
     display flex
     align-items center
-    margin-bottom var(--spacing-7)
+  &:last-child
+    margin-bottom 0
   &__card
     display flex
     align-items center
@@ -265,12 +292,12 @@ export default {
     @media $breakpoint-medium
       padding 0
 
-.company
-  margin-bottom var(--spacing-8)
-  padding-bottom var(--spacing-5)
-  border-bottom 1px solid var(--title)
-  @media $breakpoint-medium
-    margin-bottom var(--spacing-6)
+// .company
+//   margin-bottom var(--spacing-8)
+//   padding-bottom var(--spacing-5)
+//   border-bottom 1px solid var(--title)
+//   @media $breakpoint-medium
+//     margin-bottom var(--spacing-6)
 
 .avatar
   flex-shrink: 0

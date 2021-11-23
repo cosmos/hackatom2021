@@ -3,7 +3,7 @@
     <graphics-hero :isSmall="true" class="section-hero__graphics" />
 
     <div class="tm-section-container tm-container">
-      <kinesis-element :strength="-20" class="tm-text-center logo-hackatom">
+      <tm-link href="/" class="tm-text-center logo-hackatom">
         <h1 class="sr-only">Hackatom</h1>
         <logo-hackatom class="logo-hackatom__svg" />
         <div class="logo-hackatom__text tm-title tm-lh-title tm-medium">
@@ -16,7 +16,7 @@
           </div>
           <div class="logo-hackatom__short">Nov 11 - Dec 8</div>
         </div>
-      </kinesis-element>
+      </tm-link>
     </div>
   </section>
 </template>
