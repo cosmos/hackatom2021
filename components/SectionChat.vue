@@ -3,9 +3,6 @@
     <div class="tm-section-container tm-container">
       <div class="card">
         <div class="card__graphics">
-          <div class="icon">
-            <icon-discord />
-          </div>
           <graphics-cta-developer-chat class="graphics" />
         </div>
         <div class="card__info">
@@ -15,15 +12,12 @@
           <p
             class="mt-5 tm-lh-copy tm-rf0 tm-normal tm-muted tm-measure-narrow"
           >
-            Join the community of Cosmonaut Hackers on&nbsp;Discord.
+            Schedule some time with a mentor to make sure your project hits all
+            the right notes.
           </p>
           <div class="mt-5">
-            <tm-button
-              to-link="external"
-              href="https://discord.gg/cosmosnetwork"
-              id="joinDeveloperChat"
-            >
-              Join Developer Chat<span class="icon__external">&nearr;</span>
+            <tm-button to-link="internal" id="mentorsLink" to="/mentors">
+              Mentors <span class="icon__external">&nearr;</span>
             </tm-button>
           </div>
         </div>
@@ -33,12 +27,10 @@
 </template>
 
 <script>
-import IconDiscord from '~/components/icons/IconDiscord.vue'
 import GraphicsCtaDeveloperChat from '~/components/graphics/GraphicsCtaDeveloperChat.vue'
 
 export default {
   components: {
-    IconDiscord,
     GraphicsCtaDeveloperChat,
   },
   data() {
@@ -70,23 +62,6 @@ export default {
     width 100%
     @media $breakpoint-xl
       width 50%
-
-.icon
-  position relative
-  z-index 1
-  display inline-block
-  margin-bottom var(--spacing-10)
-  @media $breakpoint-medium
-    margin-bottom 0
-  &:after
-    content: ''
-    position absolute
-    top 0
-    left 100%
-    width 16rem
-    height 1px
-    margin-left var(--spacing-3)
-    background-color: var(--white)
 
 .graphics
   position absolute
