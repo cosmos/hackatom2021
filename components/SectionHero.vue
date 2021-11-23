@@ -143,6 +143,7 @@ export default {
 
 .logo-hackatom
   position relative
+  display inline-block
   width 98%
   max-width 48.625rem
   margin-left auto

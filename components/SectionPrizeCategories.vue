@@ -207,9 +207,10 @@
             Requirements
           </div>
           <div class="mt-5 tm-lh-copy tm-rf1 tm-normal tm-muted">
-            <p v-if="currentItem.requirementsInfo">
-              {{ currentItem.requirementsInfo }}
-            </p>
+            <p
+              v-if="currentItem.requirementsInfo"
+              v-html="currentItem.requirementsInfo"
+            />
             <ul v-if="currentItem.requirements">
               <li
                 v-for="info in currentItem.requirements"
@@ -217,6 +218,10 @@
                 v-html="info"
               />
             </ul>
+            <div
+              v-if="currentItem.requirementsAfter"
+              v-html="currentItem.requirementsAfter"
+            />
           </div>
         </div>
         <div v-if="currentItem.judgingCriteria" class="mt-9">
@@ -804,13 +809,13 @@ export default {
                 '2nd': '$15,000',
               },
               info: [
-                `<b>Cross Chain Liquidity Mining</b>`,
-                `Agoric is an open-source development company launching an interoperable Proof-of-Stake chain and economy. Agoric's hackathon challenge is to build a set of Agoric smart contracts on Agoric that provide flexible liquidity mining options to Cosmos projects based on an Osmosis LP token. The contracts must at a minimum be able to do the following:`,
+                `Agoric is an open-source development company launching an interoperable Proof-of-Stake chain and economy. Agoric's hackathon challenge is to build a set of Agoric smart contracts on Agoric that use Osmosis LP tokens brought over IBC to provide additional defi capabilities to holders of those tokens.`,
+                `Example use cases could be:`,
                 `<ul>
-                  <li>Accept an Osmosis LP token</li>
-                  <li>Allow an arbitrary number of reward tiers based on lockup time (e.g.,100 tokens per block for no lockup, 200 tokens per block for 1 month lockup, etc.)</li>
-                  <li>Allow governance token rewards to be deposited ahead of time and locked subject to distribution rules (i.e., project owners can credibly commit to reward amounts and distribution logic)</li>
-                  <li>Optional: include a nifty front end!</li>
+                  <li>More flexible liquidity mining options for projects - contract accepts Osmosis LP tokens for different lockups than are available on Osmosis and provides different reward tiers</li>
+                  <li>Loan protocol which allows Osmosis LP tokens as collateral to borrow against</li>
+                  <li>An OlympusDAO-style protocol which accepts Osmosis LP tokens as bonds</li>
+                  <li>Any other creative use case you can imagine!</li>
                 </ul>`,
               ],
               context: [
@@ -821,17 +826,20 @@ export default {
                 `However, in this partnership, Akash is limited to distributing its token based on the settings that Osmosis allows. For example, if Akash wanted to ask users to lock liquidity for 3 months in order to receive rewards, as protocols in Ethereum have done, this would not be possible.`,
                 `The goal of this bounty is to solve this problem more generally and to allow projects to offer liquidity mining rewards to LPs in major Cosmos DEXs (Osmosis and Gravity DEX to start) with flexible structures.`,
               ],
+              requirementsInfo: `
+                <p>Submissions must include a link to the github project and a basic video walk through of the code and use case.</p>
+                <p>A successful project must:</p>
+              `,
               requirements: [
-                `A successful project should demonstrate the capabilities mentioned above in the description`,
-                `<p>The contracts must, at a minimum, be able to do the following:</p>
-                <ul>
-                  <li>Accept an Osmosis LP token transferred over IBC</li>
-                  <li>Allow an arbitrary number of reward tiers based on lockup time (e.g., 100 tokens per block for no lockup, 200 tokens per block for 1 month lockup, etc.)</li>
-                  <li>Allow governance token rewards to be deposited ahead of time and locked subject to distribution rules (i.e., project owners can credibly commit to reward amounts and distribution logic)</li>
-                  <li>Optional: a front end</li>
-                  <li>Contract should be written in JavaScript using the Agoric SDK. Testnet deployments are preferred over local.</li>
-                </ul>`,
+                `Accept Osmosis LP tokens into a contract`,
+                `Provide a novel defi-related use case for those tokens`,
+                `Include Agoric JavaScript contracts which successfully complete the intended use case! A UI is optional.`,
               ],
+              requirementsAfter: `<br/><p>
+                  Use cases do not need to be limited to the examples provided above.
+                </p><p>
+                  To qualify, the contract(s) must be written in JavaScript using the Agoric SDK. Either local or testnet deployments will be accepted, but Agoric testnet deployments are preferred
+                </p>`,
               sources: {
                 'Agoric ERTP Documentation':
                   'https://agoric.com/documentation/ertp/guide/',

@@ -603,6 +603,28 @@ export default {
         //   ],
         // },
         {
+          title:
+            'Archway AMA Brainstorming Session <> Intro to Building dApps on Archway and Brainstorming AMA Session',
+          date: '2021-11-24',
+          startTime: '16:00',
+          type: 'Virtual',
+          details:
+            'Description: Learn how to get started building Cosmwasm smart contracts on Archway, a protocol that directly rewards developers. This workshop will walk through getting your environment set up and spinning up your own dApps using example frontends and starter code templates from the Archway Developer CLI.',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Drew Taylor',
+              avatar: 'drew',
+              company: 'Archway',
+            },
+            {
+              name: 'Mike Cullinan',
+              avatar: 'mike',
+              company: 'Archway',
+            },
+          ],
+        },
+        {
           title: 'Evmos Challenge <> AMA Brainstorming Session',
           date: '2021-11-24',
           startTime: '17:30',
@@ -664,6 +686,26 @@ export default {
               name: 'Denis Fadeev',
               avatar: 'denis',
               company: 'Starport',
+            },
+          ],
+        },
+        {
+          title: 'Akash AMA Brainstorming Session',
+          date: '2021-11-30',
+          startTime: '13:00',
+          type: 'Virtual',
+          details: 'Brainstorming AMA session on Akash challenge',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Eric Zietlow',
+              avatar: 'eric',
+              company: 'Akash ',
+            },
+            {
+              name: 'Scott Carruthers',
+              avatar: 'scott',
+              company: 'Akash ',
             },
           ],
         },
