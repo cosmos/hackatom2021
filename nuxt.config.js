@@ -8,7 +8,7 @@ export default {
   mode: 'spa',
   generate: {
     fallback: true,
-    routes: ['/', '404'],
+    routes: ['/', '404', 'mentors'],
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
