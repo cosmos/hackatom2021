@@ -1,6 +1,6 @@
 <template>
   <section class="tm-section section-hero">
-    <!-- <graphics-hero :isSmall="true" class="section-hero__graphics" />
+    <graphics-hero :isSmall="true" class="section-hero__graphics" />
 
     <div class="tm-section-container tm-container">
       <tm-link href="/" class="tm-text-center logo-hackatom">
@@ -17,20 +17,20 @@
           <div class="logo-hackatom__short">Nov 11 - Dec 8</div>
         </div>
       </tm-link>
-    </div> -->
+    </div>
   </section>
 </template>
 
 <script>
-// import GraphicsHero from '~/components/graphics/GraphicsHero.vue'
-// import LogoHackatom from '~/components/logos/LogoHackatom.vue'
+import GraphicsHero from '~/components/graphics/GraphicsHero.vue'
+import LogoHackatom from '~/components/logos/LogoHackatom.vue'
 
-// export default {
-//   components: {
-//     GraphicsHero,
-//     LogoHackatom,
-//   },
-// }
+export default {
+  components: {
+    GraphicsHero,
+    LogoHackatom,
+  },
+}
 </script>
 
 <style lang="stylus" scoped>

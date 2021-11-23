@@ -4,7 +4,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-target
    */
   target: 'static',
-  ssr: true,
+  ssr: false,
   generate: {
     fallback: false,
     routes: ['/', '404'],
