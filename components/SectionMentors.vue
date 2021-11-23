@@ -14,10 +14,11 @@
         <tm-collapse accordion>
           <tm-collapse-item v-for="item in mentors" :key="item.company">
             <div slot="header">
-              <div class="company tm-title tm-lh-copy tm-rf0 tm-bold">
+              <div class="tm-title tm-lh-copy tm-rf0 tm-bold">
                 {{ item.company }}
               </div>
             </div>
+
             <div
               class="mentor"
               v-for="mentor in item.people"

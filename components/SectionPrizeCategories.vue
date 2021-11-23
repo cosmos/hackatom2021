@@ -827,8 +827,8 @@ export default {
                 `The goal of this bounty is to solve this problem more generally and to allow projects to offer liquidity mining rewards to LPs in major Cosmos DEXs (Osmosis and Gravity DEX to start) with flexible structures.`,
               ],
               requirementsInfo: `
-                <p>Submissions must include a link to the github project and a basic video walk through of the code and use case.</p>
-                <p>A successful project must:</p>
+                Submissions must include a link to the github project and a basic video walk through of the code and use case.<br/><br/>
+                A successful project must:
               `,
               requirements: [
                 `Accept Osmosis LP tokens into a contract`,
@@ -1421,7 +1421,7 @@ export default {
             },
             {
               type: 'Pylons',
-              title: 'Grant.fish and Juno Challenge',
+              title: 'Grant.fish and Juno',
               preview: `For this important challenge, Juno and grant.fish are teaming up to ask you to change the state of the planet by building modules, accessible apps, and integrations for local currencies, self-sovereign identity, non-fungible impact tokens, verification oracles, decentralized impact exchanges, and earth intelligence data.`,
               prizes: {
                 '1st': '$35,000',
