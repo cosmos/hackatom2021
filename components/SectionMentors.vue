@@ -10,7 +10,7 @@
         </h2>
       </div>
 
-      <div class="list mt-10">
+      <!-- <div class="list mt-10">
         <tm-collapse accordion>
           <div v-for="item in mentors" :key="item.title">
             <tm-collapse-item>
@@ -21,8 +21,7 @@
               </div>
 
               <div>
-                {{ item.company }}
-                <!-- <div
+                <div
                   class="mentor"
                   v-for="mentor in item.people"
                   :key="mentor.name"
@@ -51,12 +50,12 @@
                       Schedule time
                     </tm-link>
                   </div>
-                </div> -->
+                </div>
               </div>
             </tm-collapse-item>
           </div>
         </tm-collapse>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
