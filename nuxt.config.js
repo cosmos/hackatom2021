@@ -7,7 +7,7 @@ export default {
   ssr: true,
   mode: 'spa',
   generate: {
-    fallback: false,
+    fallback: true,
     routes: ['/', '404'],
   },
 

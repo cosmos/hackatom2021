@@ -275,9 +275,12 @@ export default {
     padding-right 3rem
 
 .mentor
+  margin-bottom var(--spacing-7)
   @media $breakpoint-medium
     display flex
     align-items center
+  &:last-child
+    margin-bottom 0
   &__card
     display flex
     align-items center
