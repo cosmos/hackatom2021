@@ -74,7 +74,7 @@
                       </div>
                     </div>
                     <div class="tm-title tm-lh-title tm-rf1 tm-bold">
-                      <span>{{ event.title }}</span>
+                      <span v-html="event.title" />
                       <div
                         v-if="event.place"
                         class="mt-3 tm-rf-1 tm-lh-copy tm-normal"
@@ -604,7 +604,7 @@ export default {
         // },
         {
           title:
-            'Archway AMA Brainstorming Session <> Intro to Building dApps on Archway and Brainstorming AMA Session',
+            'Archway AMA Brainstorming Session <><br/>Intro to Building dApps on Archway',
           date: '2021-11-24',
           startTime: '16:00',
           type: 'Virtual',
@@ -706,6 +706,20 @@ export default {
               name: 'Scott Carruthers',
               avatar: 'scott',
               company: 'Akash ',
+            },
+          ],
+        },
+        {
+          title: 'NYM <> Brainstorming AMA Session',
+          date: '2021-12-01',
+          startTime: '15:00',
+          type: 'Virtual',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Max Hampshire',
+              avatar: 'max',
+              company: 'NYM ',
             },
           ],
         },
