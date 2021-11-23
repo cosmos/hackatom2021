@@ -26,7 +26,8 @@
                   v-for="mentor in item.people"
                   :key="mentor.name"
                 >
-                  <div class="mentor__card">
+                  {{ mentor.name }}
+                  <!-- <div class="mentor__card">
                     <img
                       :src="
                         require(`~/assets/images/people/${mentor.avatar}.png`)
@@ -49,7 +50,7 @@
                     <tm-link :href="mentor.link" class="tm-link-external">
                       Schedule time
                     </tm-link>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </tm-collapse-item>
