@@ -5,9 +5,8 @@ export default {
    */
   target: 'static',
   ssr: true,
-  mode: 'spa',
   generate: {
-    fallback: true,
+    fallback: false,
     routes: ['/', '404', 'mentors'],
   },
 
