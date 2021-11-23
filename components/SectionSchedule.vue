@@ -586,22 +586,22 @@ export default {
             },
           ],
         },
-        {
-          title: 'Bitsong Challenge <> AMA Brainstorming Session ',
-          date: '2021-11-24',
-          startTime: '12:00',
-          type: 'Virtual',
-          details:
-            'Join an open AMA brainstorming session on Bitsong Challenge',
-          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
-          people: [
-            {
-              name: 'TBC',
-              avatar: 'avatar',
-              company: 'Bitsong',
-            },
-          ],
-        },
+        // {
+        //   title: 'Bitsong Challenge <> AMA Brainstorming Session ',
+        //   date: '2021-11-24',
+        //   startTime: '12:00',
+        //   type: 'Virtual',
+        //   details:
+        //     'Join an open AMA brainstorming session on Bitsong Challenge',
+        //   url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+        //   people: [
+        //     {
+        //       name: 'TBC',
+        //       avatar: 'avatar',
+        //       company: 'Bitsong',
+        //     },
+        //   ],
+        // },
         {
           title: 'Evmos Challenge <> AMA Brainstorming Session',
           date: '2021-11-24',
