@@ -1,5 +1,5 @@
 <template>
-  <section class="tm-section section mt-6 pb0" id="schedule">
+  <section id="schedule" class="tm-section section mt-6 pb0">
     <div class="tm-section-container tm-container">
       <div class="schedule">
         <p class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">Event</p>
@@ -677,7 +677,7 @@ export default {
         {
           title: 'Starport Challenge <> Brainstorming AMA Session',
           date: '2021-11-25',
-          startTime: '14:00',
+          startTime: '13:00',
           type: 'Virtual',
           details: 'Join the Q&A session on Starport Challenge!',
           url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
@@ -690,9 +690,57 @@ export default {
           ],
         },
         {
+          title: 'Agoric AMA Brainstorming Session',
+          date: '2021-11-29',
+          startTime: '16:00',
+          type: 'Virtual',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Rowland Graus',
+              avatar: 'rowland-o',
+              company: 'Agoric',
+            },
+          ],
+        },
+        {
+          title: 'Kava Labs <> Brainstorming AMA Session',
+          date: '2021-11-29',
+          startTime: '18:00',
+          type: 'Virtual',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Kevin Davis',
+              avatar: 'kevin',
+              company: 'Kava Labs',
+            },
+            {
+              name: 'Adam Turman',
+              avatar: 'avatar',
+              company: 'Kava Labs',
+            },
+          ],
+        },
+        {
+          title: 'Workshop: From Beginner to Building Your Own Blockchain',
+          date: '2021-11-30',
+          startTime: '12:00',
+          type: 'Virtual',
+          details: `In this workshop, we'll dive deep into a section inside the brand new Cosmos Academy and learn how we can get started in creating our own chain from scratch using Starport.`,
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Noam Cohen',
+              avatar: 'noam',
+              company: 'Interchain Foundation',
+            },
+          ],
+        },
+        {
           title: 'Akash AMA Brainstorming Session',
           date: '2021-11-30',
-          startTime: '13:00',
+          startTime: '16:00',
           type: 'Virtual',
           details: 'Brainstorming AMA session on Akash challenge',
           url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
@@ -706,6 +754,21 @@ export default {
               name: 'Scott Carruthers',
               avatar: 'scott',
               company: 'Akash ',
+            },
+          ],
+        },
+        {
+          title: 'Brainstorming AMA session on Sifchain challenge',
+          date: '2021-11-30',
+          startTime: '17:00',
+          type: 'Virtual',
+          details: 'Brainstorming AMA session on Sifchain challenge',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'McCall Alexander',
+              avatar: 'mcall',
+              company: 'Sifchain  ',
             },
           ],
         },

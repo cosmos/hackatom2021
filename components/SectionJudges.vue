@@ -1,5 +1,5 @@
 <template>
-  <section class="tm-section section pb0" id="jury">
+  <section id="jury" class="tm-section section pb0">
     <div class="tm-section-container tm-container">
       <div class="graphics" />
 

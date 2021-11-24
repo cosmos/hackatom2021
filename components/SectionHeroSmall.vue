@@ -1,6 +1,6 @@
 <template>
   <section class="tm-section section-hero">
-    <graphics-hero :isSmall="true" class="section-hero__graphics" />
+    <graphics-hero :is-small="true" class="section-hero__graphics" />
 
     <div class="tm-section-container tm-container">
       <tm-link href="/" class="tm-text-center logo-hackatom">

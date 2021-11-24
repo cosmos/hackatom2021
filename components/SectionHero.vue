@@ -56,11 +56,11 @@
 
         <div class="mt-6 tm-text-center">
           <tm-button
+            id="submitProject"
             class="cta-button"
             size="l"
             to-link="external"
             href="https://cosmos-hackatom-vi.devpost.com/"
-            id="submitProject"
           >
             Participate <span class="icon__external">&nearr;</span>
           </tm-button>

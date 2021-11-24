@@ -22,9 +22,9 @@
 
               <div>
                 <div
-                  class="mentor"
                   v-for="mentor in item.people"
                   :key="mentor.name"
+                  class="mentor"
                 >
                   <div class="mentor__card">
                     <img
