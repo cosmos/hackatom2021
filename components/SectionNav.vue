@@ -9,16 +9,16 @@
         <div class="nav-list" :class="isOpen && 'opened'">
           <ul>
             <li>
-              <tm-link v-scroll-to="'#schedule'">Schedule</tm-link>
+              <tm-link v-scroll-to="'#schedule'"> Schedule </tm-link>
             </li>
             <li>
-              <tm-link v-scroll-to="'#prizes'">Prizes</tm-link>
+              <tm-link v-scroll-to="'#prizes'"> Prizes </tm-link>
             </li>
             <li>
-              <tm-link v-scroll-to="'#jury'">Jury</tm-link>
+              <tm-link v-scroll-to="'#jury'"> Jury </tm-link>
             </li>
             <li>
-              <tm-link v-scroll-to="'#faq'">FAQ</tm-link>
+              <tm-link v-scroll-to="'#faq'"> FAQ </tm-link>
             </li>
             <li>
               <tm-link
@@ -43,7 +43,7 @@
           <tm-tooltip
             text="Some restrictions may apply.<br/>Click to learn more."
             position="top-center"
-            :isIcon="true"
+            :is-icon="true"
           >
             <icon-info />
           </tm-tooltip>

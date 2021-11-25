@@ -1,5 +1,5 @@
 <template>
-  <section class="tm-section section mx-6" id="faq">
+  <section id="faq" class="tm-section section mx-6">
     <div class="tm-section-container tm-container">
       <div class="header tm-center">
         <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">FAQ</div>

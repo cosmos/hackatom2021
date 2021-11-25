@@ -38,11 +38,11 @@
                   required="required"
                 />
                 <tm-button
+                  id="getUpdates"
                   class="btn"
                   size="s"
                   :disabled="emailInvalid"
                   @click="actionSubmitEmail"
-                  id="getUpdates"
                 >
                   <span>Get updates</span>
                   <span class="icon__right">&rarr;</span>

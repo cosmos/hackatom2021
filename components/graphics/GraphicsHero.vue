@@ -4,16 +4,16 @@
     <kinesis-element :strength="-5" class="galaxy__container">
       <graphics-galaxy class="galaxy" />
     </kinesis-element>
-    <kinesis-element :strength="-10" v-if="!isSmall" class="planet _comet">
+    <kinesis-element v-if="!isSmall" :strength="-10" class="planet _comet">
       <img src="~/assets/images/tx.png" />
     </kinesis-element>
-    <kinesis-element :strength="-30" v-if="!isSmall" class="planet _pink">
+    <kinesis-element v-if="!isSmall" :strength="-30" class="planet _pink">
       <img src="~/assets/images/planet-01.png" />
     </kinesis-element>
-    <kinesis-element :strength="-40" v-if="!isSmall" class="planet _gray">
+    <kinesis-element v-if="!isSmall" :strength="-40" class="planet _gray">
       <img src="~/assets/images/planet-03.png" />
     </kinesis-element>
-    <kinesis-element :strength="-50" v-if="!isSmall" class="planet _blue">
+    <kinesis-element v-if="!isSmall" :strength="-50" class="planet _blue">
       <img src="~/assets/images/planet-02.png" />
     </kinesis-element>
   </div>

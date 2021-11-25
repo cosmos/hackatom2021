@@ -5,10 +5,10 @@
       <section-competition />
     </kinesis-container>
     <section-schedule />
+    <section-chat />
     <section-incoming-transmissions />
     <section-prize-pool />
     <section-prize-categories />
-    <section-chat />
     <section-sponsored />
     <section-judging-criteria />
     <section-judges />
