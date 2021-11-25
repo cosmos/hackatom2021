@@ -21,11 +21,11 @@
 
       <div class="mt-8 tm-text-center">
         <tm-button
+          id="submitProjectBottom"
           class="btn"
           size="l"
           to-link="external"
           href="https://cosmos-hackatom-vi.devpost.com/"
-          id="submitProjectBottom"
         >
           Submit your Project <span class="icon__external">&nearr;</span>
         </tm-button>

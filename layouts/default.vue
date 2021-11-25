@@ -2,7 +2,7 @@
   <div id="content">
     <cookie-banner />
     <div class="page-container">
-      <section-nav v-if="this.$route.path === '/'" />
+      <section-nav v-if="$route.path === '/'" />
       <nuxt />
     </div>
     <tm-footer />
