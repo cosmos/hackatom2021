@@ -143,6 +143,17 @@ export default {
           ],
         },
         {
+          company: 'Injective',
+          people: [
+            {
+              avatar: 'mirza',
+              name: 'Mirza Uddin',
+              position: 'Head of Business Development',
+              link: 'https://calendly.com/injective/30min',
+            },
+          ],
+        },
+        {
           company: 'LikeCoin',
           people: [
             {
@@ -160,7 +171,7 @@ export default {
               avatar: 'max',
               name: 'Max Hampshire',
               position: 'Technical Writer / DevOps',
-              link: 'https://meet.nymte.ch/nymchallengecosmoshack',
+              link: 'https://calendly.com/max-nym',
             },
           ],
         },
@@ -258,6 +269,12 @@ export default {
         {
           company: 'Tendermint',
           people: [
+            {
+              avatar: 'aliasgar',
+              name: 'Aliasgar Merchant',
+              position: 'Developer Relations',
+              link: 'https://calendly.com/ali-tendermint/15min',
+            },
             {
               avatar: 'sonia',
               name: 'Sonia Singla',
