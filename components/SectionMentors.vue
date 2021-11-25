@@ -8,9 +8,18 @@
         <h2 class="mt-3 tm-title tm-rf5 tm-lh-title tm-bold">
           Schedule a chat<br />with a mentor
         </h2>
+        <p class="mt-6 tm-lh-copy tm-rf1 tm-normal tm-title">
+          All mentors are also reachable
+          <tm-link
+            href="https://discord.com/invite/cosmosnetwork"
+            class="tm-link-external"
+          >
+            Discord
+          </tm-link>
+        </p>
       </div>
 
-      <div class="list mt-10">
+      <div class="list mt-9">
         <tm-collapse accordion>
           <div v-for="item in mentors" :key="item.title">
             <tm-collapse-item>

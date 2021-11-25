@@ -8,7 +8,7 @@
           </div>
           <div class="card__info">
             <h2 class="tm-title tm-lh-title tm-rf2 tm-bold">
-              Conversation with a Mentor
+              Schedule a call with a mentor
             </h2>
             <p
               class="
@@ -33,7 +33,7 @@
           </div>
           <div class="card__info">
             <h2 class="tm-title tm-lh-title tm-rf2 tm-bold">
-              Continue the Chat
+              Chat with mentors and hackers
             </h2>
             <p
               class="
