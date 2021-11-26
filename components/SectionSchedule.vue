@@ -738,6 +738,21 @@ export default {
           ],
         },
         {
+          title: 'Starport Challenge <> Brainstorming AMA Session',
+          date: '2021-11-30',
+          startTime: '14:00',
+          type: 'Virtual',
+          details: `Join the Q&A session on Starport Challenge!`,
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Denis Fadeev',
+              avatar: 'denis',
+              company: 'Starport',
+            },
+          ],
+        },
+        {
           title: 'Akash AMA Brainstorming Session',
           date: '2021-11-30',
           startTime: '16:00',
