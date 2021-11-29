@@ -690,7 +690,7 @@ export default {
           ],
         },
         {
-          title: 'Agoric AMA Brainstorming Session',
+          title: 'Agoric Challenge <> Brainstorming AMA Session',
           date: '2021-11-29',
           startTime: '15:00',
           type: 'Virtual',
@@ -753,7 +753,7 @@ export default {
           ],
         },
         {
-          title: 'Akash AMA Brainstorming Session',
+          title: 'Akash Challenge <> Brainstorming AMA Session',
           date: '2021-11-30',
           startTime: '16:00',
           type: 'Virtual',
@@ -773,7 +773,7 @@ export default {
           ],
         },
         {
-          title: 'Brainstorming AMA session on Sifchain challenge',
+          title: 'Sifchain challenge <> Brainstorming AMA Session',
           date: '2021-11-30',
           startTime: '17:00',
           type: 'Virtual',
