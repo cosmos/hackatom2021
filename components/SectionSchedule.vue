@@ -692,7 +692,7 @@ export default {
         {
           title: 'Agoric AMA Brainstorming Session',
           date: '2021-11-29',
-          startTime: '16:00',
+          startTime: '15:00',
           type: 'Virtual',
           url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
           people: [
