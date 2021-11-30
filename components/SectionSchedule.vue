@@ -723,6 +723,26 @@ export default {
           ],
         },
         {
+          title: 'Sentinel Challenge <> Brainstorming AMA session',
+          date: '2021-11-30',
+          startTime: '11:00',
+          type: 'Virtual',
+          details: `Brainstorming AMA Session on Sentinel Challenge.`,
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Srinivas Baride',
+              avatar: 'srinivas',
+              company: 'Sentinel',
+            },
+            {
+              name: 'Dan Edlebeck',
+              avatar: 'avatar',
+              company: 'Sentinel',
+            },
+          ],
+        },
+        {
           title: 'Workshop: From Beginner to Building Your Own Blockchain',
           date: '2021-11-30',
           startTime: '12:00',
@@ -783,7 +803,21 @@ export default {
             {
               name: 'McCall Alexander',
               avatar: 'mcall',
-              company: 'Sifchain  ',
+              company: 'Sifchain',
+            },
+          ],
+        },
+        {
+          title: 'Osmosis Challenge <> Brainstorming AMA Session',
+          date: '2021-12-01',
+          startTime: '13:00',
+          type: 'Virtual',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Josh Lee',
+              avatar: 'avatar',
+              company: 'Osmosis',
             },
           ],
         },
@@ -797,7 +831,42 @@ export default {
             {
               name: 'Max Hampshire',
               avatar: 'max',
-              company: 'NYM ',
+              company: 'NYM',
+            },
+          ],
+        },
+        {
+          title: 'Archway Challenge<> Brainstorming AMA Session with team',
+          date: '2021-12-01',
+          startTime: '16:00',
+          type: 'Virtual',
+          details: 'Join an AMA Session with Archway',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Drew Taylor',
+              avatar: 'drew',
+              company: 'Archway',
+            },
+            {
+              name: 'Mike Cullinan',
+              avatar: 'mike',
+              company: 'Archway',
+            },
+          ],
+        },
+        {
+          title: 'Keynote: Intro to ABCI ++',
+          date: '2021-12-03',
+          startTime: '13:00',
+          type: 'Virtual',
+          details: 'How will the new ABCI ++ interface look and what benefits it can unlock for applications',
+          url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
+          people: [
+            {
+              name: 'Callum Waters',
+              avatar: 'callum',
+              company: 'Interchain Foundation',
             },
           ],
         },
