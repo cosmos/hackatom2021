@@ -836,21 +836,16 @@ export default {
           ],
         },
         {
-          title: 'Archway Challenge<> Brainstorming AMA Session with team',
+          title: 'How to Build, Mint, and Transfer NFTs on Archway',
           date: '2021-12-01',
           startTime: '16:00',
           type: 'Virtual',
-          details: 'Join an AMA Session with Archway',
+          details: 'Learn how to build, mint and transfer NFTs and ask all your questions from Archway team',
           url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
           people: [
             {
-              name: 'Drew Taylor',
-              avatar: 'drew',
-              company: 'Archway',
-            },
-            {
-              name: 'Mike Cullinan',
-              avatar: 'mike',
+              name: 'Augusto Elesbão',
+              avatar: 'augusto',
               company: 'Archway',
             },
           ],
