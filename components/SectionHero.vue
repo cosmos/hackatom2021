@@ -28,15 +28,6 @@
             tm-text-center tm-rf2 tm-rf4-m-up tm-rf3-l-up tm-lh-title tm-bold
           "
         >
-          Time remaining
-        </div>
-
-        <div
-          class="
-            mt-4
-            tm-text-center tm-rf2 tm-rf4-m-up tm-rf3-l-up tm-lh-title tm-bold
-          "
-        >
           <tm-countdown
             class="tm-mono tm-rf4 tm-rf3-l-up countdown__count"
             :now="countdown.now"
@@ -46,30 +37,18 @@
 
         <div
           class="
-            mt-3
-            tm-rf-1 tm-rf0-m-up tm-medium tm-text-center tm-overline tm-muted
-            date
+            mt-4
+            tm-text-center tm-rf2 tm-rf4-m-up tm-rf3-l-up tm-lh-title tm-bold
           "
         >
-          7 PM Nov 11 – 7 PM Dec 08
+          Submissions closed
         </div>
 
-        <div class="mt-6 tm-text-center">
-          <tm-button
-            id="submitProject"
-            class="cta-button"
-            size="l"
-            to-link="external"
-            href="https://cosmos-hackatom-vi.devpost.com/"
-          >
-            Participate <span class="icon__external">&nearr;</span>
-          </tm-button>
-        </div>
-
-        <div class="mt-7 tm-text-center">
-          <span class="tm-overline tm-rf0 tm-lh-title tm-medium">
-            WIN OVER $1M in prizes
-          </span>
+        <div class="mt-4 tm-text-center">
+          <tm-link href="https://discord.com/invite/cosmosnetwork">
+            Winner Announcement & Closing Ceremony<br />
+            December 16th ↓
+          </tm-link>
         </div>
       </div>
     </div>
