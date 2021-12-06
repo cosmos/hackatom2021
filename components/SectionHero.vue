@@ -43,7 +43,7 @@
         </div>
 
         <div class="mt-4 tm-text-center">
-          <tm-link href="https://discord.com/invite/cosmosnetwork">
+          <tm-link v-scroll-to="'#schedule'">
             Winner Announcement & Closing Ceremony<br />
             December 16th ↓
           </tm-link>
