@@ -28,11 +28,9 @@
             tm-text-center tm-rf2 tm-rf4-m-up tm-rf3-l-up tm-lh-title tm-bold
           "
         >
-          <tm-countdown
-            class="tm-mono tm-rf4 tm-rf3-l-up countdown__count"
-            :now="countdown.now"
-            :end="countdownTimer(countdown.date, countdown.time)"
-          />
+          <div class="tm-mono tm-rf4 tm-rf3-l-up countdown__count">
+            00:00:00
+          </div>
         </div>
 
         <div
