@@ -161,13 +161,13 @@ export default {
     margin-top 0
     transform translateY(-50%)
   &._top
-    top 1.6rem
+    top 1.3rem
     right 0
     margin-top 0
     @media $breakpoint-medium
-      top 3rem
+      top 2.4rem
     @media $breakpoint-large
-      top 3.3rem
+      top 2.6rem
   &._mobile-bottom
     @media $breakpoint-medium-max
       bottom 2.1rem

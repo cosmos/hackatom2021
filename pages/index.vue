@@ -4,25 +4,24 @@
       <section-hero />
       <section-competition />
     </kinesis-container>
-    <section-schedule />
-    <section-judges />
-    <section-judging-criteria />
-    <section-chat />
-    <section-updates />
-    <section-prize-pool />
-    <section-prize-categories />
     <section-sponsored />
-    <!-- <section-participate /> -->
+    <section-prize-categories />
     <section-incoming-transmissions />
-    <section-faq />
-    <promo-signal-card />
+    <!-- <section-schedule /> -->
+    <!-- <section-judges /> -->
+    <!-- <section-judging-criteria /> -->
+    <!-- <section-chat /> -->
+    <!-- <section-updates /> -->
+    <!-- <section-prize-pool /> -->
+    <!-- <section-participate /> -->
+    <!-- <section-faq /> -->
+    <!-- <promo-signal-card /> -->
   </main>
 </template>
 
 <script>
-import PromoSignalCard from '../components/PromoSignalCard.vue'
 export default {
-  components: { PromoSignalCard },
+  components: {},
 }
 </script>
 
