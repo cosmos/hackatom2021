@@ -17,9 +17,8 @@
       <div class="tm-measure tm-center mt-8">
         <div class="info tm-lh-copy tm-rf1 tm-normal">
           <p>
-            Catch all the latest updates about HackAtom VI including competition
-            rules, prize details, sponsors, and special news on our in-person
-            events in major cities…
+            We'll be returning in 2022 with HackAtom VII. Be sure not to miss
+            our updates and be the first to know what's coming next time.
           </p>
         </div>
       </div>
