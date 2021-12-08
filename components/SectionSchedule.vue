@@ -867,8 +867,8 @@ export default {
         },
         {
           title: 'Submissions Deadline',
-          date: '2021-12-08',
-          startTime: '19:00',
+          date: '2021-12-10',
+          startTime: '18:00',
           type: 'Virtual',
         },
         {
