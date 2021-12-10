@@ -51,7 +51,7 @@
             date
           "
         >
-          7 PM Nov 11 – 7 PM Dec 10
+          6 PM Nov 11 – 6 PM Dec 10 (UTC)
         </div>
 
         <div class="mt-6 tm-text-center">
