@@ -24,13 +24,13 @@
               <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
                 Participants
               </div>
-              <div class="tm-title tm-lh-title tm-rf3 tm-bold">2500</div>
+              <div class="tm-title tm-lh-title tm-rf3 tm-bold">1958</div>
             </div>
             <div class="statistic__item">
               <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
                 Submissions
               </div>
-              <div class="tm-title tm-lh-title tm-rf3 tm-bold">120</div>
+              <div class="tm-title tm-lh-title tm-rf3 tm-bold">103</div>
             </div>
             <div class="statistic__item">
               <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
