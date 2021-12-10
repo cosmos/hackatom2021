@@ -19,20 +19,32 @@
 
       <div class="tm-grid-base mt-8">
         <div class="info">
-          <p class="tm-lh-copy tm-rf0 tm-rf1-m-up">
-            Calling all developers… It's time to build a cross-chain universe!
-            Take part in the biggest HackAtom in Cosmos history and compete for
-            your share of $1,000,000 in prizes paid in $ATOM. Organized by
-            Tendermint, HackAtom VI is a one-month virtual event with in-person
-            side events covering seven different themes.
-          </p>
-          <p class="mt-7 tm-lh-copy tm-rf0 tm-rf1-m-up">
-            Cosmos is a rapidly expanding ecosystem of independent
-            interconnected blockchains built using developer-friendly
-            application components and connected with the ground-breaking
-            Inter-Blockchain Communication protocol (IBC). There are more than
-            250 blockchain apps and services in the Cosmos Network with over
-            $130 billion of digital assets under management.
+          <div class="statistic">
+            <div class="statistic__item">
+              <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
+                Participants
+              </div>
+              <div class="tm-title tm-lh-title tm-rf3 tm-bold">2500</div>
+            </div>
+            <div class="statistic__item">
+              <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
+                Submissions
+              </div>
+              <div class="tm-title tm-lh-title tm-rf3 tm-bold">120</div>
+            </div>
+            <div class="statistic__item">
+              <div class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
+                Prize pool
+              </div>
+              <div class="tm-title tm-lh-title tm-rf3 tm-bold">$1M+</div>
+            </div>
+          </div>
+          <p class="mt-8 tm-lh-copy tm-rf0 tm-rf1-m-up">
+            Submissions to HackAtom VI are now closed. Our judges are reviewing
+            the entries and we'll announce the winners on Dec 16. The community
+            will also be voting on their favorite project from Dec 14-15 via
+            DevPost. A huge thank you to everyone who took part, making this our
+            biggest HackAtom yet with over $1,000,000 in prizes paid in ATOM.
           </p>
         </div>
       </div>
@@ -104,6 +116,15 @@ export default {
   grid-column 1 / -1
   @media $breakpoint-xl
     grid-column 4 / span 6
+
+.statistic
+  display flex
+  flex-direction: column
+  gap var(--grid-gap-x)
+  @media $breakpoint-medium
+    flex-direction: row
+  &__item
+    width 100%
 
 .video
   position relative

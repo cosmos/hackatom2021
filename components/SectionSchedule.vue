@@ -73,8 +73,17 @@
                         </span>
                       </div>
                     </div>
-                    <div class="tm-title tm-lh-title tm-rf1 tm-bold">
+                    <div
+                      class="tm-title tm-lh-title tm-rf1 tm-bold"
+                      :class="event.voting && '_voting'"
+                    >
                       <span v-html="event.title" />
+                      <div v-if="event.voting" class="voting">
+                        <tm-button to-link="external" :href="event.voting">
+                          <span>Vote</span>
+                          <span class="icon__external">&nearr;</span>
+                        </tm-button>
+                      </div>
                       <div
                         v-if="event.place"
                         class="mt-3 tm-rf-1 tm-lh-copy tm-normal"
@@ -90,7 +99,7 @@
                       <div v-if="event.people" class="mt-3">
                         <div
                           v-for="item in event.people"
-                          :key="item.name"
+                          :key="`${item.name}_${event.date}`"
                           class="tm-lh-copy tm-rf0 tm-normal tm-muted"
                         >
                           <b class="">{{ item.name }}</b>
@@ -840,7 +849,8 @@ export default {
           date: '2021-12-01',
           startTime: '16:00',
           type: 'Virtual',
-          details: 'Learn how to build, mint and transfer NFTs and ask all your questions from Archway team',
+          details:
+            'Learn how to build, mint and transfer NFTs and ask all your questions from Archway team',
           url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
           people: [
             {
@@ -855,7 +865,8 @@ export default {
           date: '2021-12-03',
           startTime: '13:00',
           type: 'Virtual',
-          details: 'How will the new ABCI ++ interface look and what benefits it can unlock for applications',
+          details:
+            'How will the new ABCI ++ interface look and what benefits it can unlock for applications',
           url: 'https://hackatom.airmeet.com/e/8d99ec40-424e-11ec-868e-f7fade6f497c',
           people: [
             {
@@ -882,6 +893,7 @@ export default {
           date: '2021-12-15',
           startTime: '20:00',
           type: 'Virtual',
+          // voting: '/',
         },
         {
           title: 'Winner Announcement and Closing Ceremony',
@@ -979,6 +991,17 @@ export default {
       margin-top 0
     @media $breakpoint-xl
       grid-column span 7
+    &._voting
+      @media $breakpoint-xl
+        grid-column span 8
+        display flex
+        justify-content space-between
+  .voting
+    margin-top var(--spacing-7)
+    @media $breakpoint-medium
+      margin-top var(--spacing-4)
+    @media $breakpoint-xl
+      margin-top -0.7rem
 
 .avatars
   display flex

@@ -1,8 +1,8 @@
 <template>
   <div
+    v-if="!disabled"
     :class="{
       'open-item': maxHeight != '0px',
-      disabled: disabled,
       light: light,
       'mobile-light': mobileLight,
       'hide-border': hideBorder,
@@ -23,6 +23,27 @@
       />
       <slot name="header" />
     </button>
+    <div ref="content" :style="styleContent" class="tm-collapse-item--content">
+      <div class="con-content--item">
+        <slot />
+      </div>
+    </div>
+  </div>
+  <div
+    v-else
+    :class="{
+      'open-item': maxHeight != '0px',
+      light: light,
+      'mobile-light': mobileLight,
+      'hide-border': hideBorder,
+    }"
+    class="tm-collapse-item"
+    @mouseover="mouseover"
+    @mouseout="mouseout"
+  >
+    <div class="tm-collapse-item--header">
+      <slot name="header" />
+    </div>
     <div ref="content" :style="styleContent" class="tm-collapse-item--content">
       <div class="con-content--item">
         <slot />
