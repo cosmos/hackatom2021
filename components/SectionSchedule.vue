@@ -893,7 +893,7 @@ export default {
           date: '2021-12-15',
           startTime: '20:00',
           type: 'Virtual',
-          // voting: '/',
+          voting: 'https://cosmos-hackatom-vi.devpost.com/project-gallery',
         },
         {
           title: 'Winner Announcement and Closing Ceremony',
