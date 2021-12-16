@@ -7,15 +7,6 @@
     <section-sponsored />
     <section-prize-categories />
     <section-incoming-transmissions />
-    <!-- <section-schedule /> -->
-    <!-- <section-judges /> -->
-    <!-- <section-judging-criteria /> -->
-    <!-- <section-chat /> -->
-    <!-- <section-updates /> -->
-    <!-- <section-prize-pool /> -->
-    <!-- <section-participate /> -->
-    <!-- <section-faq /> -->
-    <!-- <promo-signal-card /> -->
   </main>
 </template>
 
