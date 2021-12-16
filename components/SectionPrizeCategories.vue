@@ -132,7 +132,8 @@
                         v-if="!challenge.winners"
                         class="mt-5 tm-lh-copy tm-rf0 tm-bold"
                       >
-                        Challenge did not have a wininng submission
+                        Submissions for this challenge did not meet the minimum
+                        viable judging criteria
                       </div>
                     </div>
                     <div
