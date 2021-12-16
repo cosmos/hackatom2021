@@ -211,11 +211,11 @@ export default {
           prize: '$25K',
           graphics: true,
           description:
-            'The Grand Prix Prize went to the project that successfully combined at least two different challenges.',
+            'The Grand Prix Prize went to the projects that successfully combined at least two different challenges.',
           winners: [
             {
               prize: '$25,000',
-              team: 'Geospatial Data oracle for Cosmos',
+              team: 'Geospatial Data Oracle for Cosmos',
               link: 'https://cosmos-hackatom-vi.devpost.com/review/submissions/M2pBa29CbmVlWGllU2ZHYVdzcmFPSjdrMENrQ01obm5FVi9QMTZEc25jeUN0V0pLVnlYVCtCTVNvTU00YkRvNzZzWXRrR0ErZmxFOUdGbWU3eTBnZCtUTitTWkhUNWNUR1pLd0ZlTU9wUHM9LS1MUlVtbzZRbFRUelM5aGFlR1dUOXpRPT0=--9320db5391fa0d519110052f8ee96e145cd46044',
             },
             {
@@ -280,7 +280,7 @@ export default {
                 {
                   title: '1st',
                   prize: '$35,000',
-                  team: '(AST)Walking around starport',
+                  team: '(AST)Walking Around Starport',
                   link: 'https://cosmos-hackatom-vi.devpost.com/review/submissions/aDZQNmVKWlpHVGJTUFR1TlRjbndtUUh0R3pHelR1YUdxQXBBN2N5RTlPTldXNkJpL0gzdjdIWDVyMlVUOVJ5WTU3aEU5dEgxY2FDR3NMOE0yeTFQVk9BMTExUERwaVVFVEhKaXdzQUZrQU09LS1YTHN5dEswaWNlelZoWE5KdWp1d1N3PT0=--60928b878c400b2e196f553f71401eeaa68bedeb',
                 },
                 {
@@ -309,7 +309,7 @@ export default {
                 {
                   title: '1st',
                   prize: '$35,000',
-                  team: 'Starport plugin system',
+                  team: 'Starport Plugin System',
                   link: 'https://cosmos-hackatom-vi.devpost.com/review/submissions/TWpZNVJCcVNZcGdSVEpXc1Mya1RDOXhqbDliaFlOVUJadVJmeGlnTEdRR2FTMCs3Zlp0NlAzUGRVSjlDaTBVY0t0MWNGcjk0Qjc5MlM0SEZMTjRBTXZySEVRNEtNbWhLeTVBZVRMS0J6MzQ9LS1wVUVaTjRia3o3T0xvS2xkNkRNRVpBPT0=--4cbea939348c93acfa47f73ba6bf9fcc5d03b8a1',
                 },
               ],
@@ -355,7 +355,7 @@ export default {
                 {
                   title: '2nd',
                   prize: '$15,000',
-                  team: 'Akash Cosmos Omnibus evolution',
+                  team: 'Akash Cosmos Omnibus Evolution',
                   link: 'https://cosmos-hackatom-vi.devpost.com/review/submissions/cTg3S1VzUTQwM2c4UkpIamtJNTZQYlhuVm1idjFmdytqVVYzZ2lseHcrdXJMN0hTOVVnbDlhaE4welVVODhaYUlDWXhXdEVLODdtb1J1Yk91dFRkYTAyYmUrR0hqSGVuUCt1NEpmbmRhOFE9LS1NakpicW4raXZZVjU0eldDZ0NjcFF3PT0=--de02aaf9cc0d03056d46f41e87e0da31d6f7799d',
                 },
               ],
@@ -475,7 +475,7 @@ export default {
                 {
                   title: '1st',
                   prize: '$35,000',
-                  team: 'Osmosis (Semi-)Auto Compound',
+                  team: 'Osmosis (Semi-) Auto Compound',
                   link: 'https://cosmos-hackatom-vi.devpost.com/submissions/288104-osmosis-semi-auto-compound',
                 },
                 {
@@ -524,7 +524,7 @@ export default {
                 {
                   title: '2nd',
                   prize: '$15,000',
-                  team: 'Poker Joker Dao',
+                  team: 'Poker Joker DAO',
                   link: 'https://cosmos-hackatom-vi.devpost.com/review/submissions/QkNYRFlKQ2VjeEFTMTZ6WUk4OTRpTVdNL3NMQUpoejdieSsyZ2VtcDZQZ21kekJ4TTh6b2MvbU1lY2tEQmprU1V6dkMvcFlMNnpXcFR4YTAvdGZHdDlsZ0dsZ3diV0lFdm1CaTU0R1pTb0k9LS04RWw5N2NNR0JKcW5UZjI4c3dwL0FnPT0=--ee11de1c5b2ba8e2da6537d909503209538b6840',
                 },
               ],
@@ -542,7 +542,7 @@ export default {
                 {
                   title: '1st',
                   prize: '$35,000',
-                  team: 'Geospatial Data oracle for Cosmos',
+                  team: 'Geospatial Data Oracle for Cosmos',
                   link: 'https://cosmos-hackatom-vi.devpost.com/review/submissions/UlU5YVp1UDEvWnd1MFk5Mnk0QVFiM3NSVEh6UHdra1lubWpnVWtBZVdlV21tVmhPR25wUkh6ZUlzMTk3Z3paSmVGWE8xWjY0Ri8zeFZnRVdmTkxmZGZKNCtLWXpXWjNrbm40ekNOc1l2OHc9LS14ZmtpaGNRSGdsK2dxcUNRUUxidFhnPT0=--a9050ecc77facca6adef3088602d7ea35e50511f',
                 },
                 {
@@ -580,7 +580,7 @@ export default {
                 {
                   title: '2nd',
                   prize: '$15,000',
-                  team: 'Unremarkable project',
+                  team: 'Unremarkable Project',
                   link: 'https://cosmos-hackatom-vi.devpost.com/review/submissions/TDRibWJvQXlSNUxXWjcrazhPRWY2aU5Laks0SzhhbzN0dmtJUlpLNkd5RTZTQWUvRjh2czlnYWNIQ0F2YWxuYTE5UFp4NU03dHY4NVpzVlM4SUhRbmlIUFZlKzYzdHZhTFMvKzFrM0sxSG89LS11SDlLL05HV2VicTc2eEdUUmpjWWJ3PT0=--c6cd0f8c218afb47a269416bfdac5b9801bb005e',
                 },
               ],
@@ -593,7 +593,7 @@ export default {
                 {
                   title: '1st',
                   prize: '$35,000',
-                  team: 'Arbiter DAO***',
+                  team: 'Arbiter DAO',
                   link: 'https://cosmos-hackatom-vi.devpost.com/review/submissions/M2pBa29CbmVlWGllU2ZHYVdzcmFPSjdrMENrQ01obm5FVi9QMTZEc25jeUN0V0pLVnlYVCtCTVNvTU00YkRvNzZzWXRrR0ErZmxFOUdGbWU3eTBnZCtUTitTWkhUNWNUR1pLd0ZlTU9wUHM9LS1MUlVtbzZRbFRUelM5aGFlR1dUOXpRPT0=--9320db5391fa0d519110052f8ee96e145cd46044',
                 },
                 {
