@@ -15,10 +15,8 @@
             Platinum Sponsor Starport
           </div>
           <div class="logo-hackatom__short">Platinum - Starport</div>
-          <div class="logo-hackatom__long tm-overline">
-            November 11 - December 10
-          </div>
-          <div class="logo-hackatom__short">Nov 11 - Dec 10</div>
+          <div class="logo-hackatom__long tm-overline">2021</div>
+          <div class="logo-hackatom__short">2021</div>
         </div>
       </kinesis-element>
 
@@ -39,14 +37,13 @@
             tm-text-center tm-rf2 tm-rf4-m-up tm-rf3-l-up tm-lh-title tm-bold
           "
         >
-          Submissions closed
+          Competition ended
         </div>
 
         <div class="mt-4 tm-text-center">
-          <tm-link v-scroll-to="'#schedule'">
-            Winner Announcement & Closing Ceremony<br />
-            December 16th ↓
-          </tm-link>
+          <span class="tm-overline tm-rf0 tm-lh-title tm-medium tm-muted">
+            7 pm Nov 11 – 7 PM Dec 08 2021
+          </span>
         </div>
       </div>
     </div>

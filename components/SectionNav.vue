@@ -6,38 +6,6 @@
           <logo-cosmos class="logo__svg" />
           <span class="sr-only">Cosmos</span>
         </span>
-        <div class="nav-list" :class="isOpen && 'opened'">
-          <ul>
-            <li>
-              <tm-link v-scroll-to="'#schedule'"> Schedule </tm-link>
-            </li>
-            <li>
-              <tm-link v-scroll-to="'#prizes'"> Prizes </tm-link>
-            </li>
-            <li>
-              <tm-link v-scroll-to="'#jury'"> Jury </tm-link>
-            </li>
-            <li>
-              <tm-link v-scroll-to="'#faq'"> FAQ </tm-link>
-            </li>
-            <li>
-              <tm-link
-                href="https://discord.gg/cosmosnetwork"
-                class="tm-link-external"
-              >
-                Discord
-              </tm-link>
-            </li>
-          </ul>
-          <div class="nav-list-bottom mt-9 tm-rf0 tm-lh-title tm-title">
-            <div class="">Virtual Hackathon</div>
-            <div class="mt-3">
-              Some restrictions may apply.<br />
-              Click to
-              <tm-link>learn more <span>&rarr;</span></tm-link>
-            </div>
-          </div>
-        </div>
         <span class="info tm-text tm-normal">
           <span>Virtual Hackathon</span>
           <tm-tooltip
@@ -48,18 +16,6 @@
             <icon-info />
           </tm-tooltip>
         </span>
-        <button
-          class="burger"
-          :class="isOpen && 'opened'"
-          variant="text"
-          @click="toggleNav"
-        >
-          <i />
-          <i />
-          <i />
-          <i />
-          <span class="sr-only">Toggle nav</span>
-        </button>
       </nav>
     </div>
   </div>
@@ -144,9 +100,7 @@ export default {
     @media $breakpoint-medium
       display none
   .info
-    display none
-    @media $breakpoint-medium
-      display block
+    display block
     > *
       vertical-align middle
     &.tablet
@@ -207,45 +161,6 @@ export default {
     display inline-block
     + li
       margin-left var(--spacing-7)
-
-.burger
-  position relative
-  width 1.25rem
-  height 1.25rem
-  padding 0
-  flex-shrink 0
-  -webkit-tap-highlight-color transparent
-  @media $breakpoint-medium
-    display none
-  i
-    position absolute
-    width 100%
-    height 1px
-    left 50%
-    top 50%
-    background-color var(--link)
-    transform translate(-50%, 0)
-    transition transform .25s $ease-out, opacity .2s $ease-out, color .2s $ease-out
-    &:nth-child(1)
-      transform translate(-50%, -4px)
-    &:nth-child(2)
-      transform translate(-50%, 4px)
-    &:nth-child(3)
-    &:nth-child(4)
-      opacity 0
-  &.opened
-    i
-      &:nth-child(1)
-      &:nth-child(2)
-        opacity 0
-        transform translate(-50%, 0)
-      &:nth-child(3)
-      &:nth-child(4)
-        opacity 1
-      &:nth-child(3)
-        transform translate(-50%, 0) rotate(45deg)
-      &:nth-child(4)
-        transform translate(-50%, 0) rotate(-45deg)
 
 @media $breakpoint-medium-max
   .nav-list

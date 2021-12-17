@@ -40,11 +40,11 @@
             </div>
           </div>
           <p class="mt-8 tm-lh-copy tm-rf0 tm-rf1-m-up">
-            Submissions to HackAtom VI are now closed. Our judges are reviewing
-            the entries and we'll announce the winners on Dec 16. The community
-            will also be voting on their favorite project from Dec 14-15 via
-            DevPost. A huge thank you to everyone who took part, making this our
-            biggest HackAtom yet with over $1,000,000 in prizes paid in ATOM.
+            The wait is over! We received many high-quality submissions over the
+            25 challenges and our judges have finally decided on the winning
+            projects! A big thank you to everyone who took part in making this
+            our biggest HackAtom yet, with over $1,000,000 in prizes in ATOM!
+            We'll return with HackAtom VII in 2022. Stay tuned!
           </p>
         </div>
       </div>
