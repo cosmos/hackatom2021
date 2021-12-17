@@ -147,6 +147,15 @@
                           class="links__item tm-rf0"
                         >
                           <div
+                            v-if="!winner"
+                            class="
+                              links__row
+                              tm-title tm-lh-title tm-rf-1 tm-normal
+                            "
+                          >
+                            The Challenge did not have a 1st winning submission
+                          </div>
+                          <div
                             class="
                               tm-overline tm-rf-1 tm-lh-title tm-medium tm-muted
                             "
@@ -408,6 +417,15 @@ export default {
               type: 'Injective',
               title: 'Injective Challenge',
               preview: `Injective's HackAtom VI challenge is to build a new simple single-page application trading interface for trading spot and perpetual markets. The purpose of this is to provide mass market users (not pro traders) an accessible, user-friendly interface for trading (Like Matcha on Ethereum, for example).`,
+              winners: [
+                false,
+                {
+                  title: '2nd',
+                  prize: '$15,000',
+                  team: 'Magnetar',
+                  link: 'https://cosmos-hackatom-vi.devpost.com/review/submissions/MXZEQzVvaE9xVm80RTEzSUtNVDhOM3NXRSthMkc1N0V0ZFAvM2JFQjd0cUVmUFFPeUJia0dCcHVldmRaVHgxZmo4Vzl0b3d6OXZLOS9iUDl3SU9TckNGb3c1MmRvWHMxcnk0WWxmekcySlE9LS1mbnZGREtKZjB1RG9wTGNvM2lTdmVRPT0=--a469f50723dfbaedcd48bf9a2fe3dc888c9bac66',
+                },
+              ],
             },
             {
               type: 'LikeCoin',
